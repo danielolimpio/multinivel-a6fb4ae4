@@ -9,39 +9,39 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 15% 20%;
+    --foreground: 0 0% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover-foreground: 0 0% 9%;
 
-    /* Primary - Azul da logo */
+    /* Primary - Azul da logo (#003bff) */
     --primary: 226 100% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 98%;
 
-    /* Secondary - Dourado da logo */
+    /* Secondary - Dourado da logo (#c8983d) */
     --secondary: 39 56% 51%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 9%;
 
     /* Muted - Cinzas suaves */
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 15% 55%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
     /* Accent - Dourado para highlights */
     --accent: 39 56% 51%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 0 0% 9%;
 
     /* Turquoise highlight - mantendo para compatibilidade */
     --turquoise: 180 65% 50%;
-    --turquoise-foreground: 0 0% 100%;
+    --turquoise-foreground: 0 0% 9%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 95%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
     --ring: 226 100% 50%;
 
     --radius: 0.75rem;
@@ -70,35 +70,35 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 60% 8%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 50% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 50% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 226 100% 60%;
-    --primary-foreground: 220 60% 15%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 39 56% 45%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 39 56% 55%;
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 220 40% 18%;
-    --muted-foreground: 220 15% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
 
     --accent: 39 56% 55%;
-    --accent-foreground: 220 60% 15%;
+    --accent-foreground: 0 0% 9%;
 
     --turquoise: 180 65% 60%;
-    --turquoise-foreground: 220 60% 15%;
+    --turquoise-foreground: 0 0% 9%;
 
     --destructive: 0 75% 65%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 40% 25%;
-    --input: 220 40% 20%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
     --ring: 226 100% 60%;
     
     --gradient-primary: linear-gradient(135deg, hsl(226 100% 60%), hsl(39 56% 55%));
