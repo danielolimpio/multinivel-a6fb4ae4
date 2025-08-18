@@ -4,75 +4,111 @@ import { ArrowRight, Star, TrendingUp, Users } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-primary opacity-5" />
+    <section className="relative py-16 overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 right-20 w-96 h-96 border border-white/20 rounded-full" />
+        <div className="absolute top-40 right-40 w-72 h-72 border border-white/10 rounded-full" />
+        <div className="absolute top-60 right-60 w-48 h-48 border border-white/5 rounded-full" />
+      </div>
+
+      {/* Growth line graphic */}
+      <div className="absolute top-1/2 right-8 transform -translate-y-1/2 hidden lg:block">
+        <svg width="200" height="120" viewBox="0 0 200 120" className="text-white/20">
+          <path
+            d="M20 100 L50 80 L80 60 L110 40 L140 20 L170 10"
+            stroke="currentColor"
+            strokeWidth="3"
+            fill="none"
+            className="animate-pulse"
+          />
+          <circle cx="20" cy="100" r="4" fill="currentColor" />
+          <circle cx="50" cy="80" r="4" fill="currentColor" />
+          <circle cx="80" cy="60" r="4" fill="currentColor" />
+          <circle cx="110" cy="40" r="4" fill="currentColor" />
+          <circle cx="140" cy="20" r="4" fill="currentColor" />
+          <circle cx="170" cy="10" r="6" fill="white" className="animate-pulse" />
+        </svg>
+      </div>
       
-      {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Badge */}
-          <Badge 
-            variant="secondary" 
-            className="mb-6 px-4 py-2 text-sm font-medium bg-accent/10 text-accent border-accent/20"
-          >
-            <Star className="w-4 h-4 mr-2" />
-            Portal de referência em Marketing de Rede
-          </Badge>
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
+          {/* Left Column - Main Content */}
+          <div className="lg:col-span-2 text-white">
+            <div className="mb-4">
+              <span className="text-sm font-medium text-white/80">Est. Year 2024</span>
+            </div>
+            
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Universidade Multinível
+            </h1>
+            
+            <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-xl">
+              Universidade Multinível é uma rede de network marketing brasileira que oferece serviços de distribuição e oportunidades de renda para empresas.
+            </p>
 
-          {/* Main headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 animate-fade-in">
-            <span className="block">Universidade</span>
-            <span className="block bg-gradient-primary bg-clip-text text-transparent">
-              Multinível
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up">
-            O portal de referência em Marketing de Rede no Brasil. 
-            Vote nas melhores empresas, participe da comunidade e construa sua rede de sucesso.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-scale-in">
-            <Button 
-              size="lg" 
-              className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 shadow-elegant"
-            >
-              Cadastrar e Votar - R$20/mês
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-lg px-8 py-6 border-2 hover:bg-muted/50"
-            >
-              Ver Ranking Completo
-            </Button>
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-2 text-white/90">
+                <div className="w-2 h-2 bg-turquoise rounded-full" />
+                <span>Ranking</span>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold text-white mb-2">Momentum ranks</h3>
+                <p className="text-sm text-white/80 leading-relaxed">
+                  Momentum Rankings, que abrange mais de 1.600+ empresas de marketing de rede mundialmente avaliadas, não é apenas estatística.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold text-white mb-2">Income disclaimers</h3>
+                <p className="text-sm text-white/80 leading-relaxed">
+                  Disclaimer geral: ganhos potenciais e reais variam significativamente entre distribuidores.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Trust indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-accent" />
-              <span>Mais de 10.000 usuários</span>
+          {/* Right Column - Stats Cards */}
+          <div className="space-y-4">
+            {/* Top Earners Card */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4" />
+                Top Earners
+              </h3>
+              <p className="text-sm text-white/80 mb-3">
+                Os top earners são líderes definidos, alta liderança e, geralmente, fundadores da empresa e líderes principais.
+              </p>
+              <Button variant="secondary" size="sm" className="w-full">
+                Top earners
+              </Button>
             </div>
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-turquoise" />
-              <span>Ranking atualizado diariamente</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Star className="w-4 h-4 text-accent" />
-              <span>Sistema de recompensas</span>
+
+            {/* Real Time Traffic Card */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
+                <Users className="w-4 h-4" />
+                Tráfego em tempo real
+              </h3>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between text-white/90">
+                  <span>Atualmente online:</span>
+                  <span className="font-semibold">1,247</span>
+                </div>
+                <div className="flex justify-between text-white/80">
+                  <span>Hoje:</span>
+                  <span>12,458 visitantes</span>
+                </div>
+                <div className="flex justify-between text-white/80">
+                  <span>Este mês:</span>
+                  <span>234,567 visitantes</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-4 w-72 h-72 bg-gradient-accent opacity-5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-4 w-96 h-96 bg-gradient-primary opacity-5 rounded-full blur-3xl" />
     </section>
   );
 }
