@@ -136,11 +136,11 @@ const Forum = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-primary to-primary-dark text-white py-12">
+      <div className="bg-gradient-primary text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Bem-vindo ao Fórum</h1>
           <p className="text-xl mb-6">Faça perguntas, obtenha respostas sem complicação</p>
-          <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+          <Button size="lg" variant="secondary">
             Criar Nova Conta
           </Button>
         </div>
@@ -157,7 +157,7 @@ const Forum = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 h-12"
             />
-            <Button className="absolute right-2 top-1/2 transform -translate-y-1/2">
+            <Button className="absolute right-2 top-1/2 transform -translate-y-1/2" size="sm">
               Fazer Pergunta 💬
             </Button>
           </div>
@@ -240,7 +240,7 @@ const Forum = () => {
                             </div>
                           </div>
 
-                          <Button size="sm" className="bg-black text-white hover:bg-gray-800">
+                          <Button size="sm" variant="default">
                             Responder
                           </Button>
                         </div>
