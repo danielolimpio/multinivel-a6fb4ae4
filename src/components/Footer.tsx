@@ -68,9 +68,16 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Brand Column */}
             <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-accent to-turquoise bg-clip-text text-transparent mb-4">
-                Universidade Multinível
-              </h2>
+              <div className="flex items-center space-x-3 mb-4">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Universidade Multinível" 
+                  className="h-8 w-8"
+                />
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-accent to-turquoise bg-clip-text text-transparent">
+                  Universidade Multinível
+                </h2>
+              </div>
               <p className="text-primary-foreground/80 mb-6 max-w-md">
                 O portal de referência em Marketing de Rede no Brasil. 
                 Conectando oportunidades, construindo sucesso.

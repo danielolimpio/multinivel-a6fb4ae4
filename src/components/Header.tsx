@@ -21,7 +21,12 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 flex items-center space-x-3">
+              <img 
+                src="/placeholder.svg" 
+                alt="Universidade Multinível" 
+                className="h-10 w-10"
+              />
               <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 Universidade Multinível
               </h1>
