@@ -82,6 +82,44 @@ const topCompanies = [
       { name: "Thiago Cardoso", avatar: "/placeholder.svg", city: "Boa Vista" },
       { name: "Priscila Gomes", avatar: "/placeholder.svg", city: "Macapá" },
     ]
+  },
+  {
+    id: 6,
+    name: "Mary Kay",
+    logo: "/placeholder.svg",
+    position: 6,
+    votes: 1823,
+    maxVotes: 3000,
+    recentVoters: [
+      { name: "Beatriz Alves", avatar: "/placeholder.svg", city: "Campinas" },
+      { name: "Rafael Santos", avatar: "/placeholder.svg", city: "Santos" },
+      { name: "Cristina Melo", avatar: "/placeholder.svg", city: "Sorocaba" },
+    ]
+  },
+  {
+    id: 7,
+    name: "Amway",
+    logo: "/placeholder.svg",
+    position: 7,
+    votes: 1654,
+    maxVotes: 3000,
+    recentVoters: [
+      { name: "Lucas Pereira", avatar: "/placeholder.svg", city: "Ribeirão Preto" },
+      { name: "Monica Lima", avatar: "/placeholder.svg", city: "Osasco" },
+      { name: "Eduardo Costa", avatar: "/placeholder.svg", city: "São José" },
+    ]
+  },
+  {
+    id: 8,
+    name: "Natura",
+    logo: "/placeholder.svg",
+    position: 8,
+    votes: 1542,
+    maxVotes: 3000,
+    recentVoters: [
+      { name: "Adriana Silva", avatar: "/placeholder.svg", city: "Guarulhos" },
+      { name: "Marcos Oliveira", avatar: "/placeholder.svg", city: "Campina Grande" },
+    ]
   }
 ];
 
@@ -99,113 +137,112 @@ export function RankingSection() {
 
   const getPositionIcon = (position: number) => {
     if (position <= 3) {
-      return <Trophy className="w-5 h-5 text-white" />;
+      return <Trophy className="w-4 h-4 text-white" />;
     }
-    return <span className="text-white font-bold">{position}</span>;
+    return <span className="text-white font-bold text-sm">{position}</span>;
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <Badge variant="secondary" className="mb-4 px-4 py-2 bg-accent/10 text-accent">
+        <div className="text-center mb-8">
+          <Badge variant="secondary" className="mb-3 px-3 py-1 bg-accent/10 text-accent">
             <Trophy className="w-4 h-4 mr-2" />
             Ranking Atual
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Top 10 Empresas de Marketing de Rede
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+            Top Empresas de Marketing de Rede
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ranking baseado em votos ativos dos últimos 30 dias. Cada voto custa R$20 e permanece ativo por 30 dias.
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Ranking baseado em votos ativos dos últimos 30 dias
           </p>
         </div>
 
-        {/* Ranking Cards */}
-        <div className="space-y-6 mb-12">
+        {/* Compact Ranking Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
           {topCompanies.map((company, index) => (
             <Card 
               key={company.id} 
-              className="p-6 hover:shadow-card transition-all duration-300 hover:scale-[1.02] animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in"
+              style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
+              <div className="flex items-center gap-4">
                 {/* Position Badge */}
-                <div className={`flex items-center justify-center w-16 h-16 rounded-full ${getPositionColor(company.position)} shadow-lg flex-shrink-0`}>
+                <div className={`flex items-center justify-center w-12 h-12 rounded-full ${getPositionColor(company.position)} shadow-md flex-shrink-0`}>
                   {getPositionIcon(company.position)}
                 </div>
 
                 {/* Company Info */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
-                    <div className="flex items-center gap-4">
-                      <img 
-                        src={company.logo} 
-                        alt={`${company.name} logo`}
-                        className="w-12 h-12 rounded-lg object-cover bg-muted"
-                      />
-                      <div>
-                        <h3 className="text-xl font-semibold text-foreground">{company.name}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {company.votes.toLocaleString()} votos ativos
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex gap-2 sm:ml-auto">
-                      <Button variant="outline" size="sm">
-                        <Eye className="w-4 h-4 mr-2" />
-                        Ver Perfil
-                      </Button>
-                      <Button size="sm" className="bg-gradient-primary">
-                        <Vote className="w-4 h-4 mr-2" />
-                        Votar
-                      </Button>
+                  <div className="flex items-center gap-3 mb-2">
+                    <img 
+                      src={company.logo} 
+                      alt={`${company.name} logo`}
+                      className="w-8 h-8 rounded object-cover bg-muted flex-shrink-0"
+                    />
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-foreground text-lg">{company.name}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        {company.votes.toLocaleString()} votos
+                      </p>
                     </div>
                   </div>
 
                   {/* Progress Bar */}
-                  <div className="mb-4">
-                    <div className="flex justify-between text-sm text-muted-foreground mb-2">
-                      <span>Progresso de votos</span>
-                      <span>{((company.votes / company.maxVotes) * 100).toFixed(1)}%</span>
-                    </div>
+                  <div className="mb-3">
                     <Progress 
                       value={(company.votes / company.maxVotes) * 100} 
                       className="h-2"
                     />
+                    <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                      <span>{((company.votes / company.maxVotes) * 100).toFixed(1)}%</span>
+                      <span>Meta: {company.maxVotes.toLocaleString()}</span>
+                    </div>
                   </div>
 
                   {/* Recent Voters */}
-                  <div>
-                    <p className="text-sm text-muted-foreground mb-2">Últimos votantes:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {company.recentVoters.slice(0, 10).map((voter, voterIndex) => (
-                        <div
-                          key={voterIndex}
-                          className="relative"
-                          onMouseEnter={() => setHoveredVoter({ companyId: company.id, voterIndex })}
-                          onMouseLeave={() => setHoveredVoter(null)}
-                        >
-                          <Avatar className="w-10 h-10 border-2 border-background shadow-sm cursor-pointer hover:scale-110 transition-transform">
-                            <AvatarImage src={voter.avatar} alt={voter.name} />
-                            <AvatarFallback className="text-xs bg-accent text-accent-foreground">
-                              {voter.name.split(' ').map(n => n[0]).join('')}
-                            </AvatarFallback>
-                          </Avatar>
-                          
-                          {/* Tooltip */}
-                          {hoveredVoter?.companyId === company.id && hoveredVoter?.voterIndex === voterIndex && (
-                            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10">
-                              <div className="bg-popover text-popover-foreground px-3 py-2 rounded-lg shadow-lg text-sm whitespace-nowrap border">
-                                <p className="font-medium">{voter.name}</p>
-                                <p className="text-muted-foreground">{voter.city}</p>
-                                <p className="text-xs text-muted-foreground">Votou hoje</p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-muted-foreground">Últimos votos:</span>
+                      <div className="flex -space-x-1">
+                        {company.recentVoters.slice(0, 5).map((voter, voterIndex) => (
+                          <div
+                            key={voterIndex}
+                            className="relative"
+                            onMouseEnter={() => setHoveredVoter({ companyId: company.id, voterIndex })}
+                            onMouseLeave={() => setHoveredVoter(null)}
+                          >
+                            <Avatar className="w-6 h-6 border-2 border-background shadow-sm cursor-pointer hover:scale-110 transition-transform">
+                              <AvatarImage src={voter.avatar} alt={voter.name} />
+                              <AvatarFallback className="text-xs bg-accent text-accent-foreground">
+                                {voter.name.split(' ').map(n => n[0]).join('')}
+                              </AvatarFallback>
+                            </Avatar>
+                            
+                            {/* Tooltip */}
+                            {hoveredVoter?.companyId === company.id && hoveredVoter?.voterIndex === voterIndex && (
+                              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10">
+                                <div className="bg-popover text-popover-foreground px-2 py-1 rounded shadow-lg text-xs whitespace-nowrap border">
+                                  <p className="font-medium">{voter.name}</p>
+                                  <p className="text-muted-foreground">{voter.city}</p>
+                                </div>
                               </div>
-                            </div>
-                          )}
-                        </div>
-                      ))}
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-1">
+                      <Button variant="ghost" size="sm" className="h-8 px-2 text-xs">
+                        <Eye className="w-3 h-3 mr-1" />
+                        Ver
+                      </Button>
+                      <Button size="sm" className="h-8 px-3 text-xs bg-gradient-primary">
+                        <Vote className="w-3 h-3 mr-1" />
+                        Votar
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -219,10 +256,10 @@ export function RankingSection() {
           <Button 
             size="lg" 
             variant="outline" 
-            className="px-8 py-6 text-lg border-2 hover:bg-muted/50"
+            className="px-6 py-4 border-2 hover:bg-muted/50"
           >
             Ver Todas as Empresas
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>
