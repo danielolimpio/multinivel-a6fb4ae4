@@ -38,11 +38,11 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground relative">
       {/* Logo positioned to overlap from above */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 -top-20 z-40">
+      <div className="absolute left-1/2 transform -translate-x-1/2 -top-16 z-40">
         <img 
           src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
           alt="Logo" 
-          className="h-40 w-40 object-contain" 
+          className="h-32 w-32 object-contain" 
           style={{
             filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
           }}
@@ -51,7 +51,7 @@ export function Footer() {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Newsletter Section with top padding for logo */}
-        <div className="pt-24 pb-12 border-b border-primary-foreground/10">
+        <div className="pt-20 pb-12 border-b border-primary-foreground/10">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl font-bold mb-4">
               Fique por dentro das novidades

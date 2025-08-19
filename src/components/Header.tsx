@@ -35,12 +35,12 @@ export function Header() {
           </nav>
 
           {/* Logo - Center - positioned to overlap into next section */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2">
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 mt-4">
             <div className="flex-shrink-0">
               <img 
                 src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
                 alt="Logo" 
-                className="h-40 w-40 object-contain relative z-50" 
+                className="h-32 w-32 object-contain relative z-50" 
                 style={{
                   filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
                 }}
