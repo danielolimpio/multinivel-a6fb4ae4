@@ -8,11 +8,13 @@ export function Header() {
 
   const navigation = [
     { name: "Home", href: "/" },
+    { name: "Sobre", href: "/sobre" },
     { name: "Ranking", href: "/ranking" },
     { name: "Notícias", href: "/noticias" },
     { name: "Fórum", href: "/forum" },
     { name: "Comunidade", href: "/comunidade" },
-    { name: "Sobre", href: "/sobre" },
+    { name: "Depoimentos", href: "/depoimentos" },
+    { name: "Contato", href: "/contato" },
   ];
 
   return (
