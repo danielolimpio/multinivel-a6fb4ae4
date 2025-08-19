@@ -5,47 +5,67 @@ interface FlagIconProps {
 }
 
 export function FlagIcon({ countryCode, className = '', size = 'md' }: FlagIconProps) {
-  const flagEmojis: Record<string, string> = {
-    'pt': '🇧🇷', // Brasil
-    'en': '🇺🇸', // USA
-    'es': '🇪🇸', // España
-    'fr': '🇫🇷', // França
-    'de': '🇩🇪', // Alemanha
-    'it': '🇮🇹', // Itália
-    'pt-pt': '🇵🇹', // Portugal
-    'zh': '🇨🇳', // China
-    'ja': '🇯🇵', // Japão
-    'ru': '🇷🇺', // Rússia
-    'ar': '🇸🇦', // Arábia Saudita
-    'hi': '🇮🇳', // Índia
-    'nl': '🇳🇱', // Holanda
-    'pl': '🇵🇱', // Polônia
-    'tr': '🇹🇷', // Turquia
-    'ko': '🇰🇷', // Coreia do Sul
-    'vi': '🇻🇳', // Vietnã
-    'id': '🇮🇩', // Indonésia
+  const flagImages: Record<string, string> = {
+    'pt': '🇧🇷', // Brasil - usar emoji por não ter imagem
+    'en': '🇺🇸', // USA - usar emoji por não ter imagem
+    'es': '/lovable-uploads/e73547c8-d4f6-4f0f-9cfb-e11bb07af065.png', // Espanha
+    'fr': '🇫🇷', // França - usar emoji por não ter imagem
+    'de': '🇩🇪', // Alemanha - usar emoji por não ter imagem
+    'it': '/lovable-uploads/13a78034-02e5-49d4-9ecd-e9e950900f2f.png', // Itália
+    'pt-pt': '/lovable-uploads/19c6cf99-56ab-4c8d-bdfe-8d3a3d60b380.png', // Portugal
+    'zh': '🇨🇳', // China - usar emoji por não ter imagem
+    'ja': '🇯🇵', // Japão - usar emoji por não ter imagem
+    'ru': '/lovable-uploads/e718df1a-b14f-4d62-9d4b-84342153a3c7.png', // Rússia
+    'ar': '🇸🇦', // Arábia Saudita - usar emoji por não ter imagem
+    'hi': '🇮🇳', // Índia - usar emoji por não ter imagem
+    'nl': '/lovable-uploads/20a3591e-c468-4ca2-b49f-67b8a74ea552.png', // Holanda
+    'pl': '/lovable-uploads/99d9847c-76df-4b6a-96d4-2c4f9f44f9c0.png', // Polônia
+    'tr': '/lovable-uploads/5ef3cace-a690-4b64-aa7d-50be7d485170.png', // Turquia
+    'ko': '/lovable-uploads/ac42a4c2-c19c-4420-a4b8-53c2cccd50c4.png', // Coreia do Sul
+    'vi': '/lovable-uploads/219814cb-9a2a-40b5-a838-9f3076a5b95d.png', // Vietnã
+    'id': '/lovable-uploads/f09ff5c7-9dc9-441e-84a4-760c71526c64.png', // Indonésia
   };
 
   const sizeClasses = {
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-lg'
+    sm: 'w-5 h-4',
+    md: 'w-6 h-5', 
+    lg: 'w-7 h-6'
   };
 
+  const flag = flagImages[countryCode] || '🏳️';
+
+  // Se é um emoji, renderiza como texto
+  if (flag.startsWith('🇧🇷') || flag.startsWith('🇺🇸') || flag.startsWith('🇫🇷') || 
+      flag.startsWith('🇩🇪') || flag.startsWith('🇨🇳') || flag.startsWith('🇯🇵') || 
+      flag.startsWith('🇸🇦') || flag.startsWith('🇮🇳') || flag.startsWith('🏳️')) {
+    return (
+      <span 
+        className={`inline-block text-base ${className}`}
+        style={{ 
+          width: size === 'sm' ? '20px' : size === 'md' ? '24px' : '28px',
+          height: size === 'sm' ? '15px' : size === 'md' ? '18px' : '21px',
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: '2px',
+          overflow: 'hidden'
+        }}
+      >
+        {flag}
+      </span>
+    );
+  }
+
+  // Se é uma imagem, renderiza como img
   return (
-    <span 
-      className={`inline-block ${sizeClasses[size]} ${className}`}
+    <img 
+      src={flag}
+      alt={`Flag of ${countryCode}`}
+      className={`inline-block object-cover border border-gray-200 rounded-sm ${sizeClasses[size]} ${className}`}
       style={{ 
-        width: size === 'sm' ? '20px' : size === 'md' ? '24px' : '28px',
-        height: size === 'sm' ? '15px' : size === 'md' ? '18px' : '21px',
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
         borderRadius: '2px',
-        overflow: 'hidden'
+        objectFit: 'cover'
       }}
-    >
-      {flagEmojis[countryCode] || '🏳️'}
-    </span>
+    />
   );
 }
