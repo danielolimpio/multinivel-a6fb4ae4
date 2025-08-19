@@ -22,9 +22,11 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                Universidade Multinível
-              </h1>
+              <img 
+                src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
+                alt="Logo" 
+                className="h-10 w-10" 
+              />
             </div>
           </div>
 
