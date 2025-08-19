@@ -20,7 +20,16 @@ export function Hero() {
     { country: "Portugal", flag: "🇵🇹", content: "Portal de Marketing de Rede" },
     { country: "México", flag: "🇲🇽", content: "Portal de Marketing de Red" },
     { country: "Canadá", flag: "🇨🇦", content: "Network Marketing Portal" },
-    { country: "Reino Unido", flag: "🇬🇧", content: "Network Marketing Portal" }
+    { country: "Reino Unido", flag: "🇬🇧", content: "Network Marketing Portal" },
+    { country: "China", flag: "🇨🇳", content: "网络营销门户" },
+    { country: "Japão", flag: "🇯🇵", content: "ネットワークマーケティングポータル" },
+    { country: "Rússia", flag: "🇷🇺", content: "Портал сетевого маркетинга" },
+    { country: "Holanda", flag: "🇳🇱", content: "Netwerk Marketing Portaal" },
+    { country: "Polônia", flag: "🇵🇱", content: "Portal Marketingu Sieciowego" },
+    { country: "Turquia", flag: "🇹🇷", content: "Ağ Pazarlama Portalı" },
+    { country: "Coreia do Sul", flag: "🇰🇷", content: "네트워크 마케팅 포털" },
+    { country: "Vietnã", flag: "🇻🇳", content: "Cổng tiếp thị mạng" },
+    { country: "Indonésia", flag: "🇮🇩", content: "Portal Pemasaran Jaringan" }
   ];
 
   useEffect(() => {
