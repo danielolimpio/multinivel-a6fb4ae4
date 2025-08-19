@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe, DollarSign } from "lucide-react";
+import { Menu, X, Globe, DollarSign, ChevronDown } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState({ name: "Português", flag: "🇧🇷", code: "pt" });
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -15,6 +17,27 @@ export function Header() {
     { name: "Comunidade", href: "/comunidade" },
     { name: "Depoimentos", href: "/depoimentos" },
     { name: "Contato", href: "/contato" },
+  ];
+
+  const languages = [
+    { name: "Arabic", flag: "🇸🇦", code: "ar" },
+    { name: "Chinese (Simplified)", flag: "🇨🇳", code: "zh" },
+    { name: "Dutch", flag: "🇳🇱", code: "nl" },
+    { name: "English", flag: "🇺🇸", code: "en" },
+    { name: "Filipino", flag: "🇵🇭", code: "fil" },
+    { name: "French", flag: "🇫🇷", code: "fr" },
+    { name: "German", flag: "🇩🇪", code: "de" },
+    { name: "Hindi", flag: "🇮🇳", code: "hi" },
+    { name: "Indonesian", flag: "🇮🇩", code: "id" },
+    { name: "Italian", flag: "🇮🇹", code: "it" },
+    { name: "Korean", flag: "🇰🇷", code: "ko" },
+    { name: "Polish", flag: "🇵🇱", code: "pl" },
+    { name: "Português", flag: "🇧🇷", code: "pt" },
+    { name: "Russian", flag: "🇷🇺", code: "ru" },
+    { name: "Spanish", flag: "🇪🇸", code: "es" },
+    { name: "Thai", flag: "🇹🇭", code: "th" },
+    { name: "Turkish", flag: "🇹🇷", code: "tr" },
+    { name: "Vietnamese", flag: "🇻🇳", code: "vi" },
   ];
 
   return (
@@ -38,10 +61,27 @@ export function Header() {
 
             {/* Desktop Actions */}
             <div className="hidden md:flex items-center space-x-4">
-              <Button variant="ghost" size="sm">
-                <Globe className="h-4 w-4 mr-2" />
-                PT
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm">
+                    <span className="mr-2">{selectedLanguage.flag}</span>
+                    {selectedLanguage.code.toUpperCase()}
+                    <ChevronDown className="h-3 w-3 ml-1" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                  {languages.map((language) => (
+                    <DropdownMenuItem
+                      key={language.code}
+                      onClick={() => setSelectedLanguage(language)}
+                      className="flex items-center gap-2"
+                    >
+                      <span>{language.flag}</span>
+                      {language.name}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button variant="outline" size="sm">
                 Entrar
               </Button>
@@ -76,10 +116,29 @@ export function Header() {
                       </a>
                     ))}
                     <div className="border-t pt-4 space-y-2 w-full">
-                      <Button variant="ghost" className="w-full justify-start">
-                        <Globe className="h-4 w-4 mr-2" />
-                        Português
-                      </Button>
+                      <div className="text-center">
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" className="w-full justify-center">
+                              <span className="mr-2">{selectedLanguage.flag}</span>
+                              {selectedLanguage.name}
+                              <ChevronDown className="h-3 w-3 ml-1" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="center" className="w-56">
+                            {languages.map((language) => (
+                              <DropdownMenuItem
+                                key={language.code}
+                                onClick={() => setSelectedLanguage(language)}
+                                className="flex items-center gap-2"
+                              >
+                                <span>{language.flag}</span>
+                                {language.name}
+                              </DropdownMenuItem>
+                            ))}
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
                       <Button variant="outline" className="w-full">
                         Entrar
                       </Button>

@@ -2,12 +2,22 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, TrendingUp, Users } from "lucide-react";
 export function Hero() {
-  return <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-32 right-20 w-96 h-96 border border-white/20 rounded-full" />
-        <div className="absolute top-52 right-40 w-72 h-72 border border-white/10 rounded-full" />
-        <div className="absolute top-72 right-60 w-48 h-48 border border-white/5 rounded-full" />
+  return <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-hero">
+      {/* Floating particles animation */}
+      <div className="floating-particles">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 4 + 2}px`,
+              height: `${Math.random() * 4 + 2}px`,
+              animationDuration: `${Math.random() * 10 + 8}s`,
+              animationDelay: `${Math.random() * 2}s`,
+            }}
+          />
+        ))}
       </div>
 
       {/* Growth line graphic */}
@@ -72,7 +82,7 @@ export function Hero() {
               <p className="text-sm text-white/80 mb-3">
                 Os top earners são líderes definidos, alta liderança e, geralmente, fundadores da empresa e líderes principais.
               </p>
-              <Button variant="secondary" size="sm" className="w-full">
+              <Button variant="purple" size="sm" className="w-full">
                 Top earners
               </Button>
             </div>
@@ -83,19 +93,33 @@ export function Hero() {
                 <Users className="w-4 h-4" />
                 Tráfego em tempo real
               </h3>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between text-white/90">
-                  <span>Atualmente online:</span>
-                  <span className="font-semibold">1,247</span>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center justify-between">
+                  <span className="text-white/80 text-xs">Visitante de Hillsboro, United States</span>
+                  <span className="text-xs">🇺🇸</span>
                 </div>
-                <div className="flex justify-between text-white/80">
-                  <span>Hoje:</span>
-                  <span>12,458 visitantes</span>
+                <div className="text-white/90 text-xs bg-white/10 p-2 rounded">
+                  visualizou <strong>Amber Olson Rourke cùa Neora</strong> đưa ra tầm nhìn về sự tăng trưởng và đổi mới cho ngành bán hàng trực tiếp. Sự kiên định, số liệu và tin tức về bán hàng trực tiếp
                 </div>
-                <div className="flex justify-between text-white/80">
-                  <span>Este mês:</span>
-                  <span>234,567 visitantes</span>
+                <div className="text-white/70 text-xs">0s</div>
+                
+                <div className="flex items-center justify-between mt-3">
+                  <span className="text-white/80 text-xs">Visitante de United States</span>
+                  <span className="text-xs">🇺🇸</span>
                 </div>
+                <div className="text-white/90 text-xs bg-white/10 p-2 rounded">
+                  visualizou <strong>M INTERNATIONAL®</strong> 성장하였습니다.. 페이지 작업 관련 시설, 수치 및 뉴스
+                </div>
+                <div className="text-white/70 text-xs">5s</div>
+
+                <div className="flex items-center justify-between mt-3">
+                  <span className="text-white/80 text-xs">Visitante de Rockville, United States</span>
+                  <span className="text-xs">🇺🇸</span>
+                </div>
+                <div className="text-white/90 text-xs bg-white/10 p-2 rounded">
+                  visualizou <strong>Top Earners Rankings</strong> Direct Selling
+                </div>
+                <div className="text-white/70 text-xs">12s</div>
               </div>
             </div>
           </div>
