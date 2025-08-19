@@ -8,31 +8,33 @@ export function Hero() {
   const [currentVisitor, setCurrentVisitor] = useState({
     country: "Brasil",
     countryCode: "pt",
-    content: "Portal de Marketing de Rede"
+    content: "Portal de Marketing de Rede",
+    name: "Carlos Silva"
   });
 
   const visitors = [
-    { country: "Brasil", countryCode: "pt", content: "Portal de Marketing de Rede" },
-    { country: "Estados Unidos", countryCode: "en", content: "Network Marketing Portal" },
-    { country: "Espanha", countryCode: "es", content: "Portal de Marketing de Red" },
-    { country: "França", countryCode: "fr", content: "Portail Marketing de Réseau" },
-    { country: "Alemanha", countryCode: "de", content: "Network-Marketing-Portal" },
-    { country: "Itália", countryCode: "it", content: "Portale di Network Marketing" },
-    { country: "Portugal", countryCode: "pt-pt", content: "Portal de Marketing de Rede" },
-    { country: "México", countryCode: "es", content: "Portal de Marketing de Red" },
-    { country: "Canadá", countryCode: "en", content: "Network Marketing Portal" },
-    { country: "Reino Unido", countryCode: "en", content: "Network Marketing Portal" },
-    { country: "China", countryCode: "zh", content: "网络营销门户" },
-    { country: "Japão", countryCode: "ja", content: "ネットワークマーケティングポータル" },
-    { country: "Rússia", countryCode: "ru", content: "Портал сетевого маркетинга" },
-    { country: "Holanda", countryCode: "nl", content: "Netwerk Marketing Portaal" },
-    { country: "Polônia", countryCode: "pl", content: "Portal Marketingu Sieciowego" },
-    { country: "Turquia", countryCode: "tr", content: "Ağ Pazarlama Portalı" },
-    { country: "Coreia do Sul", countryCode: "ko", content: "네트워크 마케팅 포털" },
-    { country: "Vietnã", countryCode: "vi", content: "Cổng tiếp thị mạng" },
-    { country: "Indonésia", countryCode: "id", content: "Portal Pemasaran Jaringan" },
-    { country: "Arábia Saudita", countryCode: "ar", content: "بوابة التسويق الشبكي" },
-    { country: "Índia", countryCode: "hi", content: "नेटवर्क मार्केटिंग पोर्टल" }
+    { country: "Brasil", countryCode: "pt", content: "Portal de Marketing de Rede", name: "Carlos Silva" },
+    { country: "Reino Unido", countryCode: "en", content: "Network Marketing Portal", name: "James Smith" },
+    { country: "Espanha", countryCode: "es", content: "Portal de Marketing de Red", name: "José García" },
+    { country: "França", countryCode: "fr", content: "Portail Marketing de Réseau", name: "Pierre Dubois" },
+    { country: "Alemanha", countryCode: "de", content: "Network-Marketing-Portal", name: "Hans Mueller" },
+    { country: "Itália", countryCode: "it", content: "Portale di Network Marketing", name: "Marco Rossi" },
+    { country: "Portugal", countryCode: "pt-pt", content: "Portal de Marketing de Rede", name: "João Santos" },
+    { country: "México", countryCode: "es", content: "Portal de Marketing de Red", name: "Luis Rodriguez" },
+    { country: "Canadá", countryCode: "en", content: "Network Marketing Portal", name: "Michael Johnson" },
+    { country: "China", countryCode: "zh", content: "网络营销门户", name: "Li Wei" },
+    { country: "Japão", countryCode: "ja", content: "ネットワークマーケティングポータル", name: "Takeshi Yamamoto" },
+    { country: "Rússia", countryCode: "ru", content: "Портал сетевого маркетинга", name: "Vladimir Petrov" },
+    { country: "Holanda", countryCode: "nl", content: "Netwerk Marketing Portaal", name: "Jan van Berg" },
+    { country: "Polônia", countryCode: "pl", content: "Portal Marketingu Sieciowego", name: "Piotr Kowalski" },
+    { country: "Turquia", countryCode: "tr", content: "Ağ Pazarlama Portalı", name: "Mehmet Yılmaz" },
+    { country: "Coreia do Sul", countryCode: "ko", content: "네트워크 마케팅 포털", name: "Kim Min-jun" },
+    { country: "Vietnã", countryCode: "vi", content: "Cổng tiếp thị mạng", name: "Nguyen Van An" },
+    { country: "Indonésia", countryCode: "id", content: "Portal Pemasaran Jaringan", name: "Ahmad Wijaya" },
+    { country: "Liga Árabe", countryCode: "ar", content: "بوابة التسويق الشبكي", name: "Ahmed Al-Rashid" },
+    { country: "Índia", countryCode: "hi", content: "नेटवर्क मार्केटिंग पोर्टल", name: "Raj Patel" },
+    { country: "Filipinas", countryCode: "tl", content: "Network Marketing Portal", name: "Jose Cruz" },
+    { country: "Croácia", countryCode: "hr", content: "Portal mrežnog marketinga", name: "Ivan Marić" }
   ];
 
   useEffect(() => {
@@ -140,7 +142,10 @@ export function Hero() {
                   <div className="bg-white/20 p-1 rounded-sm">
                     <FlagIcon countryCode={currentVisitor.countryCode} size="sm" />
                   </div>
-                  <span className="text-white/80 text-xs font-medium">{currentVisitor.country}</span>
+                  <div>
+                    <span className="text-white/90 text-xs font-medium block">{currentVisitor.name}</span>
+                    <span className="text-white/70 text-xs">{currentVisitor.country}</span>
+                  </div>
                 </div>
                 <div className="text-white/90 text-xs bg-white/10 p-2 rounded">
                   visualizou <strong>{currentVisitor.content}</strong>

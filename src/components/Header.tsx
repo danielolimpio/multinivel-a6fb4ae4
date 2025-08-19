@@ -10,24 +10,26 @@ export function Header() {
   const [selectedLanguage, setSelectedLanguage] = useState('pt');
   
   const languages = [
-    { code: 'pt', name: 'Português', country: 'Brasil' },
-    { code: 'en', name: 'English', country: 'United States' },
-    { code: 'es', name: 'Español', country: 'España' },
-    { code: 'fr', name: 'Français', country: 'France' },
-    { code: 'de', name: 'Deutsch', country: 'Deutschland' },
-    { code: 'it', name: 'Italiano', country: 'Italia' },
-    { code: 'pt-pt', name: 'Português (PT)', country: 'Portugal' },
-    { code: 'zh', name: '中文', country: 'China' },
-    { code: 'ja', name: '日本語', country: 'Japan' },
-    { code: 'ru', name: 'Русский', country: 'Russia' },
-    { code: 'ar', name: 'العربية', country: 'Saudi Arabia' },
-    { code: 'hi', name: 'हिन्दी', country: 'India' },
-    { code: 'nl', name: 'Nederlands', country: 'Netherlands' },
-    { code: 'pl', name: 'Polski', country: 'Poland' },
-    { code: 'tr', name: 'Türkçe', country: 'Turkey' },
-    { code: 'ko', name: '한국어', country: 'South Korea' },
-    { code: 'vi', name: 'Tiếng Việt', country: 'Vietnam' },
-    { code: 'id', name: 'Bahasa Indonesia', country: 'Indonesia' }
+    { code: 'pt', name: 'Brasil' },
+    { code: 'en', name: 'Reino Unido' },
+    { code: 'es', name: 'Espanha' },
+    { code: 'fr', name: 'França' },
+    { code: 'de', name: 'Alemanha' },
+    { code: 'it', name: 'Itália' },
+    { code: 'pt-pt', name: 'Portugal' },
+    { code: 'zh', name: 'China' },
+    { code: 'ja', name: 'Japão' },
+    { code: 'ru', name: 'Rússia' },
+    { code: 'ar', name: 'Liga Árabe' },
+    { code: 'hi', name: 'Índia' },
+    { code: 'nl', name: 'Holanda' },
+    { code: 'pl', name: 'Polônia' },
+    { code: 'tr', name: 'Turquia' },
+    { code: 'ko', name: 'Coreia do Sul' },
+    { code: 'vi', name: 'Vietnã' },
+    { code: 'id', name: 'Indonésia' },
+    { code: 'tl', name: 'Filipinas' },
+    { code: 'hr', name: 'Croácia' }
   ];
 
   const translations = {
@@ -337,18 +339,15 @@ export function Header() {
                     <ChevronDown className="h-3 w-3" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuContent align="end" className="w-40">
                   {languages.map((language) => (
                     <DropdownMenuItem
                       key={language.code}
                       onClick={() => setSelectedLanguage(language.code)}
-                      className="flex items-center gap-3 cursor-pointer"
+                      className="flex items-center gap-2 cursor-pointer py-1.5"
                     >
                       <FlagIcon countryCode={language.code} size="sm" />
-                      <div className="flex flex-col">
-                        <span className="font-medium">{language.name}</span>
-                        <span className="text-xs text-muted-foreground">{language.country}</span>
-                      </div>
+                      <span className="text-sm">{language.name}</span>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
@@ -396,18 +395,15 @@ export function Header() {
                               <ChevronDown className="h-3 w-3" />
                             </Button>
                           </DropdownMenuTrigger>
-                          <DropdownMenuContent align="center" className="w-56">
+                          <DropdownMenuContent align="center" className="w-40">
                             {languages.map((language) => (
                               <DropdownMenuItem
                                 key={language.code}
                                 onClick={() => setSelectedLanguage(language.code)}
-                                className="flex items-center gap-3 cursor-pointer"
+                                className="flex items-center gap-2 cursor-pointer py-1.5"
                               >
                                 <FlagIcon countryCode={language.code} size="sm" />
-                                <div className="flex flex-col">
-                                  <span className="font-medium">{language.name}</span>
-                                  <span className="text-xs text-muted-foreground">{language.country}</span>
-                                </div>
+                                <span className="text-sm">{language.name}</span>
                               </DropdownMenuItem>
                             ))}
                           </DropdownMenuContent>
