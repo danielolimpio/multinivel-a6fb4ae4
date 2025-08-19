@@ -7,16 +7,19 @@ import { FlagIcon } from "@/components/FlagIcon";
 export function Hero() {
   const [currentVisitors, setCurrentVisitors] = useState([
     { country: "Brasil", countryCode: "pt" },
-    { country: "Reino Unido", countryCode: "en" },
-    { country: "Espanha", countryCode: "es" }
+    { country: "Estados Unidos", countryCode: "en" },
+    { country: "Reino Unido", countryCode: "en" }
   ]);
 
   const visitors = [
     { country: "Brasil", countryCode: "pt" },
     { country: "Brasil", countryCode: "pt" },
     { country: "Brasil", countryCode: "pt" },
-    { country: "Reino Unido", countryCode: "en" },
+    { country: "Brasil", countryCode: "pt" },
     { country: "Estados Unidos", countryCode: "en" },
+    { country: "Estados Unidos", countryCode: "en" },
+    { country: "Estados Unidos", countryCode: "en" },
+    { country: "Reino Unido", countryCode: "en" },
     { country: "Canadá", countryCode: "ca" },
     { country: "México", countryCode: "mx" },
     { country: "Espanha", countryCode: "es" },
@@ -135,7 +138,7 @@ export function Hero() {
                 <Users className="w-4 h-4" />
                 Tráfego em tempo real
               </h3>
-              <div className="space-y-2 text-sm max-h-32 overflow-hidden">
+              <div className="space-y-2 text-sm max-h-40 overflow-hidden">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-white/80 text-xs">Visitantes online agora</span>
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
