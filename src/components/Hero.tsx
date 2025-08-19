@@ -1,20 +1,46 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, TrendingUp, Users } from "lucide-react";
+import { useState, useEffect } from "react";
+
 export function Hero() {
+  const [currentVisitor, setCurrentVisitor] = useState({
+    country: "Brasil",
+    flag: "🇧🇷",
+    content: "Portal de Marketing de Rede"
+  });
+
+  const visitors = [
+    { country: "Brasil", flag: "🇧🇷", content: "Portal de Marketing de Rede" },
+    { country: "Estados Unidos", flag: "🇺🇸", content: "Network Marketing Portal" },
+    { country: "Espanha", flag: "🇪🇸", content: "Portal de Marketing de Red" },
+    { country: "França", flag: "🇫🇷", content: "Portail Marketing de Réseau" },
+    { country: "Alemanha", flag: "🇩🇪", content: "Network-Marketing-Portal" },
+    { country: "Itália", flag: "🇮🇹", content: "Portale di Network Marketing" },
+    { country: "Portugal", flag: "🇵🇹", content: "Portal de Marketing de Rede" },
+    { country: "México", flag: "🇲🇽", content: "Portal de Marketing de Red" },
+    { country: "Canadá", flag: "🇨🇦", content: "Network Marketing Portal" },
+    { country: "Reino Unido", flag: "🇬🇧", content: "Network Marketing Portal" }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const randomVisitor = visitors[Math.floor(Math.random() * visitors.length)];
+      setCurrentVisitor(randomVisitor);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
   return <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-hero">
       {/* Floating particles animation */}
       <div className="floating-particles">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(80)].map((_, i) => (
           <div
             key={i}
-            className="particle"
+            className={`particle particle-${(i % 5) + 1}`}
             style={{
               left: `${Math.random() * 100}%`,
-              width: `${Math.random() * 4 + 2}px`,
-              height: `${Math.random() * 4 + 2}px`,
-              animationDuration: `${Math.random() * 10 + 8}s`,
-              animationDelay: `${Math.random() * 2}s`,
+              animationDelay: `${Math.random() * 10}s`,
             }}
           />
         ))}
@@ -95,31 +121,17 @@ export function Hero() {
               </h3>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center justify-between">
-                  <span className="text-white/80 text-xs">Visitante de Hillsboro, United States</span>
-                  <span className="text-xs">🇺🇸</span>
+                  <span className="text-white/80 text-xs">Visitante online agora</span>
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-lg">{currentVisitor.flag}</span>
+                  <span className="text-white/80 text-xs">{currentVisitor.country}</span>
                 </div>
                 <div className="text-white/90 text-xs bg-white/10 p-2 rounded">
-                  visualizou <strong>Amber Olson Rourke cùa Neora</strong> đưa ra tầm nhìn về sự tăng trưởng và đổi mới cho ngành bán hàng trực tiếp. Sự kiên định, số liệu và tin tức về bán hàng trực tiếp
+                  visualizou <strong>{currentVisitor.content}</strong>
                 </div>
-                <div className="text-white/70 text-xs">0s</div>
-                
-                <div className="flex items-center justify-between mt-3">
-                  <span className="text-white/80 text-xs">Visitante de United States</span>
-                  <span className="text-xs">🇺🇸</span>
-                </div>
-                <div className="text-white/90 text-xs bg-white/10 p-2 rounded">
-                  visualizou <strong>M INTERNATIONAL®</strong> 성장하였습니다.. 페이지 작업 관련 시설, 수치 및 뉴스
-                </div>
-                <div className="text-white/70 text-xs">5s</div>
-
-                <div className="flex items-center justify-between mt-3">
-                  <span className="text-white/80 text-xs">Visitante de Rockville, United States</span>
-                  <span className="text-xs">🇺🇸</span>
-                </div>
-                <div className="text-white/90 text-xs bg-white/10 p-2 rounded">
-                  visualizou <strong>Top Earners Rankings</strong> Direct Selling
-                </div>
-                <div className="text-white/70 text-xs">12s</div>
+                <div className="text-white/70 text-xs">agora</div>
               </div>
             </div>
           </div>

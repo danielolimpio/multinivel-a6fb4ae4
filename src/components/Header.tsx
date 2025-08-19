@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Globe, DollarSign, ChevronDown } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -6,38 +6,304 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState({ name: "Português", flag: "🇧🇷", code: "pt" });
-
-  const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Sobre", href: "/sobre" },
-    { name: "Ranking", href: "/ranking" },
-    { name: "Notícias", href: "/noticias" },
-    { name: "Fórum", href: "/forum" },
-    { name: "Comunidade", href: "/comunidade" },
-    { name: "Depoimentos", href: "/depoimentos" },
-    { name: "Contato", href: "/contato" },
+  const [selectedLanguage, setSelectedLanguage] = useState('pt');
+  
+  const languages = [
+    { code: 'pt', name: 'Português', flag: '🇧🇷' },
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'es', name: 'Español', flag: '🇪🇸' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+    { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+    { code: 'zh', name: '中文', flag: '🇨🇳' },
+    { code: 'ja', name: '日本語', flag: '🇯🇵' },
+    { code: 'ko', name: '한국어', flag: '🇰🇷' },
+    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+    { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
+    { code: 'th', name: 'ไทย', flag: '🇹🇭' },
+    { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
+    { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
+    { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+    { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+    { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
   ];
 
-  const languages = [
-    { name: "Arabic", flag: "🇸🇦", code: "ar" },
-    { name: "Chinese (Simplified)", flag: "🇨🇳", code: "zh" },
-    { name: "Dutch", flag: "🇳🇱", code: "nl" },
-    { name: "English", flag: "🇺🇸", code: "en" },
-    { name: "Filipino", flag: "🇵🇭", code: "fil" },
-    { name: "French", flag: "🇫🇷", code: "fr" },
-    { name: "German", flag: "🇩🇪", code: "de" },
-    { name: "Hindi", flag: "🇮🇳", code: "hi" },
-    { name: "Indonesian", flag: "🇮🇩", code: "id" },
-    { name: "Italian", flag: "🇮🇹", code: "it" },
-    { name: "Korean", flag: "🇰🇷", code: "ko" },
-    { name: "Polish", flag: "🇵🇱", code: "pl" },
-    { name: "Português", flag: "🇧🇷", code: "pt" },
-    { name: "Russian", flag: "🇷🇺", code: "ru" },
-    { name: "Spanish", flag: "🇪🇸", code: "es" },
-    { name: "Thai", flag: "🇹🇭", code: "th" },
-    { name: "Turkish", flag: "🇹🇷", code: "tr" },
-    { name: "Vietnamese", flag: "🇻🇳", code: "vi" },
+  const translations = {
+    pt: {
+      home: "Home",
+      about: "Sobre", 
+      ranking: "Ranking",
+      news: "Notícias",
+      forum: "Fórum",
+      community: "Comunidade",
+      testimonials: "Depoimentos",
+      contact: "Contato",
+      login: "Entrar",
+      register: "Cadastre-se",
+      totalCommission: "Pagamento total da comissão",
+      totalSales: "Vendas totais de todas as empresas"
+    },
+    en: {
+      home: "Home",
+      about: "About",
+      ranking: "Ranking",
+      news: "News",
+      forum: "Forum",
+      community: "Community",
+      testimonials: "Testimonials",
+      contact: "Contact",
+      login: "Login",
+      register: "Sign Up",
+      totalCommission: "Total commission payment",
+      totalSales: "Total sales of all companies"
+    },
+    es: {
+      home: "Inicio",
+      about: "Acerca de",
+      ranking: "Ranking",
+      news: "Noticias",
+      forum: "Foro",
+      community: "Comunidad",
+      testimonials: "Testimonios", 
+      contact: "Contacto",
+      login: "Iniciar Sesión",
+      register: "Registrarse",
+      totalCommission: "Pago total de comisiones",
+      totalSales: "Ventas totales de todas las empresas"
+    },
+    fr: {
+      home: "Accueil",
+      about: "À propos",
+      ranking: "Classement",
+      news: "Actualités",
+      forum: "Forum",
+      community: "Communauté",
+      testimonials: "Témoignages",
+      contact: "Contact",
+      login: "Se connecter",
+      register: "S'inscrire",
+      totalCommission: "Paiement total des commissions",
+      totalSales: "Ventes totales de toutes les entreprises"
+    },
+    de: {
+      home: "Startseite",
+      about: "Über uns",
+      ranking: "Rangliste",
+      news: "Nachrichten",
+      forum: "Forum",
+      community: "Gemeinschaft",
+      testimonials: "Erfahrungsberichte",
+      contact: "Kontakt",
+      login: "Anmelden",
+      register: "Registrieren",
+      totalCommission: "Gesamte Provisionszahlung",
+      totalSales: "Gesamtumsatz aller Unternehmen"
+    },
+    it: {
+      home: "Home",
+      about: "Chi siamo",
+      ranking: "Classifica",
+      news: "Notizie",
+      forum: "Forum",
+      community: "Comunità",
+      testimonials: "Testimonianze",
+      contact: "Contatti",
+      login: "Accedi",
+      register: "Registrati",
+      totalCommission: "Pagamento totale commissioni",
+      totalSales: "Vendite totali di tutte le aziende"
+    },
+    ru: {
+      home: "Главная",
+      about: "О нас", 
+      ranking: "Рейтинг",
+      news: "Новости",
+      forum: "Форум",
+      community: "Сообщество",
+      testimonials: "Отзывы",
+      contact: "Контакты",
+      login: "Войти",
+      register: "Регистрация",
+      totalCommission: "Общий платеж комиссии",
+      totalSales: "Общие продажи всех компаний"
+    },
+    zh: {
+      home: "首页",
+      about: "关于我们",
+      ranking: "排名",
+      news: "新闻",
+      forum: "论坛",
+      community: "社区",
+      testimonials: "推荐信",
+      contact: "联系我们",
+      login: "登录",
+      register: "注册",
+      totalCommission: "总佣金支付",
+      totalSales: "所有公司总销售额"
+    },
+    ja: {
+      home: "ホーム",
+      about: "私たちについて",
+      ranking: "ランキング",
+      news: "ニュース",
+      forum: "フォーラム",
+      community: "コミュニティ", 
+      testimonials: "お客様の声",
+      contact: "お問い合わせ",
+      login: "ログイン",
+      register: "登録",
+      totalCommission: "総手数料支払い",
+      totalSales: "全企業の総売上"
+    },
+    ko: {
+      home: "홈",
+      about: "회사소개",
+      ranking: "순위",
+      news: "뉴스",
+      forum: "포럼",
+      community: "커뮤니티",
+      testimonials: "고객후기",
+      contact: "연락처",
+      login: "로그인",
+      register: "회원가입",
+      totalCommission: "총 수수료 지급",
+      totalSales: "모든 회사의 총 매출"
+    },
+    ar: {
+      home: "الرئيسية",
+      about: "معلومات عنا",
+      ranking: "التصنيف",
+      news: "الأخبار",
+      forum: "المنتدى",
+      community: "المجتمع",
+      testimonials: "الشهادات",
+      contact: "اتصل بنا",
+      login: "تسجيل الدخول",
+      register: "التسجيل",
+      totalCommission: "إجمالي دفع العمولات",
+      totalSales: "إجمالي مبيعات جميع الشركات"
+    },
+    hi: {
+      home: "होम",
+      about: "हमारे बारे में",
+      ranking: "रैंकिंग",
+      news: "समाचार",
+      forum: "फोरम",
+      community: "समुदाय",
+      testimonials: "प्रशंसापत्र",
+      contact: "संपर्क करें",
+      login: "लॉगिन करें",
+      register: "साइन अप करें",
+      totalCommission: "कुल कमीशन भुगतान",
+      totalSales: "सभी कंपनियों की कुल बिक्री"
+    },
+    th: {
+      home: "หน้าแรก", 
+      about: "เกี่ยวกับเรา",
+      ranking: "อันดับ",
+      news: "ข่าวสาร",
+      forum: "ฟอรั่ม",
+      community: "ชุมชน",
+      testimonials: "คำแนะนำ",
+      contact: "ติดต่อ",
+      login: "เข้าสู่ระบบ",
+      register: "สมัครสมาชิก",
+      totalCommission: "การจ่ายค่าคอมมิชชั่นรวม",
+      totalSales: "ยอดขายรวมของทุกบริษัท"
+    },
+    vi: {
+      home: "Trang chủ",
+      about: "Về chúng tôi",
+      ranking: "Xếp hạng",
+      news: "Tin tức",
+      forum: "Diễn đàn",
+      community: "Cộng đồng",
+      testimonials: "Lời chứng thực",
+      contact: "Liên hệ",
+      login: "Đăng nhập",
+      register: "Đăng ký",
+      totalCommission: "Tổng thanh toán hoa hồng",
+      totalSales: "Tổng doanh số của tất cả công ty"
+    },
+    tr: {
+      home: "Ana Sayfa",
+      about: "Hakkımızda", 
+      ranking: "Sıralama",
+      news: "Haberler",
+      forum: "Forum",
+      community: "Topluluk",
+      testimonials: "Referanslar",
+      contact: "İletişim",
+      login: "Giriş Yap",
+      register: "Kayıt Ol",
+      totalCommission: "Toplam komisyon ödemesi",
+      totalSales: "Tüm şirketlerin toplam satışları"
+    },
+    pl: {
+      home: "Strona główna",
+      about: "O nas",
+      ranking: "Ranking",
+      news: "Wiadomości",
+      forum: "Forum",
+      community: "Społeczność",
+      testimonials: "Referencje",
+      contact: "Kontakt",
+      login: "Zaloguj się",
+      register: "Zarejestruj się",
+      totalCommission: "Łączna płatność prowizji",
+      totalSales: "Łączna sprzedaż wszystkich firm"
+    },
+    nl: {
+      home: "Thuis",
+      about: "Over ons",
+      ranking: "Ranglijst",
+      news: "Nieuws",
+      forum: "Forum",
+      community: "Gemeenschap", 
+      testimonials: "Getuigenissen",
+      contact: "Contact",
+      login: "Inloggen",  
+      register: "Aanmelden",
+      totalCommission: "Totale commissiebetaling",
+      totalSales: "Totale verkopen van alle bedrijven"
+    },
+    sv: {
+      home: "Hem",
+      about: "Om oss",
+      ranking: "Rankning",
+      news: "Nyheter",
+      forum: "Forum",
+      community: "Gemenskap",
+      testimonials: "Rekommendationer",
+      contact: "Kontakt",
+      login: "Logga in",
+      register: "Registrera",
+      totalCommission: "Total provisionsbetalning",
+      totalSales: "Total försäljning för alla företag"
+    }
+  };
+
+  const currentTranslations = translations[selectedLanguage as keyof typeof translations] || translations.pt;
+
+  // Detect browser language on mount
+  useEffect(() => {
+    const browserLang = navigator.language.split('-')[0];
+    const supportedLang = languages.find(lang => lang.code === browserLang);
+    if (supportedLang) {
+      setSelectedLanguage(browserLang);
+    }
+  }, []);
+
+  const navigation = [
+    { name: currentTranslations.home, href: "/" },
+    { name: currentTranslations.about, href: "/sobre" },
+    { name: currentTranslations.ranking, href: "/ranking" },
+    { name: currentTranslations.news, href: "/noticias" },
+    { name: currentTranslations.forum, href: "/forum" },
+    { name: currentTranslations.community, href: "/comunidade" },
+    { name: currentTranslations.testimonials, href: "/depoimentos" },
+    { name: currentTranslations.contact, href: "/contato" },
   ];
 
   return (
@@ -64,8 +330,8 @@ export function Header() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="sm">
-                    <span className="mr-2">{selectedLanguage.flag}</span>
-                    {selectedLanguage.code.toUpperCase()}
+                    <span className="mr-2">{languages.find(lang => lang.code === selectedLanguage)?.flag}</span>
+                    {selectedLanguage.toUpperCase()}
                     <ChevronDown className="h-3 w-3 ml-1" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -73,7 +339,7 @@ export function Header() {
                   {languages.map((language) => (
                     <DropdownMenuItem
                       key={language.code}
-                      onClick={() => setSelectedLanguage(language)}
+                      onClick={() => setSelectedLanguage(language.code)}
                       className="flex items-center gap-2"
                     >
                       <span>{language.flag}</span>
@@ -83,10 +349,10 @@ export function Header() {
                 </DropdownMenuContent>
               </DropdownMenu>
               <Button variant="outline" size="sm">
-                Entrar
+                {currentTranslations.login}
               </Button>
               <Button size="sm" className="bg-gradient-primary hover:opacity-90">
-                Cadastre-se
+                {currentTranslations.register}
               </Button>
             </div>
 
@@ -120,8 +386,8 @@ export function Header() {
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
                             <Button variant="ghost" className="w-full justify-center">
-                              <span className="mr-2">{selectedLanguage.flag}</span>
-                              {selectedLanguage.name}
+                              <span className="mr-2">{languages.find(lang => lang.code === selectedLanguage)?.flag}</span>
+                              {languages.find(lang => lang.code === selectedLanguage)?.name}
                               <ChevronDown className="h-3 w-3 ml-1" />
                             </Button>
                           </DropdownMenuTrigger>
@@ -129,7 +395,7 @@ export function Header() {
                             {languages.map((language) => (
                               <DropdownMenuItem
                                 key={language.code}
-                                onClick={() => setSelectedLanguage(language)}
+                                onClick={() => setSelectedLanguage(language.code)}
                                 className="flex items-center gap-2"
                               >
                                 <span>{language.flag}</span>
@@ -140,10 +406,10 @@ export function Header() {
                         </DropdownMenu>
                       </div>
                       <Button variant="outline" className="w-full">
-                        Entrar
+                        {currentTranslations.login}
                       </Button>
                       <Button className="w-full bg-gradient-primary hover:opacity-90">
-                        Cadastre-se
+                        {currentTranslations.register}
                       </Button>
                     </div>
                   </div>
@@ -163,7 +429,7 @@ export function Header() {
               <DollarSign className="h-5 w-5 text-primary" />
               <div className="text-left">
                 <div className="text-lg font-bold text-foreground">46 bilhões</div>
-                <div className="text-xs text-muted-foreground">Pagamento total da comissão</div>
+                <div className="text-xs text-muted-foreground">{currentTranslations.totalCommission}</div>
               </div>
             </div>
           </div>
@@ -188,7 +454,7 @@ export function Header() {
               <DollarSign className="h-5 w-5 text-primary" />
               <div className="text-left">
                 <div className="text-lg font-bold text-foreground">250 bilhões</div>
-                <div className="text-xs text-muted-foreground">Vendas totais de todas as empresas</div>
+                <div className="text-xs text-muted-foreground">{currentTranslations.totalSales}</div>
               </div>
             </div>
           </div>
