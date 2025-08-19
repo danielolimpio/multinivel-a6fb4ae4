@@ -4,12 +4,12 @@ import { ArrowRight, Star, TrendingUp, Users } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
+    <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 right-20 w-96 h-96 border border-white/20 rounded-full" />
-        <div className="absolute top-40 right-40 w-72 h-72 border border-white/10 rounded-full" />
-        <div className="absolute top-60 right-60 w-48 h-48 border border-white/5 rounded-full" />
+        <div className="absolute top-32 right-20 w-96 h-96 border border-white/20 rounded-full" />
+        <div className="absolute top-52 right-40 w-72 h-72 border border-white/10 rounded-full" />
+        <div className="absolute top-72 right-60 w-48 h-48 border border-white/5 rounded-full" />
       </div>
 
       {/* Growth line graphic */}

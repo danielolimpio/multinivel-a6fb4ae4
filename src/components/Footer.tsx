@@ -36,10 +36,22 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground relative">
+      {/* Logo positioned to overlap from above */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 -top-20 z-40">
+        <img 
+          src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
+          alt="Logo" 
+          className="h-40 w-40 object-contain" 
+          style={{
+            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
+          }}
+        />
+      </div>
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Newsletter Section */}
-        <div className="py-12 border-b border-primary-foreground/10">
+        {/* Newsletter Section with top padding for logo */}
+        <div className="pt-24 pb-12 border-b border-primary-foreground/10">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl font-bold mb-4">
               Fique por dentro das novidades
@@ -66,13 +78,9 @@ export function Footer() {
         {/* Main Footer Content */}
         <div className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            {/* Brand Column */}
+            {/* Brand Column - without logo since it's positioned above */}
             <div className="lg:col-span-2 flex flex-col items-center lg:items-start">
-              <img 
-                src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
-                alt="Logo" 
-                className="h-20 w-20 object-contain mb-4" 
-              />
+              <div className="pt-8"></div> {/* Space for overlapping logo */}
               <p className="text-primary-foreground/80 mb-6 max-w-md">
                 O portal de referência em Marketing de Rede no Brasil. 
                 Conectando oportunidades, construindo sucesso.
