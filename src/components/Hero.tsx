@@ -5,43 +5,42 @@ import { useState, useEffect } from "react";
 import { FlagIcon } from "@/components/FlagIcon";
 
 export function Hero() {
-  const [currentVisitor, setCurrentVisitor] = useState({
-    country: "Brasil",
-    countryCode: "pt",
-    content: "Portal de Marketing de Rede",
-    name: "Carlos Silva"
-  });
+  const [currentVisitors, setCurrentVisitors] = useState([
+    { country: "Brasil", countryCode: "pt" },
+    { country: "Reino Unido", countryCode: "en" },
+    { country: "Espanha", countryCode: "es" }
+  ]);
 
   const visitors = [
-    { country: "Brasil", countryCode: "pt", content: "Portal de Marketing de Rede", name: "Carlos Silva" },
-    { country: "Reino Unido", countryCode: "en", content: "Network Marketing Portal", name: "James Smith" },
-    { country: "Espanha", countryCode: "es", content: "Portal de Marketing de Red", name: "José García" },
-    { country: "França", countryCode: "fr", content: "Portail Marketing de Réseau", name: "Pierre Dubois" },
-    { country: "Alemanha", countryCode: "de", content: "Network-Marketing-Portal", name: "Hans Mueller" },
-    { country: "Itália", countryCode: "it", content: "Portale di Network Marketing", name: "Marco Rossi" },
-    { country: "Portugal", countryCode: "pt-pt", content: "Portal de Marketing de Rede", name: "João Santos" },
-    { country: "México", countryCode: "es", content: "Portal de Marketing de Red", name: "Luis Rodriguez" },
-    { country: "Canadá", countryCode: "en", content: "Network Marketing Portal", name: "Michael Johnson" },
-    { country: "China", countryCode: "zh", content: "网络营销门户", name: "Li Wei" },
-    { country: "Japão", countryCode: "ja", content: "ネットワークマーケティングポータル", name: "Takeshi Yamamoto" },
-    { country: "Rússia", countryCode: "ru", content: "Портал сетевого маркетинга", name: "Vladimir Petrov" },
-    { country: "Holanda", countryCode: "nl", content: "Netwerk Marketing Portaal", name: "Jan van Berg" },
-    { country: "Polônia", countryCode: "pl", content: "Portal Marketingu Sieciowego", name: "Piotr Kowalski" },
-    { country: "Turquia", countryCode: "tr", content: "Ağ Pazarlama Portalı", name: "Mehmet Yılmaz" },
-    { country: "Coreia do Sul", countryCode: "ko", content: "네트워크 마케팅 포털", name: "Kim Min-jun" },
-    { country: "Vietnã", countryCode: "vi", content: "Cổng tiếp thị mạng", name: "Nguyen Van An" },
-    { country: "Indonésia", countryCode: "id", content: "Portal Pemasaran Jaringan", name: "Ahmad Wijaya" },
-    { country: "Liga Árabe", countryCode: "ar", content: "بوابة التسويق الشبكي", name: "Ahmed Al-Rashid" },
-    { country: "Índia", countryCode: "hi", content: "नेटवर्क मार्केटिंग पोर्टल", name: "Raj Patel" },
-    { country: "Filipinas", countryCode: "tl", content: "Network Marketing Portal", name: "Jose Cruz" },
-    { country: "Croácia", countryCode: "hr", content: "Portal mrežnog marketinga", name: "Ivan Marić" }
+    { country: "Brasil", countryCode: "pt" },
+    { country: "Reino Unido", countryCode: "en" },
+    { country: "Espanha", countryCode: "es" },
+    { country: "França", countryCode: "fr" },
+    { country: "Alemanha", countryCode: "de" },
+    { country: "Itália", countryCode: "it" },
+    { country: "Portugal", countryCode: "pt-pt" },
+    { country: "México", countryCode: "es" },
+    { country: "Canadá", countryCode: "en" },
+    { country: "China", countryCode: "zh" },
+    { country: "Japão", countryCode: "ja" },
+    { country: "Rússia", countryCode: "ru" },
+    { country: "Holanda", countryCode: "nl" },
+    { country: "Polônia", countryCode: "pl" },
+    { country: "Turquia", countryCode: "tr" },
+    { country: "Coreia do Sul", countryCode: "ko" },
+    { country: "Vietnã", countryCode: "vi" },
+    { country: "Indonésia", countryCode: "id" },
+    { country: "Liga Árabe", countryCode: "ar" },
+    { country: "Índia", countryCode: "hi" },
+    { country: "Filipinas", countryCode: "tl" },
+    { country: "Croácia", countryCode: "hr" }
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomVisitor = visitors[Math.floor(Math.random() * visitors.length)];
-      setCurrentVisitor(randomVisitor);
-    }, 10000);
+      const shuffledVisitors = [...visitors].sort(() => Math.random() - 0.5);
+      setCurrentVisitors(shuffledVisitors.slice(0, 3));
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [visitors]);
@@ -133,22 +132,22 @@ export function Hero() {
                 <Users className="w-4 h-4" />
                 Tráfego em tempo real
               </h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center justify-between">
-                  <span className="text-white/80 text-xs">Visitante online agora</span>
+              <div className="space-y-2 text-sm max-h-32 overflow-hidden">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-white/80 text-xs">Visitantes online agora</span>
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="bg-white/20 p-1 rounded-sm">
-                    <FlagIcon countryCode={currentVisitor.countryCode} size="sm" />
-                  </div>
-                  <div>
-                    <span className="text-white/90 text-xs font-medium block">{currentVisitor.name}</span>
-                    <span className="text-white/70 text-xs">{currentVisitor.country}</span>
-                  </div>
-                </div>
-                <div className="text-white/90 text-xs bg-white/10 p-2 rounded">
-                  visualizou <strong>{currentVisitor.content}</strong>
+                <div className="space-y-2 animate-[slide-in-right_20s_linear_infinite]">
+                  {currentVisitors.map((visitor, index) => (
+                    <div key={`${visitor.countryCode}-${index}`} className="flex items-center space-x-2 bg-white/5 p-2 rounded text-xs">
+                      <div className="bg-white/20 p-1 rounded-sm flex-shrink-0">
+                        <FlagIcon countryCode={visitor.countryCode} size="sm" />
+                      </div>
+                      <span className="text-white/90">
+                        Um visitante {visitor.country === "Brasil" ? "do" : visitor.country === "Estados Unidos" ? "dos" : "da"} <strong>{visitor.country}</strong> visualizou...
+                      </span>
+                    </div>
+                  ))}
                 </div>
                 <div className="text-white/70 text-xs">agora</div>
               </div>

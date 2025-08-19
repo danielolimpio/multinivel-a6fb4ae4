@@ -6,7 +6,7 @@ interface FlagIconProps {
 
 export function FlagIcon({ countryCode, className = '', size = 'md' }: FlagIconProps) {
   const flagImages: Record<string, string> = {
-    'pt': '🇧🇷', // Brasil - usar emoji por não ter imagem
+    'pt': '🇧🇷', // Brasil
     'en': '/lovable-uploads/9c52d89c-c3f2-4de7-8d2b-494e62a12379.png', // Reino Unido
     'es': '/lovable-uploads/e73547c8-d4f6-4f0f-9cfb-e11bb07af065.png', // Espanha
     'fr': '/lovable-uploads/f7414847-cb86-4d7e-bbc4-bf08109e87c7.png', // França
@@ -14,7 +14,7 @@ export function FlagIcon({ countryCode, className = '', size = 'md' }: FlagIconP
     'it': '/lovable-uploads/13a78034-02e5-49d4-9ecd-e9e950900f2f.png', // Itália
     'pt-pt': '/lovable-uploads/19c6cf99-56ab-4c8d-bdfe-8d3a3d60b380.png', // Portugal
     'zh': '/lovable-uploads/96abc21f-04bb-4c64-8237-b0245c134f32.png', // China
-    'ja': '🇯🇵', // Japão - usar emoji por não ter imagem
+    'ja': '🇯🇵', // Japão
     'ru': '/lovable-uploads/e718df1a-b14f-4d62-9d4b-84342153a3c7.png', // Rússia
     'ar': '/lovable-uploads/6091f727-b690-4657-821a-d94d63400799.png', // Liga Árabe
     'hi': '/lovable-uploads/c6636bda-450e-4543-93b7-a0cafbd605c8.png', // Índia
@@ -37,7 +37,7 @@ export function FlagIcon({ countryCode, className = '', size = 'md' }: FlagIconP
   const flag = flagImages[countryCode] || '🏳️';
 
   // Se é um emoji, renderiza como texto
-  if (flag.startsWith("🇧🇷") || flag.startsWith("🇯🇵")) {
+  if (flag.startsWith("🇧🇷") || flag.startsWith("🇯🇵") || flag.startsWith("🏳️")) {
     return (
       <span 
         className={`inline-block text-base ${className}`}
