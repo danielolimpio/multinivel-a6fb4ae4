@@ -16,9 +16,9 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Desktop Navigation - Left */}
           <nav className="hidden md:block flex-1">
             <div className="flex items-baseline space-x-4">
@@ -35,12 +35,15 @@ export function Header() {
           </nav>
 
           {/* Logo - Center */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center relative">
             <div className="flex-shrink-0">
               <img 
                 src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
                 alt="Logo" 
-                className="h-12 w-12 object-contain" 
+                className="h-32 w-32 object-contain relative z-50" 
+                style={{
+                  filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.1))'
+                }}
               />
             </div>
           </div>

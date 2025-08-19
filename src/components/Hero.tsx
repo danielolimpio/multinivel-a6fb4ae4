@@ -4,7 +4,7 @@ import { ArrowRight, Star, TrendingUp, Users } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative py-16 overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
+    <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 right-20 w-96 h-96 border border-white/20 rounded-full" />
@@ -40,11 +40,11 @@ export function Hero() {
             </div>
             
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Universidade Multinível
+              Portal de Marketing de Rede
             </h1>
             
             <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-xl">
-              Universidade Multinível é uma rede de network marketing brasileira que oferece serviços de distribuição e oportunidades de renda para empresas.
+              O portal de referência em Marketing de Rede no Brasil, oferecendo ranking, análises e oportunidades de renda para empresas e distribuidores.
             </p>
 
             <div className="space-y-4 mb-8">
