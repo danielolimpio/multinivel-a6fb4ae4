@@ -36,7 +36,7 @@ export function Header() {
 
           {/* Logo - Center */}
           <div className="flex items-center justify-center relative">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 absolute top-2">
               <img 
                 src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
                 alt="Logo" 
