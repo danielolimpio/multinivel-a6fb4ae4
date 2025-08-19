@@ -10,13 +10,12 @@ export function Header() {
   const [selectedLanguage, setSelectedLanguage] = useState('pt');
   
   const languages = [
-    { code: 'pt', name: 'Brasil' },
+    { code: 'pt', name: 'Portugal' },
     { code: 'en', name: 'Reino Unido' },
     { code: 'es', name: 'Espanha' },
     { code: 'fr', name: 'França' },
     { code: 'de', name: 'Alemanha' },
     { code: 'it', name: 'Itália' },
-    { code: 'pt-pt', name: 'Portugal' },
     { code: 'zh', name: 'China' },
     { code: 'ja', name: 'Japão' },
     { code: 'ru', name: 'Rússia' },
