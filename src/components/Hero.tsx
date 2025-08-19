@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, TrendingUp, Users } from "lucide-react";
-
 export function Hero() {
-  return (
-    <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
+  return <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-32 right-20 w-96 h-96 border border-white/20 rounded-full" />
@@ -15,13 +13,7 @@ export function Hero() {
       {/* Growth line graphic */}
       <div className="absolute top-1/2 right-8 transform -translate-y-1/2 hidden lg:block">
         <svg width="200" height="120" viewBox="0 0 200 120" className="text-white/20">
-          <path
-            d="M20 100 L50 80 L80 60 L110 40 L140 20 L170 10"
-            stroke="currentColor"
-            strokeWidth="3"
-            fill="none"
-            className="animate-pulse"
-          />
+          <path d="M20 100 L50 80 L80 60 L110 40 L140 20 L170 10" stroke="currentColor" strokeWidth="3" fill="none" className="animate-pulse" />
           <circle cx="20" cy="100" r="4" fill="currentColor" />
           <circle cx="50" cy="80" r="4" fill="currentColor" />
           <circle cx="80" cy="60" r="4" fill="currentColor" />
@@ -36,7 +28,7 @@ export function Hero() {
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 text-white">
             <div className="mb-4">
-              <span className="text-sm font-medium text-white/80">Est. Year 2024</span>
+              <span className="text-sm font-medium text-white/80">Est. Year 2010</span>
             </div>
             
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
@@ -109,6 +101,5 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
