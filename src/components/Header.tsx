@@ -3,30 +3,31 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Globe, DollarSign, ChevronDown } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { FlagIcon } from "@/components/FlagIcon";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('pt');
   
   const languages = [
-    { code: 'pt', name: 'Português', flag: '🇧🇷' },
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'it', name: 'Italiano', flag: '🇮🇹' },
-    { code: 'pt-pt', name: 'Português (PT)', flag: '🇵🇹' },
-    { code: 'zh', name: '中文', flag: '🇨🇳' },
-    { code: 'ja', name: '日本語', flag: '🇯🇵' },
-    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-    { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
-    { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
-    { code: 'pl', name: 'Polski', flag: '🇵🇱' },
-    { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
-    { code: 'ko', name: '한국어', flag: '🇰🇷' },
-    { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
-    { code: 'id', name: 'Bahasa Indonesia', flag: '🇮🇩' }
+    { code: 'pt', name: 'Português', country: 'Brasil' },
+    { code: 'en', name: 'English', country: 'United States' },
+    { code: 'es', name: 'Español', country: 'España' },
+    { code: 'fr', name: 'Français', country: 'France' },
+    { code: 'de', name: 'Deutsch', country: 'Deutschland' },
+    { code: 'it', name: 'Italiano', country: 'Italia' },
+    { code: 'pt-pt', name: 'Português (PT)', country: 'Portugal' },
+    { code: 'zh', name: '中文', country: 'China' },
+    { code: 'ja', name: '日本語', country: 'Japan' },
+    { code: 'ru', name: 'Русский', country: 'Russia' },
+    { code: 'ar', name: 'العربية', country: 'Saudi Arabia' },
+    { code: 'hi', name: 'हिन्दी', country: 'India' },
+    { code: 'nl', name: 'Nederlands', country: 'Netherlands' },
+    { code: 'pl', name: 'Polski', country: 'Poland' },
+    { code: 'tr', name: 'Türkçe', country: 'Turkey' },
+    { code: 'ko', name: '한국어', country: 'South Korea' },
+    { code: 'vi', name: 'Tiếng Việt', country: 'Vietnam' },
+    { code: 'id', name: 'Bahasa Indonesia', country: 'Indonesia' }
   ];
 
   const translations = {
@@ -329,10 +330,11 @@ export function Header() {
             <div className="hidden md:flex items-center space-x-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm">
-                    <span className="mr-2">{languages.find(lang => lang.code === selectedLanguage)?.flag}</span>
+                  <Button variant="ghost" size="sm" className="gap-2">
+                    <FlagIcon countryCode={selectedLanguage} size="sm" />
+                    <Globe className="w-3 h-3" />
                     {selectedLanguage.toUpperCase()}
-                    <ChevronDown className="h-3 w-3 ml-1" />
+                    <ChevronDown className="h-3 w-3" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56">
@@ -340,10 +342,13 @@ export function Header() {
                     <DropdownMenuItem
                       key={language.code}
                       onClick={() => setSelectedLanguage(language.code)}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-3 cursor-pointer"
                     >
-                      <span>{language.flag}</span>
-                      {language.name}
+                      <FlagIcon countryCode={language.code} size="sm" />
+                      <div className="flex flex-col">
+                        <span className="font-medium">{language.name}</span>
+                        <span className="text-xs text-muted-foreground">{language.country}</span>
+                      </div>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
@@ -385,10 +390,10 @@ export function Header() {
                       <div className="text-center">
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="w-full justify-center">
-                              <span className="mr-2">{languages.find(lang => lang.code === selectedLanguage)?.flag}</span>
+                            <Button variant="ghost" className="w-full justify-center gap-2">
+                              <FlagIcon countryCode={selectedLanguage} size="sm" />
                               {languages.find(lang => lang.code === selectedLanguage)?.name}
-                              <ChevronDown className="h-3 w-3 ml-1" />
+                              <ChevronDown className="h-3 w-3" />
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="center" className="w-56">
@@ -396,10 +401,13 @@ export function Header() {
                               <DropdownMenuItem
                                 key={language.code}
                                 onClick={() => setSelectedLanguage(language.code)}
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-3 cursor-pointer"
                               >
-                                <span>{language.flag}</span>
-                                {language.name}
+                                <FlagIcon countryCode={language.code} size="sm" />
+                                <div className="flex flex-col">
+                                  <span className="font-medium">{language.name}</span>
+                                  <span className="text-xs text-muted-foreground">{language.country}</span>
+                                </div>
                               </DropdownMenuItem>
                             ))}
                           </DropdownMenuContent>

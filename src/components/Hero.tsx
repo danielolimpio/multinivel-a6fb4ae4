@@ -2,34 +2,37 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, TrendingUp, Users } from "lucide-react";
 import { useState, useEffect } from "react";
+import { FlagIcon } from "@/components/FlagIcon";
 
 export function Hero() {
   const [currentVisitor, setCurrentVisitor] = useState({
     country: "Brasil",
-    flag: "🇧🇷",
+    countryCode: "pt",
     content: "Portal de Marketing de Rede"
   });
 
   const visitors = [
-    { country: "Brasil", flag: "🇧🇷", content: "Portal de Marketing de Rede" },
-    { country: "Estados Unidos", flag: "🇺🇸", content: "Network Marketing Portal" },
-    { country: "Espanha", flag: "🇪🇸", content: "Portal de Marketing de Red" },
-    { country: "França", flag: "🇫🇷", content: "Portail Marketing de Réseau" },
-    { country: "Alemanha", flag: "🇩🇪", content: "Network-Marketing-Portal" },
-    { country: "Itália", flag: "🇮🇹", content: "Portale di Network Marketing" },
-    { country: "Portugal", flag: "🇵🇹", content: "Portal de Marketing de Rede" },
-    { country: "México", flag: "🇲🇽", content: "Portal de Marketing de Red" },
-    { country: "Canadá", flag: "🇨🇦", content: "Network Marketing Portal" },
-    { country: "Reino Unido", flag: "🇬🇧", content: "Network Marketing Portal" },
-    { country: "China", flag: "🇨🇳", content: "网络营销门户" },
-    { country: "Japão", flag: "🇯🇵", content: "ネットワークマーケティングポータル" },
-    { country: "Rússia", flag: "🇷🇺", content: "Портал сетевого маркетинга" },
-    { country: "Holanda", flag: "🇳🇱", content: "Netwerk Marketing Portaal" },
-    { country: "Polônia", flag: "🇵🇱", content: "Portal Marketingu Sieciowego" },
-    { country: "Turquia", flag: "🇹🇷", content: "Ağ Pazarlama Portalı" },
-    { country: "Coreia do Sul", flag: "🇰🇷", content: "네트워크 마케팅 포털" },
-    { country: "Vietnã", flag: "🇻🇳", content: "Cổng tiếp thị mạng" },
-    { country: "Indonésia", flag: "🇮🇩", content: "Portal Pemasaran Jaringan" }
+    { country: "Brasil", countryCode: "pt", content: "Portal de Marketing de Rede" },
+    { country: "Estados Unidos", countryCode: "en", content: "Network Marketing Portal" },
+    { country: "Espanha", countryCode: "es", content: "Portal de Marketing de Red" },
+    { country: "França", countryCode: "fr", content: "Portail Marketing de Réseau" },
+    { country: "Alemanha", countryCode: "de", content: "Network-Marketing-Portal" },
+    { country: "Itália", countryCode: "it", content: "Portale di Network Marketing" },
+    { country: "Portugal", countryCode: "pt-pt", content: "Portal de Marketing de Rede" },
+    { country: "México", countryCode: "es", content: "Portal de Marketing de Red" },
+    { country: "Canadá", countryCode: "en", content: "Network Marketing Portal" },
+    { country: "Reino Unido", countryCode: "en", content: "Network Marketing Portal" },
+    { country: "China", countryCode: "zh", content: "网络营销门户" },
+    { country: "Japão", countryCode: "ja", content: "ネットワークマーケティングポータル" },
+    { country: "Rússia", countryCode: "ru", content: "Портал сетевого маркетинга" },
+    { country: "Holanda", countryCode: "nl", content: "Netwerk Marketing Portaal" },
+    { country: "Polônia", countryCode: "pl", content: "Portal Marketingu Sieciowego" },
+    { country: "Turquia", countryCode: "tr", content: "Ağ Pazarlama Portalı" },
+    { country: "Coreia do Sul", countryCode: "ko", content: "네트워크 마케팅 포털" },
+    { country: "Vietnã", countryCode: "vi", content: "Cổng tiếp thị mạng" },
+    { country: "Indonésia", countryCode: "id", content: "Portal Pemasaran Jaringan" },
+    { country: "Arábia Saudita", countryCode: "ar", content: "بوابة التسويق الشبكي" },
+    { country: "Índia", countryCode: "hi", content: "नेटवर्क मार्केटिंग पोर्टल" }
   ];
 
   useEffect(() => {
@@ -39,7 +42,7 @@ export function Hero() {
     }, 10000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [visitors]);
   return <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-hero">
       {/* Floating particles animation */}
       <div className="floating-particles">
@@ -133,9 +136,11 @@ export function Hero() {
                   <span className="text-white/80 text-xs">Visitante online agora</span>
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-lg">{currentVisitor.flag}</span>
-                  <span className="text-white/80 text-xs">{currentVisitor.country}</span>
+                <div className="flex items-center space-x-3">
+                  <div className="bg-white/20 p-1 rounded-sm">
+                    <FlagIcon countryCode={currentVisitor.countryCode} size="sm" />
+                  </div>
+                  <span className="text-white/80 text-xs font-medium">{currentVisitor.country}</span>
                 </div>
                 <div className="text-white/90 text-xs bg-white/10 p-2 rounded">
                   visualizou <strong>{currentVisitor.content}</strong>
