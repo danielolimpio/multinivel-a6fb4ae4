@@ -4,7 +4,7 @@ import { ArrowRight, Star, TrendingUp, Users } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative py-16 overflow-hidden bg-[radial-gradient(ellipse_at_top,hsl(230_100%_15%),hsl(240_100%_25%),hsl(250_100%_35%))]">
+    <section className="relative py-16 overflow-hidden bg-gradient-hero">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 right-20 w-96 h-96 border border-white/20 rounded-full" />
