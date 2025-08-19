@@ -19,21 +19,36 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center">
+          {/* Desktop Navigation - Left */}
+          <nav className="hidden md:block flex-1">
+            <div className="flex items-baseline space-x-4">
+              {navigation.slice(0, 3).map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-muted-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-muted/50"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </nav>
+
+          {/* Logo - Center */}
+          <div className="flex items-center justify-center">
             <div className="flex-shrink-0">
               <img 
                 src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
                 alt="Logo" 
-                className="h-10 w-10" 
+                className="h-12 w-12 object-contain" 
               />
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navigation.map((item) => (
+          {/* Desktop Navigation - Right */}
+          <nav className="hidden md:block flex-1">
+            <div className="flex items-baseline justify-end space-x-4">
+              {navigation.slice(3).map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -46,7 +61,7 @@ export function Header() {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4 ml-6">
             <Button variant="ghost" size="sm">
               <Globe className="h-4 w-4 mr-2" />
               PT
@@ -68,7 +83,12 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent>
-                <div className="flex flex-col space-y-4 mt-8">
+                <div className="flex flex-col items-center space-y-4 mt-8">
+                  <img 
+                    src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
+                    alt="Logo" 
+                    className="h-16 w-16 object-contain mb-4" 
+                  />
                   {navigation.map((item) => (
                     <a
                       key={item.name}
@@ -79,7 +99,7 @@ export function Header() {
                       {item.name}
                     </a>
                   ))}
-                  <div className="border-t pt-4 space-y-2">
+                  <div className="border-t pt-4 space-y-2 w-full">
                     <Button variant="ghost" className="w-full justify-start">
                       <Globe className="h-4 w-4 mr-2" />
                       Português

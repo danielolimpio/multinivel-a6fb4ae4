@@ -67,11 +67,11 @@ export function Footer() {
         <div className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Brand Column */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 flex flex-col items-center lg:items-start">
               <img 
                 src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
                 alt="Logo" 
-                className="h-16 w-16 mb-4" 
+                className="h-20 w-20 object-contain mb-4" 
               />
               <p className="text-primary-foreground/80 mb-6 max-w-md">
                 O portal de referência em Marketing de Rede no Brasil. 
