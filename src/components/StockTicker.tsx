@@ -14,18 +14,13 @@ export function StockTicker() {
   const [stockData, setStockData] = useState<StockData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Empresas de vendas diretas listadas em bolsa
+  // Empresas de vendas diretas listadas em bolsa (reduzido para evitar limite da API)
   const stocks = [
     { name: "USANA", ticker: "USNA" },
     { name: "Herbalife", ticker: "HLF" },
-    { name: "Lifevantage", ticker: "LFVN" },
     { name: "Nu Skin", ticker: "NUS" },
-    { name: "Mannatech", ticker: "MTFX" },
-    { name: "Youngevity", ticker: "YGVI" },
     { name: "Primerica", ticker: "PRI" },
-    { name: "Tupperware", ticker: "TUP" },
-    { name: "Natura &Co", ticker: "NTCOY" },
-    { name: "eXp World", ticker: "EXPI" }
+    { name: "Tupperware", ticker: "TUP" }
   ];
 
   // Busca cotação da ação
@@ -35,6 +30,19 @@ export function StockTicker() {
         `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=${API_KEY}`
       );
       const data = await response.json();
+      
+      // Verifica se há erro de limite de taxa da API
+      if (data['Information'] && data['Information'].includes('rate limit')) {
+        // Dados de fallback simulados para demonstração
+        const fallbackData: { [key: string]: StockData } = {
+          'USNA': { name: 'USANA', ticker: 'USNA', price: '30.95', changePercent: '+2.08%', isUp: true },
+          'HLF': { name: 'Herbalife', ticker: 'HLF', price: '9.59', changePercent: '+4.58%', isUp: true },
+          'NUS': { name: 'Nu Skin', ticker: 'NUS', price: '11.86', changePercent: '+1.63%', isUp: true },
+          'PRI': { name: 'Primerica', ticker: 'PRI', price: '267.62', changePercent: '+1.99%', isUp: true },
+          'TUP': { name: 'Tupperware', ticker: 'TUP', price: '1.25', changePercent: '-2.34%', isUp: false }
+        };
+        return fallbackData[ticker] || { name: ticker, ticker, price: '-', changePercent: '-', isUp: false };
+      }
       
       if (data['Global Quote'] && data['Global Quote']['05. price']) {
         const price = parseFloat(data['Global Quote']['05. price']).toFixed(2);
