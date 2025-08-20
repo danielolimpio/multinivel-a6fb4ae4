@@ -151,7 +151,7 @@ All colors MUST be HSL.
 
   /* Stock ticker animation */
   .ticker-scroll {
-    animation: ticker-scroll 60s linear infinite;
+    animation: ticker-scroll 120s linear infinite;
   }
 
   @keyframes ticker-scroll {
