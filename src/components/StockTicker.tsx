@@ -16,11 +16,11 @@ export function StockTicker() {
 
   // Empresas de vendas diretas listadas em bolsa (reduzido para evitar limite da API)
   const stocks = [
-    { name: "USANA", ticker: "USNA" },
-    { name: "Herbalife", ticker: "HLF" },
-    { name: "Nu Skin", ticker: "NUS" },
-    { name: "Primerica", ticker: "PRI" },
-    { name: "Tupperware", ticker: "TUP" }
+    { name: "USANA", ticker: "USNA", logo: "https://logo.clearbit.com/usana.com" },
+    { name: "Herbalife", ticker: "HLF", logo: "https://logo.clearbit.com/herbalife.com" },
+    { name: "Nu Skin", ticker: "NUS", logo: "https://logo.clearbit.com/nuskin.com" },
+    { name: "Primerica", ticker: "PRI", logo: "https://logo.clearbit.com/primerica.com" },
+    { name: "Tupperware", ticker: "TUP", logo: "https://logo.clearbit.com/tupperware.com" }
   ];
 
   // Busca cotação da ação
@@ -101,25 +101,51 @@ export function StockTicker() {
             </div>
           ) : (
             <>
-              {stockData.map((stock, index) => (
-                <div key={index} className="inline-flex items-center space-x-2 font-medium text-sm">
-                  <span className="text-primary-foreground font-bold">{stock.ticker}</span>
-                  <span className="text-primary-foreground">${stock.price}</span>
-                  <span className={stock.isUp ? "text-emerald-400" : "text-red-400"}>
-                    {stock.isUp ? '🟢' : '🔴'}{stock.changePercent}
-                  </span>
-                </div>
-              ))}
+              {stockData.map((stock, index) => {
+                const stockInfo = stocks.find(s => s.ticker === stock.ticker);
+                return (
+                  <div key={index} className="inline-flex items-center space-x-3 font-medium text-sm">
+                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm">
+                      <img 
+                        src={stockInfo?.logo} 
+                        alt={stock.name}
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                        }}
+                      />
+                    </div>
+                    <span className="text-primary-foreground font-bold">{stock.ticker}</span>
+                    <span className="text-primary-foreground">${stock.price}</span>
+                    <span className={stock.isUp ? "text-emerald-400" : "text-red-400"}>
+                      {stock.isUp ? '🟢' : '🔴'}{stock.changePercent}
+                    </span>
+                  </div>
+                );
+              })}
               {/* Duplica os dados para animação contínua */}
-              {stockData.map((stock, index) => (
-                <div key={`duplicate-${index}`} className="inline-flex items-center space-x-2 font-medium text-sm">
-                  <span className="text-primary-foreground font-bold">{stock.ticker}</span>
-                  <span className="text-primary-foreground">${stock.price}</span>
-                  <span className={stock.isUp ? "text-emerald-400" : "text-red-400"}>
-                    {stock.isUp ? '🟢' : '🔴'}{stock.changePercent}
-                  </span>
-                </div>
-              ))}
+              {stockData.map((stock, index) => {
+                const stockInfo = stocks.find(s => s.ticker === stock.ticker);
+                return (
+                  <div key={`duplicate-${index}`} className="inline-flex items-center space-x-3 font-medium text-sm">
+                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm">
+                      <img 
+                        src={stockInfo?.logo} 
+                        alt={stock.name}
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                        }}
+                      />
+                    </div>
+                    <span className="text-primary-foreground font-bold">{stock.ticker}</span>
+                    <span className="text-primary-foreground">${stock.price}</span>
+                    <span className={stock.isUp ? "text-emerald-400" : "text-red-400"}>
+                      {stock.isUp ? '🟢' : '🔴'}{stock.changePercent}
+                    </span>
+                  </div>
+                );
+              })}
             </>
           )}
         </div>
