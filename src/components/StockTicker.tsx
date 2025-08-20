@@ -92,12 +92,12 @@ export function StockTicker() {
   }, []);
 
   return (
-    <div className="bg-primary border-y border-border overflow-hidden py-3">
+    <div className="bg-white border-y border-border overflow-hidden py-3 shadow-sm">
       <div className="ticker-scroll whitespace-nowrap">
         <div className="inline-flex items-center space-x-12">
           {isLoading ? (
             <div className="inline-flex items-center space-x-2 font-medium text-sm">
-              <span className="text-primary-foreground">Carregando cotações...</span>
+              <span className="text-foreground">Carregando cotações...</span>
             </div>
           ) : (
             <>
@@ -105,7 +105,7 @@ export function StockTicker() {
                 const stockInfo = stocks.find(s => s.ticker === stock.ticker);
                 return (
                   <div key={index} className="inline-flex items-center space-x-3 font-medium text-sm">
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm">
+                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm border">
                       <img 
                         src={stockInfo?.logo} 
                         alt={stock.name}
@@ -115,9 +115,9 @@ export function StockTicker() {
                         }}
                       />
                     </div>
-                    <span className="text-primary-foreground font-bold">{stock.ticker}</span>
-                    <span className="text-primary-foreground">${stock.price}</span>
-                    <span className={stock.isUp ? "text-emerald-400" : "text-red-400"}>
+                    <span className="text-foreground font-bold">{stock.ticker}</span>
+                    <span className="text-foreground">${stock.price}</span>
+                    <span className={stock.isUp ? "text-emerald-600" : "text-red-600"}>
                       {stock.isUp ? '🟢' : '🔴'}{stock.changePercent}
                     </span>
                   </div>
@@ -128,7 +128,7 @@ export function StockTicker() {
                 const stockInfo = stocks.find(s => s.ticker === stock.ticker);
                 return (
                   <div key={`duplicate-${index}`} className="inline-flex items-center space-x-3 font-medium text-sm">
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm">
+                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm border">
                       <img 
                         src={stockInfo?.logo} 
                         alt={stock.name}
@@ -138,9 +138,9 @@ export function StockTicker() {
                         }}
                       />
                     </div>
-                    <span className="text-primary-foreground font-bold">{stock.ticker}</span>
-                    <span className="text-primary-foreground">${stock.price}</span>
-                    <span className={stock.isUp ? "text-emerald-400" : "text-red-400"}>
+                    <span className="text-foreground font-bold">{stock.ticker}</span>
+                    <span className="text-foreground">${stock.price}</span>
+                    <span className={stock.isUp ? "text-emerald-600" : "text-red-600"}>
                       {stock.isUp ? '🟢' : '🔴'}{stock.changePercent}
                     </span>
                   </div>
