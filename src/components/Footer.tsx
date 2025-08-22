@@ -159,7 +159,15 @@ export function Footer() {
         <div className="py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © 2024 Universidade Multinível. Todos os direitos reservados.
+              Copyright © 2025 | Universidade Multinível | Todos os direitos reservados | Desenvolvido por{" "}
+              <a 
+                href="https://danielolimpio.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors"
+              >
+                DanielOlimpio
+              </a>
             </p>
             <div className="flex items-center gap-4">
               <Button variant="ghost" size="sm" className="text-primary-foreground/60 hover:text-primary-foreground">
