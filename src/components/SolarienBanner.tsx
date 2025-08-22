@@ -1,12 +1,12 @@
 export function SolarienBanner() {
   return (
-    <div className="text-center mx-4 my-6 relative overflow-hidden rounded-xl">
+    <div className="relative overflow-hidden rounded-xl h-full">
       <video 
         autoPlay 
         loop 
         muted 
         playsInline 
-        className="max-w-full h-auto block"
+        className="w-full h-full object-cover min-h-[200px]"
         poster="https://res.cloudinary.com/da1qwcv4u/image/upload/v1755888747/Sem_t%C3%ADtulo_15_xjbgpg.jpg"
       >
         <source src="https://res.cloudinary.com/da1qwcv4u/video/upload/v1755888747/Sem_t%C3%ADtulo_15_xjbgpg.mp4" type="video/mp4" />
@@ -18,7 +18,7 @@ export function SolarienBanner() {
           href="https://solarien.com.br" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="bg-green-500 text-white px-8 py-3.5 text-lg font-bold no-underline rounded-full shadow-lg hover:bg-green-600 transition-colors inline-block"
+          className="bg-green-500 text-white px-6 py-2.5 text-sm font-bold no-underline rounded-full shadow-lg hover:bg-green-600 transition-colors inline-block"
         >
           Acesse o Site
         </a>
