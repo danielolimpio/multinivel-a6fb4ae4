@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Search, Crown, TrendingUp, DollarSign } from "lucide-react";
+import { SolarienBanner } from "@/components/SolarienBanner";
 
 export function TopEarnersSection() {
   const topEarners = [
@@ -242,6 +243,8 @@ export function TopEarnersSection() {
                 </div>
               </div>
             </Card>
+            
+            <SolarienBanner />
           </div>
         </div>
       </div>
