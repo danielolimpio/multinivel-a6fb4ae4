@@ -23,6 +23,20 @@ export function StockTicker() {
     { name: 'Medifast', ticker: 'MED', price: '45.20', changePercent: '+2.10%', isUp: true }
   ]);
 
+  // Logos das empresas
+  const companyLogos: { [key: string]: string } = {
+    'USNA': 'https://logo.clearbit.com/usana.com',
+    'HLF': 'https://logo.clearbit.com/herbalife.com', 
+    'NUS': 'https://logo.clearbit.com/nuskin.com',
+    'PRI': 'https://logo.clearbit.com/primerica.com',
+    'TUP': 'https://logo.clearbit.com/tupperware.com',
+    'LFVN': 'https://logo.clearbit.com/lifevantage.com',
+    'NATU3': 'https://logo.clearbit.com/natura.com.br',
+    'YGVI': 'https://logo.clearbit.com/youngevity.com',
+    'EXPI': 'https://logo.clearbit.com/expworldholdings.com',
+    'MED': 'https://logo.clearbit.com/medifast.com'
+  };
+
   // Simula variação nos preços para animação
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,8 +66,23 @@ export function StockTicker() {
         <div className="inline-flex items-center space-x-8">
           {stockData.map((stock, index) => (
             <div key={index} className="inline-flex items-center space-x-3 font-medium text-sm">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary/10 to-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-xs font-bold text-primary">{stock.ticker.slice(0, 2)}</span>
+              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center border border-border/20 shadow-sm">
+                <img 
+                  src={companyLogos[stock.ticker]} 
+                  alt={stock.name}
+                  className="w-6 h-6 object-contain"
+                  onError={(e) => {
+                    // Fallback para texto se a imagem não carregar
+                    (e.target as HTMLImageElement).style.display = 'none';
+                    const parent = (e.target as HTMLImageElement).parentElement;
+                    if (parent && !parent.querySelector('span')) {
+                      const fallback = document.createElement('span');
+                      fallback.className = 'text-xs font-bold text-primary';
+                      fallback.textContent = stock.ticker.slice(0, 2);
+                      parent.appendChild(fallback);
+                    }
+                  }}
+                />
               </div>
               <span className="text-foreground font-bold">{stock.ticker}</span>
               <span className="text-foreground">${stock.price}</span>
@@ -65,8 +94,23 @@ export function StockTicker() {
           {/* Duplica para animação contínua */}
           {stockData.map((stock, index) => (
             <div key={`dup-${index}`} className="inline-flex items-center space-x-3 font-medium text-sm">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary/10 to-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-xs font-bold text-primary">{stock.ticker.slice(0, 2)}</span>
+              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center border border-border/20 shadow-sm">
+                <img 
+                  src={companyLogos[stock.ticker]} 
+                  alt={stock.name}
+                  className="w-6 h-6 object-contain"
+                  onError={(e) => {
+                    // Fallback para texto se a imagem não carregar
+                    (e.target as HTMLImageElement).style.display = 'none';
+                    const parent = (e.target as HTMLImageElement).parentElement;
+                    if (parent && !parent.querySelector('span')) {
+                      const fallback = document.createElement('span');
+                      fallback.className = 'text-xs font-bold text-primary';
+                      fallback.textContent = stock.ticker.slice(0, 2);
+                      parent.appendChild(fallback);
+                    }
+                  }}
+                />
               </div>
               <span className="text-foreground font-bold">{stock.ticker}</span>
               <span className="text-foreground">${stock.price}</span>
