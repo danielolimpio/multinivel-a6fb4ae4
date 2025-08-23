@@ -62,64 +62,64 @@ export function StockTicker() {
 
   return (
     <div className="bg-white border-y border-border overflow-hidden py-3 shadow-sm">
-      <div className="ticker-scroll whitespace-nowrap">
-        <div className="inline-flex items-center space-x-8">
-          {stockData.map((stock, index) => (
-            <div key={index} className="inline-flex items-center space-x-3 font-medium text-sm">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center border border-border/20 shadow-sm">
-                <img 
-                  src={companyLogos[stock.ticker]} 
-                  alt={stock.name}
-                  className="w-6 h-6 object-contain"
-                  onError={(e) => {
-                    // Fallback para texto se a imagem não carregar
-                    (e.target as HTMLImageElement).style.display = 'none';
-                    const parent = (e.target as HTMLImageElement).parentElement;
-                    if (parent && !parent.querySelector('span')) {
-                      const fallback = document.createElement('span');
-                      fallback.className = 'text-xs font-bold text-primary';
-                      fallback.textContent = stock.ticker.slice(0, 2);
-                      parent.appendChild(fallback);
-                    }
-                  }}
-                />
-              </div>
-              <span className="text-foreground font-bold">{stock.ticker}</span>
-              <span className="text-foreground">${stock.price}</span>
-              <span className={stock.isUp ? "text-emerald-600" : "text-red-600"}>
-                {stock.isUp ? '▲' : '▼'} {stock.changePercent}
-              </span>
+      <div className="ticker-scroll space-x-8">
+        {/* Primeira instância dos dados */}
+        {stockData.map((stock, index) => (
+          <div key={index} className="inline-flex items-center space-x-3 font-medium text-sm mr-8">
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center border border-border/20 shadow-sm">
+              <img 
+                src={companyLogos[stock.ticker]} 
+                alt={stock.name}
+                className="w-6 h-6 object-contain"
+                onError={(e) => {
+                  // Fallback para texto se a imagem não carregar
+                  (e.target as HTMLImageElement).style.display = 'none';
+                  const parent = (e.target as HTMLImageElement).parentElement;
+                  if (parent && !parent.querySelector('span')) {
+                    const fallback = document.createElement('span');
+                    fallback.className = 'text-xs font-bold text-primary';
+                    fallback.textContent = stock.ticker.slice(0, 2);
+                    parent.appendChild(fallback);
+                  }
+                }}
+              />
             </div>
-          ))}
-          {/* Duplica para animação contínua */}
-          {stockData.map((stock, index) => (
-            <div key={`dup-${index}`} className="inline-flex items-center space-x-3 font-medium text-sm">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center border border-border/20 shadow-sm">
-                <img 
-                  src={companyLogos[stock.ticker]} 
-                  alt={stock.name}
-                  className="w-6 h-6 object-contain"
-                  onError={(e) => {
-                    // Fallback para texto se a imagem não carregar
-                    (e.target as HTMLImageElement).style.display = 'none';
-                    const parent = (e.target as HTMLImageElement).parentElement;
-                    if (parent && !parent.querySelector('span')) {
-                      const fallback = document.createElement('span');
-                      fallback.className = 'text-xs font-bold text-primary';
-                      fallback.textContent = stock.ticker.slice(0, 2);
-                      parent.appendChild(fallback);
-                    }
-                  }}
-                />
-              </div>
-              <span className="text-foreground font-bold">{stock.ticker}</span>
-              <span className="text-foreground">${stock.price}</span>
-              <span className={stock.isUp ? "text-emerald-600" : "text-red-600"}>
-                {stock.isUp ? '▲' : '▼'} {stock.changePercent}
-              </span>
+            <span className="text-foreground font-bold">{stock.ticker}</span>
+            <span className="text-foreground">${stock.price}</span>
+            <span className={stock.isUp ? "text-emerald-600" : "text-red-600"}>
+              {stock.isUp ? '▲' : '▼'} {stock.changePercent}
+            </span>
+          </div>
+        ))}
+        
+        {/* Segunda instância para continuidade */}
+        {stockData.map((stock, index) => (
+          <div key={`dup-${index}`} className="inline-flex items-center space-x-3 font-medium text-sm mr-8">
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center border border-border/20 shadow-sm">
+              <img 
+                src={companyLogos[stock.ticker]} 
+                alt={stock.name}
+                className="w-6 h-6 object-contain"
+                onError={(e) => {
+                  // Fallback para texto se a imagem não carregar
+                  (e.target as HTMLImageElement).style.display = 'none';
+                  const parent = (e.target as HTMLImageElement).parentElement;
+                  if (parent && !parent.querySelector('span')) {
+                    const fallback = document.createElement('span');
+                    fallback.className = 'text-xs font-bold text-primary';
+                    fallback.textContent = stock.ticker.slice(0, 2);
+                    parent.appendChild(fallback);
+                  }
+                }}
+              />
             </div>
-          ))}
-        </div>
+            <span className="text-foreground font-bold">{stock.ticker}</span>
+            <span className="text-foreground">${stock.price}</span>
+            <span className={stock.isUp ? "text-emerald-600" : "text-red-600"}>
+              {stock.isUp ? '▲' : '▼'} {stock.changePercent}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
