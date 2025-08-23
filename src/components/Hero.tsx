@@ -50,7 +50,12 @@ export function Hero() {
 
     return () => clearInterval(interval);
   }, [visitors]);
-  return <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-hero">
+  return <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-hero border-t border-b border-yellow-400/60">
+      {/* Linha dourada superior */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+      
+      {/* Linha dourada inferior */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
       {/* Floating particles animation */}
       <div className="floating-particles">
         {[...Array(80)].map((_, i) => (
