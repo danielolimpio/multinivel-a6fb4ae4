@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Star, TrendingUp, Users, Award, Target, Shield, Zap } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ArrowRight, Star, TrendingUp, Users, Award, Target, Shield, Zap, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
 import { FlagIcon } from "@/components/FlagIcon";
 import heroBackground from "@/assets/hero-background.webp";
@@ -208,6 +209,27 @@ export function Hero() {
                   ))}
                 </div>
                 <div className="text-white/70 text-xs">agora</div>
+              </div>
+            </div>
+
+            {/* Newsletter Card */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                Newsletter
+              </h3>
+              <p className="text-sm text-white/80 mb-3">
+                Receba as últimas novidades e análises do mercado de marketing de rede.
+              </p>
+              <div className="space-y-2">
+                <Input 
+                  type="email" 
+                  placeholder="Seu melhor e-mail"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-yellow-400 focus:ring-yellow-400/20"
+                />
+                <Button variant="default" size="sm" className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-semibold">
+                  Assinar Newsletter
+                </Button>
               </div>
             </div>
           </div>
