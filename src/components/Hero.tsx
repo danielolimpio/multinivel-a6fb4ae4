@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Star, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Star, TrendingUp, Users, Award, Target, Shield, Zap } from "lucide-react";
 import { useState, useEffect } from "react";
 import { FlagIcon } from "@/components/FlagIcon";
 import heroBackground from "@/assets/hero-background.webp";
@@ -108,24 +108,54 @@ export function Hero() {
               O portal de referência em Marketing de Rede no Brasil, oferecendo ranking, análises e oportunidades de renda para empresas e distribuidores.
             </p>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-2 text-white/90">
-                <div className="w-2 h-2 bg-turquoise rounded-full" />
-                <span>Ranking</span>
+            <div className="space-y-6 mb-8">
+              {/* Ranking Feature */}
+              <div className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center">
+                  <Award className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-1 flex items-center gap-2">
+                    Ranking Global
+                    <Badge variant="outline" className="text-xs border-yellow-400/50 text-yellow-400">
+                      1.600+ empresas
+                    </Badge>
+                  </h3>
+                  <p className="text-sm text-white/80 leading-relaxed">
+                    Momentum Rankings mundialmente avaliadas com análises detalhadas e métricas precisas.
+                  </p>
+                </div>
               </div>
               
-              <div>
-                <h3 className="font-semibold text-white mb-2">Momentum ranks</h3>
-                <p className="text-sm text-white/80 leading-relaxed">
-                  Momentum Rankings, que abrange mais de 1.600+ empresas de marketing de rede mundialmente avaliadas, não é apenas estatística.
-                </p>
+              {/* Momentum Feature */}
+              <div className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-turquoise to-blue-500 rounded-lg flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-1 flex items-center gap-2">
+                    Momentum Analysis
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  </h3>
+                  <p className="text-sm text-white/80 leading-relaxed">
+                    Análises em tempo real do crescimento e performance das empresas no mercado.
+                  </p>
+                </div>
               </div>
               
-              <div>
-                <h3 className="font-semibold text-white mb-2">Income disclaimers</h3>
-                <p className="text-sm text-white/80 leading-relaxed">
-                  Disclaimer geral: ganhos potenciais e reais variam significativamente entre distribuidores.
-                </p>
+              {/* Income Disclaimer */}
+              <div className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-1">
+                    Transparência Total
+                  </h3>
+                  <p className="text-sm text-white/80 leading-relaxed">
+                    Ganhos potenciais e reais variam significativamente entre distribuidores. Resultados não garantidos.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -157,10 +187,18 @@ export function Hero() {
                   <span className="text-white/80 text-xs">Visitantes online agora</span>
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 </div>
-                <div className="space-y-2 animate-[slide-in-right_20s_linear_infinite]">
+                <div className="space-y-2 relative overflow-hidden">
                   {currentVisitors.map((visitor, index) => (
-                    <div key={`${visitor.countryCode}-${index}`} className="flex items-center space-x-2 bg-white/5 p-2 rounded text-xs">
-                      <div className="bg-white/20 p-1 rounded-sm flex-shrink-0">
+                    <div 
+                      key={`${visitor.countryCode}-${index}-${Date.now()}`} 
+                      className="flex items-center space-x-2 bg-white/5 p-2 rounded text-xs animate-fade-in"
+                      style={{
+                        animationDelay: `${index * 0.2}s`,
+                        animationDuration: '0.5s',
+                        animationFillMode: 'both'
+                      }}
+                    >
+                      <div className="bg-white/20 p-1 rounded-sm flex-shrink-0 transition-all duration-300">
                         <FlagIcon countryCode={visitor.countryCode} size="sm" />
                       </div>
                       <span className="text-white/90">
