@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, TrendingUp, Users } from "lucide-react";
 import { useState, useEffect } from "react";
 import { FlagIcon } from "@/components/FlagIcon";
+import heroBackground from "@/assets/hero-background.webp";
 
 export function Hero() {
   const [currentVisitors, setCurrentVisitors] = useState([
@@ -50,7 +51,15 @@ export function Hero() {
 
     return () => clearInterval(interval);
   }, [visitors]);
-  return <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-hero border-t border-b border-yellow-400/60">
+  return <section 
+    className="relative pt-32 pb-16 overflow-hidden border-t border-b border-yellow-400/60"
+    style={{
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${heroBackground})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}
+  >
       {/* Linha dourada superior */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
       
