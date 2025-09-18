@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
 import { Vote, Trophy, ArrowRight, Eye } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Mock data for top companies
 const topCompanies = [
@@ -193,7 +194,7 @@ export function RankingSection() {
                   <div className="mb-3">
                     <Progress 
                       value={(company.votes / company.maxVotes) * 100} 
-                      className="h-2"
+                      className="h-2 animate-progress-fill"
                     />
                     <div className="flex justify-between text-xs text-muted-foreground mt-1">
                       <span>{((company.votes / company.maxVotes) * 100).toFixed(1)}%</span>
@@ -253,14 +254,16 @@ export function RankingSection() {
 
         {/* View All Button */}
         <div className="text-center">
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="px-6 py-4 border-2 hover:bg-muted/50"
-          >
-            Ver Todas as Empresas
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <Link to="/empresas">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="px-6 py-4 border-2 hover:bg-muted/50"
+            >
+              Ver Todas as Empresas
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

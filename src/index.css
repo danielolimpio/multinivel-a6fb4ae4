@@ -164,6 +164,25 @@ All colors MUST be HSL.
       transform: translateX(-50%);
     }
   }
+
+  /* Progress bar fill animation */
+  .animate-progress-fill .bg-primary {
+    animation: progress-fill 2s ease-out;
+  }
+
+  @keyframes progress-fill {
+    0% { 
+      transform: translateX(-100%);
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% { 
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
 
 /* Floating particles animation */
