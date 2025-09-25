@@ -101,59 +101,59 @@ export function Hero() {
               <span className="text-sm font-medium text-white/80">Est. Year 2010</span>
             </div>
             
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               Portal de Marketing de Rede
             </h1>
             
-            <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-white/90 mb-8 leading-relaxed max-w-xl">
               O portal de referência em Marketing de Rede no Brasil, oferecendo ranking, análises e oportunidades de renda para empresas e distribuidores.
             </p>
 
-            <div className="space-y-6 mb-8">
+            <div className="space-y-4 sm:space-y-6 mb-8">
               {/* Ranking Feature */}
-              <div className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center">
-                  <Award className="w-5 h-5 text-white" />
+              <div className="flex items-start gap-3 p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center">
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-white mb-1 flex items-center gap-2">
-                    Ranking Global
-                    <Badge variant="outline" className="text-xs border-yellow-400/50 text-yellow-400">
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-white mb-1 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <span>Ranking Global</span>
+                    <Badge variant="outline" className="text-xs border-yellow-400/50 text-yellow-400 w-fit">
                       1.600+ empresas
                     </Badge>
                   </h3>
-                  <p className="text-sm text-white/80 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
                     Momentum Rankings mundialmente avaliadas com análises detalhadas e métricas precisas.
                   </p>
                 </div>
               </div>
               
               {/* Momentum Feature */}
-              <div className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-turquoise to-blue-500 rounded-lg flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-white" />
+              <div className="flex items-start gap-3 p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-turquoise to-blue-500 rounded-lg flex items-center justify-center">
+                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-semibold text-white mb-1 flex items-center gap-2">
-                    Momentum Analysis
+                    <span>Momentum Analysis</span>
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   </h3>
-                  <p className="text-sm text-white/80 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
                     Análises em tempo real do crescimento e performance das empresas no mercado.
                   </p>
                 </div>
               </div>
               
               {/* Income Disclaimer */}
-              <div className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-white" />
+              <div className="flex items-start gap-3 p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
+                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-semibold text-white mb-1">
                     Transparência Total
                   </h3>
-                  <p className="text-sm text-white/80 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
                     Ganhos potenciais e reais variam significativamente entre distribuidores. Resultados não garantidos.
                   </p>
                 </div>
@@ -162,7 +162,7 @@ export function Hero() {
           </div>
 
           {/* Right Column - Stats Cards */}
-          <div className="space-y-4">
+          <div className="space-y-4 mt-8 lg:mt-0">
             {/* Top Earners Card */}
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
               <h3 className="font-semibold text-white mb-2 flex items-center gap-2">

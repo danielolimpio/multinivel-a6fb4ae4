@@ -246,22 +246,22 @@ export function RankingSection() {
 
         {/* Compact Ranking Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
-          {topCompanies.map((company, index) => <Card key={company.id} className="p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in" style={{
+          {topCompanies.map((company, index) => <Card key={company.id} className="p-3 sm:p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in" style={{
           animationDelay: `${index * 50}ms`
         }}>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
                 {/* Position Badge */}
-                <div className={`flex items-center justify-center w-12 h-12 rounded-full ${getPositionColor(company.position)} shadow-md flex-shrink-0`}>
+                <div className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full ${getPositionColor(company.position)} shadow-md flex-shrink-0`}>
                   {getPositionIcon(company.position)}
                 </div>
 
                 {/* Company Info */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-2">
-                    <img src={company.logo} alt={`${company.name} logo`} className="w-8 h-8 rounded object-cover bg-muted flex-shrink-0" />
+                <div className="flex-1 min-w-0 w-full">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+                    <img src={company.logo} alt={`${company.name} logo`} className="w-6 h-6 sm:w-8 sm:h-8 rounded object-cover bg-muted flex-shrink-0" />
                     <div className="min-w-0">
-                      <h3 className="font-semibold text-foreground text-lg">{company.name}</h3>
-                      <p className="text-sm text-muted-foreground">
+                      <h3 className="font-semibold text-foreground text-base sm:text-lg">{company.name}</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         {company.votes.toLocaleString()} votos
                       </p>
                     </div>
@@ -276,16 +276,16 @@ export function RankingSection() {
                     </div>
                   </div>
 
-                  {/* Recent Voters */}
-                  <div className="flex items-center justify-between">
+                  {/* Recent Voters and Actions */}
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs text-muted-foreground">Últimos votos:</span>
+                      <span className="text-xs text-muted-foreground hidden sm:inline">Últimos votos:</span>
                       <div className="flex -space-x-1">
-                        {company.recentVoters.slice(0, 5).map((voter, voterIndex) => <div key={voterIndex} className="relative" onMouseEnter={() => setHoveredVoter({
+                        {company.recentVoters.slice(0, 3).map((voter, voterIndex) => <div key={voterIndex} className="relative" onMouseEnter={() => setHoveredVoter({
                       companyId: company.id,
                       voterIndex
                     })} onMouseLeave={() => setHoveredVoter(null)}>
-                            <Avatar className="w-6 h-6 border-2 border-background shadow-sm cursor-pointer hover:scale-110 transition-transform">
+                            <Avatar className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-background shadow-sm cursor-pointer hover:scale-110 transition-transform">
                               <AvatarImage src={voter.avatar} alt={voter.name} />
                               <AvatarFallback className="text-xs bg-accent text-accent-foreground">
                                 {voter.name.split(' ').map(n => n[0]).join('')}
@@ -303,14 +303,14 @@ export function RankingSection() {
                       </div>
                     </div>
                     
-                    <div className="flex gap-1">
-                      <Button variant="ghost" size="sm" className="h-8 px-2 text-xs">
-                        <Eye className="w-3 h-3 mr-1" />
-                        Ver
+                    <div className="flex gap-1 sm:gap-2 justify-end">
+                      <Button variant="ghost" size="sm" className="h-7 sm:h-8 px-2 text-xs">
+                        <Eye className="w-3 h-3 sm:mr-1" />
+                        <span className="hidden sm:inline">Ver</span>
                       </Button>
-                      <Button size="sm" className="h-8 px-3 text-xs bg-gradient-primary">
-                        <Vote className="w-3 h-3 mr-1" />
-                        Votar
+                      <Button size="sm" className="h-7 sm:h-8 px-2 sm:px-3 text-xs bg-gradient-primary">
+                        <Vote className="w-3 h-3 sm:mr-1" />
+                        <span className="hidden sm:inline">Votar</span>
                       </Button>
                     </div>
                   </div>

@@ -425,9 +425,9 @@ export function Header() {
 
       {/* Main Header with Stats and Logo */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-24 items-center justify-between relative">
+        <div className="flex h-24 sm:h-32 items-center justify-between relative">
           {/* Left Stats - Desktop */}
-          <div className="hidden md:flex flex-1 justify-start">
+          <div className="hidden lg:flex flex-1 justify-start">
             <div className="flex items-center space-x-2 bg-muted/50 px-4 py-2 rounded-lg">
               <DollarSign className="h-5 w-5 text-primary" />
               <div className="text-left">
@@ -437,22 +437,20 @@ export function Header() {
             </div>
           </div>
 
-          {/* Logo - Center - positioned to overlap into next section */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 mt-8">
-            <div className="flex-shrink-0">
-              <img 
-                src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
-                alt="Logo" 
-                className="h-32 w-32 object-contain relative z-50" 
-                style={{
-                  filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
-                }}
-              />
-            </div>
+          {/* Logo - Center */}
+          <div className="flex-shrink-0 mx-auto lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:mt-8">
+            <img 
+              src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
+              alt="Logo" 
+              className="h-20 w-20 sm:h-24 sm:w-24 lg:h-32 lg:w-32 object-contain relative z-50" 
+              style={{
+                filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
+              }}
+            />
           </div>
 
           {/* Right Stats - Desktop */}
-          <div className="hidden md:flex flex-1 justify-end">
+          <div className="hidden lg:flex flex-1 justify-end">
             <div className="flex items-center space-x-2 bg-muted/50 px-4 py-2 rounded-lg">
               <DollarSign className="h-5 w-5 text-primary" />
               <div className="text-left">
@@ -461,16 +459,24 @@ export function Header() {
               </div>
             </div>
           </div>
-
-          {/* Mobile Stats */}
-          <div className="md:hidden absolute inset-x-0 bottom-0 flex justify-center space-x-4 pb-2">
-            <div className="flex items-center space-x-1 bg-muted/50 px-2 py-1 rounded text-xs">
+        </div>
+        
+        {/* Mobile Stats - Below logo */}
+        <div className="lg:hidden -mt-4 pb-4">
+          <div className="flex justify-center space-x-4">
+            <div className="flex items-center space-x-1 bg-muted/50 px-3 py-2 rounded-lg text-xs">
               <DollarSign className="h-3 w-3 text-primary" />
-              <span className="font-bold">46bi</span>
+              <div className="text-center">
+                <div className="font-bold">46bi</div>
+                <div className="text-xs text-muted-foreground">Comissões</div>
+              </div>
             </div>
-            <div className="flex items-center space-x-1 bg-muted/50 px-2 py-1 rounded text-xs">
+            <div className="flex items-center space-x-1 bg-muted/50 px-3 py-2 rounded-lg text-xs">
               <DollarSign className="h-3 w-3 text-primary" />
-              <span className="font-bold">250bi</span>
+              <div className="text-center">
+                <div className="font-bold">250bi</div>
+                <div className="text-xs text-muted-foreground">Vendas</div>
+              </div>
             </div>
           </div>
         </div>

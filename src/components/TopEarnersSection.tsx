@@ -100,13 +100,13 @@ export function TopEarnersSection() {
   };
 
   return (
-    <section className="py-16 pb-28 bg-background">
+    <section className="py-8 sm:py-16 pb-20 sm:pb-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
           {/* Main Table */}
           <div className="lg:col-span-3">
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
                 Top Earners na Carreira de Vendas Diretas
               </h2>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -114,68 +114,72 @@ export function TopEarnersSection() {
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input placeholder="Pesquisar..." className="pl-10" />
                 </div>
-                <Button variant="outline">Filtrar por país</Button>
+                <Button variant="outline" size="sm" className="sm:size-default">
+                  Filtrar por país
+                </Button>
               </div>
             </div>
 
             <Card className="overflow-hidden">
               <div className="overflow-x-auto">
-                <table className="w-full">
+                <table className="w-full min-w-[640px]">
                   <thead className="bg-primary text-primary-foreground">
                     <tr>
-                      <th className="text-left p-4 font-semibold">Rank</th>
-                      <th className="text-left p-4 font-semibold">Nome</th>
-                      <th className="text-left p-4 font-semibold">Empresa</th>
-                      <th className="text-left p-4 font-semibold">Renda Mensal</th>
-                      <th className="text-left p-4 font-semibold">Total de Carreira</th>
-                      <th className="text-left p-4 font-semibold">Status</th>
+                      <th className="text-left p-2 sm:p-4 font-semibold text-sm">Rank</th>
+                      <th className="text-left p-2 sm:p-4 font-semibold text-sm">Nome</th>
+                      <th className="text-left p-2 sm:p-4 font-semibold text-sm">Empresa</th>
+                      <th className="text-left p-2 sm:p-4 font-semibold text-sm hidden sm:table-cell">Renda Mensal</th>
+                      <th className="text-left p-2 sm:p-4 font-semibold text-sm hidden md:table-cell">Total de Carreira</th>
+                      <th className="text-left p-2 sm:p-4 font-semibold text-sm">Status</th>
                     </tr>
                   </thead>
                   <tbody>
                     {topEarners.map((earner) => (
                       <tr key={earner.rank} className="border-b border-border hover:bg-muted/50 transition-colors">
-                        <td className="p-4">
-                          <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold ${getRankBadgeColor(earner.rank)}`}>
-                            {earner.rank <= 3 ? <Crown className="w-4 h-4" /> : earner.rank}
+                        <td className="p-2 sm:p-4">
+                          <div className={`inline-flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full text-xs sm:text-sm font-bold ${getRankBadgeColor(earner.rank)}`}>
+                            {earner.rank <= 3 ? <Crown className="w-3 h-3 sm:w-4 sm:h-4" /> : earner.rank}
                           </div>
                         </td>
-                        <td className="p-4">
-                          <div className="flex items-center gap-3">
-                            <Avatar className="w-10 h-10">
+                        <td className="p-2 sm:p-4">
+                          <div className="flex items-center gap-2 sm:gap-3">
+                            <Avatar className="w-8 h-8 sm:w-10 sm:h-10">
                               <AvatarImage src={earner.avatar} alt={earner.name} />
-                              <AvatarFallback className="bg-accent text-accent-foreground text-sm">
+                              <AvatarFallback className="bg-accent text-accent-foreground text-xs sm:text-sm">
                                 {earner.name.split(' ').map(n => n[0]).join('')}
                               </AvatarFallback>
                             </Avatar>
-                            <div>
-                              <div className="font-medium text-foreground">{earner.name}</div>
-                              <div className="text-sm text-muted-foreground flex items-center gap-1">
-                                <span className="fi fi-br w-4 h-4 rounded-sm"></span>
-                                Brasil
+                            <div className="min-w-0">
+                              <div className="font-medium text-foreground text-sm sm:text-base truncate">{earner.name}</div>
+                              <div className="text-xs sm:text-sm text-muted-foreground flex items-center gap-1">
+                                <span className="fi fi-br w-3 h-3 sm:w-4 sm:h-4 rounded-sm"></span>
+                                <span className="hidden sm:inline">Brasil</span>
                               </div>
                             </div>
                           </div>
                         </td>
-                        <td className="p-4">
-                          <span className="font-medium text-foreground">{earner.company}</span>
+                        <td className="p-2 sm:p-4">
+                          <span className="font-medium text-foreground text-sm sm:text-base">{earner.company}</span>
                         </td>
-                        <td className="p-4">
-                          <div className="flex items-center gap-1 text-accent font-semibold">
-                            <DollarSign className="w-4 h-4" />
+                        <td className="p-2 sm:p-4 hidden sm:table-cell">
+                          <div className="flex items-center gap-1 text-accent font-semibold text-sm">
+                            <DollarSign className="w-3 h-3 sm:w-4 sm:h-4" />
                             {earner.monthlyEarnings}
                           </div>
                         </td>
-                        <td className="p-4">
-                          <span className="font-semibold text-foreground">{earner.totalEarnings}</span>
+                        <td className="p-2 sm:p-4 hidden md:table-cell">
+                          <span className="font-semibold text-foreground text-sm">{earner.totalEarnings}</span>
                         </td>
-                        <td className="p-4">
+                        <td className="p-2 sm:p-4">
                           {earner.isVerified ? (
-                            <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200">
-                              Verificado
+                            <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200 text-xs">
+                              <span className="hidden sm:inline">Verificado</span>
+                              <span className="sm:hidden">✓</span>
                             </Badge>
                           ) : (
-                            <Badge variant="outline">
-                              Pendente
+                            <Badge variant="outline" className="text-xs">
+                              <span className="hidden sm:inline">Pendente</span>
+                              <span className="sm:hidden">⏳</span>
                             </Badge>
                           )}
                         </td>
@@ -185,9 +189,9 @@ export function TopEarnersSection() {
                 </table>
               </div>
               
-              <div className="p-4 border-t border-border bg-muted/30">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-feedforeground">
+              <div className="p-3 sm:p-4 border-t border-border bg-muted/30">
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
+                  <span className="text-xs sm:text-sm text-muted-foreground">
                     Mostrando 8 de 1,247 resultados
                   </span>
                   <div className="flex gap-2">
@@ -200,13 +204,13 @@ export function TopEarnersSection() {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
-            <Card className="p-6">
-              <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-accent" />
+          <div className="space-y-4 sm:space-y-6 mt-8 lg:mt-0">
+            <Card className="p-4 sm:p-6">
+              <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2 text-sm sm:text-base">
+                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
                 Ranking por categoria
               </h3>
-              <div className="space-y-3 text-sm">
+              <div className="space-y-3 text-xs sm:text-sm">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Top Monthly Earners</span>
                   <span className="font-medium text-foreground">1,247</span>
@@ -226,25 +230,27 @@ export function TopEarnersSection() {
               </div>
             </Card>
 
-            <Card className="p-6">
-              <h3 className="font-semibold text-foreground mb-4">Estatísticas</h3>
-              <div className="space-y-4">
+            <Card className="p-4 sm:p-6">
+              <h3 className="font-semibold text-foreground mb-4 text-sm sm:text-base">Estatísticas</h3>
+              <div className="space-y-3 sm:space-y-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-accent">R$ 2.4M+</div>
-                  <div className="text-sm text-muted-foreground">Renda total distribuída</div>
+                  <div className="text-xl sm:text-2xl font-bold text-accent">R$ 2.4M+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Renda total distribuída</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-turquoise">1,247</div>
-                  <div className="text-sm text-muted-foreground">Distribuidores ativos</div>
+                  <div className="text-xl sm:text-2xl font-bold text-turquoise">1,247</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Distribuidores ativos</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">234</div>
-                  <div className="text-sm text-muted-foreground">Empresas listadas</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary">234</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Empresas listadas</div>
                 </div>
               </div>
             </Card>
             
-            <SolarienBanner />
+            <div className="hidden lg:block">
+              <SolarienBanner />
+            </div>
           </div>
         </div>
       </div>
