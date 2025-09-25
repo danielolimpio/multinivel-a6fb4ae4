@@ -24,6 +24,7 @@ const App = () => (
           <Route path="/forum" element={<Forum />} />
           <Route path="/empresas" element={<AllCompanies />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/admin/auth" element={<Auth userType="admin" />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/admin" element={<AdminDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
