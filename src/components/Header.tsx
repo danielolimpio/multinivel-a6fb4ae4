@@ -351,10 +351,10 @@ export function Header() {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" onClick={() => window.location.href = '/auth'}>
                 {currentTranslations.login}
               </Button>
-              <Button size="sm" className="bg-gradient-primary hover:opacity-90">
+              <Button size="sm" className="bg-gradient-primary hover:opacity-90" onClick={() => window.location.href = '/auth'}>
                 {currentTranslations.register}
               </Button>
             </div>
@@ -408,10 +408,10 @@ export function Header() {
                           </DropdownMenuContent>
                         </DropdownMenu>
                       </div>
-                      <Button variant="outline" className="w-full">
+                      <Button variant="outline" className="w-full" onClick={() => window.location.href = '/auth'}>
                         {currentTranslations.login}
                       </Button>
-                      <Button className="w-full bg-gradient-primary hover:opacity-90">
+                      <Button className="w-full bg-gradient-primary hover:opacity-90" onClick={() => window.location.href = '/auth'}>
                         {currentTranslations.register}
                       </Button>
                     </div>
