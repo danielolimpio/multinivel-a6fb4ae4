@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
@@ -14,9 +14,11 @@ import {
   LogOut,
   Download,
   MessageSquare,
-  Star,
   Copy,
-  CreditCard
+  CreditCard,
+  ArrowUpRight,
+  ArrowDownRight,
+  Clock
 } from "lucide-react";
 
 interface Profile {
@@ -87,7 +89,6 @@ const Dashboard = () => {
 
   const loadUserData = async (userId: string) => {
     try {
-      // Load profile
       const { data: profileData, error: profileError } = await supabase
         .from("profiles")
         .select("*")
@@ -97,7 +98,6 @@ const Dashboard = () => {
       if (profileError) throw profileError;
       setProfile(profileData);
 
-      // Load commissions
       const { data: commissionsData, error: commissionsError } = await supabase
         .from("commissions")
         .select("*")
@@ -108,7 +108,6 @@ const Dashboard = () => {
       if (commissionsError) throw commissionsError;
       setCommissions(commissionsData || []);
 
-      // Load withdrawals
       const { data: withdrawalsData, error: withdrawalsError } = await supabase
         .from("withdrawals")
         .select("*")
@@ -170,22 +169,22 @@ const Dashboard = () => {
     };
     
     const statusInfo = statusMap[status as keyof typeof statusMap] || { label: status, variant: "secondary" as const };
-    return <Badge variant={statusInfo.variant}>{statusInfo.label}</Badge>;
+    return <Badge variant={statusInfo.variant} className="bg-gradient-gold text-gold-foreground">{statusInfo.label}</Badge>;
   };
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
+      <div className="min-h-screen bg-gradient-to-br from-[#0f1729] via-[#1a2332] to-[#0f1729] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gradient-gold"></div>
       </div>
     );
   }
 
   if (!profile) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-[#0f1729] via-[#1a2332] to-[#0f1729] flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold mb-4">Perfil não encontrado</h2>
+          <h2 className="text-2xl font-bold mb-4 text-white">Perfil não encontrado</h2>
           <Button onClick={() => navigate("/auth")}>Voltar ao Login</Button>
         </div>
       </div>
@@ -193,20 +192,27 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-[#0f1729] via-[#1a2332] to-[#0f1729]">
       {/* Header */}
-      <header className="bg-card border-b border-border">
+      <header className="bg-[#1a2332]/80 backdrop-blur-xl border-b border-white/10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-primary">Dashboard</h1>
-              <p className="text-muted-foreground">Bem-vindo, {profile.full_name}</p>
+            <div className="flex items-center gap-4">
+              <img 
+                src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
+                alt="Logo" 
+                className="h-12 w-12 object-contain" 
+              />
+              <div>
+                <h1 className="text-2xl font-bold text-gradient-gold">Dashboard</h1>
+                <p className="text-white/70 text-sm">Bem-vindo, {profile.full_name}</p>
+              </div>
             </div>
             <div className="flex items-center gap-4">
-              <Button variant="outline" onClick={() => navigate("/")}>
+              <Button variant="outline" onClick={() => navigate("/")} className="border-white/20 text-white hover:bg-white/10">
                 Voltar ao Site
               </Button>
-              <Button variant="ghost" onClick={handleLogout}>
+              <Button variant="ghost" onClick={handleLogout} className="text-white hover:bg-white/10">
                 <LogOut className="h-4 w-4 mr-2" />
                 Sair
               </Button>
@@ -218,56 +224,75 @@ const Dashboard = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Saldo Disponível</CardTitle>
-              <DollarSign className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-green-600">
-                {formatCurrency(profile.available_balance)}
+          <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10 hover:border-white/20 transition-all">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-3 bg-gradient-gold rounded-lg">
+                  <DollarSign className="h-6 w-6 text-gold-foreground" />
+                </div>
+                <ArrowUpRight className="h-5 w-5 text-green-400" />
+              </div>
+              <div className="space-y-1">
+                <p className="text-white/70 text-sm">Saldo Disponível</p>
+                <h3 className="text-3xl font-bold text-gradient-gold">
+                  {formatCurrency(profile.available_balance)}
+                </h3>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total de Ganhos</CardTitle>
-              <TrendingUp className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">
-                {formatCurrency(profile.total_earnings)}
+          <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10 hover:border-white/20 transition-all">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-3 bg-gradient-gold rounded-lg">
+                  <TrendingUp className="h-6 w-6 text-gold-foreground" />
+                </div>
+                <ArrowUpRight className="h-5 w-5 text-green-400" />
+              </div>
+              <div className="space-y-1">
+                <p className="text-white/70 text-sm">Total de Ganhos</p>
+                <h3 className="text-3xl font-bold text-white">
+                  {formatCurrency(profile.total_earnings)}
+                </h3>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Sacado</CardTitle>
-              <CreditCard className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">
-                {formatCurrency(profile.total_withdrawals)}
+          <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10 hover:border-white/20 transition-all">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-3 bg-gradient-gold rounded-lg">
+                  <CreditCard className="h-6 w-6 text-gold-foreground" />
+                </div>
+                <ArrowDownRight className="h-5 w-5 text-orange-400" />
+              </div>
+              <div className="space-y-1">
+                <p className="text-white/70 text-sm">Total Sacado</p>
+                <h3 className="text-3xl font-bold text-white">
+                  {formatCurrency(profile.total_withdrawals)}
+                </h3>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Meu Código</CardTitle>
-              <Award className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-primary">
-                {profile.referral_code}
+          <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10 hover:border-white/20 transition-all">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-3 bg-gradient-gold rounded-lg">
+                  <Award className="h-6 w-6 text-gold-foreground" />
+                </div>
+              </div>
+              <div className="space-y-1">
+                <p className="text-white/70 text-sm">Meu Código</p>
+                <h3 className="text-3xl font-bold text-gradient-gold">
+                  {profile.referral_code}
+                </h3>
               </div>
               <Button
-                variant="outline"
+                variant="ghost"
                 size="sm"
                 onClick={copyReferralLink}
-                className="mt-2"
+                className="mt-3 w-full text-white hover:bg-white/10"
               >
                 <Copy className="h-4 w-4 mr-2" />
                 Copiar Link
@@ -278,36 +303,39 @@ const Dashboard = () => {
 
         {/* Tabs Content */}
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-6">
-            <TabsTrigger value="overview">Visão Geral</TabsTrigger>
-            <TabsTrigger value="commissions">Comissões</TabsTrigger>
-            <TabsTrigger value="withdrawals">Saques</TabsTrigger>
-            <TabsTrigger value="network">Rede</TabsTrigger>
-            <TabsTrigger value="support">Suporte</TabsTrigger>
-            <TabsTrigger value="downloads">Downloads</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-6 bg-[#1a2332]/80 border border-white/10">
+            <TabsTrigger value="overview" className="data-[state=active]:bg-gradient-gold data-[state=active]:text-gold-foreground">Visão Geral</TabsTrigger>
+            <TabsTrigger value="commissions" className="data-[state=active]:bg-gradient-gold data-[state=active]:text-gold-foreground">Comissões</TabsTrigger>
+            <TabsTrigger value="withdrawals" className="data-[state=active]:bg-gradient-gold data-[state=active]:text-gold-foreground">Saques</TabsTrigger>
+            <TabsTrigger value="network" className="data-[state=active]:bg-gradient-gold data-[state=active]:text-gold-foreground">Rede</TabsTrigger>
+            <TabsTrigger value="support" className="data-[state=active]:bg-gradient-gold data-[state=active]:text-gold-foreground">Suporte</TabsTrigger>
+            <TabsTrigger value="downloads" className="data-[state=active]:bg-gradient-gold data-[state=active]:text-gold-foreground">Downloads</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Últimas Comissões</CardTitle>
-                  <CardDescription>
-                    Suas comissões mais recentes
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
+              <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-gradient-gold rounded-lg">
+                      <Clock className="h-5 w-5 text-gold-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Últimas Comissões</h3>
+                      <p className="text-white/60 text-sm">Suas comissões mais recentes</p>
+                    </div>
+                  </div>
                   <div className="space-y-4">
                     {commissions.slice(0, 5).map((commission) => (
-                      <div key={commission.id} className="flex items-center justify-between">
+                      <div key={commission.id} className="flex items-center justify-between p-4 bg-[#0f1729]/50 rounded-lg border border-white/5 hover:border-white/10 transition-all">
                         <div>
-                          <p className="font-medium">Nível {commission.level}</p>
-                          <p className="text-sm text-muted-foreground">
+                          <p className="font-medium text-white">Nível {commission.level}</p>
+                          <p className="text-sm text-white/60">
                             {new Date(commission.created_at).toLocaleDateString('pt-BR')}
                           </p>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-green-600">
+                          <p className="font-bold text-gradient-gold text-lg">
                             {formatCurrency(commission.amount)}
                           </p>
                           {getStatusBadge(commission.status)}
@@ -315,7 +343,7 @@ const Dashboard = () => {
                       </div>
                     ))}
                     {commissions.length === 0 && (
-                      <p className="text-muted-foreground text-center py-4">
+                      <p className="text-white/60 text-center py-8">
                         Nenhuma comissão encontrada
                       </p>
                     )}
@@ -323,17 +351,20 @@ const Dashboard = () => {
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Link de Referência</CardTitle>
-                  <CardDescription>
-                    Compartilhe este link para ganhar comissões
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
+              <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-gradient-gold rounded-lg">
+                      <Award className="h-5 w-5 text-gold-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Link de Referência</h3>
+                      <p className="text-white/60 text-sm">Compartilhe para ganhar comissões</p>
+                    </div>
+                  </div>
                   <div className="space-y-4">
-                    <div className="p-4 bg-muted rounded-lg">
-                      <p className="text-sm break-all">
+                    <div className="p-4 bg-[#0f1729]/50 rounded-lg border border-white/10">
+                      <p className="text-sm text-white/80 break-all">
                         {`${window.location.origin}/auth?ref=${profile.referral_code}`}
                       </p>
                     </div>
@@ -348,25 +379,28 @@ const Dashboard = () => {
           </TabsContent>
 
           <TabsContent value="commissions">
-            <Card>
-              <CardHeader>
-                <CardTitle>Histórico de Comissões</CardTitle>
-                <CardDescription>
-                  Todas as suas comissões recebidas
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+            <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2 bg-gradient-gold rounded-lg">
+                    <TrendingUp className="h-5 w-5 text-gold-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Histórico de Comissões</h3>
+                    <p className="text-white/60 text-sm">Todas as suas comissões recebidas</p>
+                  </div>
+                </div>
                 <div className="space-y-4">
                   {commissions.map((commission) => (
-                    <div key={commission.id} className="flex items-center justify-between p-4 border rounded-lg">
+                    <div key={commission.id} className="flex items-center justify-between p-4 bg-[#0f1729]/50 rounded-lg border border-white/5 hover:border-white/10 transition-all">
                       <div>
-                        <p className="font-medium">Comissão Nível {commission.level}</p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="font-medium text-white">Comissão Nível {commission.level}</p>
+                        <p className="text-sm text-white/60">
                           {new Date(commission.created_at).toLocaleString('pt-BR')}
                         </p>
                       </div>
                       <div className="text-right">
-                        <p className="font-bold text-green-600">
+                        <p className="font-bold text-gradient-gold text-lg">
                           {formatCurrency(commission.amount)}
                         </p>
                         {getStatusBadge(commission.status)}
@@ -374,7 +408,7 @@ const Dashboard = () => {
                     </div>
                   ))}
                   {commissions.length === 0 && (
-                    <p className="text-muted-foreground text-center py-8">
+                    <p className="text-white/60 text-center py-8">
                       Nenhuma comissão encontrada
                     </p>
                   )}
@@ -384,25 +418,28 @@ const Dashboard = () => {
           </TabsContent>
 
           <TabsContent value="withdrawals">
-            <Card>
-              <CardHeader>
-                <CardTitle>Histórico de Saques</CardTitle>
-                <CardDescription>
-                  Seus saques realizados e pendentes
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+            <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2 bg-gradient-gold rounded-lg">
+                    <CreditCard className="h-5 w-5 text-gold-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Histórico de Saques</h3>
+                    <p className="text-white/60 text-sm">Seus saques realizados e pendentes</p>
+                  </div>
+                </div>
                 <div className="space-y-4">
                   {withdrawals.map((withdrawal) => (
-                    <div key={withdrawal.id} className="flex items-center justify-between p-4 border rounded-lg">
+                    <div key={withdrawal.id} className="flex items-center justify-between p-4 bg-[#0f1729]/50 rounded-lg border border-white/5 hover:border-white/10 transition-all">
                       <div>
-                        <p className="font-medium">Saque PIX</p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="font-medium text-white">Saque PIX</p>
+                        <p className="text-sm text-white/60">
                           {new Date(withdrawal.created_at).toLocaleString('pt-BR')}
                         </p>
                       </div>
                       <div className="text-right">
-                        <p className="font-bold">
+                        <p className="font-bold text-white text-lg">
                           {formatCurrency(withdrawal.amount)}
                         </p>
                         {getStatusBadge(withdrawal.status)}
@@ -410,7 +447,7 @@ const Dashboard = () => {
                     </div>
                   ))}
                   {withdrawals.length === 0 && (
-                    <p className="text-muted-foreground text-center py-8">
+                    <p className="text-white/60 text-center py-8">
                       Nenhum saque encontrado
                     </p>
                   )}
@@ -420,17 +457,14 @@ const Dashboard = () => {
           </TabsContent>
 
           <TabsContent value="network">
-            <Card>
-              <CardHeader>
-                <CardTitle>Minha Rede</CardTitle>
-                <CardDescription>
-                  Gerencie sua rede de afiliados
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-center py-8">
-                  <Users className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-                  <p className="text-muted-foreground">
+            <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10">
+              <CardContent className="p-6">
+                <div className="text-center py-12">
+                  <div className="p-4 bg-gradient-gold/10 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    <Users className="h-10 w-10 text-gradient-gold" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Minha Rede</h3>
+                  <p className="text-white/60">
                     Funcionalidade em desenvolvimento
                   </p>
                 </div>
@@ -439,17 +473,14 @@ const Dashboard = () => {
           </TabsContent>
 
           <TabsContent value="support">
-            <Card>
-              <CardHeader>
-                <CardTitle>Suporte</CardTitle>
-                <CardDescription>
-                  Entre em contato conosco
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-center py-8">
-                  <MessageSquare className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-                  <p className="text-muted-foreground">
+            <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10">
+              <CardContent className="p-6">
+                <div className="text-center py-12">
+                  <div className="p-4 bg-gradient-gold/10 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    <MessageSquare className="h-10 w-10 text-gradient-gold" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Suporte</h3>
+                  <p className="text-white/60">
                     Sistema de tickets em desenvolvimento
                   </p>
                 </div>
@@ -458,17 +489,14 @@ const Dashboard = () => {
           </TabsContent>
 
           <TabsContent value="downloads">
-            <Card>
-              <CardHeader>
-                <CardTitle>Material para Download</CardTitle>
-                <CardDescription>
-                  Materiais de apoio e treinamentos
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-center py-8">
-                  <Download className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-                  <p className="text-muted-foreground">
+            <Card className="bg-gradient-to-br from-[#1e2a3f] to-[#2a3548] border-white/10">
+              <CardContent className="p-6">
+                <div className="text-center py-12">
+                  <div className="p-4 bg-gradient-gold/10 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    <Download className="h-10 w-10 text-gradient-gold" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Material para Download</h3>
+                  <p className="text-white/60">
                     Materiais serão disponibilizados em breve
                   </p>
                 </div>

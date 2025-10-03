@@ -53,7 +53,7 @@ export function Hero() {
     return () => clearInterval(interval);
   }, [visitors]);
   return <section 
-    className="relative pt-32 pb-16 overflow-hidden border-t border-b border-yellow-400/60"
+    className="relative pt-20 md:pt-32 pb-16 overflow-hidden border-t border-b border-yellow-400/60"
     style={{
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${heroBackground})`,
       backgroundSize: 'cover',

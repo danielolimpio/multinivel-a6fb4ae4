@@ -20,6 +20,12 @@ All colors MUST be HSL.
     /* Primary - Azul escuro autoritário */
     --primary: 220 60% 15%;
     --primary-foreground: 0 0% 100%;
+    
+    /* Golden gradient tokens - matching eagle logo */
+    --gold-light: 48 100% 67%;
+    --gold-medium: 43 96% 56%;
+    --gold-dark: 38 92% 50%;
+    --gold-foreground: 0 0% 0%;
 
     /* Secondary - Azul médio */
     --secondary: 220 45% 25%;
@@ -54,8 +60,10 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(220 60% 15%), hsl(220 45% 25%));
     --gradient-accent: linear-gradient(135deg, hsl(280 65% 60%), hsl(180 65% 50%));
     --gradient-hero: linear-gradient(135deg, hsl(207, 95%, 18%) 0%, hsl(272, 100%, 38%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(48 100% 67%), hsl(43 96% 56%), hsl(38 92% 50%));
     --shadow-elegant: 0 10px 30px -10px hsl(220 60% 15% / 0.2);
     --shadow-card: 0 4px 20px -5px hsl(220 60% 15% / 0.1);
+    --shadow-gold: 0 8px 25px -8px hsl(43 96% 56% / 0.5);
 
     --sidebar-background: 0 0% 98%;
 
@@ -112,8 +120,10 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(220 60% 8%), hsl(220 50% 15%));
     --gradient-accent: linear-gradient(135deg, hsl(280 65% 70%), hsl(180 65% 60%));
     --gradient-hero: linear-gradient(135deg, hsl(207, 95%, 12%) 0%, hsl(272, 100%, 45%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(48 100% 67%), hsl(43 96% 56%), hsl(38 92% 50%));
     --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.4);
     --shadow-card: 0 4px 20px -5px hsl(0 0% 0% / 0.3);
+    --shadow-gold: 0 8px 25px -8px hsl(43 96% 56% / 0.6);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -147,6 +157,17 @@ All colors MUST be HSL.
   
   .text-gradient-accent {
     @apply bg-gradient-accent bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
   }
 
   /* Stock ticker animation */
