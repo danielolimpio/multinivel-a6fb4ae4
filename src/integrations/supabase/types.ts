@@ -306,6 +306,27 @@ export type Database = {
         }
         Relationships: []
       }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
       votes: {
         Row: {
           company_id: string | null
@@ -405,9 +426,12 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: string
       }
-      get_current_user_role: {
-        Args: Record<PropertyKey, never>
-        Returns: string
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
       }
       process_mlm_commissions: {
         Args: { vote_id_param: string }
@@ -415,6 +439,7 @@ export type Database = {
       }
     }
     Enums: {
+      app_role: "admin" | "affiliate"
       commission_status: "pending" | "paid"
       user_type: "admin" | "affiliate"
       vote_type: "company" | "leader"
@@ -546,6 +571,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
+      app_role: ["admin", "affiliate"],
       commission_status: ["pending", "paid"],
       user_type: ["admin", "affiliate"],
       vote_type: ["company", "leader"],
