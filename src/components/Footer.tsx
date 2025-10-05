@@ -16,7 +16,7 @@ export function Footer() {
       { name: "Fórum", href: "/forum" },
       { name: "Ranking Completo", href: "/ranking" },
       { name: "Top Indicadores", href: "/top-indicadores" },
-      { name: "Artigos", href: "/artigos" },
+      { name: "Blog", href: "/blog" },
       { name: "Eventos", href: "/eventos" }
     ],
     recursos: [

@@ -301,7 +301,7 @@ export function Header() {
     { name: currentTranslations.home, href: "/" },
     { name: currentTranslations.about, href: "/sobre" },
     { name: currentTranslations.ranking, href: "/ranking" },
-    { name: currentTranslations.news, href: "/noticias" },
+    { name: "Blog", href: "/blog" },
     { name: currentTranslations.forum, href: "/forum" },
     { name: currentTranslations.community, href: "/comunidade" },
     { name: currentTranslations.testimonials, href: "/depoimentos" },
@@ -435,7 +435,7 @@ export function Header() {
           {/* Left Stats - Desktop */}
           <div className="hidden lg:flex flex-1 justify-start">
             <div className="flex items-center space-x-2 bg-muted/50 px-4 py-2 rounded-lg">
-              <DollarSign className="h-5 w-5 text-primary" />
+              <DollarSign className="h-5 w-5 text-gold" />
               <div className="text-left">
                 <div className="text-lg font-bold text-foreground">46 bilhões</div>
                 <div className="text-xs text-muted-foreground">{currentTranslations.totalCommission}</div>
@@ -444,11 +444,11 @@ export function Header() {
           </div>
 
           {/* Logo - Center */}
-          <div className="flex-shrink-0 mx-auto lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:mt-8">
+          <div className="flex-shrink-0 mx-auto lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:mt-16">
             <img 
               src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
               alt="Logo" 
-              className="h-32 w-32 sm:h-24 sm:w-24 lg:h-32 lg:w-32 object-contain relative z-50" 
+              className="h-20 w-20 sm:h-24 sm:w-24 lg:h-32 lg:w-32 object-contain relative z-50 mt-8 sm:mt-0" 
               style={{
                 filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
               }}
@@ -458,7 +458,7 @@ export function Header() {
           {/* Right Stats - Desktop */}
           <div className="hidden lg:flex flex-1 justify-end">
             <div className="flex items-center space-x-2 bg-muted/50 px-4 py-2 rounded-lg">
-              <DollarSign className="h-5 w-5 text-primary" />
+              <DollarSign className="h-5 w-5 text-gold" />
               <div className="text-left">
                 <div className="text-lg font-bold text-foreground">250 bilhões</div>
                 <div className="text-xs text-muted-foreground">{currentTranslations.totalSales}</div>
@@ -467,21 +467,21 @@ export function Header() {
           </div>
         </div>
         
-        {/* Mobile Stats - Below logo */}
+        {/* Mobile Stats - Adjusted positioning */}
         <div className="lg:hidden -mt-4 pb-4">
-          <div className="flex justify-center space-x-4">
-            <div className="flex items-center space-x-1 bg-muted/50 px-3 py-2 rounded-lg text-xs">
-              <DollarSign className="h-3 w-3 text-primary" />
-              <div className="text-center">
-                <div className="font-bold">46bi</div>
-                <div className="text-xs text-muted-foreground">Comissões</div>
+          <div className="grid grid-cols-2 gap-2 px-2">
+            <div className="flex items-center space-x-1 bg-muted/50 px-2 py-2 rounded-lg text-xs">
+              <DollarSign className="h-3 w-3 text-gold-medium" style={{ color: 'hsl(43 96% 56%)' }} />
+              <div className="text-left">
+                <div className="font-bold text-xs">46bi</div>
+                <div className="text-[10px] text-muted-foreground">Comissões</div>
               </div>
             </div>
-            <div className="flex items-center space-x-1 bg-muted/50 px-3 py-2 rounded-lg text-xs">
-              <DollarSign className="h-3 w-3 text-primary" />
-              <div className="text-center">
-                <div className="font-bold">250bi</div>
-                <div className="text-xs text-muted-foreground">Vendas</div>
+            <div className="flex items-center space-x-1 bg-muted/50 px-2 py-2 rounded-lg text-xs justify-end">
+              <DollarSign className="h-3 w-3 text-gold-medium" style={{ color: 'hsl(43 96% 56%)' }} />
+              <div className="text-left">
+                <div className="font-bold text-xs">250bi</div>
+                <div className="text-[10px] text-muted-foreground">Vendas</div>
               </div>
             </div>
           </div>
