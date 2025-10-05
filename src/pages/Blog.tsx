@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Calendar, User, Search, TrendingUp, Trophy, Eye } from "lucide-react";
 import { useState } from "react";
+import ajudaMutuaImage from "@/assets/ajuda-mutua-piramide.jpg";
 
 const categories = [
   { name: "Educação Financeira", count: 24, color: "bg-gold-medium text-gold-foreground" },
@@ -26,15 +27,16 @@ const topCompanies = [
 const blogPosts = [
   {
     id: 1,
-    title: "Como Construir Riqueza através do Marketing de Rede: Guia Completo 2025",
-    excerpt: "Descubra estratégias comprovadas de educação financeira aplicadas ao marketing multinível. Aprenda a gerenciar seus ganhos, investir de forma inteligente e construir patrimônio sustentável no setor de vendas diretas.",
-    image: "/lovable-uploads/f7414847-cb86-4d7e-bbc4-bf08109e87c7.png",
-    author: "Ana Paula Silva",
-    date: "20 Jan 2025",
+    title: "O que é sistema de ajuda mútua? Saiba por que muitos são esquemas piramidais disfarçados",
+    excerpt: "Você já recebeu um convite para participar de um 'grupo de ajuda mútua' no WhatsApp ou Telegram? Descubra como identificar esquemas piramidais disfarçados de solidariedade e proteger-se de armadilhas financeiras.",
+    image: ajudaMutuaImage,
+    author: "Equipe UniversidadeMN",
+    date: "05 Out 2025",
     category: "Educação Financeira",
     categoryColor: "bg-gold-medium text-gold-foreground",
-    views: 1247,
-    readTime: "8 min"
+    views: 2847,
+    readTime: "12 min",
+    imageCredit: "Freepik"
   },
   {
     id: 2,
@@ -184,6 +186,11 @@ export default function Blog() {
                           {post.category}
                         </Badge>
                       </div>
+                      {post.imageCredit && (
+                        <div className="absolute bottom-1 right-2 text-[8px] text-white/70 bg-black/30 px-1 rounded">
+                          Imagem: {post.imageCredit}
+                        </div>
+                      )}
                     </div>
                     
                     <div className="md:col-span-2 p-6">

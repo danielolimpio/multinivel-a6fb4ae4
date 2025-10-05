@@ -448,7 +448,7 @@ export function Header() {
             <img 
               src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
               alt="Logo" 
-              className="h-20 w-20 sm:h-24 sm:w-24 lg:h-32 lg:w-32 object-contain relative z-50 mt-8 sm:mt-0" 
+              className="h-32 w-32 sm:h-36 sm:w-36 lg:h-32 lg:w-32 object-contain relative z-50 mt-12 sm:mt-16 lg:mt-0" 
               style={{
                 filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
               }}
@@ -468,17 +468,17 @@ export function Header() {
         </div>
         
         {/* Mobile Stats - Adjusted positioning */}
-        <div className="lg:hidden -mt-4 pb-4">
+        <div className="lg:hidden mt-8 pb-6">
           <div className="grid grid-cols-2 gap-2 px-2">
             <div className="flex items-center space-x-1 bg-muted/50 px-2 py-2 rounded-lg text-xs">
-              <DollarSign className="h-3 w-3 text-gold-medium" style={{ color: 'hsl(43 96% 56%)' }} />
+              <DollarSign className="h-3 w-3 text-gold-medium" />
               <div className="text-left">
                 <div className="font-bold text-xs">46bi</div>
                 <div className="text-[10px] text-muted-foreground">Comissões</div>
               </div>
             </div>
             <div className="flex items-center space-x-1 bg-muted/50 px-2 py-2 rounded-lg text-xs justify-end">
-              <DollarSign className="h-3 w-3 text-gold-medium" style={{ color: 'hsl(43 96% 56%)' }} />
+              <DollarSign className="h-3 w-3 text-gold-medium" />
               <div className="text-left">
                 <div className="font-bold text-xs">250bi</div>
                 <div className="text-[10px] text-muted-foreground">Vendas</div>
