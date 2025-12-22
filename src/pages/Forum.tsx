@@ -184,34 +184,34 @@ const Forum = () => {
             <div className="space-y-4">
               {questions.map((question) => (
                 <Card key={question.id} className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex gap-4">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex gap-3 sm:gap-4">
                       {/* Avatar */}
-                      <Avatar className="h-12 w-12">
+                      <Avatar className="h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0">
                         <AvatarImage src={question.author.avatar} />
                         <AvatarFallback>{question.author.name.charAt(0)}</AvatarFallback>
                       </Avatar>
 
                       {/* Content */}
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
                           <span className="font-medium text-sm">{question.author.name}</span>
-                          <span className="text-muted-foreground text-sm">{question.timeAgo}</span>
+                          <span className="text-muted-foreground text-xs sm:text-sm">{question.timeAgo}</span>
                           <Badge variant="secondary" className="text-xs">
                             {question.category}
                           </Badge>
                         </div>
 
-                        <h3 className="font-semibold text-lg mb-2 hover:text-primary cursor-pointer">
+                        <h3 className="font-semibold text-base sm:text-lg mb-2 hover:text-primary cursor-pointer leading-snug">
                           {question.title}
                         </h3>
 
-                        <p className="text-muted-foreground mb-4 line-clamp-2">
+                        <p className="text-muted-foreground text-sm mb-3 sm:mb-4 line-clamp-2">
                           {question.content}
                         </p>
 
                         {/* Tags */}
-                        <div className="flex flex-wrap gap-1 mb-4">
+                        <div className="flex flex-wrap gap-1 mb-3 sm:mb-4">
                           {question.tags.map((tag) => (
                             <Badge key={tag} variant="outline" className="text-xs">
                               {tag}
@@ -219,28 +219,28 @@ const Forum = () => {
                           ))}
                         </div>
 
-                        {/* Actions */}
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        {/* Actions - Mobile Responsive */}
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
                             <div className="flex items-center gap-1">
-                              <ThumbsUp className="h-4 w-4" />
+                              <ThumbsUp className="h-3 w-3 sm:h-4 sm:w-4" />
                               <span>{question.votes}</span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <MessageCircle className="h-4 w-4" />
+                              <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />
                               <span>{question.answers}</span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <Eye className="h-4 w-4" />
+                              <Eye className="h-3 w-3 sm:h-4 sm:w-4" />
                               <span>{question.views}</span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <Star className="h-4 w-4" />
+                              <Star className="h-3 w-3 sm:h-4 sm:w-4" />
                               <span>{question.likes}</span>
                             </div>
                           </div>
 
-                          <Button size="sm" variant="default">
+                          <Button size="sm" variant="default" className="text-xs sm:text-sm h-8 px-3 sm:px-4 flex-shrink-0">
                             Responder
                           </Button>
                         </div>
