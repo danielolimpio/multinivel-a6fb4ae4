@@ -122,65 +122,112 @@ export function TopEarnersSection() {
             </div>
 
             <Card className="overflow-hidden">
-              <div className="overflow-x-auto -mx-0">
-                <table className="w-full min-w-[500px]">
+              {/* Mobile Card View */}
+              <div className="block sm:hidden divide-y divide-border">
+                {topEarners.map((earner) => (
+                  <div key={earner.rank} className="p-4 hover:bg-muted/50 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold flex-shrink-0 ${getRankBadgeColor(earner.rank)}`}>
+                        {earner.rank <= 3 ? <Crown className="w-4 h-4" /> : earner.rank}
+                      </div>
+                      <Avatar className="w-10 h-10 flex-shrink-0">
+                        <AvatarImage src={earner.avatar} alt={earner.name} />
+                        <AvatarFallback className="bg-accent text-accent-foreground text-xs">
+                          {earner.name.split(' ').map(n => n[0]).join('')}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-semibold text-foreground text-sm">{earner.name}</div>
+                        <div className="text-xs text-muted-foreground">{earner.company}</div>
+                      </div>
+                      {earner.isVerified ? (
+                        <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200 text-xs px-2 flex-shrink-0">
+                          ✓
+                        </Badge>
+                      ) : (
+                        <Badge variant="outline" className="text-xs px-2 flex-shrink-0">
+                          ⏳
+                        </Badge>
+                      )}
+                    </div>
+                    <div className="mt-3 flex justify-between items-center text-xs">
+                      <div className="flex items-center gap-1 text-muted-foreground">
+                        <span className="fi fi-br w-3 h-3 rounded-sm"></span>
+                        <span>Brasil</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="text-right">
+                          <div className="text-accent font-semibold">{earner.monthlyEarnings}</div>
+                          <div className="text-muted-foreground text-[10px]">mensal</div>
+                        </div>
+                        <div className="text-right">
+                          <div className="font-semibold text-foreground">{earner.totalEarnings}</div>
+                          <div className="text-muted-foreground text-[10px]">total</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Table View */}
+              <div className="hidden sm:block overflow-x-auto">
+                <table className="w-full">
                   <thead className="bg-primary text-primary-foreground">
                     <tr>
-                      <th className="text-left p-2 sm:p-3 lg:p-4 font-semibold text-xs sm:text-sm w-12 sm:w-16">Rank</th>
-                      <th className="text-left p-2 sm:p-3 lg:p-4 font-semibold text-xs sm:text-sm">Nome</th>
-                      <th className="text-left p-2 sm:p-3 lg:p-4 font-semibold text-xs sm:text-sm">Empresa</th>
-                      <th className="text-left p-2 sm:p-3 lg:p-4 font-semibold text-xs sm:text-sm hidden sm:table-cell">Renda</th>
-                      <th className="text-left p-2 sm:p-3 lg:p-4 font-semibold text-xs sm:text-sm hidden lg:table-cell">Total</th>
-                      <th className="text-left p-2 sm:p-3 lg:p-4 font-semibold text-xs sm:text-sm w-16 sm:w-24">Status</th>
+                      <th className="text-left p-3 lg:p-4 font-semibold text-sm w-16">Rank</th>
+                      <th className="text-left p-3 lg:p-4 font-semibold text-sm">Nome</th>
+                      <th className="text-left p-3 lg:p-4 font-semibold text-sm">Empresa</th>
+                      <th className="text-left p-3 lg:p-4 font-semibold text-sm">Renda</th>
+                      <th className="text-left p-3 lg:p-4 font-semibold text-sm hidden lg:table-cell">Total</th>
+                      <th className="text-left p-3 lg:p-4 font-semibold text-sm w-24">Status</th>
                     </tr>
                   </thead>
                   <tbody>
                     {topEarners.map((earner) => (
                       <tr key={earner.rank} className="border-b border-border hover:bg-muted/50 transition-colors">
-                        <td className="p-2 sm:p-3 lg:p-4">
-                          <div className={`inline-flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 rounded-full text-xs font-bold ${getRankBadgeColor(earner.rank)}`}>
-                            {earner.rank <= 3 ? <Crown className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> : earner.rank}
+                        <td className="p-3 lg:p-4">
+                          <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold ${getRankBadgeColor(earner.rank)}`}>
+                            {earner.rank <= 3 ? <Crown className="w-4 h-4" /> : earner.rank}
                           </div>
                         </td>
-                        <td className="p-2 sm:p-3 lg:p-4">
-                          <div className="flex items-center gap-2">
-                            <Avatar className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 flex-shrink-0">
+                        <td className="p-3 lg:p-4">
+                          <div className="flex items-center gap-3">
+                            <Avatar className="w-10 h-10 flex-shrink-0">
                               <AvatarImage src={earner.avatar} alt={earner.name} />
-                              <AvatarFallback className="bg-accent text-accent-foreground text-[10px] sm:text-xs">
+                              <AvatarFallback className="bg-accent text-accent-foreground text-xs">
                                 {earner.name.split(' ').map(n => n[0]).join('')}
                               </AvatarFallback>
                             </Avatar>
-                            <div className="min-w-0 flex-1">
-                              <div className="font-medium text-foreground text-xs sm:text-sm truncate max-w-[80px] sm:max-w-[120px] lg:max-w-none">{earner.name}</div>
-                              <div className="text-[10px] sm:text-xs text-muted-foreground flex items-center gap-1">
+                            <div>
+                              <div className="font-medium text-foreground text-sm">{earner.name}</div>
+                              <div className="text-xs text-muted-foreground flex items-center gap-1">
                                 <span className="fi fi-br w-3 h-3 rounded-sm"></span>
-                                <span className="hidden sm:inline">Brasil</span>
+                                <span>Brasil</span>
                               </div>
                             </div>
                           </div>
                         </td>
-                        <td className="p-2 sm:p-3 lg:p-4">
-                          <span className="font-medium text-foreground text-xs sm:text-sm">{earner.company}</span>
+                        <td className="p-3 lg:p-4">
+                          <span className="font-medium text-foreground text-sm">{earner.company}</span>
                         </td>
-                        <td className="p-2 sm:p-3 lg:p-4 hidden sm:table-cell">
-                          <div className="flex items-center gap-1 text-accent font-semibold text-xs sm:text-sm">
+                        <td className="p-3 lg:p-4">
+                          <div className="flex items-center gap-1 text-accent font-semibold text-sm">
                             <DollarSign className="w-3 h-3" />
-                            <span className="truncate">{earner.monthlyEarnings}</span>
+                            <span>{earner.monthlyEarnings}</span>
                           </div>
                         </td>
-                        <td className="p-2 sm:p-3 lg:p-4 hidden lg:table-cell">
+                        <td className="p-3 lg:p-4 hidden lg:table-cell">
                           <span className="font-semibold text-foreground text-sm">{earner.totalEarnings}</span>
                         </td>
-                        <td className="p-2 sm:p-3 lg:p-4">
+                        <td className="p-3 lg:p-4">
                           {earner.isVerified ? (
-                            <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200 text-[10px] sm:text-xs px-1.5 sm:px-2">
-                              <span className="hidden sm:inline">Verificado</span>
-                              <span className="sm:hidden">✓</span>
+                            <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200 text-xs px-2">
+                              Verificado
                             </Badge>
                           ) : (
-                            <Badge variant="outline" className="text-[10px] sm:text-xs px-1.5 sm:px-2">
-                              <span className="hidden sm:inline">Pendente</span>
-                              <span className="sm:hidden">⏳</span>
+                            <Badge variant="outline" className="text-xs px-2">
+                              Pendente
                             </Badge>
                           )}
                         </td>
@@ -190,9 +237,9 @@ export function TopEarnersSection() {
                 </table>
               </div>
               
-              <div className="p-3 sm:p-4 border-t border-border bg-muted/30">
+              <div className="p-4 border-t border-border bg-muted/30">
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
-                  <span className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
+                  <span className="text-sm text-muted-foreground text-center sm:text-left">
                     Mostrando 8 de 1,247 resultados
                   </span>
                   <div className="flex gap-2">
