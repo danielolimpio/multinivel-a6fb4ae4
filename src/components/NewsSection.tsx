@@ -34,19 +34,19 @@ export function NewsSection() {
   ];
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-12 sm:py-16 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold text-foreground">Últimas notícias</h2>
-          <Button variant="outline">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Últimas notícias</h2>
+          <Button variant="outline" className="text-sm">
             Ver todas
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
 
         {/* News Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
           {newsArticles.map((article) => (
             <Card key={article.id} className="overflow-hidden hover:shadow-card transition-all duration-300 hover:scale-[1.02]">
               <div className="aspect-video bg-muted relative overflow-hidden">
@@ -62,12 +62,12 @@ export function NewsSection() {
                 </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="font-semibold text-foreground mb-3 line-clamp-2 leading-tight">
+              <div className="p-4 sm:p-6">
+                <h3 className="font-semibold text-foreground mb-2 sm:mb-3 line-clamp-2 leading-tight text-sm sm:text-base">
                   {article.title}
                 </h3>
                 
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3">
                   {article.excerpt}
                 </p>
                 

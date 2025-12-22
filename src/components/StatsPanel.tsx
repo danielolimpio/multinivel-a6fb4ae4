@@ -34,27 +34,27 @@ export function StatsPanel() {
   ];
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-12 sm:py-16 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
               <Card 
                 key={index} 
-                className="p-6 text-center hover:shadow-card transition-all duration-300 hover:scale-105 animate-fade-in"
+                className="p-4 sm:p-6 text-center hover:shadow-card transition-all duration-300 hover:scale-105 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-muted mb-4 ${stat.color}`}>
-                  <Icon className="w-6 h-6" />
+                <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-muted mb-3 sm:mb-4 ${stat.color}`}>
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-1">
+                <h3 className="text-lg sm:text-2xl font-bold text-foreground mb-1">
                   {stat.value}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-2">
+                <p className="text-xs sm:text-sm text-muted-foreground mb-1 sm:mb-2">
                   {stat.label}
                 </p>
-                <p className={`text-xs font-medium ${stat.color}`}>
+                <p className={`text-[10px] sm:text-xs font-medium ${stat.color}`}>
                   {stat.change}
                 </p>
               </Card>
