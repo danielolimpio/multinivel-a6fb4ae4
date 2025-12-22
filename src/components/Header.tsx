@@ -366,8 +366,8 @@ export function Header() {
             <div className="md:hidden ml-auto">
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="outline" size="icon" className="h-12 w-12 bg-background shadow-lg border-2 border-primary/30">
-                    <Menu className="h-8 w-8 text-primary" />
+                  <Button variant="ghost" size="icon" className="h-14 w-14">
+                    <Menu className="h-10 w-10 text-primary" />
                     <span className="sr-only">Abrir menu</span>
                   </Button>
                 </SheetTrigger>
