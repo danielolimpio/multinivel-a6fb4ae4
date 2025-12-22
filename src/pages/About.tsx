@@ -242,10 +242,10 @@ const About = () => {
 
                 <Card className="border-gold/20 bg-card overflow-hidden">
                   <CardContent className="p-0">
-                    <div className="grid md:grid-cols-5 gap-0">
+                    <div className="grid md:grid-cols-3 gap-0">
                       {/* Photo Column */}
-                      <div className="md:col-span-2 relative">
-                        <div className="aspect-square md:aspect-auto md:h-full bg-gradient-to-br from-gold/20 to-gold-dark/20">
+                      <div className="md:col-span-1 relative">
+                        <div className="aspect-square bg-gradient-to-br from-gold/20 to-gold-dark/20 max-w-[280px] mx-auto md:max-w-none">
                           <img 
                             src={danielPhoto} 
                             alt="Daniel Olimpio - Fundador da Universidade Multinível" 
@@ -271,7 +271,7 @@ const About = () => {
                       </div>
 
                       {/* Content Column */}
-                      <div className="md:col-span-3 p-8 md:p-10">
+                      <div className="md:col-span-2 p-6 md:p-8">
                         <div className="flex flex-wrap gap-2 mb-6">
                           <span className="px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-medium">Empreendedor</span>
                           <span className="px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-medium">Networker há +20 anos</span>

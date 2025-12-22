@@ -122,13 +122,13 @@ export default function Blog() {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 pt-16 sm:pt-20">
         {/* Page Header */}
-        <div className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gradient-gold">
+        <div className="mb-8 sm:mb-12 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 text-gradient-gold">
             Blog UniversidadeMN
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Conteúdo exclusivo sobre educação financeira, empreendedorismo, carreira, tecnologia e inovação social no marketing de rede
           </p>
         </div>
@@ -148,10 +148,10 @@ export default function Blog() {
         </div>
 
         {/* Category Pills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-12 px-2">
           <Badge 
             variant={selectedCategory === "Todos" ? "default" : "outline"}
-            className="cursor-pointer px-4 py-2"
+            className="cursor-pointer px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm"
             onClick={() => setSelectedCategory("Todos")}
           >
             Todos
@@ -160,29 +160,30 @@ export default function Blog() {
             <Badge
               key={category.name}
               variant={selectedCategory === category.name ? "default" : "outline"}
-              className={`cursor-pointer px-4 py-2 ${selectedCategory === category.name ? category.color : ''}`}
+              className={`cursor-pointer px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm ${selectedCategory === category.name ? category.color : ''}`}
               onClick={() => setSelectedCategory(category.name)}
             >
-              {category.name} ({category.count})
+              <span className="hidden sm:inline">{category.name} ({category.count})</span>
+              <span className="sm:hidden">{category.name.split(' ')[0]}</span>
             </Badge>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Main Content - Blog Posts */}
-          <div className="lg:col-span-2">
-            <div className="space-y-6">
+          <div className="lg:col-span-2 order-2 lg:order-1">
+            <div className="space-y-4 sm:space-y-6">
               {filteredPosts.map((post) => (
                 <Card key={post.id} className="overflow-hidden hover:shadow-card transition-all duration-300 hover:scale-[1.01]">
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="md:col-span-1 aspect-video md:aspect-square bg-muted relative overflow-hidden">
+                  <div className="flex flex-col sm:grid sm:grid-cols-3 gap-0 sm:gap-4">
+                    <div className="sm:col-span-1 aspect-video sm:aspect-square bg-muted relative overflow-hidden">
                       <img 
                         src={post.image} 
                         alt={post.title}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute top-3 left-3">
-                        <Badge className={post.categoryColor}>
+                      <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
+                        <Badge className={`${post.categoryColor} text-xs`}>
                           {post.category}
                         </Badge>
                       </div>
@@ -193,20 +194,20 @@ export default function Blog() {
                       )}
                     </div>
                     
-                    <div className="md:col-span-2 p-6">
-                      <h2 className="font-bold text-xl text-foreground mb-3 line-clamp-2 leading-tight hover:text-gold-medium transition-colors">
+                    <div className="sm:col-span-2 p-4 sm:p-5">
+                      <h2 className="font-bold text-base sm:text-lg lg:text-xl text-foreground mb-2 sm:mb-3 line-clamp-2 leading-tight hover:text-gold-medium transition-colors">
                         {post.title}
                       </h2>
                       
-                      <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                      <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3">
                         {post.excerpt}
                       </p>
                       
-                      <div className="flex items-center justify-between text-xs text-muted-foreground flex-wrap gap-2">
-                        <div className="flex items-center gap-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-muted-foreground gap-2">
+                        <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
                           <div className="flex items-center gap-1">
                             <User className="w-3 h-3" />
-                            <span>{post.author}</span>
+                            <span className="truncate max-w-[80px] sm:max-w-none">{post.author}</span>
                           </div>
                           <div className="flex items-center gap-1">
                             <Calendar className="w-3 h-3" />
@@ -218,9 +219,9 @@ export default function Blog() {
                           </div>
                         </div>
                         
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center justify-between sm:justify-end gap-2 mt-2 sm:mt-0">
                           <span className="text-muted-foreground">{post.readTime}</span>
-                          <Button variant="ghost" size="sm" className="text-gold-medium hover:text-gold-dark p-0 h-auto font-semibold">
+                          <Button variant="ghost" size="sm" className="text-gold-medium hover:text-gold-dark p-0 h-auto font-semibold text-xs sm:text-sm">
                             Ler mais →
                           </Button>
                         </div>
@@ -240,7 +241,7 @@ export default function Blog() {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
             {/* Categories Card */}
             <Card className="p-6">
               <h3 className="font-bold text-lg mb-4 flex items-center gap-2">

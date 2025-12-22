@@ -228,28 +228,28 @@ export function RankingSection() {
     }
     return <span className="text-white font-bold text-sm">{position}</span>;
   };
-  return <section className="py-16 bg-background">
+  return <section className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-8">
-          <Badge variant="secondary" className="mb-3 px-3 py-1 bg-accent/10 text-accent">
-            <Trophy className="w-4 h-4 mr-2" />
+        <div className="text-center mb-6 sm:mb-8">
+          <Badge variant="secondary" className="mb-2 sm:mb-3 px-2 sm:px-3 py-1 bg-accent/10 text-accent text-xs sm:text-sm">
+            <Trophy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
             Ranking Atual
           </Badge>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 sm:mb-3">
             Top Empresas de Marketing de Rede
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto px-4">
             Ranking baseado em votos ativos dos últimos 30 dias
           </p>
         </div>
 
         {/* Compact Ranking Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
-          {topCompanies.map((company, index) => <Card key={company.id} className="p-3 sm:p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in" style={{
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+          {topCompanies.map((company, index) => <Card key={company.id} className="p-2.5 sm:p-3 md:p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in" style={{
           animationDelay: `${index * 50}ms`
         }}>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 md:gap-4">
                 {/* Position Badge */}
                 <div className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full ${getPositionColor(company.position)} shadow-md flex-shrink-0`}>
                   {getPositionIcon(company.position)}

@@ -431,14 +431,14 @@ export function Header() {
 
       {/* Main Header with Stats and Logo */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-24 sm:h-32 items-center justify-between relative">
+        <div className="flex h-20 sm:h-24 lg:h-32 items-center justify-between relative">
           {/* Left Stats - Desktop */}
           <div className="hidden lg:flex flex-1 justify-start">
-            <div className="flex items-center space-x-2 bg-muted/50 px-4 py-2 rounded-lg">
-              <DollarSign className="h-5 w-5 text-gold" />
+            <div className="flex items-center space-x-2 bg-muted/50 px-3 py-2 rounded-lg">
+              <DollarSign className="h-4 w-4 text-gold" />
               <div className="text-left">
-                <div className="text-lg font-bold text-foreground">46 bilhões</div>
-                <div className="text-xs text-muted-foreground">{currentTranslations.totalCommission}</div>
+                <div className="text-base font-bold text-foreground">46 bilhões</div>
+                <div className="text-[10px] text-muted-foreground">{currentTranslations.totalCommission}</div>
               </div>
             </div>
           </div>
@@ -448,7 +448,7 @@ export function Header() {
             <img 
               src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
               alt="Logo" 
-              className="h-32 w-32 sm:h-36 sm:w-36 lg:h-32 lg:w-32 object-contain relative z-50 mt-12 sm:mt-16 lg:mt-0" 
+              className="h-24 w-24 sm:h-28 sm:w-28 lg:h-32 lg:w-32 object-contain relative z-50 mt-8 sm:mt-10 lg:mt-0" 
               style={{
                 filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
               }}
