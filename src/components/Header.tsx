@@ -363,61 +363,78 @@ export function Header() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="md:hidden absolute right-4 top-1/2 transform -translate-y-1/2">
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="sm">
-                    <Menu className="h-5 w-5" />
+                  <Button variant="ghost" size="icon" className="h-10 w-10">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Abrir menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent>
-                  <div className="flex flex-col items-center space-y-4 mt-8">
-                    <img 
-                      src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
-                      alt="Logo" 
-                      className="h-16 w-16 object-contain mb-4" 
-                    />
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="text-muted-foreground hover:text-primary px-3 py-2 rounded-md text-base font-medium transition-colors"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                    <div className="border-t pt-4 space-y-2 w-full">
-                      <div className="text-center">
-                        <DropdownMenu>
-                          <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="w-full justify-center gap-2">
+                <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0">
+                  <div className="flex flex-col h-full">
+                    {/* Header with Logo */}
+                    <div className="flex items-center justify-center p-4 border-b border-border bg-muted/30">
+                      <img 
+                        src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
+                        alt="Logo" 
+                        className="h-14 w-14 object-contain" 
+                      />
+                    </div>
+                    
+                    {/* Navigation Links */}
+                    <div className="flex-1 overflow-y-auto py-4">
+                      <nav className="flex flex-col">
+                        {navigation.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="text-foreground hover:text-primary hover:bg-muted/50 px-6 py-3 text-base font-medium transition-colors border-b border-border/50"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </nav>
+                    </div>
+                    
+                    {/* Footer Actions */}
+                    <div className="border-t border-border p-4 space-y-3 bg-muted/20">
+                      {/* Language Selector */}
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="outline" className="w-full justify-between gap-2 h-10">
+                            <div className="flex items-center gap-2">
                               <FlagIcon countryCode={selectedLanguage} size="sm" />
-                              {languages.find(lang => lang.code === selectedLanguage)?.name}
-                              <ChevronDown className="h-3 w-3" />
-                            </Button>
-                          </DropdownMenuTrigger>
-                          <DropdownMenuContent align="center" className="w-40">
-                            {languages.map((language) => (
-                              <DropdownMenuItem
-                                key={language.code}
-                                onClick={() => setSelectedLanguage(language.code)}
-                                className="flex items-center gap-2 cursor-pointer py-1.5"
-                              >
-                                <FlagIcon countryCode={language.code} size="sm" />
-                                <span className="text-sm">{language.name}</span>
-                              </DropdownMenuItem>
-                            ))}
-                          </DropdownMenuContent>
-                        </DropdownMenu>
+                              <span className="text-sm">{languages.find(lang => lang.code === selectedLanguage)?.name}</span>
+                            </div>
+                            <ChevronDown className="h-4 w-4" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="center" className="w-[248px] sm:w-[288px] max-h-[300px] overflow-y-auto">
+                          {languages.map((language) => (
+                            <DropdownMenuItem
+                              key={language.code}
+                              onClick={() => setSelectedLanguage(language.code)}
+                              className="flex items-center gap-2 cursor-pointer py-2"
+                            >
+                              <FlagIcon countryCode={language.code} size="sm" />
+                              <span className="text-sm">{language.name}</span>
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                      
+                      {/* Auth Buttons */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <Button variant="outline" className="h-10 text-sm" onClick={() => { window.location.href = '/auth'; setIsMenuOpen(false); }}>
+                          Afiliado
+                        </Button>
+                        <Button variant="secondary" className="h-10 text-sm" onClick={() => { window.location.href = '/admin/auth'; setIsMenuOpen(false); }}>
+                          Admin
+                        </Button>
                       </div>
-                      <Button variant="outline" className="w-full" onClick={() => window.location.href = '/auth'}>
-                        Login Afiliado
-                      </Button>
-                      <Button variant="secondary" className="w-full" onClick={() => window.location.href = '/admin/auth'}>
-                        Login Admin
-                      </Button>
-                      <Button className="w-full bg-gradient-primary hover:opacity-90" onClick={() => window.location.href = '/auth'}>
+                      <Button className="w-full h-11 bg-gradient-primary hover:opacity-90 text-sm font-semibold" onClick={() => { window.location.href = '/auth'; setIsMenuOpen(false); }}>
                         {currentTranslations.register}
                       </Button>
                     </div>
