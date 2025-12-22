@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 // Mock data
 const questions = [
@@ -134,17 +136,19 @@ const Forum = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="bg-gradient-primary text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4">Bem-vindo ao Fórum</h1>
-          <p className="text-xl mb-6">Faça perguntas, obtenha respostas sem complicação</p>
-          <Button size="lg" variant="secondary">
-            Criar Nova Conta
-          </Button>
+    <>
+      <Header />
+      <div className="min-h-screen bg-background">
+        {/* Hero Header */}
+        <div className="bg-gradient-primary text-white py-12">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4">Bem-vindo ao Fórum</h1>
+            <p className="text-lg sm:text-xl mb-6">Faça perguntas, obtenha respostas sem complicação</p>
+            <Button size="lg" variant="secondary">
+              Criar Nova Conta
+            </Button>
+          </div>
         </div>
-      </div>
 
       <div className="container mx-auto px-4 py-8">
         {/* Search Bar */}
@@ -352,7 +356,9 @@ const Forum = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 
