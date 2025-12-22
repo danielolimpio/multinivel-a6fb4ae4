@@ -7,11 +7,21 @@ import { Vote, Trophy, ArrowRight, Eye } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+// Import company logos
+import hinodeLogo from "@/assets/logos/hinode.jpeg";
+import herbalifeLogo from "@/assets/logos/herbalife.jpeg";
+import vorwerkLogo from "@/assets/logos/vorwerk.jpeg";
+import fourLifeLogo from "@/assets/logos/4life.jpeg";
+import nuSkinLogo from "@/assets/logos/nuskin.jpeg";
+import maryKayLogo from "@/assets/logos/marykay.jpeg";
+import amwayLogo from "@/assets/logos/amway.jpeg";
+import ozonteckLogo from "@/assets/logos/ozonteck.jpeg";
+
 // Mock data for top companies
 const topCompanies = [{
   id: 1,
   name: "Hinode",
-  logo: "/placeholder.svg",
+  logo: hinodeLogo,
   position: 1,
   votes: 2847,
   maxVotes: 3000,
@@ -39,7 +49,7 @@ const topCompanies = [{
 }, {
   id: 2,
   name: "Herbalife",
-  logo: "/placeholder.svg",
+  logo: herbalifeLogo,
   position: 2,
   votes: 2634,
   maxVotes: 3000,
@@ -66,8 +76,8 @@ const topCompanies = [{
   }]
 }, {
   id: 3,
-  name: "Jeunesse",
-  logo: "/placeholder.svg",
+  name: "Vorwerk",
+  logo: vorwerkLogo,
   position: 3,
   votes: 2398,
   maxVotes: 3000,
@@ -95,7 +105,7 @@ const topCompanies = [{
 }, {
   id: 4,
   name: "4Life",
-  logo: "/placeholder.svg",
+  logo: fourLifeLogo,
   position: 4,
   votes: 2156,
   maxVotes: 3000,
@@ -123,7 +133,7 @@ const topCompanies = [{
 }, {
   id: 5,
   name: "Nu Skin",
-  logo: "/placeholder.svg",
+  logo: nuSkinLogo,
   position: 5,
   votes: 1987,
   maxVotes: 3000,
@@ -151,7 +161,7 @@ const topCompanies = [{
 }, {
   id: 6,
   name: "Mary Kay",
-  logo: "/placeholder.svg",
+  logo: maryKayLogo,
   position: 6,
   votes: 1823,
   maxVotes: 3000,
@@ -171,7 +181,7 @@ const topCompanies = [{
 }, {
   id: 7,
   name: "Amway",
-  logo: "/placeholder.svg",
+  logo: amwayLogo,
   position: 7,
   votes: 1654,
   maxVotes: 3000,
@@ -190,8 +200,8 @@ const topCompanies = [{
   }]
 }, {
   id: 8,
-  name: "Natura",
-  logo: "/placeholder.svg",
+  name: "Ozonteck",
+  logo: ozonteckLogo,
   position: 8,
   votes: 1542,
   maxVotes: 3000,
@@ -258,7 +268,7 @@ export function RankingSection() {
                 {/* Company Info */}
                 <div className="flex-1 min-w-0 w-full">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
-                    <img src={company.logo} alt={`${company.name} logo`} className="w-6 h-6 sm:w-8 sm:h-8 rounded object-cover bg-muted flex-shrink-0" />
+                    <img src={company.logo} alt={`${company.name} logo`} className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg object-cover bg-muted flex-shrink-0 shadow-md" />
                     <div className="min-w-0">
                       <h3 className="font-semibold text-foreground text-base sm:text-lg">{company.name}</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground">
