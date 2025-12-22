@@ -362,20 +362,16 @@ export function Header() {
               </Button>
             </div>
 
-            {/* Mobile menu button - positioned at top right of header */}
-            <div className="md:hidden fixed right-4 top-3 z-[60]">
+            {/* Mobile menu button */}
+            <div className="md:hidden ml-auto">
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
                   <Button variant="outline" size="icon" className="h-12 w-12 bg-background shadow-lg border-2 border-primary/30">
-                    {isMenuOpen ? (
-                      <X className="h-8 w-8 text-primary" />
-                    ) : (
-                      <Menu className="h-8 w-8 text-primary" />
-                    )}
+                    <Menu className="h-8 w-8 text-primary" />
                     <span className="sr-only">Abrir menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0">
+                <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0 z-[100]">
                   <div className="flex flex-col h-full">
                     {/* Header with Logo */}
                     <div className="flex items-center justify-center p-4 border-b border-border bg-muted/30">
