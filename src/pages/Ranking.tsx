@@ -29,12 +29,24 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
+// Import company logos
+import hinodeLogo from "@/assets/logos/hinode.jpeg";
+import herbalifeLogo from "@/assets/logos/herbalife.jpeg";
+import vorwerkLogo from "@/assets/logos/vorwerk.jpeg";
+import foreverLogo from "@/assets/logos/forever.jpeg";
+import nuSkinLogo from "@/assets/logos/nuskin.jpeg";
+import maryKayLogo from "@/assets/logos/marykay.jpeg";
+import amwayLogo from "@/assets/logos/amway.jpeg";
+import ozonteckLogo from "@/assets/logos/ozonteck.jpeg";
+import cowayLogo from "@/assets/logos/coway.jpeg";
+import fourLifeLogo from "@/assets/logos/4life.jpeg";
+
 // Extended mock data for full ranking
 const rankingData = [
   {
     id: 1,
     name: "Hinode",
-    logo: "/lovable-uploads/japan-flag.png",
+    logo: hinodeLogo,
     position: 1,
     previousPosition: 1,
     votes: 2847,
@@ -56,7 +68,7 @@ const rankingData = [
   {
     id: 2,
     name: "Herbalife",
-    logo: "/lovable-uploads/brasil-flag.png",
+    logo: herbalifeLogo,
     position: 2,
     previousPosition: 3,
     votes: 2634,
@@ -75,18 +87,18 @@ const rankingData = [
   },
   {
     id: 3,
-    name: "Jeunesse",
-    logo: "/lovable-uploads/brasil-flag.png",
+    name: "Vorwerk",
+    logo: vorwerkLogo,
     position: 3,
     previousPosition: 2,
     votes: 2398,
     maxVotes: 3000,
     rating: 4.6,
-    category: "Anti-idade & Bem-estar",
-    founded: "2009",
-    country: "Estados Unidos",
-    description: "Empresa americana focada em produtos anti-idade revolucionários",
-    highlights: ["Tecnologia de células-tronco", "Crescimento exponencial", "Produtos inovadores"],
+    category: "Eletrodomésticos Premium",
+    founded: "1883",
+    country: "Alemanha",
+    description: "Empresa alemã líder em eletrodomésticos premium e venda direta",
+    highlights: ["140+ anos de história", "Thermomix mundialmente famoso", "Qualidade alemã"],
     recentVoters: [
       { name: "Patricia Rocha", avatar: "/placeholder.svg", city: "Manaus" },
       { name: "Marcos Alves", avatar: "/placeholder.svg", city: "Belém" }
@@ -95,7 +107,7 @@ const rankingData = [
   {
     id: 4,
     name: "Forever Living",
-    logo: "/lovable-uploads/brasil-flag.png",
+    logo: foreverLogo,
     position: 4,
     previousPosition: 5,
     votes: 2156,
@@ -114,7 +126,7 @@ const rankingData = [
   {
     id: 5,
     name: "Nu Skin",
-    logo: "/lovable-uploads/brasil-flag.png",
+    logo: nuSkinLogo,
     position: 5,
     previousPosition: 4,
     votes: 1987,
@@ -132,7 +144,7 @@ const rankingData = [
   {
     id: 6,
     name: "Mary Kay",
-    logo: "/placeholder.svg",
+    logo: maryKayLogo,
     position: 6,
     previousPosition: 6,
     votes: 1823,
@@ -148,7 +160,7 @@ const rankingData = [
   {
     id: 7,
     name: "Amway",
-    logo: "/placeholder.svg",
+    logo: amwayLogo,
     position: 7,
     previousPosition: 7,
     votes: 1654,
@@ -163,50 +175,50 @@ const rankingData = [
   },
   {
     id: 8,
-    name: "Natura",
-    logo: "/placeholder.svg",
+    name: "Ozonteck",
+    logo: ozonteckLogo,
     position: 8,
     previousPosition: 9,
     votes: 1542,
     maxVotes: 3000,
     rating: 4.1,
-    category: "Cosméticos Sustentáveis",
-    founded: "1969",
+    category: "Ozônio & Tecnologia",
+    founded: "2020",
     country: "Brasil",
-    description: "Líder em cosméticos sustentáveis na América Latina",
-    highlights: ["Sustentabilidade ambiental", "Ingredientes amazônicos", "B Corp certificada"],
+    description: "Empresa brasileira inovadora em tecnologia de ozônio",
+    highlights: ["Tecnologia sustentável", "Inovação brasileira", "Crescimento acelerado"],
     recentVoters: []
   },
   {
     id: 9,
-    name: "Tupperware",
-    logo: "/placeholder.svg",
+    name: "Coway",
+    logo: cowayLogo,
     position: 9,
     previousPosition: 8,
     votes: 1398,
     maxVotes: 3000,
     rating: 4.0,
-    category: "Utensílios Domésticos",
-    founded: "1946",
-    country: "Estados Unidos",
-    description: "Pioneira em vendas diretas e demonstrações em casa",
-    highlights: ["77+ anos de história", "Marca icônica", "Sustentabilidade"],
+    category: "Purificação & Bem-estar",
+    founded: "1989",
+    country: "Coreia do Sul",
+    description: "Líder mundial em purificadores de água e ar",
+    highlights: ["35+ anos de mercado", "Tecnologia coreana", "Líder em purificação"],
     recentVoters: []
   },
   {
     id: 10,
-    name: "Oriflame",
-    logo: "/placeholder.svg",
+    name: "4Life",
+    logo: fourLifeLogo,
     position: 10,
     previousPosition: 10,
     votes: 1287,
     maxVotes: 3000,
     rating: 3.9,
-    category: "Cosméticos",
-    founded: "1967",
-    country: "Suécia",
-    description: "Empresa europeia de cosméticos naturais",
-    highlights: ["Origem escandinava", "Produtos naturais", "Presente em 60+ países"],
+    category: "Sistema Imunológico",
+    founded: "1998",
+    country: "Estados Unidos",
+    description: "Pioneira em tecnologia Transfer Factor para imunidade",
+    highlights: ["Transfer Factor exclusivo", "25+ anos de ciência", "Presente em 50+ países"],
     recentVoters: []
   }
 ];
@@ -406,7 +418,7 @@ export default function Ranking() {
                     <img 
                       src={company.logo} 
                       alt={company.name} 
-                      className="w-16 h-16 rounded-xl object-cover bg-muted shadow-md"
+                      className="w-20 h-20 rounded-xl object-cover bg-muted shadow-lg"
                     />
                     <div>
                       <h3 className="text-xl font-bold text-foreground">{company.name}</h3>
@@ -495,7 +507,7 @@ export default function Ranking() {
                       <img 
                         src={company.logo} 
                         alt={company.name} 
-                        className="w-12 h-12 rounded-lg object-cover bg-muted flex-shrink-0"
+                        className="w-16 h-16 rounded-lg object-cover bg-muted flex-shrink-0 shadow-md"
                       />
                       <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-center gap-2">
