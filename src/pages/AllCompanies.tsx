@@ -10,16 +10,38 @@ import { Input } from "@/components/ui/input";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-// Extended mock data for all companies
+// Import all company logos
+import hinode from "@/assets/logos/hinode.jpeg";
+import herbalife from "@/assets/logos/herbalife.jpeg";
+import vorwerk from "@/assets/logos/vorwerk.jpeg";
+import fourlife from "@/assets/logos/4life.jpeg";
+import nuskin from "@/assets/logos/nuskin.jpeg";
+import marykay from "@/assets/logos/marykay.jpeg";
+import amway from "@/assets/logos/amway.jpeg";
+import ozonteck from "@/assets/logos/ozonteck.jpeg";
+import forever from "@/assets/logos/forever.jpeg";
+import coway from "@/assets/logos/coway.jpeg";
+import infinitus from "@/assets/logos/infinitus.jpeg";
+import janrose from "@/assets/logos/janrose.jpeg";
+import melaleuca from "@/assets/logos/melaleuca.jpeg";
+import omnilife from "@/assets/logos/omnilife.jpeg";
+import oriflame from "@/assets/logos/oriflame.jpeg";
+import primerica from "@/assets/logos/primerica.jpeg";
+import royalprestige from "@/assets/logos/royalprestige.jpeg";
+import tupperware from "@/assets/logos/tupperware.jpeg";
+import utilitywarehouse from "@/assets/logos/utilitywarehouse.jpeg";
+
+// All 20 companies data
 const allCompanies = [
   {
     id: 1,
     name: "Hinode",
-    logo: "/placeholder.svg",
+    logo: hinode,
     position: 1,
     votes: 2847,
     maxVotes: 3000,
     category: "Cosméticos",
+    slug: "hinode",
     recentVoters: [
       { name: "Ana Silva", avatar: "/placeholder.svg", city: "São Paulo" },
       { name: "João Costa", avatar: "/placeholder.svg", city: "Rio de Janeiro" },
@@ -31,11 +53,12 @@ const allCompanies = [
   {
     id: 2,
     name: "Herbalife",
-    logo: "/placeholder.svg",
+    logo: herbalife,
     position: 2,
     votes: 2634,
     maxVotes: 3000,
     category: "Nutrição",
+    slug: "herbalife",
     recentVoters: [
       { name: "Roberto Silva", avatar: "/placeholder.svg", city: "Curitiba" },
       { name: "Lucia Mendes", avatar: "/placeholder.svg", city: "Fortaleza" },
@@ -46,12 +69,13 @@ const allCompanies = [
   },
   {
     id: 3,
-    name: "Jeunesse",
-    logo: "/placeholder.svg",
+    name: "Vorwerk",
+    logo: vorwerk,
     position: 3,
     votes: 2398,
     maxVotes: 3000,
-    category: "Anti-aging",
+    category: "Eletrodomésticos",
+    slug: "vorwerk",
     recentVoters: [
       { name: "Patricia Rocha", avatar: "/placeholder.svg", city: "Manaus" },
       { name: "Marcos Alves", avatar: "/placeholder.svg", city: "Belém" },
@@ -63,11 +87,12 @@ const allCompanies = [
   {
     id: 4,
     name: "4Life",
-    logo: "/placeholder.svg", 
+    logo: fourlife,
     position: 4,
     votes: 2156,
     maxVotes: 3000,
     category: "Suplementos",
+    slug: "4life",
     recentVoters: [
       { name: "Gustavo Reis", avatar: "/placeholder.svg", city: "Florianópolis" },
       { name: "Camila Torres", avatar: "/placeholder.svg", city: "Maceió" },
@@ -79,11 +104,12 @@ const allCompanies = [
   {
     id: 5,
     name: "Nu Skin",
-    logo: "/placeholder.svg",
+    logo: nuskin,
     position: 5,
     votes: 1987,
     maxVotes: 3000,
     category: "Cuidados Pessoais",
+    slug: "nuskin",
     recentVoters: [
       { name: "Amanda Souza", avatar: "/placeholder.svg", city: "Campo Grande" },
       { name: "Rodrigo Martins", avatar: "/placeholder.svg", city: "Cuiabá" },
@@ -95,11 +121,12 @@ const allCompanies = [
   {
     id: 6,
     name: "Mary Kay",
-    logo: "/placeholder.svg",
+    logo: marykay,
     position: 6,
     votes: 1823,
     maxVotes: 3000,
     category: "Cosméticos",
+    slug: "marykay",
     recentVoters: [
       { name: "Beatriz Alves", avatar: "/placeholder.svg", city: "Campinas" },
       { name: "Rafael Santos", avatar: "/placeholder.svg", city: "Santos" },
@@ -109,11 +136,12 @@ const allCompanies = [
   {
     id: 7,
     name: "Amway",
-    logo: "/placeholder.svg",
+    logo: amway,
     position: 7,
     votes: 1654,
     maxVotes: 3000,
     category: "Múltiplas Categorias",
+    slug: "amway",
     recentVoters: [
       { name: "Lucas Pereira", avatar: "/placeholder.svg", city: "Ribeirão Preto" },
       { name: "Monica Lima", avatar: "/placeholder.svg", city: "Osasco" },
@@ -122,12 +150,13 @@ const allCompanies = [
   },
   {
     id: 8,
-    name: "Natura",
-    logo: "/placeholder.svg",
+    name: "Ozonteck",
+    logo: ozonteck,
     position: 8,
     votes: 1542,
     maxVotes: 3000,
-    category: "Cosméticos",
+    category: "Tecnologia",
+    slug: "ozonteck",
     recentVoters: [
       { name: "Adriana Silva", avatar: "/placeholder.svg", city: "Guarulhos" },
       { name: "Marcos Oliveira", avatar: "/placeholder.svg", city: "Campina Grande" },
@@ -136,11 +165,12 @@ const allCompanies = [
   {
     id: 9,
     name: "Forever Living",
-    logo: "/placeholder.svg",
+    logo: forever,
     position: 9,
     votes: 1423,
     maxVotes: 3000,
     category: "Aloe Vera",
+    slug: "forever",
     recentVoters: [
       { name: "Isabella Costa", avatar: "/placeholder.svg", city: "Joinville" },
       { name: "Gabriel Rocha", avatar: "/placeholder.svg", city: "Londrina" },
@@ -148,12 +178,13 @@ const allCompanies = [
   },
   {
     id: 10,
-    name: "Avon",
-    logo: "/placeholder.svg",
+    name: "Coway",
+    logo: coway,
     position: 10,
     votes: 1387,
     maxVotes: 3000,
-    category: "Cosméticos",
+    category: "Purificadores",
+    slug: "coway",
     recentVoters: [
       { name: "Sophia Martins", avatar: "/placeholder.svg", city: "Maringá" },
       { name: "Henrique Silva", avatar: "/placeholder.svg", city: "Caxias do Sul" },
@@ -161,12 +192,13 @@ const allCompanies = [
   },
   {
     id: 11,
-    name: "Tupperware",
-    logo: "/placeholder.svg",
+    name: "Infinitus",
+    logo: infinitus,
     position: 11,
     votes: 1298,
     maxVotes: 3000,
-    category: "Utilidades Domésticas",
+    category: "Medicina Tradicional",
+    slug: "infinitus",
     recentVoters: [
       { name: "Larissa Oliveira", avatar: "/placeholder.svg", city: "Uberlândia" },
       { name: "Rafael Pereira", avatar: "/placeholder.svg", city: "Juiz de Fora" },
@@ -174,15 +206,128 @@ const allCompanies = [
   },
   {
     id: 12,
-    name: "Oriflame",
-    logo: "/placeholder.svg",
+    name: "Jan Rosê",
+    logo: janrose,
     position: 12,
     votes: 1245,
     maxVotes: 3000,
     category: "Cosméticos",
+    slug: "janrose",
     recentVoters: [
       { name: "Yasmin Santos", avatar: "/placeholder.svg", city: "Niterói" },
       { name: "Leonardo Costa", avatar: "/placeholder.svg", city: "Petrópolis" },
+    ]
+  },
+  {
+    id: 13,
+    name: "Melaleuca",
+    logo: melaleuca,
+    position: 13,
+    votes: 1189,
+    maxVotes: 3000,
+    category: "Bem-estar",
+    slug: "melaleuca",
+    recentVoters: [
+      { name: "Carolina Lima", avatar: "/placeholder.svg", city: "Blumenau" },
+      { name: "Fábio Santos", avatar: "/placeholder.svg", city: "Itajaí" },
+    ]
+  },
+  {
+    id: 14,
+    name: "Omnilife",
+    logo: omnilife,
+    position: 14,
+    votes: 1134,
+    maxVotes: 3000,
+    category: "Nutrição",
+    slug: "omnilife",
+    recentVoters: [
+      { name: "Renata Alves", avatar: "/placeholder.svg", city: "São Carlos" },
+      { name: "Vinicius Rocha", avatar: "/placeholder.svg", city: "Araraquara" },
+    ]
+  },
+  {
+    id: 15,
+    name: "Oriflame",
+    logo: oriflame,
+    position: 15,
+    votes: 1078,
+    maxVotes: 3000,
+    category: "Cosméticos",
+    slug: "oriflame",
+    recentVoters: [
+      { name: "Mariana Costa", avatar: "/placeholder.svg", city: "Franca" },
+      { name: "Diego Martins", avatar: "/placeholder.svg", city: "Bauru" },
+    ]
+  },
+  {
+    id: 16,
+    name: "Primerica",
+    logo: primerica,
+    position: 16,
+    votes: 1023,
+    maxVotes: 3000,
+    category: "Serviços Financeiros",
+    slug: "primerica",
+    recentVoters: [
+      { name: "Aline Ferreira", avatar: "/placeholder.svg", city: "Piracicaba" },
+      { name: "Bruno Lima", avatar: "/placeholder.svg", city: "Limeira" },
+    ]
+  },
+  {
+    id: 17,
+    name: "Royal Prestige",
+    logo: royalprestige,
+    position: 17,
+    votes: 967,
+    maxVotes: 3000,
+    category: "Utensílios de Cozinha",
+    slug: "royalprestige",
+    recentVoters: [
+      { name: "Fernanda Souza", avatar: "/placeholder.svg", city: "Taubaté" },
+      { name: "Gustavo Almeida", avatar: "/placeholder.svg", city: "Jacareí" },
+    ]
+  },
+  {
+    id: 18,
+    name: "Tupperware",
+    logo: tupperware,
+    position: 18,
+    votes: 912,
+    maxVotes: 3000,
+    category: "Utilidades Domésticas",
+    slug: "tupperware",
+    recentVoters: [
+      { name: "Paula Rocha", avatar: "/placeholder.svg", city: "Mogi das Cruzes" },
+      { name: "Ricardo Mendes", avatar: "/placeholder.svg", city: "Suzano" },
+    ]
+  },
+  {
+    id: 19,
+    name: "Utility Warehouse",
+    logo: utilitywarehouse,
+    position: 19,
+    votes: 856,
+    maxVotes: 3000,
+    category: "Serviços Essenciais",
+    slug: "utilitywarehouse",
+    recentVoters: [
+      { name: "Carla Santos", avatar: "/placeholder.svg", city: "Santo André" },
+      { name: "Marcelo Costa", avatar: "/placeholder.svg", city: "São Bernardo" },
+    ]
+  },
+  {
+    id: 20,
+    name: "Hinode Premium",
+    logo: hinode,
+    position: 20,
+    votes: 801,
+    maxVotes: 3000,
+    category: "Cosméticos Premium",
+    slug: "hinode-premium",
+    recentVoters: [
+      { name: "Juliana Lima", avatar: "/placeholder.svg", city: "Diadema" },
+      { name: "Alexandre Oliveira", avatar: "/placeholder.svg", city: "Mauá" },
     ]
   }
 ];
@@ -192,7 +337,7 @@ export default function AllCompanies() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const categories = ["all", "Cosméticos", "Nutrição", "Anti-aging", "Suplementos", "Cuidados Pessoais", "Múltiplas Categorias", "Aloe Vera", "Utilidades Domésticas"];
+  const categories = ["all", "Cosméticos", "Nutrição", "Suplementos", "Cuidados Pessoais", "Múltiplas Categorias", "Aloe Vera", "Utilidades Domésticas", "Eletrodomésticos", "Tecnologia", "Purificadores", "Medicina Tradicional", "Bem-estar", "Serviços Financeiros", "Utensílios de Cozinha", "Serviços Essenciais", "Cosméticos Premium"];
 
   const filteredCompanies = allCompanies.filter(company => {
     const matchesSearch = company.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -359,10 +504,12 @@ export default function AllCompanies() {
                   
                   {/* Actions */}
                   <div className="flex gap-2 pt-2">
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <Eye className="w-4 h-4 mr-2" />
-                      Ver Detalhes
-                    </Button>
+                    <Link to={`/empresa/${company.slug}`} className="flex-1">
+                      <Button variant="outline" size="sm" className="w-full">
+                        <Eye className="w-4 h-4 mr-2" />
+                        Ver Detalhes
+                      </Button>
+                    </Link>
                     <Button size="sm" className="flex-1 bg-gradient-primary">
                       <Vote className="w-4 h-4 mr-2" />
                       Votar Agora
