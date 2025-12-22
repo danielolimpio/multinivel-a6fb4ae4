@@ -40,6 +40,15 @@ import amwayLogo from "@/assets/logos/amway.jpeg";
 import ozonteckLogo from "@/assets/logos/ozonteck.jpeg";
 import cowayLogo from "@/assets/logos/coway.jpeg";
 import fourLifeLogo from "@/assets/logos/4life.jpeg";
+import infinitusLogo from "@/assets/logos/infinitus.jpeg";
+import janroseLogo from "@/assets/logos/janrose.jpeg";
+import melaleucaLogo from "@/assets/logos/melaleuca.jpeg";
+import omnilifeLogo from "@/assets/logos/omnilife.jpeg";
+import oriflameLogo from "@/assets/logos/oriflame.jpeg";
+import primericaLogo from "@/assets/logos/primerica.jpeg";
+import royalprestigeLogo from "@/assets/logos/royalprestige.jpeg";
+import tupperwareLogo from "@/assets/logos/tupperware.jpeg";
+import utilitywarehouseLogo from "@/assets/logos/utilitywarehouse.jpeg";
 
 // Extended mock data for full ranking
 const rankingData = [
@@ -219,6 +228,166 @@ const rankingData = [
     country: "Estados Unidos",
     description: "Pioneira em tecnologia Transfer Factor para imunidade",
     highlights: ["Transfer Factor exclusivo", "25+ anos de ciência", "Presente em 50+ países"],
+    recentVoters: []
+  },
+  {
+    id: 11,
+    name: "Infinitus",
+    logo: infinitusLogo,
+    position: 11,
+    previousPosition: 12,
+    votes: 1198,
+    maxVotes: 3000,
+    rating: 3.8,
+    category: "Medicina Tradicional Chinesa",
+    founded: "1992",
+    country: "China",
+    description: "Líder global em produtos de saúde baseados na medicina tradicional chinesa",
+    highlights: ["Raízes na medicina chinesa", "30+ anos de mercado", "Presença global"],
+    recentVoters: []
+  },
+  {
+    id: 12,
+    name: "Jan Rosê",
+    logo: janroseLogo,
+    position: 12,
+    previousPosition: 11,
+    votes: 1156,
+    maxVotes: 3000,
+    rating: 3.7,
+    category: "Cosméticos & Perfumaria",
+    founded: "2019",
+    country: "Brasil",
+    description: "Empresa brasileira de cosméticos e perfumaria com crescimento acelerado",
+    highlights: ["Marca brasileira", "Produtos inovadores", "Crescimento exponencial"],
+    recentVoters: []
+  },
+  {
+    id: 13,
+    name: "Melaleuca",
+    logo: melaleucaLogo,
+    position: 13,
+    previousPosition: 13,
+    votes: 1087,
+    maxVotes: 3000,
+    rating: 3.7,
+    category: "Bem-estar & Casa",
+    founded: "1985",
+    country: "Estados Unidos",
+    description: "The Wellness Company - produtos naturais para saúde e casa",
+    highlights: ["Produtos eco-friendly", "38+ anos de mercado", "Foco em bem-estar familiar"],
+    recentVoters: []
+  },
+  {
+    id: 14,
+    name: "Omnilife",
+    logo: omnilifeLogo,
+    position: 14,
+    previousPosition: 15,
+    votes: 1023,
+    maxVotes: 3000,
+    rating: 3.6,
+    category: "Nutrição & Suplementos",
+    founded: "1991",
+    country: "México",
+    description: "Gente que cuida de gente - suplementos nutricionais de alta qualidade",
+    highlights: ["Forte presença latina", "33+ anos de história", "Tecnologia micelização"],
+    recentVoters: []
+  },
+  {
+    id: 15,
+    name: "Oriflame",
+    logo: oriflameLogo,
+    position: 15,
+    previousPosition: 14,
+    votes: 987,
+    maxVotes: 3000,
+    rating: 3.6,
+    category: "Cosméticos Naturais",
+    founded: "1967",
+    country: "Suécia",
+    description: "Empresa europeia de cosméticos naturais de origem sueca",
+    highlights: ["Origem escandinava", "Produtos naturais", "56+ anos de tradição"],
+    recentVoters: []
+  },
+  {
+    id: 16,
+    name: "Primerica",
+    logo: primericaLogo,
+    position: 16,
+    previousPosition: 16,
+    votes: 934,
+    maxVotes: 3000,
+    rating: 3.5,
+    category: "Serviços Financeiros",
+    founded: "1977",
+    country: "Estados Unidos",
+    description: "Líder em serviços financeiros e seguros de vida via venda direta",
+    highlights: ["Serviços financeiros", "46+ anos de mercado", "Foco em educação financeira"],
+    recentVoters: []
+  },
+  {
+    id: 17,
+    name: "Royal Prestige",
+    logo: royalprestigeLogo,
+    position: 17,
+    previousPosition: 18,
+    votes: 876,
+    maxVotes: 3000,
+    rating: 3.5,
+    category: "Utensílios de Cozinha",
+    founded: "1959",
+    country: "Estados Unidos",
+    description: "Líder em utensílios de cozinha premium e sistemas de cocção",
+    highlights: ["65+ anos de qualidade", "Utensílios premium", "Garantia vitalícia"],
+    recentVoters: []
+  },
+  {
+    id: 18,
+    name: "Tupperware",
+    logo: tupperwareLogo,
+    position: 18,
+    previousPosition: 17,
+    votes: 823,
+    maxVotes: 3000,
+    rating: 3.4,
+    category: "Utensílios Domésticos",
+    founded: "1946",
+    country: "Estados Unidos",
+    description: "Pioneira em vendas diretas e demonstrações em casa",
+    highlights: ["77+ anos de história", "Marca icônica global", "Sustentabilidade"],
+    recentVoters: []
+  },
+  {
+    id: 19,
+    name: "Utility Warehouse",
+    logo: utilitywarehouseLogo,
+    position: 19,
+    previousPosition: 19,
+    votes: 756,
+    maxVotes: 3000,
+    rating: 3.4,
+    category: "Serviços & Utilities",
+    founded: "1996",
+    country: "Reino Unido",
+    description: "Maior empresa de multi-utilities do Reino Unido via marketing de rede",
+    highlights: ["Líder em utilities UK", "27+ anos de mercado", "Modelo de negócio único"],
+    recentVoters: []
+  },
+  {
+    id: 20,
+    name: "Forever Living",
+    logo: foreverLogo,
+    position: 20,
+    previousPosition: 20,
+    votes: 698,
+    maxVotes: 3000,
+    rating: 3.3,
+    category: "Aloe Vera & Saúde",
+    founded: "1978",
+    country: "Estados Unidos",
+    description: "Maior produtora de aloe vera do mundo com produtos naturais",
+    highlights: ["45+ anos de mercado", "Plantações próprias", "Qualidade premium"],
     recentVoters: []
   }
 ];
