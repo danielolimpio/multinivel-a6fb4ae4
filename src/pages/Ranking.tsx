@@ -28,6 +28,7 @@ import {
   Building2
 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Import company logos
 import hinodeLogo from "@/assets/logos/hinode.jpeg";
@@ -55,6 +56,7 @@ const rankingData = [
   {
     id: 1,
     name: "Hinode",
+    slug: "hinode",
     logo: hinodeLogo,
     position: 1,
     previousPosition: 1,
@@ -77,6 +79,7 @@ const rankingData = [
   {
     id: 2,
     name: "Herbalife",
+    slug: "herbalife",
     logo: herbalifeLogo,
     position: 2,
     previousPosition: 3,
@@ -636,10 +639,12 @@ export default function Ranking() {
 
                   {/* Actions */}
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <Eye className="w-4 h-4 mr-1" />
-                      Detalhes
-                    </Button>
+                    <Link to={`/empresa/${company.name.toLowerCase().replace(/\s+/g, '-')}`} className="flex-1">
+                      <Button variant="outline" size="sm" className="w-full">
+                        <Eye className="w-4 h-4 mr-1" />
+                        Detalhes
+                      </Button>
+                    </Link>
                     <Button size="sm" className="flex-1 bg-gradient-gold hover:opacity-90">
                       <Vote className="w-4 h-4 mr-1" />
                       Votar
@@ -713,9 +718,11 @@ export default function Ranking() {
 
                     {/* Actions */}
                     <div className="flex gap-2 flex-shrink-0">
-                      <Button variant="ghost" size="sm" className="h-9">
-                        <Eye className="w-4 h-4" />
-                      </Button>
+                      <Link to={`/empresa/${company.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <Button variant="ghost" size="sm" className="h-9">
+                          <Eye className="w-4 h-4" />
+                        </Button>
+                      </Link>
                       <Button size="sm" className="h-9 bg-gradient-gold hover:opacity-90">
                         <Vote className="w-4 h-4 sm:mr-1" />
                         <span className="hidden sm:inline">Votar</span>
