@@ -14,6 +14,8 @@ import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import Comparativo from "./pages/Comparativo";
+import SuaEmpresaIdeal from "./pages/SuaEmpresaIdeal";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +33,8 @@ const App = () => (
           <Route path="/ranking" element={<Ranking />} />
           <Route path="/empresa/:slug" element={<CompanyDetails />} />
           <Route path="/empresas" element={<AllCompanies />} />
+          <Route path="/comparativo" element={<Comparativo />} />
+          <Route path="/sua-empresa-ideal" element={<SuaEmpresaIdeal />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin/auth" element={<Auth userType="admin" />} />
           <Route path="/dashboard" element={<Dashboard />} />
