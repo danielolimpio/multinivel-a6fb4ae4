@@ -455,12 +455,12 @@ export default function Ranking() {
 
       <Header />
 
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background overflow-x-hidden">
         {/* Hero Section */}
-        <section className="relative py-16 sm:py-24">
+        <section className="relative py-16 sm:py-24 overflow-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(800px,100vw)] h-[min(800px,100vw)] bg-gold/5 rounded-full blur-3xl" />
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
