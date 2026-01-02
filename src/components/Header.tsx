@@ -309,7 +309,7 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border relative overflow-visible">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       {/* Top Menu */}
       <div className="bg-muted/30 border-b border-border/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
