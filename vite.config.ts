@@ -18,6 +18,10 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  ssr: {
+    // Ensure these packages are not externalized during SSG
+    noExternal: ['@supabase/supabase-js'],
+  },
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
@@ -26,5 +30,12 @@ export default defineConfig(({ mode }) => ({
     },
     dirStyle: 'nested',
     includeAllRoutes: true,
+    onBeforePageRender: (route: string) => {
+      console.log(`Pre-rendering: ${route}`);
+    },
+    onPageRendered: (route: string, html: string) => {
+      console.log(`Rendered: ${route} (${html.length} bytes)`);
+      return html;
+    },
   },
 }));
