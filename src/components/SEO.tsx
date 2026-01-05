@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Head } from "vite-react-ssg";
 
 interface SEOProps {
   title: string;
@@ -33,7 +33,7 @@ export function SEO({
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
 
   return (
-    <Helmet>
+    <Head>
       {/* Primary Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
@@ -87,6 +87,6 @@ export function SEO({
           ]
         })}
       </script>
-    </Helmet>
+    </Head>
   );
 }

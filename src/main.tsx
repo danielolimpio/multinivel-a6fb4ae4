@@ -1,5 +1,13 @@
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { ViteReactSSG } from 'vite-react-ssg';
+import { routes } from './routes';
+import './index.css';
 
-createRoot(document.getElementById("root")!).render(<App />);
+export const createRoot = ViteReactSSG(
+  { routes },
+  ({ isClient }) => {
+    // Client-side only initialization
+    if (isClient) {
+      // Any client-only setup can go here
+    }
+  },
+);
