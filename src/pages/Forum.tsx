@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 
 // Mock data
 const questions = [
@@ -137,6 +138,11 @@ const Forum = () => {
 
   return (
     <>
+      <SEO 
+        title="Fórum de Marketing de Rede - Perguntas e Respostas"
+        description="Participe do maior fórum de Marketing de Rede do Brasil. Faça perguntas, obtenha respostas e conecte-se com outros networkers."
+        canonical="/forum"
+      />
       <Header />
       <div className="min-h-screen bg-background">
         {/* Hero Header */}

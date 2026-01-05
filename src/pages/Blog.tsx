@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Calendar, User, Search, TrendingUp, Trophy, Eye } from "lucide-react";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
 import ajudaMutuaImage from "@/assets/ajuda-mutua-piramide.jpg";
 
 const categories = [
@@ -120,6 +121,11 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Blog UniversidadeMN - Notícias e Artigos sobre Marketing de Rede"
+        description="Conteúdo exclusivo sobre educação financeira, empreendedorismo, carreira, tecnologia e inovação social no marketing de rede."
+        canonical="/blog"
+      />
       <Header />
       
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 pt-16 sm:pt-20">

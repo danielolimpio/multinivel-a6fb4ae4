@@ -7,7 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Search, X, Plus, Trophy, Users, TrendingUp, Building2, Star, CheckCircle, XCircle } from "lucide-react";
-import { Helmet } from "react-helmet";
+import { SEO } from "@/components/SEO";
 
 // Import all company logos
 import hinode from "@/assets/logos/hinode.jpeg";
@@ -465,10 +465,11 @@ export default function Comparativo() {
 
   return (
     <>
-      <Helmet>
-        <title>Comparativo de Empresas de Marketing Multinível | Compare MLM</title>
-        <meta name="description" content="Compare até 3 empresas de marketing multinível lado a lado. Analise comissões, países de atuação, número de distribuidores e muito mais." />
-      </Helmet>
+      <SEO 
+        title="Comparativo de Empresas de Marketing Multinível | Compare MLM"
+        description="Compare até 3 empresas de marketing multinível lado a lado. Analise comissões, países de atuação, número de distribuidores e muito mais."
+        canonical="/comparativo"
+      />
       
       <Header />
       

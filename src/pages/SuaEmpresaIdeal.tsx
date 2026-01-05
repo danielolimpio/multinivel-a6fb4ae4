@@ -15,7 +15,7 @@ import {
   Trophy,
   Building2
 } from "lucide-react";
-import { Helmet } from "react-helmet";
+import { SEO } from "@/components/SEO";
 import {
   Accordion,
   AccordionContent,
@@ -594,10 +594,11 @@ export default function SuaEmpresaIdeal() {
     
     return (
       <>
-        <Helmet>
-          <title>Sua Empresa Ideal: {recommendedCompany.name} | Marketing Multinível</title>
-          <meta name="description" content={`Baseado em suas respostas, ${recommendedCompany.name} é a empresa de marketing multinível ideal para seu perfil.`} />
-        </Helmet>
+        <SEO 
+          title={`Sua Empresa Ideal: ${recommendedCompany.name} | Marketing Multinível`}
+          description={`Baseado em suas respostas, ${recommendedCompany.name} é a empresa de marketing multinível ideal para seu perfil.`}
+          canonical="/sua-empresa-ideal"
+        />
         
         <Header />
         
@@ -672,10 +673,11 @@ export default function SuaEmpresaIdeal() {
 
   return (
     <>
-      <Helmet>
-        <title>Pergunta {currentQuestion} de {questions.length}: {question.title} | Sua Empresa Ideal</title>
-        <meta name="description" content={question.metaDescription} />
-      </Helmet>
+      <SEO 
+        title={`Pergunta ${currentQuestion} de ${questions.length}: ${question.title} | Sua Empresa Ideal`}
+        description={question.metaDescription}
+        canonical={`/sua-empresa-ideal?pergunta=${currentQuestion}`}
+      />
       
       <Header />
       
