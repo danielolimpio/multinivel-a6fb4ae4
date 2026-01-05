@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 
 // Import all company logos
 import hinode from "@/assets/logos/hinode.jpeg";
@@ -363,6 +364,11 @@ export default function AllCompanies() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Todas as Empresas de Marketing de Rede - Ranking Completo"
+        description="Lista completa de todas as empresas de Marketing Multinível do Brasil e do mundo. Compare, vote e escolha a melhor para você."
+        canonical="/empresas"
+      />
       <Header />
       
       <main className="py-16">

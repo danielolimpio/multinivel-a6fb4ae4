@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -448,10 +448,11 @@ export default function Ranking() {
 
   return (
     <>
-      <Helmet>
-        <title>Ranking Top Empresas de Marketing de Rede 2025 | Universidade Multinível</title>
-        <meta name="description" content="Confira o ranking completo das melhores empresas de Marketing de Rede do Brasil e do mundo. Vote nas suas favoritas e acompanhe os resultados em tempo real." />
-      </Helmet>
+      <SEO 
+        title="Ranking Top Empresas de Marketing de Rede 2025"
+        description="Confira o ranking completo das melhores empresas de Marketing de Rede do Brasil e do mundo. Vote nas suas favoritas e acompanhe os resultados em tempo real."
+        canonical="/ranking"
+      />
 
       <Header />
 

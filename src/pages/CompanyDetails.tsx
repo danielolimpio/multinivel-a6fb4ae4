@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -1008,12 +1008,11 @@ export default function CompanyDetails() {
 
   return (
     <>
-      <Helmet>
-        <title>{company.name} - Análise Completa, História e Plano de Compensação | Universidade Multinível</title>
-        <meta name="description" content={`${company.description}. Análise completa do plano de compensação, história, produtos, estatísticas e avaliações da ${company.name}. Fundada em ${company.founded}.`} />
-        <meta name="keywords" content={`${company.name}, ${company.category}, marketing multinível, MMN, vendas diretas, plano de compensação, ${company.country}`} />
-        <link rel="canonical" href={`https://universidademultinivel.com.br/empresa/${company.slug}`} />
-      </Helmet>
+      <SEO 
+        title={`${company.name} - Análise Completa, História e Plano de Compensação`}
+        description={`${company.description}. Análise completa do plano de compensação, história, produtos, estatísticas e avaliações da ${company.name}. Fundada em ${company.founded}.`}
+        canonical={`/empresa/${company.slug}`}
+      />
 
       <Header />
 

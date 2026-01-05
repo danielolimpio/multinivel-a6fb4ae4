@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -62,10 +62,11 @@ const About = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Sobre - Universidade Multinível | Onde Experiência, Tecnologia e Rede se Encontram</title>
-        <meta name="description" content="Conheça a Universidade Multinível, fundada por Daniel Olimpio com mais de 20 anos de experiência em Marketing de Rede. Informação, conexão e inovação para o setor." />
-      </Helmet>
+      <SEO 
+        title="Sobre - Universidade Multinível | Onde Experiência, Tecnologia e Rede se Encontram"
+        description="Conheça a Universidade Multinível, fundada por Daniel Olimpio com mais de 20 anos de experiência em Marketing de Rede. Informação, conexão e inovação para o setor."
+        canonical="/sobre"
+      />
       
       <div className="min-h-screen bg-background">
         <Header />
