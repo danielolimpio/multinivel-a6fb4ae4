@@ -8,13 +8,18 @@ const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiO
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
 
-// Safe storage for SSG - only use localStorage on client side
-const safeStorage = typeof window !== 'undefined' ? localStorage : undefined;
+// Check if we're in a browser environment
+const isBrowser = typeof window !== 'undefined';
 
+// Safe storage for SSG - only use localStorage on client side
+const safeStorage = isBrowser ? window.localStorage : undefined;
+
+// Create a conditional client that works for both SSG and client-side
 export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
   auth: {
     storage: safeStorage,
-    persistSession: true,
-    autoRefreshToken: true,
+    persistSession: isBrowser,
+    autoRefreshToken: isBrowser,
+    detectSessionInUrl: isBrowser,
   }
 });
