@@ -4,6 +4,11 @@
 # Habilitar mod_rewrite
 RewriteEngine On
 
+# Evitar redirecionamento automático de diretórios sem barra final (ex.: /sobre -> /sobre/)
+<IfModule mod_dir.c>
+    DirectorySlash Off
+</IfModule>
+
 # Forçar HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -16,20 +21,22 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
-# Adicionar barra final às URLs (trailing slash)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !(.*)/$
-RewriteRule ^(.*)$ /$1/ [L,R=301]
-
 # Servir arquivos estáticos diretamente
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-# SPA Fallback - Redirecionar todas as rotas para index.html
-# (para páginas dinâmicas como /auth, /dashboard, /admin)
+# Servir index.html diretamente se a pasta existir (sem redirecionamento)
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+# Servir index.html da raiz
+RewriteRule ^$ index.html [L]
+
+# Qualquer outra requisição inválida deve retornar 404
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+RewriteRule ^ - [R=404,L]
 
 # Configurações de Cache para Assets Estáticos
 <IfModule mod_expires.c>
@@ -102,5 +109,5 @@ RewriteRule . /index.html [L]
 </IfModule>
 
 # Páginas de Erro Customizadas
-ErrorDocument 404 /index.html
-ErrorDocument 500 /index.html
+# (removidas para permitir retorno 404 real em URLs inválidas)
+
