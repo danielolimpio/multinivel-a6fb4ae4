@@ -20,6 +20,20 @@ const SITE_URL = "https://www.universidademultinivel.com";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 const SITE_NAME = "Universidade Multinível";
 
+function normalizeCanonicalPath(input?: string): string | undefined {
+  if (!input) return undefined;
+
+  // Allow passing either "/path" or a full URL.
+  const pathFromInput = input.startsWith("http") ? new URL(input).pathname : input;
+
+  let path = pathFromInput.startsWith("/") ? pathFromInput : `/${pathFromInput}`;
+
+  // Ensure trailing slash on non-root canonicals to match folder-based static hosting.
+  if (path !== "/" && !path.endsWith("/")) path += "/";
+
+  return path;
+}
+
 export function SEO({
   title,
   description,
@@ -30,7 +44,8 @@ export function SEO({
   noindex = false,
 }: SEOProps) {
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
-  const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
+  const canonicalPath = normalizeCanonicalPath(canonical);
+  const canonicalUrl = canonicalPath ? `${SITE_URL}${canonicalPath}` : undefined;
 
   return (
     <Head>
