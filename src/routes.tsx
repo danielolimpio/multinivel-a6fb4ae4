@@ -15,6 +15,9 @@ import CompanyDetails from './pages/CompanyDetails';
 import AllCompanies from './pages/AllCompanies';
 import Comparativo from './pages/Comparativo';
 import SuaEmpresaIdeal from './pages/SuaEmpresaIdeal';
+import Privacidade from './pages/Privacidade';
+import Termos from './pages/Termos';
+import Contato from './pages/Contato';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
@@ -95,6 +98,18 @@ export const routes: RouteRecord[] = [
       {
         path: 'sua-empresa-ideal',
         element: <SuaEmpresaIdeal />,
+      },
+      {
+        path: 'privacidade',
+        element: <Privacidade />,
+      },
+      {
+        path: 'termos',
+        element: <Termos />,
+      },
+      {
+        path: 'contato',
+        element: <Contato />,
       },
       // Dynamic company pages - pre-rendered with getStaticPaths
       {
