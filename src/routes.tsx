@@ -41,7 +41,7 @@ function RootLayout() {
   );
 }
 
-// List of all company slugs for static generation
+// List of all company slugs for static generation (19 companies)
 const companySlugs = [
   'hinode',
   'herbalife',

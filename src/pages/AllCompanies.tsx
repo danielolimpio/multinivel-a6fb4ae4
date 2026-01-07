@@ -110,7 +110,7 @@ const allCompanies = [
     votes: 1987,
     maxVotes: 3000,
     category: "Cuidados Pessoais",
-    slug: "nuskin",
+    slug: "nu-skin",
     recentVoters: [
       { name: "Amanda Souza", avatar: "/placeholder.svg", city: "Campo Grande" },
       { name: "Rodrigo Martins", avatar: "/placeholder.svg", city: "Cuiabá" },
@@ -127,7 +127,7 @@ const allCompanies = [
     votes: 1823,
     maxVotes: 3000,
     category: "Cosméticos",
-    slug: "marykay",
+    slug: "mary-kay",
     recentVoters: [
       { name: "Beatriz Alves", avatar: "/placeholder.svg", city: "Campinas" },
       { name: "Rafael Santos", avatar: "/placeholder.svg", city: "Santos" },
@@ -171,7 +171,7 @@ const allCompanies = [
     votes: 1423,
     maxVotes: 3000,
     category: "Aloe Vera",
-    slug: "forever",
+    slug: "forever-living",
     recentVoters: [
       { name: "Isabella Costa", avatar: "/placeholder.svg", city: "Joinville" },
       { name: "Gabriel Rocha", avatar: "/placeholder.svg", city: "Londrina" },
@@ -283,7 +283,7 @@ const allCompanies = [
     votes: 967,
     maxVotes: 3000,
     category: "Utensílios de Cozinha",
-    slug: "royalprestige",
+    slug: "royal-prestige",
     recentVoters: [
       { name: "Fernanda Souza", avatar: "/placeholder.svg", city: "Taubaté" },
       { name: "Gustavo Almeida", avatar: "/placeholder.svg", city: "Jacareí" },
@@ -317,20 +317,6 @@ const allCompanies = [
       { name: "Marcelo Costa", avatar: "/placeholder.svg", city: "São Bernardo" },
     ]
   },
-  {
-    id: 20,
-    name: "Hinode Premium",
-    logo: hinode,
-    position: 20,
-    votes: 801,
-    maxVotes: 3000,
-    category: "Cosméticos Premium",
-    slug: "hinode-premium",
-    recentVoters: [
-      { name: "Juliana Lima", avatar: "/placeholder.svg", city: "Diadema" },
-      { name: "Alexandre Oliveira", avatar: "/placeholder.svg", city: "Mauá" },
-    ]
-  }
 ];
 
 export default function AllCompanies() {
@@ -338,7 +324,7 @@ export default function AllCompanies() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const categories = ["all", "Cosméticos", "Nutrição", "Suplementos", "Cuidados Pessoais", "Múltiplas Categorias", "Aloe Vera", "Utilidades Domésticas", "Eletrodomésticos", "Tecnologia", "Purificadores", "Medicina Tradicional", "Bem-estar", "Serviços Financeiros", "Utensílios de Cozinha", "Serviços Essenciais", "Cosméticos Premium"];
+  const categories = ["all", "Cosméticos", "Nutrição", "Suplementos", "Cuidados Pessoais", "Múltiplas Categorias", "Aloe Vera", "Utilidades Domésticas", "Eletrodomésticos", "Tecnologia", "Purificadores", "Medicina Tradicional", "Bem-estar", "Serviços Financeiros", "Utensílios de Cozinha", "Serviços Essenciais"];
 
   const filteredCompanies = allCompanies.filter(company => {
     const matchesSearch = company.name.toLowerCase().includes(searchTerm.toLowerCase());
