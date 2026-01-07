@@ -213,7 +213,7 @@ const allCompanies = [
     votes: 1245,
     maxVotes: 3000,
     category: "Cosméticos",
-    slug: "janrose",
+    slug: "jan-rose",
     recentVoters: [
       { name: "Yasmin Santos", avatar: "/placeholder.svg", city: "Niterói" },
       { name: "Leonardo Costa", avatar: "/placeholder.svg", city: "Petrópolis" },
@@ -311,7 +311,7 @@ const allCompanies = [
     votes: 856,
     maxVotes: 3000,
     category: "Serviços Essenciais",
-    slug: "utilitywarehouse",
+    slug: "utility-warehouse",
     recentVoters: [
       { name: "Carla Santos", avatar: "/placeholder.svg", city: "Santo André" },
       { name: "Marcelo Costa", avatar: "/placeholder.svg", city: "São Bernardo" },

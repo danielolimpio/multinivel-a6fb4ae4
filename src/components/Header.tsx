@@ -303,8 +303,8 @@ export function Header() {
     { name: currentTranslations.ranking, href: "/ranking" },
     { name: "Blog", href: "/blog" },
     { name: currentTranslations.forum, href: "/forum" },
-    { name: currentTranslations.community, href: "/comunidade" },
-    { name: currentTranslations.testimonials, href: "/depoimentos" },
+    { name: currentTranslations.community, href: "/comparativo" },
+    { name: currentTranslations.testimonials, href: "/sua-empresa-ideal" },
     { name: currentTranslations.contact, href: "/contato" },
   ];
 
