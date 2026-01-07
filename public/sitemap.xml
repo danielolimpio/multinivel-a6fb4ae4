@@ -86,7 +86,7 @@
     <priority>0.7</priority>
   </url>
   
-  <!-- Páginas de Empresas -->
+  <!-- Páginas de Empresas (19 empresas com slugs corretos) -->
   <url>
     <loc>https://www.universidademultinivel.com/empresa/hinode/</loc>
     <lastmod>2026-01-07</lastmod>
