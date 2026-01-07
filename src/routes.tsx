@@ -18,6 +18,9 @@ import SuaEmpresaIdeal from './pages/SuaEmpresaIdeal';
 import Privacidade from './pages/Privacidade';
 import Termos from './pages/Termos';
 import Contato from './pages/Contato';
+import FAQ from './pages/FAQ';
+import Suporte from './pages/Suporte';
+import ComoFunciona from './pages/ComoFunciona';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
@@ -110,6 +113,18 @@ export const routes: RouteRecord[] = [
       {
         path: 'contato',
         element: <Contato />,
+      },
+      {
+        path: 'faq',
+        element: <FAQ />,
+      },
+      {
+        path: 'suporte',
+        element: <Suporte />,
+      },
+      {
+        path: 'como-funciona',
+        element: <ComoFunciona />,
       },
       // Dynamic company pages - pre-rendered with getStaticPaths
       {

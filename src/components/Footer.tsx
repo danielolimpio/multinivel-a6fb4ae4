@@ -7,24 +7,22 @@ export function Footer() {
   const footerLinks = {
     empresa: [
       { name: "Sobre Nós", href: "/sobre" },
-      { name: "Como Funciona", href: "/como-funciona" },
+      { name: "Ranking", href: "/ranking" },
       { name: "Política de Privacidade", href: "/privacidade" },
       { name: "Termos de Uso", href: "/termos" },
       { name: "Contato", href: "/contato" }
     ],
     comunidade: [
       { name: "Fórum", href: "/forum" },
-      { name: "Ranking Completo", href: "/ranking" },
-      { name: "Top Indicadores", href: "/top-indicadores" },
       { name: "Blog", href: "/blog" },
-      { name: "Eventos", href: "/eventos" }
+      { name: "Comparativo", href: "/comparativo" },
+      { name: "Sua Empresa Ideal", href: "/sua-empresa-ideal" },
+      { name: "FAQ", href: "/faq" }
     ],
     recursos: [
-      { name: "Sistema de Comissões", href: "/comissoes" },
-      { name: "Como Votar", href: "/como-votar" },
-      { name: "Programa de Indicação", href: "/indicacao" },
-      { name: "Suporte", href: "/suporte" },
-      { name: "FAQ", href: "/faq" }
+      { name: "Todas as Empresas", href: "/empresas" },
+      { name: "Como Funciona", href: "/como-funciona" },
+      { name: "Suporte", href: "/suporte" }
     ]
   };
 
@@ -175,7 +173,7 @@ export function Footer() {
                 Português (BR)
               </Button>
               <span className="text-primary-foreground/40 hidden sm:inline">|</span>
-              <a href="/lgpd" className="text-primary-foreground/60 hover:text-primary-foreground text-xs sm:text-sm">
+              <a href="/privacidade" className="text-primary-foreground/60 hover:text-primary-foreground text-xs sm:text-sm">
                 LGPD
               </a>
             </div>
