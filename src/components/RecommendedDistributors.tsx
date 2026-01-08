@@ -4,15 +4,19 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Star, MapPin, TrendingUp, Users } from "lucide-react";
 
+import charlesMota from "@/assets/distributors/charles-mota.png";
+import yvanaPacifici from "@/assets/distributors/yvana-pacifici.jpg";
+import elisaPortolan from "@/assets/distributors/elisa-portolan.jpg";
+
 export function RecommendedDistributors() {
   const distributors = [
     {
       id: 1,
-      name: "Rosalva Moreira",
+      name: "Charles Mota",
       company: "Hinode",
-      title: "Diamante Black",
-      location: "São Paulo, SP",
-      avatar: "/placeholder.svg",
+      title: "Triplo Diamante",
+      location: "Manaus, AM",
+      avatar: charlesMota,
       rating: 4.9,
       reviews: 127,
       teamSize: 1250,
@@ -20,11 +24,11 @@ export function RecommendedDistributors() {
     },
     {
       id: 2,
-      name: "Hugh Johnson", 
+      name: "Yvana Pacifici", 
       company: "Herbalife",
-      title: "Presidente Team Million",
-      location: "Rio de Janeiro, RJ",
-      avatar: "/placeholder.svg", 
+      title: "Presidente 20K",
+      location: "Belo Horizonte, MG",
+      avatar: yvanaPacifici, 
       rating: 4.8,
       reviews: 89,
       teamSize: 980,
@@ -32,11 +36,11 @@ export function RecommendedDistributors() {
     },
     {
       id: 3,
-      name: "Janet and Shannon",
-      company: "Jeunesse", 
-      title: "Double Diamond",
-      location: "Belo Horizonte, MG",
-      avatar: "/placeholder.svg",
+      name: "Elisa Portolan",
+      company: "Mary Kay", 
+      title: "Diretora Nacional",
+      location: "Caxias do Sul, RS",
+      avatar: elisaPortolan,
       rating: 4.9,
       reviews: 156,
       teamSize: 1450,
