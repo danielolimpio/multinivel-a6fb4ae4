@@ -7,14 +7,14 @@ import { Input } from "@/components/ui/input";
 import { Calendar, User, Search, TrendingUp, Trophy, Eye } from "lucide-react";
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
-import ajudaMutuaImage from "@/assets/ajuda-mutua-piramide.jpg";
+import { Link } from "react-router-dom";
 
 const categories = [
-  { name: "Educação Financeira", count: 24, color: "bg-gold-medium text-gold-foreground" },
-  { name: "Empreendedorismo", count: 18, color: "bg-purple text-purple-foreground" },
-  { name: "Carreira", count: 15, color: "bg-turquoise text-turquoise-foreground" },
-  { name: "Tecnologia", count: 12, color: "bg-accent text-accent-foreground" },
-  { name: "Inovação Social", count: 9, color: "bg-primary text-primary-foreground" },
+  { name: "Educação Financeira", count: 1, color: "bg-gold-medium text-gold-foreground" },
+  { name: "Empreendedorismo", count: 0, color: "bg-purple text-purple-foreground" },
+  { name: "Carreira", count: 0, color: "bg-turquoise text-turquoise-foreground" },
+  { name: "Tecnologia", count: 0, color: "bg-accent text-accent-foreground" },
+  { name: "Inovação Social", count: 0, color: "bg-primary text-primary-foreground" },
 ];
 
 const topCompanies = [
@@ -28,76 +28,16 @@ const topCompanies = [
 const blogPosts = [
   {
     id: 1,
-    title: "O que é sistema de ajuda mútua? Saiba por que muitos são esquemas piramidais disfarçados",
-    excerpt: "Você já recebeu um convite para participar de um 'grupo de ajuda mútua' no WhatsApp ou Telegram? Descubra como identificar esquemas piramidais disfarçados de solidariedade e proteger-se de armadilhas financeiras.",
-    image: ajudaMutuaImage,
+    slug: "como-ganhar-dinheiro-com-marketing-multinivel-em-2026",
+    title: "Como Ganhar Dinheiro com Marketing Multinível em 2026",
+    excerpt: "Descubra estratégias reais para lucrar com MMN em 2026, evitando golpes e construindo renda passiva com ética e consistência. Um guia completo com 7 pilares fundamentais.",
+    image: "/images/artigos/como-ganhar-dinheiro-mmn-2026.jpg",
     author: "Equipe UniversidadeMN",
-    date: "05 Out 2025",
+    date: "08 Jan 2026",
     category: "Educação Financeira",
     categoryColor: "bg-gold-medium text-gold-foreground",
-    views: 2847,
-    readTime: "12 min",
-    imageCredit: "Freepik"
-  },
-  {
-    id: 2,
-    title: "Empreendedorismo Digital no MMN: Transforme sua Presença Online em Resultados",
-    excerpt: "As melhores práticas para construir uma marca pessoal forte no marketing de rede. Domine as redes sociais, crie conteúdo relevante e atraia leads qualificados através do marketing digital estratégico.",
-    image: "/lovable-uploads/e73547c8-d4f6-4f0f-9cfb-e11bb07af065.png",
-    author: "Roberto Mendes",
-    date: "18 Jan 2025",
-    category: "Empreendedorismo",
-    categoryColor: "bg-purple text-purple-foreground",
-    views: 983,
-    readTime: "6 min"
-  },
-  {
-    id: 3,
-    title: "Carreira em Marketing de Rede: Do Zero ao Diamante em 24 Meses",
-    excerpt: "Histórias reais de sucesso e o caminho percorrido por líderes que alcançaram as maiores graduações. Estratégias de desenvolvimento pessoal, liderança e construção de equipes de alta performance.",
-    image: "/lovable-uploads/eb8e05f4-9df5-4565-8cc5-f6adee4d7340.png",
-    author: "Mariana Costa",
-    date: "15 Jan 2025",
-    category: "Carreira",
-    categoryColor: "bg-turquoise text-turquoise-foreground",
-    views: 1521,
-    readTime: "10 min"
-  },
-  {
-    id: 4,
-    title: "Tecnologia e Automação: Ferramentas Essenciais para Networkers Modernos",
-    excerpt: "CRMs, automação de marketing, funis de vendas digitais e IA aplicada ao MLM. Conheça as tecnologias que estão revolucionando o setor de vendas diretas e como implementá-las no seu negócio.",
-    image: "/lovable-uploads/8e7873b6-f5c2-46b1-90d9-4d8ee04f836a.png",
-    author: "Carlos Eduardo",
-    date: "12 Jan 2025",
-    category: "Tecnologia",
-    categoryColor: "bg-accent text-accent-foreground",
-    views: 756,
-    readTime: "7 min"
-  },
-  {
-    id: 5,
-    title: "Inovação Social: Como o MMN está Transformando Comunidades no Brasil",
-    excerpt: "Projetos sociais liderados por empresas de marketing de rede que estão gerando impacto positivo. Saiba como alinhar propósito social com crescimento de negócio e fazer a diferença na sua comunidade.",
-    image: "/lovable-uploads/219814cb-9a2a-40b5-a838-9f3076a5b95d.png",
-    author: "Juliana Santos",
-    date: "10 Jan 2025",
-    category: "Inovação Social",
-    categoryColor: "bg-primary text-primary-foreground",
-    views: 892,
-    readTime: "5 min"
-  },
-  {
-    id: 6,
-    title: "Mindset Empreendedor: Os 7 Hábitos dos Networkers de Alto Desempenho",
-    excerpt: "Desenvolva a mentalidade vencedora necessária para alcançar resultados extraordinários no marketing de rede. Técnicas de produtividade, gestão de tempo e autodesenvolvimento dos maiores líderes do setor.",
-    image: "/lovable-uploads/4d720d79-b4b3-494c-b4d5-81a40f3cf498.png",
-    author: "Fernando Oliveira",
-    date: "08 Jan 2025",
-    category: "Empreendedorismo",
-    categoryColor: "bg-purple text-purple-foreground",
-    views: 1103,
-    readTime: "9 min"
+    views: 1247,
+    readTime: "18 min",
   },
 ];
 
@@ -180,70 +120,66 @@ export default function Blog() {
           <div className="lg:col-span-2 order-2 lg:order-1">
             <div className="space-y-4 sm:space-y-6">
               {filteredPosts.map((post) => (
-                <Card key={post.id} className="overflow-hidden hover:shadow-card transition-all duration-300 hover:scale-[1.01]">
-                  <div className="flex flex-col sm:grid sm:grid-cols-3 gap-0 sm:gap-4">
-                    <div className="sm:col-span-1 aspect-video sm:aspect-square bg-muted relative overflow-hidden">
-                      <img 
-                        src={post.image} 
-                        alt={post.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
-                        <Badge className={`${post.categoryColor} text-xs`}>
-                          {post.category}
-                        </Badge>
+                <Link key={post.id} to={`/artigo/${post.slug}/`} className="block">
+                  <Card className="overflow-hidden hover:shadow-card transition-all duration-300 hover:scale-[1.01]">
+                    <div className="flex flex-col sm:grid sm:grid-cols-3 gap-0 sm:gap-4">
+                      <div className="sm:col-span-1 aspect-video sm:aspect-square bg-muted relative overflow-hidden">
+                        <img 
+                          src={post.image} 
+                          alt={post.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
+                          <Badge className={`${post.categoryColor} text-xs`}>
+                            {post.category}
+                          </Badge>
+                        </div>
                       </div>
-                      {post.imageCredit && (
-                        <div className="absolute bottom-1 right-2 text-[8px] text-white/70 bg-black/30 px-1 rounded">
-                          Imagem: {post.imageCredit}
-                        </div>
-                      )}
-                    </div>
-                    
-                    <div className="sm:col-span-2 p-4 sm:p-5">
-                      <h2 className="font-bold text-base sm:text-lg lg:text-xl text-foreground mb-2 sm:mb-3 line-clamp-2 leading-tight hover:text-gold-medium transition-colors">
-                        {post.title}
-                      </h2>
                       
-                      <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3">
-                        {post.excerpt}
-                      </p>
-                      
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-muted-foreground gap-2">
-                        <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
-                          <div className="flex items-center gap-1">
-                            <User className="w-3 h-3" />
-                            <span className="truncate max-w-[80px] sm:max-w-none">{post.author}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar className="w-3 h-3" />
-                            <span>{post.date}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Eye className="w-3 h-3" />
-                            <span>{post.views}</span>
-                          </div>
-                        </div>
+                      <div className="sm:col-span-2 p-4 sm:p-5">
+                        <h2 className="font-bold text-base sm:text-lg lg:text-xl text-foreground mb-2 sm:mb-3 line-clamp-2 leading-tight hover:text-gold-medium transition-colors">
+                          {post.title}
+                        </h2>
                         
-                        <div className="flex items-center justify-between sm:justify-end gap-2 mt-2 sm:mt-0">
-                          <span className="text-muted-foreground">{post.readTime}</span>
-                          <Button variant="ghost" size="sm" className="text-gold-medium hover:text-gold-dark p-0 h-auto font-semibold text-xs sm:text-sm">
-                            Ler mais →
-                          </Button>
+                        <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3">
+                          {post.excerpt}
+                        </p>
+                        
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-muted-foreground gap-2">
+                          <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+                            <div className="flex items-center gap-1">
+                              <User className="w-3 h-3" />
+                              <span className="truncate max-w-[80px] sm:max-w-none">{post.author}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Calendar className="w-3 h-3" />
+                              <span>{post.date}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Eye className="w-3 h-3" />
+                              <span>{post.views}</span>
+                            </div>
+                          </div>
+                          
+                          <div className="flex items-center justify-between sm:justify-end gap-2 mt-2 sm:mt-0">
+                            <span className="text-muted-foreground">{post.readTime}</span>
+                            <span className="text-gold-medium font-semibold text-xs sm:text-sm">
+                              Ler mais →
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </Card>
+                  </Card>
+                </Link>
               ))}
             </div>
 
-            {/* Load More Button */}
-            <div className="text-center mt-8">
-              <Button className="bg-gradient-gold text-gold-foreground hover:opacity-90 shadow-gold">
-                Carregar mais artigos
-              </Button>
-            </div>
+            {filteredPosts.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">Nenhum artigo encontrado.</p>
+              </div>
+            )}
           </div>
 
           {/* Sidebar */}
@@ -292,8 +228,8 @@ export default function Blog() {
                   </div>
                 ))}
               </div>
-              <Button variant="outline" className="w-full mt-4" onClick={() => window.location.href = '/empresas'}>
-                Ver ranking completo
+              <Button variant="outline" className="w-full mt-4" asChild>
+                <Link to="/empresas/">Ver ranking completo</Link>
               </Button>
             </Card>
 

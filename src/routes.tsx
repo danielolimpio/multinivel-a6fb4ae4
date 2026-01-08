@@ -9,6 +9,7 @@ import { Toaster as Sonner } from '@/components/ui/sonner';
 import Index from './pages/Index';
 import Forum from './pages/Forum';
 import Blog from './pages/Blog';
+import ArticlePage from './pages/ArticlePage';
 import About from './pages/About';
 import Ranking from './pages/Ranking';
 import CompanyDetails from './pages/CompanyDetails';
@@ -62,6 +63,11 @@ const companySlugs = [
   'royal-prestige',
   'tupperware',
   'utility-warehouse',
+];
+
+// List of all article slugs for static generation
+const articleSlugs = [
+  'como-ganhar-dinheiro-com-marketing-multinivel-em-2026',
 ];
 
 export const routes: RouteRecord[] = [
@@ -132,6 +138,13 @@ export const routes: RouteRecord[] = [
         element: <CompanyDetails />,
         entry: 'src/pages/CompanyDetails.tsx',
         getStaticPaths: () => companySlugs.map(slug => `/empresa/${slug}`),
+      },
+      // Dynamic article pages - pre-rendered with getStaticPaths
+      {
+        path: 'artigo/:slug',
+        element: <ArticlePage />,
+        entry: 'src/pages/ArticlePage.tsx',
+        getStaticPaths: () => articleSlugs.map(slug => `/artigo/${slug}`),
       },
       // SPA-only pages (auth protected, not indexed)
       {
