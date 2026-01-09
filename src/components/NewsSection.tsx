@@ -15,6 +15,16 @@ export function NewsSection() {
       date: "08 Jan 2026",
       category: "Educação Financeira"
     },
+    {
+      id: 2,
+      slug: "marketing-de-rede-guia-completo-para-iniciantes",
+      title: "Marketing de Rede: Guia Completo para Iniciantes",
+      excerpt: "Comece do zero no network marketing com este guia prático: estrutura, mindset, recrutamento e erros que arruínam novos empreendedores.",
+      image: "/images/artigos/marketing-de-rede-guia-completo-iniciantes.jpg",
+      author: "Equipe UniversidadeMN",
+      date: "09 Jan 2026",
+      category: "Educação Financeira"
+    },
   ];
 
   return (
