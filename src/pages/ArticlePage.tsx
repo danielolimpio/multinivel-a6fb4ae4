@@ -4,7 +4,7 @@ import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen, AlertTriangle, CheckCircle2, Lightbulb, Target, TrendingUp, ExternalLink, HelpCircle } from "lucide-react";
+import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen, AlertTriangle, CheckCircle2, Lightbulb, Target, TrendingUp, ExternalLink, HelpCircle, Users, Rocket, Brain, ListChecks, Wrench, ShieldCheck, MessageCircle } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 
 // Article data
@@ -459,6 +459,588 @@ const articles: Record<string, {
             <h4 className="font-bold text-foreground mb-2">6. Posso trabalhar no MMN sem experiência?</h4>
             <p className="text-muted-foreground">
               Sim. A maioria das empresas oferece treinamento inicial. O mais importante é ter disposição para aprender e agir com ética.
+            </p>
+          </Card>
+        </div>
+      </>
+    ),
+  },
+  "marketing-de-rede-guia-completo-para-iniciantes": {
+    title: "Marketing de Rede: Guia Completo para Iniciantes",
+    metaDescription: "Comece do zero no network marketing com este guia prático: estrutura, mindset, recrutamento e erros que arruínam novos empreendedores.",
+    excerpt: "Comece do zero no network marketing com este guia prático: estrutura, mindset, recrutamento e erros que arruínam novos empreendedores.",
+    image: "/images/artigos/marketing-de-rede-guia-completo-iniciantes.jpg",
+    author: "Equipe UniversidadeMN",
+    date: "09 Jan 2026",
+    category: "Educação Financeira",
+    categoryColor: "bg-gold-medium text-gold-foreground",
+    readTime: "22 min",
+    content: (
+      <>
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Se você chegou até aqui, provavelmente já ouviu falar — ou até foi convidado — a entrar no mundo do marketing de rede. Talvez tenha ficado curioso com histórias de liberdade financeira, horários flexíveis ou até mesmo de "trabalhar de pijama".
+        </p>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Mas também pode ter sentido aquele frio na barriga ao pensar em recrutar amigos, vender produtos ou lidar com rejeição. Afinal, como começar do zero nesse modelo sem cair nos erros que afastam 90% dos novos empreendedores nos primeiros meses?
+        </p>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Este guia foi feito para quem quer entender o <strong>marketing de rede</strong> com clareza, realismo e estratégia. Aqui, você vai descobrir não apenas como funciona esse modelo, mas por que ele exige mindset, consistência e ética — e como transformar esses pilares em resultados reais. Vamos desmistificar mitos, mapear armadilhas comuns e entregar um passo a passo prático para construir uma base sólida desde o primeiro dia.
+        </p>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6">O Que É Marketing de Rede (e Por Que Tanta Gente Erra no Começo)</h2>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          O marketing de rede, também conhecido como <strong>network marketing</strong> ou venda direta, é um modelo de negócios em que pessoas independentes distribuem produtos ou serviços diretamente ao consumidor final — geralmente fora de lojas físicas — e ainda têm a oportunidade de montar uma equipe de distribuidores, gerando renda residual.
+        </p>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Apesar da simplicidade conceitual, muitos iniciantes confundem o modelo com pirâmides financeiras (que são ilegais) ou esperam enriquecer rapidamente sem esforço. <strong>Essa expectativa irreal é o primeiro erro fatal.</strong>
+        </p>
+
+        <Card className="p-6 bg-primary/10 border-primary/30 my-8">
+          <div className="flex items-start gap-4">
+            <ShieldCheck className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h4 className="font-bold text-foreground mb-2">Mercado regulamentado</h4>
+              <p className="text-muted-foreground">
+                Na prática, o marketing de rede é um negócio legítimo regulamentado pela <a href="https://www.abevd.org.br/" target="_blank" rel="noopener noreferrer" className="text-gold-medium hover:underline font-medium">Associação Brasileira de Empresas de Vendas Diretas (ABEVD)</a>, que representa marcas como Herbalife, Jeunesse, Natura e outras reconhecidas no mercado. Segundo a ABEVD, o setor movimentou mais de R$ 50 bilhões no Brasil em 2023, com mais de 4 milhões de revendedores ativos.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Mas atenção: sucesso nesse modelo não depende apenas da empresa escolhida. Depende, sobretudo, da <strong>sua postura como empreendedor</strong>.
+        </p>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6 flex items-center gap-3">
+          <Brain className="w-7 h-7 text-gold-medium" />
+          Mindset do Empreendedor de Sucesso no Marketing de Rede
+        </h2>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Antes de falar sobre recrutamento, produtos ou estratégias digitais, é essencial alinhar o <strong>mindset</strong>. Muitos entram no marketing de rede pensando como "consumidores" ou "participantes", quando deveriam agir como verdadeiros donos de negócio.
+        </p>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Aqui estão três pilares mentais que separam os que desistem dos que constroem carreiras duradouras:
+        </p>
+
+        <div className="space-y-4 my-8">
+          <Card className="p-6 border-l-4 border-l-gold-medium">
+            <h4 className="font-bold text-foreground mb-2 flex items-center gap-2">
+              <Target className="w-5 h-5 text-gold-medium" />
+              Responsabilidade total
+            </h4>
+            <p className="text-muted-foreground">
+              Você é 100% responsável pelos seus resultados. Ninguém vai te cobrar, te lembrar de ligar ou te ensinar tudo passo a passo. Isso é liberdade — e também exigência.
+            </p>
+          </Card>
+
+          <Card className="p-6 border-l-4 border-l-gold-medium">
+            <h4 className="font-bold text-foreground mb-2 flex items-center gap-2">
+              <Lightbulb className="w-5 h-5 text-gold-medium" />
+              Foco em valor, não em venda
+            </h4>
+            <p className="text-muted-foreground">
+              As pessoas não compram porque você insiste. Elas compram (ou entram na equipe) porque percebem que seu produto ou oportunidade resolve um problema real delas.
+            </p>
+          </Card>
+
+          <Card className="p-6 border-l-4 border-l-gold-medium">
+            <h4 className="font-bold text-foreground mb-2 flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-gold-medium" />
+              Long game, não short win
+            </h4>
+            <p className="text-muted-foreground">
+              O marketing de rede recompensa quem persiste. Os primeiros 90 dias são de aprendizado; os primeiros 6 meses, de construção; e os primeiros 2 anos, de consolidação.
+            </p>
+          </Card>
+        </div>
+
+        <Card className="p-6 bg-muted/50 border my-8">
+          <div className="flex items-start gap-4">
+            <MessageCircle className="w-8 h-8 text-muted-foreground flex-shrink-0 mt-1" />
+            <div>
+              <p className="text-muted-foreground italic">
+                "Você não está vendendo um suplemento. Está oferecendo saúde. Não está convidando para uma empresa. Está abrindo portas para autonomia."
+              </p>
+              <p className="text-sm text-muted-foreground mt-2">— Conselho de mentor experiente</p>
+            </div>
+          </div>
+        </Card>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6 flex items-center gap-3">
+          <ListChecks className="w-7 h-7 text-gold-medium" />
+          Como Escolher a Empresa Certa: 5 Critérios Infalíveis
+        </h2>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Não basta gostar do produto. A empresa precisa ser estruturalmente sólida. Use esta checklist antes de assinar qualquer contrato:
+        </p>
+
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4 flex items-center gap-3">
+          <span className="w-8 h-8 rounded-full bg-gradient-gold text-gold-foreground flex items-center justify-center text-sm font-bold">1</span>
+          Produto com demanda real
+        </h3>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Evite empresas cujos produtos são genéricos, caros demais ou difíceis de explicar. O ideal é algo com benefício claro, uso contínuo e apelo emocional (saúde, beleza, bem-estar).
+        </p>
+
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4 flex items-center gap-3">
+          <span className="w-8 h-8 rounded-full bg-gradient-gold text-gold-foreground flex items-center justify-center text-sm font-bold">2</span>
+          Plano de compensação justo e sustentável
+        </h3>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Desconfie de planos que pagam mais por recrutamento do que por vendas reais. Um bom plano equilibra bônus por volume pessoal, volume da equipe e incentivos de longo prazo.
+        </p>
+
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4 flex items-center gap-3">
+          <span className="w-8 h-8 rounded-full bg-gradient-gold text-gold-foreground flex items-center justify-center text-sm font-bold">3</span>
+          Histórico de mercado
+        </h3>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Prefira empresas com pelo menos 5 anos de atuação no Brasil e presença internacional. Verifique se estão listadas na ABEVD — sinal de transparência e conformidade legal.
+        </p>
+
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4 flex items-center gap-3">
+          <span className="w-8 h-8 rounded-full bg-gradient-gold text-gold-foreground flex items-center justify-center text-sm font-bold">4</span>
+          Suporte e treinamento contínuo
+        </h3>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Uma boa empresa investe em formação. Procure por academias online, eventos presenciais, materiais atualizados e lideranças acessíveis.
+        </p>
+
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4 flex items-center gap-3">
+          <span className="w-8 h-8 rounded-full bg-gradient-gold text-gold-foreground flex items-center justify-center text-sm font-bold">5</span>
+          Cultura alinhada aos seus valores
+        </h3>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Visite eventos, converse com líderes de diferentes níveis. A cultura da empresa — competitiva ou colaborativa, individualista ou comunitária — impactará diretamente sua jornada.
+        </p>
+
+        <Card className="p-6 bg-gold-medium/10 border-gold-medium/30 my-8">
+          <div className="flex items-start gap-4">
+            <Lightbulb className="w-8 h-8 text-gold-medium flex-shrink-0 mt-1" />
+            <div>
+              <h4 className="font-bold text-foreground mb-2">Dica prática</h4>
+              <p className="text-muted-foreground">
+                Peça para testar os produtos por 30 dias antes de se comprometer. Se você não usaria por vontade própria, será difícil convencer outros.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6 flex items-center gap-3">
+          <Rocket className="w-7 h-7 text-gold-medium" />
+          Primeiros Passos: Do Zero à Primeira Venda (e ao Primeiro Recruta)
+        </h2>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Muitos novos empreendedores travam na fase inicial por medo de "incomodar" ou parecer "vendedor demais". A solução está em humanizar o processo.
+        </p>
+
+        <Card className="p-6 border-2 border-gold-medium/30 my-8">
+          <h4 className="font-bold text-foreground mb-4 text-lg flex items-center gap-2">
+            <span className="w-7 h-7 rounded-full bg-gold-medium text-gold-foreground flex items-center justify-center text-sm">1</span>
+            Liste 100 contatos reais
+          </h4>
+          <p className="text-muted-foreground">
+            Não são apenas números de WhatsApp. São pessoas que você conhece: familiares, colegas de trabalho, antigos amigos, vizinhos. Classifique-as por grau de proximidade e interesse potencial (ex.: quem já falou sobre emagrecimento, finanças, carreira).
+          </p>
+        </Card>
+
+        <Card className="p-6 border-2 border-gold-medium/30 my-8">
+          <h4 className="font-bold text-foreground mb-4 text-lg flex items-center gap-2">
+            <span className="w-7 h-7 rounded-full bg-gold-medium text-gold-foreground flex items-center justify-center text-sm">2</span>
+            Ofereça valor antes de oferecer oportunidade
+          </h4>
+          <p className="text-muted-foreground mb-4">Em vez de mandar um áudio genérico ("Oi, quero te apresentar uma oportunidade incrível!"), comece com algo útil:</p>
+          <ul className="space-y-3 text-muted-foreground">
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
+              <span>"Vi que você postou sobre cansaço… estou usando um suplemento natural que melhorou minha energia. Quer saber mais?"</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
+              <span>"Estou estudando formas de gerar renda extra com horário flexível. Se você tiver 10 minutos essa semana, adoraria trocar ideias — sem pressão, só conversa."</span>
+            </li>
+          </ul>
+        </Card>
+
+        <Card className="p-6 border-2 border-gold-medium/30 my-8">
+          <h4 className="font-bold text-foreground mb-4 text-lg flex items-center gap-2">
+            <span className="w-7 h-7 rounded-full bg-gold-medium text-gold-foreground flex items-center justify-center text-sm">3</span>
+            Agende encontros (presenciais ou virtuais)
+          </h4>
+          <p className="text-muted-foreground">
+            Use chamadas de vídeo curtas (15 minutos) para apresentar sua história, o produto e a oportunidade. Tenha um roteiro simples, mas seja autêntico.
+          </p>
+        </Card>
+
+        <Card className="p-6 border-2 border-gold-medium/30 my-8">
+          <h4 className="font-bold text-foreground mb-4 text-lg flex items-center gap-2">
+            <span className="w-7 h-7 rounded-full bg-gold-medium text-gold-foreground flex items-center justify-center text-sm">4</span>
+            Siga um sistema de acompanhamento
+          </h4>
+          <p className="text-muted-foreground">
+            Use uma planilha simples com colunas: Nome | Contato feito? | Interessado? | Próxima ação. Revise toda semana.
+          </p>
+        </Card>
+
+        <Card className="p-6 bg-accent/10 border-accent/30 my-8">
+          <div className="flex items-start gap-4">
+            <AlertTriangle className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
+            <div>
+              <h4 className="font-bold text-foreground mb-2">Erro comum</h4>
+              <p className="text-muted-foreground">
+                Focar só em recrutar. Lembre-se: <strong>vendas geram caixa; recrutamento gera escala</strong>. Ambos são essenciais.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6 flex items-center gap-3">
+          <Users className="w-7 h-7 text-gold-medium" />
+          Estratégias Modernas de Recrutamento no Marketing de Rede
+        </h2>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          O boca a boca ainda funciona, mas o cenário mudou. Hoje, o <strong>marketing de rede digital</strong> é tão relevante quanto o presencial — especialmente para atrair pessoas fora do seu círculo imediato.
+        </p>
+
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Use redes sociais com propósito</h3>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Não poste apenas stories promocionais. Compartilhe:
+        </p>
+
+        <ul className="list-disc list-inside text-lg text-muted-foreground mb-6 space-y-2 ml-4">
+          <li>Seu dia a dia como empreendedor (desafios e vitórias reais)</li>
+          <li>Depoimentos de clientes (com permissão)</li>
+          <li>Conteúdo educativo (ex.: "3 sinais de que você precisa repensar sua fonte de renda")</li>
+        </ul>
+
+        <Card className="p-6 bg-destructive/10 border-destructive/30 my-8">
+          <div className="flex items-start gap-4">
+            <AlertTriangle className="w-8 h-8 text-destructive flex-shrink-0 mt-1" />
+            <div>
+              <h4 className="font-bold text-foreground mb-2">Evite</h4>
+              <p className="text-muted-foreground">
+                Excesso de emojis, frases motivacionais genéricas ("Hoje é seu dia de virar o jogo!") e vídeos com trilha sonora alta. Isso afasta o público maduro.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Crie um funil simples de captação</h3>
+
+        <div className="space-y-4 my-8">
+          <Card className="p-4 border-l-4 border-l-gold-medium">
+            <p className="text-muted-foreground">
+              <strong>1.</strong> Postagem orgânica com gancho (ex.: "Como saí do emprego sem perder a estabilidade")
+            </p>
+          </Card>
+          <Card className="p-4 border-l-4 border-l-gold-medium">
+            <p className="text-muted-foreground">
+              <strong>2.</strong> Link na bio levando a um lead magnet (ex.: e-book gratuito "5 Erros que Destroem Novos Empreendedores no Network Marketing")
+            </p>
+          </Card>
+          <Card className="p-4 border-l-4 border-l-gold-medium">
+            <p className="text-muted-foreground">
+              <strong>3.</strong> Sequência de e-mails automatizados com valor + convite para call
+            </p>
+          </Card>
+        </div>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Ferramentas como Mailchimp, RD Station ou até WhatsApp Business podem ser usadas gratuitamente no início.
+        </p>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6 flex items-center gap-3">
+          <AlertTriangle className="w-7 h-7 text-destructive" />
+          Os 7 Erros que Arruínam Novos Empreendedores (e Como Evitá-los)
+        </h2>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Com base em mais de 20 anos observando milhares de casos, estes são os deslizes mais comuns — e suas soluções:
+        </p>
+
+        <div className="space-y-4 my-8">
+          <Card className="p-4">
+            <div className="flex items-start gap-3">
+              <span className="w-6 h-6 rounded-full bg-destructive/20 text-destructive flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+              <div>
+                <p className="font-medium text-foreground">Esperar resultados rápidos</p>
+                <p className="text-sm text-muted-foreground">→ <strong>Solução:</strong> Defina metas de atividade (ex.: 10 contatos/dia), não só de resultado.</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-4">
+            <div className="flex items-start gap-3">
+              <span className="w-6 h-6 rounded-full bg-destructive/20 text-destructive flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+              <div>
+                <p className="font-medium text-foreground">Não usar os produtos</p>
+                <p className="text-sm text-muted-foreground">→ <strong>Solução:</strong> Torne-se cliente primeiro. Sua credibilidade nasce da experiência real.</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-4">
+            <div className="flex items-start gap-3">
+              <span className="w-6 h-6 rounded-full bg-destructive/20 text-destructive flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
+              <div>
+                <p className="font-medium text-foreground">Copiar líderes sem adaptar ao seu estilo</p>
+                <p className="text-sm text-muted-foreground">→ <strong>Solução:</strong> Observe, aprenda, mas personalize. Autenticidade atrai mais que perfeição.</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-4">
+            <div className="flex items-start gap-3">
+              <span className="w-6 h-6 rounded-full bg-destructive/20 text-destructive flex items-center justify-center text-sm font-bold flex-shrink-0">4</span>
+              <div>
+                <p className="font-medium text-foreground">Ignorar o desenvolvimento pessoal</p>
+                <p className="text-sm text-muted-foreground">→ <strong>Solução:</strong> Leia pelo menos um livro por mês sobre vendas, comunicação ou mentalidade. Indicamos <em>Pai Rico, Pai Pobre</em> e <em>Os Segredos da Mente Milionária</em>.</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-4">
+            <div className="flex items-start gap-3">
+              <span className="w-6 h-6 rounded-full bg-destructive/20 text-destructive flex items-center justify-center text-sm font-bold flex-shrink-0">5</span>
+              <div>
+                <p className="font-medium text-foreground">Trabalhar sozinho</p>
+                <p className="text-sm text-muted-foreground">→ <strong>Solução:</strong> Envolva-se com sua upline e equipe. Participe de grupos de estudo.</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-4">
+            <div className="flex items-start gap-3">
+              <span className="w-6 h-6 rounded-full bg-destructive/20 text-destructive flex items-center justify-center text-sm font-bold flex-shrink-0">6</span>
+              <div>
+                <p className="font-medium text-foreground">Desistir na primeira rejeição</p>
+                <p className="text-sm text-muted-foreground">→ <strong>Solução:</strong> Entenda que "não" significa "não agora", não "nunca". Mantenha o relacionamento.</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-4">
+            <div className="flex items-start gap-3">
+              <span className="w-6 h-6 rounded-full bg-destructive/20 text-destructive flex items-center justify-center text-sm font-bold flex-shrink-0">7</span>
+              <div>
+                <p className="font-medium text-foreground">Focar só em ganhar dinheiro</p>
+                <p className="text-sm text-muted-foreground">→ <strong>Solução:</strong> Conecte-se a um propósito maior: ajudar, transformar, empoderar.</p>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6 flex items-center gap-3">
+          <Wrench className="w-7 h-7 text-gold-medium" />
+          Ferramentas e Hábitos que Aceleram Seus Resultados
+        </h2>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Empreendedores de alto desempenho no marketing de rede não dependem só de motivação. Eles criam <strong>sistemas</strong>.
+        </p>
+
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Rotina matinal de 20 minutos</h3>
+
+        <Card className="p-6 bg-muted/50 border my-8">
+          <ul className="space-y-3 text-muted-foreground">
+            <li className="flex items-center gap-3">
+              <span className="w-6 h-6 rounded-full bg-gold-medium/20 text-gold-medium flex items-center justify-center text-sm font-bold">5</span>
+              <span>min: visualização dos objetivos</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="w-6 h-6 rounded-full bg-gold-medium/20 text-gold-medium flex items-center justify-center text-sm font-bold">5</span>
+              <span>min: leitura inspiradora</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="w-6 h-6 rounded-full bg-gold-medium/20 text-gold-medium flex items-center justify-center text-sm font-bold">10</span>
+              <span>min: planejamento do dia (contatos, follow-ups, estudos)</span>
+            </li>
+          </ul>
+        </Card>
+
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Aplicativos essenciais</h3>
+
+        <ul className="list-disc list-inside text-lg text-muted-foreground mb-6 space-y-2 ml-4">
+          <li><strong>Trello ou Notion:</strong> para organizar leads e tarefas</li>
+          <li><strong>Canva:</strong> criar posts profissionais em minutos</li>
+          <li><strong>Google Meet ou Zoom:</strong> para calls de recrutamento</li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Métricas para acompanhar</h3>
+
+        <ul className="list-disc list-inside text-lg text-muted-foreground mb-6 space-y-2 ml-4">
+          <li>Taxa de conversão de contatos em clientes</li>
+          <li>Número de pessoas apresentadas à oportunidade por semana</li>
+          <li>Volume mensal de vendas (pessoal e da equipe)</li>
+        </ul>
+
+        <Card className="p-6 bg-primary/10 border-primary/30 my-8">
+          <div className="flex items-start gap-4">
+            <TrendingUp className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <p className="text-muted-foreground">
+                <strong>Pequenas ações consistentes geram grandes resultados.</strong> Como diz o ditado: "Água mole em pedra dura, tanto bate até que fura."
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6">É Preciso Ter Habilidades de Venda para Ter Sucesso?</h2>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          <strong>Não necessariamente.</strong> Muitos dos maiores líderes do setor começaram tímidos, inseguros ou até com medo de falar em público. O que importa é a disposição para aprender.
+        </p>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Venda, no contexto do marketing de rede, não é persuadir — é <strong>diagnosticar</strong>. Faça perguntas:
+        </p>
+
+        <Card className="p-6 bg-muted/50 border my-8">
+          <ul className="space-y-3 text-muted-foreground">
+            <li className="flex items-start gap-3">
+              <HelpCircle className="w-5 h-5 text-gold-medium flex-shrink-0 mt-1" />
+              <span>"O que você busca melhorar na sua rotina?"</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <HelpCircle className="w-5 h-5 text-gold-medium flex-shrink-0 mt-1" />
+              <span>"Já pensou em ter uma renda extra sem depender de chefe?"</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <HelpCircle className="w-5 h-5 text-gold-medium flex-shrink-0 mt-1" />
+              <span>"O que te impede de dar o próximo passo?"</span>
+            </li>
+          </ul>
+        </Card>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          <strong>Quem ouve mais do que fala constrói confiança.</strong> E confiança gera decisões.
+        </p>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Além disso, invista em treinamentos. A ABEVD oferece cursos gratuitos sobre ética, legislação e boas práticas na venda direta — fundamentais para qualquer empreendedor sério.
+        </p>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6">Marketing de Rede é Para Qualquer Pessoa?</h2>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          <strong>Sim</strong> — desde que a pessoa esteja disposta a:
+        </p>
+
+        <ul className="list-disc list-inside text-lg text-muted-foreground mb-6 space-y-2 ml-4">
+          <li>Aprender continuamente</li>
+          <li>Agir mesmo sem sentir-se "pronta"</li>
+          <li>Encarar rejeições como parte do processo</li>
+          <li>Trabalhar com integridade</li>
+        </ul>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Não é para quem busca atalhos, nem para quem espera que "o sistema faça tudo por você". É um caminho de <strong>crescimento pessoal disfarçado de negócio</strong>.
+        </p>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Se você tem disciplina, empatia e resiliência, tem tudo o que precisa para começar.
+        </p>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6">Conclusão: Seu Futuro Começa com Uma Única Ação</h2>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          O marketing de rede não é uma fórmula mágica. É um modelo poderoso nas mãos de quem entende que <strong>sucesso é construído com consistência, ética e foco em servir</strong>.
+        </p>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Você não precisa ser extrovertido, rico ou influente. Precisa apenas decidir: <strong>hoje é o dia em que paro de adiar e começo a agir</strong>.
+        </p>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Comece pequeno. Fale com uma pessoa. Compartilhe sua história. Ofereça valor. Repita.
+        </p>
+
+        <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          Em 6 meses, você olhará para trás e se orgulhará da coragem de ter dado o primeiro passo.
+        </p>
+
+        <Card className="p-6 bg-gradient-gold text-gold-foreground my-8">
+          <div className="flex items-start gap-4">
+            <BookOpen className="w-8 h-8 flex-shrink-0 mt-1" />
+            <div>
+              <h4 className="font-bold mb-2">Sua jornada merece ser bem guiada</h4>
+              <p className="mb-4">
+                Se este guia fez sentido para você, compartilhe com alguém que está pensando em começar. E explore outros conteúdos do nosso <Link to="/blog/" className="underline font-medium hover:opacity-80">blog</Link>.
+              </p>
+              <p>
+                Confira também nosso <Link to="/ranking/" className="underline font-medium hover:opacity-80">ranking completo de empresas</Link> para encontrar a melhor opção para seu perfil.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <h2 className="text-2xl font-bold text-foreground mt-10 mb-6 flex items-center gap-3">
+          <HelpCircle className="w-7 h-7 text-gold-medium" />
+          Perguntas Frequentes (FAQ)
+        </h2>
+
+        <div className="space-y-6">
+          <Card className="p-6">
+            <h4 className="font-bold text-foreground mb-2">O que é marketing de rede e como funciona?</h4>
+            <p className="text-muted-foreground">
+              Marketing de rede é um modelo de vendas diretas em que pessoas independentes comercializam produtos e constroem equipes, recebendo comissões por suas vendas e pelo volume da rede que desenvolvem.
+            </p>
+          </Card>
+
+          <Card className="p-6">
+            <h4 className="font-bold text-foreground mb-2">Marketing de rede é pirâmide?</h4>
+            <p className="text-muted-foreground">
+              Não. Pirâmides são ilegais e se baseiam apenas no recrutamento, sem produtos reais. O marketing de rede legítimo exige venda de produtos com valor de mercado e está regulamentado pela ABEVD.
+            </p>
+          </Card>
+
+          <Card className="p-6">
+            <h4 className="font-bold text-foreground mb-2">Quanto custa para começar no marketing de rede?</h4>
+            <p className="text-muted-foreground">
+              Varia conforme a empresa, mas geralmente envolve um kit inicial entre R$ 100 e R$ 500. Evite empresas que cobram taxas altas ou exigem estoques volumosos.
+            </p>
+          </Card>
+
+          <Card className="p-6">
+            <h4 className="font-bold text-foreground mb-2">Posso trabalhar no marketing de rede sem experiência?</h4>
+            <p className="text-muted-foreground">
+              Sim. A maioria dos empreendedores começa do zero. O essencial é disposição para aprender, agir e seguir um sistema comprovado.
+            </p>
+          </Card>
+
+          <Card className="p-6">
+            <h4 className="font-bold text-foreground mb-2">Quanto tempo leva para ganhar dinheiro no marketing de rede?</h4>
+            <p className="text-muted-foreground">
+              Depende do esforço e da estratégia. Alguns geram renda extra em 30 dias; outros levam 6 a 12 meses para construir uma renda consistente. Consistência é o fator-chave.
+            </p>
+          </Card>
+
+          <Card className="p-6">
+            <h4 className="font-bold text-foreground mb-2">Preciso vender para amigos e familiares?</h4>
+            <p className="text-muted-foreground">
+              Não é obrigatório, mas seu círculo próximo costuma ser o primeiro grupo receptivo. O segredo está em oferecer valor, não pressionar.
+            </p>
+          </Card>
+
+          <Card className="p-6">
+            <h4 className="font-bold text-foreground mb-2">Como escolher a melhor empresa de marketing de rede?</h4>
+            <p className="text-muted-foreground">
+              Analise: qualidade do produto, plano de compensação justo, histórico no mercado, suporte e alinhamento com seus valores. Verifique se a empresa é associada à ABEVD.
             </p>
           </Card>
         </div>

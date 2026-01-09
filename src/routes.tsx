@@ -68,6 +68,7 @@ const companySlugs = [
 // List of all article slugs for static generation
 const articleSlugs = [
   'como-ganhar-dinheiro-com-marketing-multinivel-em-2026',
+  'marketing-de-rede-guia-completo-para-iniciantes',
 ];
 
 export const routes: RouteRecord[] = [

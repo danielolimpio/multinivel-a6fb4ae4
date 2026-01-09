@@ -10,7 +10,7 @@ import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 
 const categories = [
-  { name: "Educação Financeira", count: 1, color: "bg-gold-medium text-gold-foreground" },
+  { name: "Educação Financeira", count: 2, color: "bg-gold-medium text-gold-foreground" },
   { name: "Empreendedorismo", count: 0, color: "bg-purple text-purple-foreground" },
   { name: "Carreira", count: 0, color: "bg-turquoise text-turquoise-foreground" },
   { name: "Tecnologia", count: 0, color: "bg-accent text-accent-foreground" },
@@ -38,6 +38,19 @@ const blogPosts = [
     categoryColor: "bg-gold-medium text-gold-foreground",
     views: 1247,
     readTime: "18 min",
+  },
+  {
+    id: 2,
+    slug: "marketing-de-rede-guia-completo-para-iniciantes",
+    title: "Marketing de Rede: Guia Completo para Iniciantes",
+    excerpt: "Comece do zero no network marketing com este guia prático: estrutura, mindset, recrutamento e erros que arruínam novos empreendedores.",
+    image: "/images/artigos/marketing-de-rede-guia-completo-iniciantes.jpg",
+    author: "Equipe UniversidadeMN",
+    date: "09 Jan 2026",
+    category: "Educação Financeira",
+    categoryColor: "bg-gold-medium text-gold-foreground",
+    views: 856,
+    readTime: "22 min",
   },
 ];
 
