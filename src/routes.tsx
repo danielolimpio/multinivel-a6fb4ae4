@@ -26,6 +26,8 @@ import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import NotFound from './pages/NotFound';
+import QuizPage from './pages/QuizPage';
+import { quizQuestions } from './data/quizData';
 
 const queryClient = new QueryClient();
 
@@ -146,6 +148,13 @@ export const routes: RouteRecord[] = [
         element: <ArticlePage />,
         entry: 'src/pages/ArticlePage.tsx',
         getStaticPaths: () => articleSlugs.map(slug => `/artigo/${slug}`),
+      },
+      // Quiz pages - pre-rendered with getStaticPaths
+      {
+        path: 'quiz/:slug',
+        element: <QuizPage />,
+        entry: 'src/pages/QuizPage.tsx',
+        getStaticPaths: () => quizQuestions.map(q => `/quiz/${q.slug}`),
       },
       // SPA-only pages (auth protected, not indexed)
       {
