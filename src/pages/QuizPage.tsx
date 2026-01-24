@@ -13,16 +13,33 @@ import {
   getQuestionIndex,
   totalQuestions 
 } from "@/data/quizData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, BookOpen, GraduationCap, Lightbulb, HelpCircle, ArrowRight } from "lucide-react";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { QuizFAQSchema } from "@/components/QuizFAQSchema";
+import { useQuizResponses } from "@/hooks/useQuizResponses";
+
+const SITE_URL = "https://www.universidademultinivel.com";
 
 const QuizPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const { saveResponse, getResponse, overallLevel } = useQuizResponses();
   
   const question = getQuestionBySlug(slug || '');
+  
+  // Load saved response when question changes
+  useEffect(() => {
+    if (slug) {
+      const savedResponse = getResponse(slug);
+      if (savedResponse) {
+        setSelectedOptions(savedResponse.selectedOptions);
+      } else {
+        setSelectedOptions([]);
+      }
+    }
+  }, [slug, getResponse]);
   
   if (!question) {
     return (
@@ -53,13 +70,24 @@ const QuizPage = () => {
   };
 
   const handleNext = () => {
+    // Determine the level based on selected options
+    const selectedOption = question.options.find(opt => selectedOptions.includes(opt.value));
+    const level = selectedOption?.level || null;
+    
+    // Save response before navigating
+    saveResponse(slug || '', selectedOptions, level);
+    
     if (nextSlug) {
       navigate(`/quiz/${nextSlug}/`);
-      setSelectedOptions([]);
+    } else {
+      // Navigate to results page
+      navigate('/quiz/relatorio-final/');
     }
   };
 
-  const recommendation = question.recommendations.general || 
+  // Get personalized recommendation based on user level
+  const recommendation = question.recommendations[overallLevel] ||
+    question.recommendations.general || 
     question.recommendations.intermediario || 
     question.recommendations.iniciante ||
     question.recommendations.avancado;
@@ -70,6 +98,11 @@ const QuizPage = () => {
         title={question.title}
         description={question.metaDescription}
         canonical={`/quiz/${slug}/`}
+      />
+      <QuizFAQSchema 
+        faq={question.faq}
+        pageTitle={question.title}
+        pageUrl={`${SITE_URL}/quiz/${slug}/`}
       />
       <AnnouncementBanner />
       <Header />
