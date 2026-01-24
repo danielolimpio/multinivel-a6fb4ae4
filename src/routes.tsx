@@ -27,6 +27,7 @@ import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import NotFound from './pages/NotFound';
 import QuizPage from './pages/QuizPage';
+import QuizResult from './pages/QuizResult';
 import { quizQuestions } from './data/quizData';
 
 const queryClient = new QueryClient();
@@ -155,6 +156,11 @@ export const routes: RouteRecord[] = [
         element: <QuizPage />,
         entry: 'src/pages/QuizPage.tsx',
         getStaticPaths: () => quizQuestions.map(q => `/quiz/${q.slug}`),
+      },
+      // Quiz result page
+      {
+        path: 'quiz/resultado',
+        element: <QuizResult />,
       },
       // SPA-only pages (auth protected, not indexed)
       {
