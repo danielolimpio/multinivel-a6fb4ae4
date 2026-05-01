@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
 import { companyNameToSlug } from "@/lib/companySlug";
+import { SocialShare } from "@/components/SocialShare";
 
 // Import company logos
 import hinodeLogo from "@/assets/logos/hinode.jpeg";
