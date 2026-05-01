@@ -12,6 +12,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
 import { companyNameToSlug } from "@/lib/companySlug";
+import { SocialShare } from "@/components/SocialShare";
 
 // Import all company logos
 import hinode from "@/assets/logos/hinode.jpeg";
@@ -447,12 +448,22 @@ export default function AllCompanies() {
                           alt={`${company.name} logo`}
                           className="w-10 h-10 rounded object-cover bg-muted flex-shrink-0"
                         />
-                        <div className="min-w-0">
+                        <div className="min-w-0 flex-1">
                           <h3 className="font-semibold text-foreground text-lg">{company.name}</h3>
                           <Badge variant="secondary" className="text-xs">
                             {company.category}
                           </Badge>
                         </div>
+                        {/* Premium social share — small icons aligned right of the logo */}
+                        <SocialShare
+                          url={`/empresa/${company.slug}`}
+                          title={`${company.name} — Ranking de Marketing de Rede`}
+                          description={`Confira ${company.name} no ranking das melhores empresas de marketing multinível.`}
+                          image={company.logo}
+                          size="sm"
+                          centered
+                          className="ml-auto"
+                        />
                       </div>
                     </div>
                   </div>

@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
 import { companyNameToSlug } from "@/lib/companySlug";
+import { SocialShare } from "@/components/SocialShare";
 
 // Import company logos
 import hinodeLogo from "@/assets/logos/hinode.jpeg";
@@ -197,12 +198,22 @@ export function RankingSection() {
                 <div className="flex-1 min-w-0 w-full">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
                     <img src={company.logo} alt={`${company.name} logo`} className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg object-cover bg-muted flex-shrink-0 shadow-md" />
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
                       <h3 className="font-semibold text-foreground text-base sm:text-lg">{company.name}</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground">
                         {liveVotes.toLocaleString()} votos
                       </p>
                     </div>
+                    {/* Premium social share — small icons aligned right of the logo */}
+                    <SocialShare
+                      url={`/empresa/${slug}`}
+                      title={`${company.name} — Ranking de Marketing de Rede`}
+                      description={`Confira ${company.name} no ranking das melhores empresas de marketing multinível.`}
+                      image={company.logo}
+                      size="sm"
+                      centered
+                      className="sm:ml-auto"
+                    />
                   </div>
 
                   {/* Progress Bar — share of total votes */}
