@@ -31,6 +31,30 @@ function persistVotedCompany(slug: string | null) {
   else localStorage.removeItem(VOTED_COMPANY_KEY);
 }
 
+type CountsListener = (updater: (prev: Record<string, number>) => Record<string, number>) => void;
+const countsListeners = new Set<CountsListener>();
+const recentSelfChanges = new Map<string, number>(); // slug -> expiry timestamp
+
+export function applyCountsDelta(updater: (prev: Record<string, number>) => Record<string, number>) {
+  countsListeners.forEach((l) => l(updater));
+}
+
+export function markSelfChange(slug: string) {
+  recentSelfChanges.set(slug, Date.now() + 4000);
+}
+
+function isRecentSelfChange(slug: string | undefined): boolean {
+  if (!slug) return false;
+  const expiry = recentSelfChanges.get(slug);
+  if (!expiry) return false;
+  if (Date.now() > expiry) {
+    recentSelfChanges.delete(slug);
+    return false;
+  }
+  recentSelfChanges.delete(slug);
+  return true;
+}
+
 export function useCompanyVoteCounts() {
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
@@ -50,6 +74,14 @@ export function useCompanyVoteCounts() {
   }, []);
 
   useEffect(() => {
+    const listener: CountsListener = (updater) => setCounts(updater);
+    countsListeners.add(listener);
+    return () => {
+      countsListeners.delete(listener);
+    };
+  }, []);
+
+  useEffect(() => {
     fetchCounts();
     const channel = supabase
       .channel("company-votes-realtime")
@@ -58,6 +90,7 @@ export function useCompanyVoteCounts() {
         { event: "INSERT", schema: "public", table: "company_votes" },
         (payload) => {
           const slug = (payload.new as any).company_slug as string;
+          if (isRecentSelfChange(slug)) return;
           setCounts((prev) => ({ ...prev, [slug]: (prev[slug] ?? 0) + 1 }));
         },
       )
@@ -68,6 +101,12 @@ export function useCompanyVoteCounts() {
           const newSlug = (payload.new as any).company_slug as string;
           const oldSlug = (payload.old as any).company_slug as string | undefined;
           if (oldSlug && oldSlug !== newSlug) {
+            // Skip if this update was already applied optimistically by this client
+            if (isRecentSelfChange(newSlug)) {
+              // also clear paired old marker if present
+              isRecentSelfChange(oldSlug);
+              return;
+            }
             setCounts((prev) => ({
               ...prev,
               [oldSlug]: Math.max(0, (prev[oldSlug] ?? 0) - 1),
@@ -127,8 +166,27 @@ export function useCompanyVote() {
         if (error) throw error;
 
         if (data?.success) {
+          const previousSlug = votedCompany;
           setVotedCompany(slug);
           persistVotedCompany(slug);
+
+          // Optimistic count update for instant UI feedback
+          if (data.changed && previousSlug && previousSlug !== slug) {
+            markSelfChange(slug);
+            markSelfChange(previousSlug);
+            applyCountsDelta((prev) => ({
+              ...prev,
+              [previousSlug]: Math.max(0, (prev[previousSlug] ?? 0) - 1),
+              [slug]: (prev[slug] ?? 0) + 1,
+            }));
+          } else if (!data.unchanged && !data.changed) {
+            markSelfChange(slug);
+            applyCountsDelta((prev) => ({
+              ...prev,
+              [slug]: (prev[slug] ?? 0) + 1,
+            }));
+          }
+
           if (data.changed) {
             toast({
               title: "Voto transferido!",

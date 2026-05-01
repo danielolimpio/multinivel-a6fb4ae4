@@ -1,0 +1,1 @@
+ALTER TABLE public.company_votes REPLICA IDENTITY FULL;
