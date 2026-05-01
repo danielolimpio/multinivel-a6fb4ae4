@@ -470,12 +470,12 @@ export default function AllCompanies() {
                     
                     {/* Animated Progress Bar */}
                     <Progress 
-                      value={(liveVotes / company.maxVotes) * 100} 
+                      value={sharePct} 
                       className="h-3 animate-progress-fill"
                     />
                     <div className="flex justify-between text-xs text-muted-foreground">
-                      <span>{((liveVotes / company.maxVotes) * 100).toFixed(1)}%</span>
-                      <span>Meta: {company.maxVotes.toLocaleString()}</span>
+                      <span>{sharePct.toFixed(1)}% do total</span>
+                      <span>Total: {totalVotes.toLocaleString()} votos</span>
                     </div>
                   </div>
 
