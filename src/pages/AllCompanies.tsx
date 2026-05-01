@@ -3,13 +3,15 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
-import { Vote, Trophy, Eye, ArrowLeft, Search, Filter } from "lucide-react";
+import { Vote, Trophy, Eye, ArrowLeft, Search, Filter, Check, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
+import { companyNameToSlug } from "@/lib/companySlug";
 
 // Import all company logos
 import hinode from "@/assets/logos/hinode.jpeg";
