@@ -34,6 +34,9 @@ import royalprestige from "@/assets/logos/royalprestige.jpeg";
 import tupperware from "@/assets/logos/tupperware.jpeg";
 import utilitywarehouse from "@/assets/logos/utilitywarehouse.jpeg";
 
+const w = (i: number) => `https://randomuser.me/api/portraits/thumb/women/${i}.jpg`;
+const m = (i: number) => `https://randomuser.me/api/portraits/thumb/men/${i}.jpg`;
+
 // All 20 companies data
 const allCompanies = [
   {
@@ -46,11 +49,11 @@ const allCompanies = [
     category: "Cosméticos",
     slug: "hinode",
     recentVoters: [
-      { name: "Ana Silva", avatar: "/placeholder.svg", city: "São Paulo" },
-      { name: "João Costa", avatar: "/placeholder.svg", city: "Rio de Janeiro" },
-      { name: "Maria Santos", avatar: "/placeholder.svg", city: "Belo Horizonte" },
-      { name: "Pedro Lima", avatar: "/placeholder.svg", city: "Brasília" },
-      { name: "Carla Oliveira", avatar: "/placeholder.svg", city: "Salvador" },
+      { name: "Ana Silva", avatar: w(1), city: "São Paulo" },
+      { name: "João Costa", avatar: m(1), city: "Rio de Janeiro" },
+      { name: "Maria Santos", avatar: w(2), city: "Belo Horizonte" },
+      { name: "Pedro Lima", avatar: m(2), city: "Brasília" },
+      { name: "Carla Oliveira", avatar: w(3), city: "Salvador" },
     ]
   },
   {
@@ -63,11 +66,11 @@ const allCompanies = [
     category: "Nutrição",
     slug: "herbalife",
     recentVoters: [
-      { name: "Roberto Silva", avatar: "/placeholder.svg", city: "Curitiba" },
-      { name: "Lucia Mendes", avatar: "/placeholder.svg", city: "Fortaleza" },
-      { name: "Carlos Ferreira", avatar: "/placeholder.svg", city: "Porto Alegre" },
-      { name: "Sandra Costa", avatar: "/placeholder.svg", city: "Recife" },
-      { name: "Bruno Santos", avatar: "/placeholder.svg", city: "Goiânia" },
+      { name: "Roberto Silva", avatar: m(3), city: "Curitiba" },
+      { name: "Lucia Mendes", avatar: w(4), city: "Fortaleza" },
+      { name: "Carlos Ferreira", avatar: m(4), city: "Porto Alegre" },
+      { name: "Sandra Costa", avatar: w(5), city: "Recife" },
+      { name: "Bruno Santos", avatar: m(5), city: "Goiânia" },
     ]
   },
   {
@@ -80,11 +83,11 @@ const allCompanies = [
     category: "Eletrodomésticos",
     slug: "vorwerk",
     recentVoters: [
-      { name: "Patricia Rocha", avatar: "/placeholder.svg", city: "Manaus" },
-      { name: "Marcos Alves", avatar: "/placeholder.svg", city: "Belém" },
-      { name: "Fernanda Lima", avatar: "/placeholder.svg", city: "Natal" },
-      { name: "Ricardo Barbosa", avatar: "/placeholder.svg", city: "João Pessoa" },
-      { name: "Juliana Campos", avatar: "/placeholder.svg", city: "Vitória" },
+      { name: "Patricia Rocha", avatar: w(6), city: "Manaus" },
+      { name: "Marcos Alves", avatar: m(6), city: "Belém" },
+      { name: "Fernanda Lima", avatar: w(7), city: "Natal" },
+      { name: "Ricardo Barbosa", avatar: m(7), city: "João Pessoa" },
+      { name: "Juliana Campos", avatar: w(8), city: "Vitória" },
     ]
   },
   {
@@ -97,11 +100,11 @@ const allCompanies = [
     category: "Suplementos",
     slug: "4life",
     recentVoters: [
-      { name: "Gustavo Reis", avatar: "/placeholder.svg", city: "Florianópolis" },
-      { name: "Camila Torres", avatar: "/placeholder.svg", city: "Maceió" },
-      { name: "Diego Moreira", avatar: "/placeholder.svg", city: "Teresina" },
-      { name: "Vanessa Cruz", avatar: "/placeholder.svg", city: "São Luís" },
-      { name: "Felipe Nascimento", avatar: "/placeholder.svg", city: "Aracaju" },
+      { name: "Gustavo Reis", avatar: m(8), city: "Florianópolis" },
+      { name: "Camila Torres", avatar: w(9), city: "Maceió" },
+      { name: "Diego Moreira", avatar: m(9), city: "Teresina" },
+      { name: "Vanessa Cruz", avatar: w(10), city: "São Luís" },
+      { name: "Felipe Nascimento", avatar: m(10), city: "Aracaju" },
     ]
   },
   {
@@ -114,11 +117,11 @@ const allCompanies = [
     category: "Cuidados Pessoais",
     slug: "nu-skin",
     recentVoters: [
-      { name: "Amanda Souza", avatar: "/placeholder.svg", city: "Campo Grande" },
-      { name: "Rodrigo Martins", avatar: "/placeholder.svg", city: "Cuiabá" },
-      { name: "Leticia Pereira", avatar: "/placeholder.svg", city: "Palmas" },
-      { name: "Thiago Cardoso", avatar: "/placeholder.svg", city: "Boa Vista" },
-      { name: "Priscila Gomes", avatar: "/placeholder.svg", city: "Macapá" },
+      { name: "Amanda Souza", avatar: w(11), city: "Campo Grande" },
+      { name: "Rodrigo Martins", avatar: m(11), city: "Cuiabá" },
+      { name: "Leticia Pereira", avatar: w(12), city: "Palmas" },
+      { name: "Thiago Cardoso", avatar: m(12), city: "Boa Vista" },
+      { name: "Priscila Gomes", avatar: w(13), city: "Macapá" },
     ]
   },
   {
@@ -131,9 +134,9 @@ const allCompanies = [
     category: "Cosméticos",
     slug: "mary-kay",
     recentVoters: [
-      { name: "Beatriz Alves", avatar: "/placeholder.svg", city: "Campinas" },
-      { name: "Rafael Santos", avatar: "/placeholder.svg", city: "Santos" },
-      { name: "Cristina Melo", avatar: "/placeholder.svg", city: "Sorocaba" },
+      { name: "Beatriz Alves", avatar: m(13), city: "Campinas" },
+      { name: "Rafael Santos", avatar: w(14), city: "Santos" },
+      { name: "Cristina Melo", avatar: m(14), city: "Sorocaba" },
     ]
   },
   {
@@ -146,9 +149,9 @@ const allCompanies = [
     category: "Múltiplas Categorias",
     slug: "amway",
     recentVoters: [
-      { name: "Lucas Pereira", avatar: "/placeholder.svg", city: "Ribeirão Preto" },
-      { name: "Monica Lima", avatar: "/placeholder.svg", city: "Osasco" },
-      { name: "Eduardo Costa", avatar: "/placeholder.svg", city: "São José" },
+      { name: "Lucas Pereira", avatar: w(15), city: "Ribeirão Preto" },
+      { name: "Monica Lima", avatar: m(15), city: "Osasco" },
+      { name: "Eduardo Costa", avatar: w(16), city: "São José" },
     ]
   },
   {
@@ -161,8 +164,8 @@ const allCompanies = [
     category: "Tecnologia",
     slug: "ozonteck",
     recentVoters: [
-      { name: "Adriana Silva", avatar: "/placeholder.svg", city: "Guarulhos" },
-      { name: "Marcos Oliveira", avatar: "/placeholder.svg", city: "Campina Grande" },
+      { name: "Adriana Silva", avatar: m(16), city: "Guarulhos" },
+      { name: "Marcos Oliveira", avatar: w(17), city: "Campina Grande" },
     ]
   },
   {
@@ -175,8 +178,8 @@ const allCompanies = [
     category: "Aloe Vera",
     slug: "forever-living",
     recentVoters: [
-      { name: "Isabella Costa", avatar: "/placeholder.svg", city: "Joinville" },
-      { name: "Gabriel Rocha", avatar: "/placeholder.svg", city: "Londrina" },
+      { name: "Isabella Costa", avatar: m(17), city: "Joinville" },
+      { name: "Gabriel Rocha", avatar: w(18), city: "Londrina" },
     ]
   },
   {
@@ -189,8 +192,8 @@ const allCompanies = [
     category: "Purificadores",
     slug: "coway",
     recentVoters: [
-      { name: "Sophia Martins", avatar: "/placeholder.svg", city: "Maringá" },
-      { name: "Henrique Silva", avatar: "/placeholder.svg", city: "Caxias do Sul" },
+      { name: "Sophia Martins", avatar: m(18), city: "Maringá" },
+      { name: "Henrique Silva", avatar: w(19), city: "Caxias do Sul" },
     ]
   },
   {
@@ -203,8 +206,8 @@ const allCompanies = [
     category: "Medicina Tradicional",
     slug: "infinitus",
     recentVoters: [
-      { name: "Larissa Oliveira", avatar: "/placeholder.svg", city: "Uberlândia" },
-      { name: "Rafael Pereira", avatar: "/placeholder.svg", city: "Juiz de Fora" },
+      { name: "Larissa Oliveira", avatar: m(19), city: "Uberlândia" },
+      { name: "Rafael Pereira", avatar: w(20), city: "Juiz de Fora" },
     ]
   },
   {
@@ -217,8 +220,8 @@ const allCompanies = [
     category: "Cosméticos",
     slug: "jan-rose",
     recentVoters: [
-      { name: "Yasmin Santos", avatar: "/placeholder.svg", city: "Niterói" },
-      { name: "Leonardo Costa", avatar: "/placeholder.svg", city: "Petrópolis" },
+      { name: "Yasmin Santos", avatar: m(20), city: "Niterói" },
+      { name: "Leonardo Costa", avatar: w(21), city: "Petrópolis" },
     ]
   },
   {
@@ -231,8 +234,8 @@ const allCompanies = [
     category: "Bem-estar",
     slug: "melaleuca",
     recentVoters: [
-      { name: "Carolina Lima", avatar: "/placeholder.svg", city: "Blumenau" },
-      { name: "Fábio Santos", avatar: "/placeholder.svg", city: "Itajaí" },
+      { name: "Carolina Lima", avatar: m(21), city: "Blumenau" },
+      { name: "Fábio Santos", avatar: w(22), city: "Itajaí" },
     ]
   },
   {
@@ -245,8 +248,8 @@ const allCompanies = [
     category: "Nutrição",
     slug: "omnilife",
     recentVoters: [
-      { name: "Renata Alves", avatar: "/placeholder.svg", city: "São Carlos" },
-      { name: "Vinicius Rocha", avatar: "/placeholder.svg", city: "Araraquara" },
+      { name: "Renata Alves", avatar: m(22), city: "São Carlos" },
+      { name: "Vinicius Rocha", avatar: w(23), city: "Araraquara" },
     ]
   },
   {
@@ -259,8 +262,8 @@ const allCompanies = [
     category: "Cosméticos",
     slug: "oriflame",
     recentVoters: [
-      { name: "Mariana Costa", avatar: "/placeholder.svg", city: "Franca" },
-      { name: "Diego Martins", avatar: "/placeholder.svg", city: "Bauru" },
+      { name: "Mariana Costa", avatar: m(23), city: "Franca" },
+      { name: "Diego Martins", avatar: w(24), city: "Bauru" },
     ]
   },
   {
@@ -273,8 +276,8 @@ const allCompanies = [
     category: "Serviços Financeiros",
     slug: "primerica",
     recentVoters: [
-      { name: "Aline Ferreira", avatar: "/placeholder.svg", city: "Piracicaba" },
-      { name: "Bruno Lima", avatar: "/placeholder.svg", city: "Limeira" },
+      { name: "Aline Ferreira", avatar: m(24), city: "Piracicaba" },
+      { name: "Bruno Lima", avatar: w(25), city: "Limeira" },
     ]
   },
   {
@@ -287,8 +290,8 @@ const allCompanies = [
     category: "Utensílios de Cozinha",
     slug: "royal-prestige",
     recentVoters: [
-      { name: "Fernanda Souza", avatar: "/placeholder.svg", city: "Taubaté" },
-      { name: "Gustavo Almeida", avatar: "/placeholder.svg", city: "Jacareí" },
+      { name: "Fernanda Souza", avatar: m(25), city: "Taubaté" },
+      { name: "Gustavo Almeida", avatar: w(26), city: "Jacareí" },
     ]
   },
   {
@@ -301,8 +304,8 @@ const allCompanies = [
     category: "Utilidades Domésticas",
     slug: "tupperware",
     recentVoters: [
-      { name: "Paula Rocha", avatar: "/placeholder.svg", city: "Mogi das Cruzes" },
-      { name: "Ricardo Mendes", avatar: "/placeholder.svg", city: "Suzano" },
+      { name: "Paula Rocha", avatar: m(26), city: "Mogi das Cruzes" },
+      { name: "Ricardo Mendes", avatar: w(27), city: "Suzano" },
     ]
   },
   {
@@ -315,8 +318,8 @@ const allCompanies = [
     category: "Serviços Essenciais",
     slug: "utility-warehouse",
     recentVoters: [
-      { name: "Carla Santos", avatar: "/placeholder.svg", city: "Santo André" },
-      { name: "Marcelo Costa", avatar: "/placeholder.svg", city: "São Bernardo" },
+      { name: "Carla Santos", avatar: m(27), city: "Santo André" },
+      { name: "Marcelo Costa", avatar: w(28), city: "São Bernardo" },
     ]
   },
 ];
@@ -415,8 +418,14 @@ export default function AllCompanies() {
 
           {/* Companies Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {filteredCompanies.map((company, index) => {
+            {(() => {
+              const totalVotes = filteredCompanies.reduce(
+                (acc, c) => acc + c.votes + (counts[c.slug] ?? 0),
+                0
+              );
+              return filteredCompanies.map((company, index) => {
               const liveVotes = company.votes + (counts[company.slug] ?? 0);
+              const sharePct = totalVotes > 0 ? (liveVotes / totalVotes) * 100 : 0;
               const voted = hasVoted(company.slug);
               const isVoting = voting === company.slug;
               return (
@@ -461,12 +470,12 @@ export default function AllCompanies() {
                     
                     {/* Animated Progress Bar */}
                     <Progress 
-                      value={(liveVotes / company.maxVotes) * 100} 
+                      value={sharePct} 
                       className="h-3 animate-progress-fill"
                     />
                     <div className="flex justify-between text-xs text-muted-foreground">
-                      <span>{((liveVotes / company.maxVotes) * 100).toFixed(1)}%</span>
-                      <span>Meta: {company.maxVotes.toLocaleString()}</span>
+                      <span>{sharePct.toFixed(1)}% do total</span>
+                      <span>Total: {totalVotes.toLocaleString()} votos</span>
                     </div>
                   </div>
 
@@ -529,7 +538,8 @@ export default function AllCompanies() {
                 </div>
               </Card>
               );
-            })}
+            });
+            })()}
           </div>
 
           {/* No Results */}
