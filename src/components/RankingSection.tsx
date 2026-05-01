@@ -172,8 +172,6 @@ export function RankingSection() {
           </p>
         </div>
 
-        {/* Total votes across all listed companies (base + live deltas) */}
-        {(() => null)()}
         {/* Compact Ranking Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
           {topCompanies.map((company, index) => {
