@@ -47,9 +47,12 @@ import {
   History,
   Landmark,
   CircleDollarSign,
-  BadgeCheck
+  BadgeCheck,
+  Check,
+  Loader2
 } from "lucide-react";
 import { useParams, Link } from "react-router-dom";
+import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
 
 // Import company logos
 import hinodeLogo from "@/assets/logos/hinode.jpeg";
@@ -980,6 +983,8 @@ const companiesData: Record<string, CompanyData> = {
 
 export default function CompanyDetails() {
   const { slug } = useParams<{ slug: string }>();
+  const { counts } = useCompanyVoteCounts();
+  const { vote, hasVoted, voting } = useCompanyVote();
   
   const company = slug ? companiesData[slug] : null;
 
@@ -1081,14 +1086,25 @@ export default function CompanyDetails() {
                     ))}
                   </div>
                   <span className="text-2xl font-bold text-foreground">{company.rating}</span>
-                  <span className="text-muted-foreground">({company.votes.toLocaleString()} votos)</span>
+                  <span className="text-muted-foreground">({(company.votes + (counts[company.slug] ?? 0)).toLocaleString()} votos)</span>
                 </div>
 
                 {/* Actions */}
                 <div className="flex flex-wrap gap-3">
-                  <Button size="lg" className="bg-gradient-gold hover:opacity-90">
-                    <Vote className="w-5 h-5 mr-2" />
-                    Votar nesta Empresa
+                  <Button
+                    size="lg"
+                    disabled={hasVoted(company.slug) || voting === company.slug}
+                    onClick={() => vote(company.slug)}
+                    className="bg-gradient-gold hover:opacity-90 disabled:opacity-70"
+                  >
+                    {voting === company.slug ? (
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                    ) : hasVoted(company.slug) ? (
+                      <Check className="w-5 h-5 mr-2" />
+                    ) : (
+                      <Vote className="w-5 h-5 mr-2" />
+                    )}
+                    {hasVoted(company.slug) ? "Voto Registrado" : "Votar nesta Empresa"}
                   </Button>
                   <a href={company.website} target="_blank" rel="noopener noreferrer">
                     <Button size="lg" variant="outline">
