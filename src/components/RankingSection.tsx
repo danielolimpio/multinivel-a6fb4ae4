@@ -223,7 +223,7 @@ export function RankingSection() {
     voterIndex: number;
   } | null>(null);
   const { counts } = useCompanyVoteCounts();
-  const { vote, hasVoted, voting } = useCompanyVote();
+  const { vote, hasVoted, voting, votedCompany } = useCompanyVote();
   const getPositionColor = (position: number) => {
     switch (position) {
       case 1:
