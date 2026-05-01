@@ -139,6 +139,33 @@ export type Database = {
         }
         Relationships: []
       }
+      company_votes: {
+        Row: {
+          company_slug: string
+          created_at: string
+          fingerprint: string
+          id: string
+          ip_hash: string
+          user_agent: string | null
+        }
+        Insert: {
+          company_slug: string
+          created_at?: string
+          fingerprint: string
+          id?: string
+          ip_hash: string
+          user_agent?: string | null
+        }
+        Update: {
+          company_slug?: string
+          created_at?: string
+          fingerprint?: string
+          id?: string
+          ip_hash?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       downloads: {
         Row: {
           created_at: string
@@ -419,7 +446,13 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      company_vote_counts: {
+        Row: {
+          company_slug: string | null
+          vote_count: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       generate_referral_code: { Args: never; Returns: string }
