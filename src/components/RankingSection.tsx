@@ -19,6 +19,11 @@ import maryKayLogo from "@/assets/logos/marykay.jpeg";
 import amwayLogo from "@/assets/logos/amway.jpeg";
 import ozonteckLogo from "@/assets/logos/ozonteck.jpeg";
 
+// Helper to build randomuser.me thumbnail URLs (real human portraits, ~3KB each)
+// Each voter has a unique portrait — no faces repeat across companies.
+const w = (i: number) => `https://randomuser.me/api/portraits/thumb/women/${i}.jpg`;
+const m = (i: number) => `https://randomuser.me/api/portraits/thumb/men/${i}.jpg`;
+
 // Mock data for top companies
 const topCompanies = [{
   id: 1,
@@ -27,27 +32,13 @@ const topCompanies = [{
   position: 1,
   votes: 2847,
   maxVotes: 3000,
-  recentVoters: [{
-    name: "Ana Silva",
-    avatar: "undefined",
-    city: "São Paulo"
-  }, {
-    name: "João Costa",
-    avatar: "undefined",
-    city: "Rio de Janeiro"
-  }, {
-    name: "Maria Santos",
-    avatar: "undefined",
-    city: "Belo Horizonte"
-  }, {
-    name: "Pedro Lima",
-    avatar: "undefined",
-    city: "Brasília"
-  }, {
-    name: "Carla Oliveira",
-    avatar: "undefined",
-    city: "Salvador"
-  }]
+  recentVoters: [
+    { name: "Ana Silva", avatar: w(1), city: "São Paulo" },
+    { name: "João Costa", avatar: m(1), city: "Rio de Janeiro" },
+    { name: "Maria Santos", avatar: w(2), city: "Belo Horizonte" },
+    { name: "Pedro Lima", avatar: m(2), city: "Brasília" },
+    { name: "Carla Oliveira", avatar: w(3), city: "Salvador" },
+  ]
 }, {
   id: 2,
   name: "Herbalife",
@@ -55,27 +46,13 @@ const topCompanies = [{
   position: 2,
   votes: 2634,
   maxVotes: 3000,
-  recentVoters: [{
-    name: "Roberto Silva",
-    avatar: "undefined",
-    city: "Curitiba"
-  }, {
-    name: "Lucia Mendes",
-    avatar: "undefined",
-    city: "Fortaleza"
-  }, {
-    name: "Carlos Ferreira",
-    avatar: "undefined",
-    city: "Porto Alegre"
-  }, {
-    name: "Sandra Costa",
-    avatar: "undefined",
-    city: "Recife"
-  }, {
-    name: "Bruno Santos",
-    avatar: "undefined",
-    city: "Goiânia"
-  }]
+  recentVoters: [
+    { name: "Roberto Silva", avatar: m(3), city: "Curitiba" },
+    { name: "Lucia Mendes", avatar: w(4), city: "Fortaleza" },
+    { name: "Carlos Ferreira", avatar: m(4), city: "Porto Alegre" },
+    { name: "Sandra Costa", avatar: w(5), city: "Recife" },
+    { name: "Bruno Santos", avatar: m(5), city: "Goiânia" },
+  ]
 }, {
   id: 3,
   name: "Vorwerk",
@@ -83,27 +60,13 @@ const topCompanies = [{
   position: 3,
   votes: 2398,
   maxVotes: 3000,
-  recentVoters: [{
-    name: "Patricia Rocha",
-    avatar: "undefined",
-    city: "Manaus"
-  }, {
-    name: "Marcos Alves",
-    avatar: "undefined",
-    city: "Belém"
-  }, {
-    name: "Fernanda Lima",
-    avatar: "undefined",
-    city: "Natal"
-  }, {
-    name: "Ricardo Barbosa",
-    avatar: "undefined",
-    city: "João Pessoa"
-  }, {
-    name: "Juliana Campos",
-    avatar: "undefined",
-    city: "Vitória"
-  }]
+  recentVoters: [
+    { name: "Patricia Rocha", avatar: w(6), city: "Manaus" },
+    { name: "Marcos Alves", avatar: m(6), city: "Belém" },
+    { name: "Fernanda Lima", avatar: w(7), city: "Natal" },
+    { name: "Ricardo Barbosa", avatar: m(7), city: "João Pessoa" },
+    { name: "Juliana Campos", avatar: w(8), city: "Vitória" },
+  ]
 }, {
   id: 4,
   name: "4Life",
@@ -111,27 +74,13 @@ const topCompanies = [{
   position: 4,
   votes: 2156,
   maxVotes: 3000,
-  recentVoters: [{
-    name: "Gustavo Reis",
-    avatar: "undefined",
-    city: "Florianópolis"
-  }, {
-    name: "Camila Torres",
-    avatar: "undefined",
-    city: "Maceió"
-  }, {
-    name: "Diego Moreira",
-    avatar: "undefined",
-    city: "Teresina"
-  }, {
-    name: "Vanessa Cruz",
-    avatar: "undefined",
-    city: "São Luís"
-  }, {
-    name: "Felipe Nascimento",
-    avatar: "undefined",
-    city: "Aracaju"
-  }]
+  recentVoters: [
+    { name: "Gustavo Reis", avatar: m(8), city: "Florianópolis" },
+    { name: "Camila Torres", avatar: w(9), city: "Maceió" },
+    { name: "Diego Moreira", avatar: m(9), city: "Teresina" },
+    { name: "Vanessa Cruz", avatar: w(10), city: "São Luís" },
+    { name: "Felipe Nascimento", avatar: m(10), city: "Aracaju" },
+  ]
 }, {
   id: 5,
   name: "Nu Skin",
@@ -139,27 +88,13 @@ const topCompanies = [{
   position: 5,
   votes: 1987,
   maxVotes: 3000,
-  recentVoters: [{
-    name: "Amanda Souza",
-    avatar: "undefined",
-    city: "Campo Grande"
-  }, {
-    name: "Rodrigo Martins",
-    avatar: "undefined",
-    city: "Cuiabá"
-  }, {
-    name: "Leticia Pereira",
-    avatar: "undefined",
-    city: "Palmas"
-  }, {
-    name: "Thiago Cardoso",
-    avatar: "undefined",
-    city: "Boa Vista"
-  }, {
-    name: "Priscila Gomes",
-    avatar: "undefined",
-    city: "Macapá"
-  }]
+  recentVoters: [
+    { name: "Amanda Souza", avatar: w(11), city: "Campo Grande" },
+    { name: "Rodrigo Martins", avatar: m(11), city: "Cuiabá" },
+    { name: "Leticia Pereira", avatar: w(12), city: "Palmas" },
+    { name: "Thiago Cardoso", avatar: m(12), city: "Boa Vista" },
+    { name: "Priscila Gomes", avatar: w(13), city: "Macapá" },
+  ]
 }, {
   id: 6,
   name: "Mary Kay",
@@ -167,19 +102,11 @@ const topCompanies = [{
   position: 6,
   votes: 1823,
   maxVotes: 3000,
-  recentVoters: [{
-    name: "Beatriz Alves",
-    avatar: "undefined",
-    city: "Campinas"
-  }, {
-    name: "Rafael Santos",
-    avatar: "undefined",
-    city: "Santos"
-  }, {
-    name: "Cristina Melo",
-    avatar: "undefined",
-    city: "Sorocaba"
-  }]
+  recentVoters: [
+    { name: "Beatriz Alves", avatar: w(14), city: "Campinas" },
+    { name: "Rafael Santos", avatar: m(13), city: "Santos" },
+    { name: "Cristina Melo", avatar: w(15), city: "Sorocaba" },
+  ]
 }, {
   id: 7,
   name: "Amway",
@@ -187,19 +114,11 @@ const topCompanies = [{
   position: 7,
   votes: 1654,
   maxVotes: 3000,
-  recentVoters: [{
-    name: "Lucas Pereira",
-    avatar: "undefined",
-    city: "Ribeirão Preto"
-  }, {
-    name: "Monica Lima",
-    avatar: "undefined",
-    city: "Osasco"
-  }, {
-    name: "Eduardo Costa",
-    avatar: "undefined",
-    city: "São José"
-  }]
+  recentVoters: [
+    { name: "Lucas Pereira", avatar: m(14), city: "Ribeirão Preto" },
+    { name: "Monica Lima", avatar: w(16), city: "Osasco" },
+    { name: "Eduardo Costa", avatar: m(15), city: "São José" },
+  ]
 }, {
   id: 8,
   name: "Ozonteck",
@@ -207,15 +126,10 @@ const topCompanies = [{
   position: 8,
   votes: 1542,
   maxVotes: 3000,
-  recentVoters: [{
-    name: "Adriana Silva",
-    avatar: "undefined",
-    city: "Guarulhos"
-  }, {
-    name: "Marcos Oliveira",
-    avatar: "undefined",
-    city: "Campina Grande"
-  }]
+  recentVoters: [
+    { name: "Adriana Silva", avatar: w(17), city: "Guarulhos" },
+    { name: "Marcos Oliveira", avatar: m(16), city: "Campina Grande" },
+  ]
 }];
 export function RankingSection() {
   const [hoveredVoter, setHoveredVoter] = useState<{
