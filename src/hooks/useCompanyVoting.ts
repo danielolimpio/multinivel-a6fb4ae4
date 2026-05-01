@@ -90,6 +90,7 @@ export function useCompanyVoteCounts() {
         { event: "INSERT", schema: "public", table: "company_votes" },
         (payload) => {
           const slug = (payload.new as any).company_slug as string;
+          if (isRecentSelfChange(slug)) return;
           setCounts((prev) => ({ ...prev, [slug]: (prev[slug] ?? 0) + 1 }));
         },
       )
@@ -100,6 +101,12 @@ export function useCompanyVoteCounts() {
           const newSlug = (payload.new as any).company_slug as string;
           const oldSlug = (payload.old as any).company_slug as string | undefined;
           if (oldSlug && oldSlug !== newSlug) {
+            // Skip if this update was already applied optimistically by this client
+            if (isRecentSelfChange(newSlug)) {
+              // also clear paired old marker if present
+              isRecentSelfChange(oldSlug);
+              return;
+            }
             setCounts((prev) => ({
               ...prev,
               [oldSlug]: Math.max(0, (prev[oldSlug] ?? 0) - 1),
