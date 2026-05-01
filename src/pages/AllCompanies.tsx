@@ -418,8 +418,14 @@ export default function AllCompanies() {
 
           {/* Companies Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {filteredCompanies.map((company, index) => {
+            {(() => {
+              const totalVotes = filteredCompanies.reduce(
+                (acc, c) => acc + c.votes + (counts[c.slug] ?? 0),
+                0
+              );
+              return filteredCompanies.map((company, index) => {
               const liveVotes = company.votes + (counts[company.slug] ?? 0);
+              const sharePct = totalVotes > 0 ? (liveVotes / totalVotes) * 100 : 0;
               const voted = hasVoted(company.slug);
               const isVoting = voting === company.slug;
               return (
