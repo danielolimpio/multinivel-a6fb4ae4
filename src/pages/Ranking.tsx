@@ -674,7 +674,12 @@ export default function Ranking() {
 
             {/* Rest of Ranking */}
             <div className="space-y-4">
-              {rankingData.slice(3).map((company, index) => (
+              {rankingData.slice(3).map((company, index) => {
+                const slug = (company as any).slug ?? companyNameToSlug(company.name);
+                const liveVotes = company.votes + (counts[slug] ?? 0);
+                const voted = hasVoted(slug);
+                const isVoting = voting === slug;
+                return (
                 <Card 
                   key={company.id}
                   className="p-4 sm:p-6 hover:shadow-card transition-all duration-300 animate-fade-in"
@@ -722,33 +727,39 @@ export default function Ranking() {
 
                     {/* Votes */}
                     <div className="text-right flex-shrink-0 hidden md:block">
-                      <p className="font-semibold text-foreground">{company.votes.toLocaleString()}</p>
+                      <p className="font-semibold text-foreground">{liveVotes.toLocaleString()}</p>
                       <p className="text-xs text-muted-foreground">votos</p>
                     </div>
 
                     {/* Progress (hidden on mobile) */}
                     <div className="w-32 hidden lg:block flex-shrink-0">
-                      <Progress value={(company.votes / company.maxVotes) * 100} className="h-2" />
+                      <Progress value={(liveVotes / company.maxVotes) * 100} className="h-2" />
                       <p className="text-xs text-muted-foreground text-right mt-1">
-                        {((company.votes / company.maxVotes) * 100).toFixed(0)}%
+                        {((liveVotes / company.maxVotes) * 100).toFixed(0)}%
                       </p>
                     </div>
 
                     {/* Actions */}
                     <div className="flex gap-2 flex-shrink-0">
-                      <Link to={`/empresa/${company.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                      <Link to={`/empresa/${slug}`}>
                         <Button variant="ghost" size="sm" className="h-9">
                           <Eye className="w-4 h-4" />
                         </Button>
                       </Link>
-                      <Button size="sm" className="h-9 bg-gradient-gold hover:opacity-90">
-                        <Vote className="w-4 h-4 sm:mr-1" />
-                        <span className="hidden sm:inline">Votar</span>
+                      <Button
+                        size="sm"
+                        disabled={voted || isVoting}
+                        onClick={() => vote(slug)}
+                        className="h-9 bg-gradient-gold hover:opacity-90 disabled:opacity-70"
+                      >
+                        {isVoting ? <Loader2 className="w-4 h-4 sm:mr-1 animate-spin" /> : voted ? <Check className="w-4 h-4 sm:mr-1" /> : <Vote className="w-4 h-4 sm:mr-1" />}
+                        <span className="hidden sm:inline">{voted ? "Votado" : "Votar"}</span>
                       </Button>
                     </div>
                   </div>
                 </Card>
-              ))}
+                );
+              })}
             </div>
 
             {/* Load More */}
