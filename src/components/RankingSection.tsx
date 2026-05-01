@@ -305,7 +305,7 @@ export function RankingSection() {
                       voterIndex
                     })} onMouseLeave={() => setHoveredVoter(null)}>
                             <Avatar className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-background shadow-sm cursor-pointer hover:scale-110 transition-transform">
-                              <AvatarImage src={voter.avatar} alt={voter.name} />
+                              <AvatarImage src={voter.avatar} alt={voter.name} loading="lazy" decoding="async" />
                               <AvatarFallback className="text-xs bg-accent text-accent-foreground">
                                 {voter.name.split(' ').map(n => n[0]).join('')}
                               </AvatarFallback>
