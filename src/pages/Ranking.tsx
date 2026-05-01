@@ -25,10 +25,14 @@ import {
   Sparkles,
   Target,
   Zap,
-  Building2
+  Building2,
+  Check,
+  Loader2
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
+import { companyNameToSlug } from "@/lib/companySlug";
 
 // Import company logos
 import hinodeLogo from "@/assets/logos/hinode.jpeg";
@@ -407,6 +411,8 @@ export default function Ranking() {
     companyId: number;
     voterIndex: number;
   } | null>(null);
+  const { counts } = useCompanyVoteCounts();
+  const { vote, hasVoted, voting } = useCompanyVote();
 
   const getPositionStyle = (position: number) => {
     switch (position) {
@@ -566,7 +572,12 @@ export default function Ranking() {
 
             {/* Top 3 Podium */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              {rankingData.slice(0, 3).map((company, index) => (
+              {rankingData.slice(0, 3).map((company, index) => {
+                const slug = company.slug ?? companyNameToSlug(company.name);
+                const liveVotes = company.votes + (counts[slug] ?? 0);
+                const voted = hasVoted(slug);
+                const isVoting = voting === slug;
+                return (
                 <Card 
                   key={company.id}
                   className={`relative overflow-hidden p-6 hover:shadow-gold transition-all duration-300 ${
@@ -632,32 +643,43 @@ export default function Ranking() {
                   {/* Progress Bar */}
                   <div className="mb-4">
                     <div className="flex justify-between text-xs text-muted-foreground mb-1">
-                      <span>{company.votes.toLocaleString()} votos</span>
-                      <span>{((company.votes / company.maxVotes) * 100).toFixed(0)}%</span>
+                      <span>{liveVotes.toLocaleString()} votos</span>
+                      <span>{((liveVotes / company.maxVotes) * 100).toFixed(0)}%</span>
                     </div>
-                    <Progress value={(company.votes / company.maxVotes) * 100} className="h-2" />
+                    <Progress value={(liveVotes / company.maxVotes) * 100} className="h-2" />
                   </div>
 
                   {/* Actions */}
                   <div className="flex gap-2">
-                    <Link to={`/empresa/${company.name.toLowerCase().replace(/\s+/g, '-')}`} className="flex-1">
+                    <Link to={`/empresa/${slug}`} className="flex-1">
                       <Button variant="outline" size="sm" className="w-full">
                         <Eye className="w-4 h-4 mr-1" />
                         Detalhes
                       </Button>
                     </Link>
-                    <Button size="sm" className="flex-1 bg-gradient-gold hover:opacity-90">
-                      <Vote className="w-4 h-4 mr-1" />
-                      Votar
+                    <Button
+                      size="sm"
+                      disabled={voted || isVoting}
+                      onClick={() => vote(slug)}
+                      className="flex-1 bg-gradient-gold hover:opacity-90 disabled:opacity-70"
+                    >
+                      {isVoting ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : voted ? <Check className="w-4 h-4 mr-1" /> : <Vote className="w-4 h-4 mr-1" />}
+                      {voted ? "Votado" : "Votar"}
                     </Button>
                   </div>
                 </Card>
-              ))}
+                );
+              })}
             </div>
 
             {/* Rest of Ranking */}
             <div className="space-y-4">
-              {rankingData.slice(3).map((company, index) => (
+              {rankingData.slice(3).map((company, index) => {
+                const slug = (company as any).slug ?? companyNameToSlug(company.name);
+                const liveVotes = company.votes + (counts[slug] ?? 0);
+                const voted = hasVoted(slug);
+                const isVoting = voting === slug;
+                return (
                 <Card 
                   key={company.id}
                   className="p-4 sm:p-6 hover:shadow-card transition-all duration-300 animate-fade-in"
@@ -705,33 +727,39 @@ export default function Ranking() {
 
                     {/* Votes */}
                     <div className="text-right flex-shrink-0 hidden md:block">
-                      <p className="font-semibold text-foreground">{company.votes.toLocaleString()}</p>
+                      <p className="font-semibold text-foreground">{liveVotes.toLocaleString()}</p>
                       <p className="text-xs text-muted-foreground">votos</p>
                     </div>
 
                     {/* Progress (hidden on mobile) */}
                     <div className="w-32 hidden lg:block flex-shrink-0">
-                      <Progress value={(company.votes / company.maxVotes) * 100} className="h-2" />
+                      <Progress value={(liveVotes / company.maxVotes) * 100} className="h-2" />
                       <p className="text-xs text-muted-foreground text-right mt-1">
-                        {((company.votes / company.maxVotes) * 100).toFixed(0)}%
+                        {((liveVotes / company.maxVotes) * 100).toFixed(0)}%
                       </p>
                     </div>
 
                     {/* Actions */}
                     <div className="flex gap-2 flex-shrink-0">
-                      <Link to={`/empresa/${company.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                      <Link to={`/empresa/${slug}`}>
                         <Button variant="ghost" size="sm" className="h-9">
                           <Eye className="w-4 h-4" />
                         </Button>
                       </Link>
-                      <Button size="sm" className="h-9 bg-gradient-gold hover:opacity-90">
-                        <Vote className="w-4 h-4 sm:mr-1" />
-                        <span className="hidden sm:inline">Votar</span>
+                      <Button
+                        size="sm"
+                        disabled={voted || isVoting}
+                        onClick={() => vote(slug)}
+                        className="h-9 bg-gradient-gold hover:opacity-90 disabled:opacity-70"
+                      >
+                        {isVoting ? <Loader2 className="w-4 h-4 sm:mr-1 animate-spin" /> : voted ? <Check className="w-4 h-4 sm:mr-1" /> : <Vote className="w-4 h-4 sm:mr-1" />}
+                        <span className="hidden sm:inline">{voted ? "Votado" : "Votar"}</span>
                       </Button>
                     </div>
                   </div>
                 </Card>
-              ))}
+                );
+              })}
             </div>
 
             {/* Load More */}

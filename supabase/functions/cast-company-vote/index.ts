@@ -1,0 +1,130 @@
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+};
+
+async function sha256(input: string): Promise<string> {
+  const data = new TextEncoder().encode(input);
+  const hash = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(hash))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+Deno.serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response("ok", { headers: corsHeaders });
+  }
+
+  try {
+    const { company_slug, fingerprint } = await req.json();
+
+    if (
+      !company_slug ||
+      typeof company_slug !== "string" ||
+      company_slug.length > 100 ||
+      !fingerprint ||
+      typeof fingerprint !== "string" ||
+      fingerprint.length < 8 ||
+      fingerprint.length > 128
+    ) {
+      return new Response(
+        JSON.stringify({ error: "Parâmetros inválidos" }),
+        {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    const slug = company_slug.toLowerCase().trim();
+    const fp = fingerprint.trim();
+
+    // Get IP
+    const xff = req.headers.get("x-forwarded-for") ?? "";
+    const ip = xff.split(",")[0].trim() || req.headers.get("cf-connecting-ip") || "0.0.0.0";
+    const salt = Deno.env.get("VOTE_SALT") ?? "umn-vote-salt-2026";
+    const ipHash = await sha256(`${salt}:${ip}`);
+    const fpHash = await sha256(`${salt}:${fp}`);
+    const userAgent = req.headers.get("user-agent")?.slice(0, 500) ?? null;
+
+    const supabase = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
+    );
+
+    // Check if already voted
+    const { data: existing } = await supabase
+      .from("company_votes")
+      .select("id")
+      .eq("company_slug", slug)
+      .or(`ip_hash.eq.${ipHash},fingerprint.eq.${fpHash}`)
+      .limit(1)
+      .maybeSingle();
+
+    if (existing) {
+      return new Response(
+        JSON.stringify({ success: false, alreadyVoted: true, message: "Você já votou nesta empresa." }),
+        {
+          status: 200,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    const { error } = await supabase.from("company_votes").insert({
+      company_slug: slug,
+      ip_hash: ipHash,
+      fingerprint: fpHash,
+      user_agent: userAgent,
+    });
+
+    if (error) {
+      // Unique violation -> treat as already voted
+      if (error.code === "23505") {
+        return new Response(
+          JSON.stringify({ success: false, alreadyVoted: true, message: "Você já votou nesta empresa." }),
+          {
+            status: 200,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          },
+        );
+      }
+      console.error("Insert error:", error);
+      return new Response(
+        JSON.stringify({ error: "Erro ao registrar voto" }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    // Return new count
+    const { count } = await supabase
+      .from("company_votes")
+      .select("*", { count: "exact", head: true })
+      .eq("company_slug", slug);
+
+    return new Response(
+      JSON.stringify({ success: true, voteCount: count ?? 0 }),
+      {
+        status: 200,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      },
+    );
+  } catch (err) {
+    console.error("Function error:", err);
+    return new Response(
+      JSON.stringify({ error: "Erro interno" }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      },
+    );
+  }
+});

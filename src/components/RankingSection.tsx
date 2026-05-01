@@ -3,9 +3,11 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
-import { Vote, Trophy, ArrowRight, Eye } from "lucide-react";
+import { Vote, Trophy, ArrowRight, Eye, Check, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
+import { companyNameToSlug } from "@/lib/companySlug";
 
 // Import company logos
 import hinodeLogo from "@/assets/logos/hinode.jpeg";
@@ -220,6 +222,8 @@ export function RankingSection() {
     companyId: number;
     voterIndex: number;
   } | null>(null);
+  const { counts } = useCompanyVoteCounts();
+  const { vote, hasVoted, voting } = useCompanyVote();
   const getPositionColor = (position: number) => {
     switch (position) {
       case 1:
@@ -256,7 +260,12 @@ export function RankingSection() {
 
         {/* Compact Ranking Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
-          {topCompanies.map((company, index) => <Card key={company.id} className="p-2.5 sm:p-3 md:p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in" style={{
+          {topCompanies.map((company, index) => {
+          const slug = companyNameToSlug(company.name);
+          const liveVotes = company.votes + (counts[slug] ?? 0);
+          const voted = hasVoted(slug);
+          const isVoting = voting === slug;
+          return <Card key={company.id} className="p-2.5 sm:p-3 md:p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in" style={{
           animationDelay: `${index * 50}ms`
         }}>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 md:gap-4">
@@ -272,16 +281,16 @@ export function RankingSection() {
                     <div className="min-w-0">
                       <h3 className="font-semibold text-foreground text-base sm:text-lg">{company.name}</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground">
-                        {company.votes.toLocaleString()} votos
+                        {liveVotes.toLocaleString()} votos
                       </p>
                     </div>
                   </div>
 
                   {/* Progress Bar */}
                   <div className="mb-3">
-                    <Progress value={company.votes / company.maxVotes * 100} className="h-2 animate-progress-fill" />
+                    <Progress value={liveVotes / company.maxVotes * 100} className="h-2 animate-progress-fill" />
                     <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                      <span>{(company.votes / company.maxVotes * 100).toFixed(1)}%</span>
+                      <span>{(liveVotes / company.maxVotes * 100).toFixed(1)}%</span>
                       <span>Meta: {company.maxVotes.toLocaleString()}</span>
                     </div>
                   </div>
@@ -314,19 +323,33 @@ export function RankingSection() {
                     </div>
                     
                     <div className="flex gap-1 sm:gap-2 justify-end">
-                      <Button variant="ghost" size="sm" className="h-7 sm:h-8 px-2 text-xs">
-                        <Eye className="w-3 h-3 sm:mr-1" />
-                        <span className="hidden sm:inline">Ver</span>
-                      </Button>
-                      <Button size="sm" className="h-7 sm:h-8 px-2 sm:px-3 text-xs bg-gradient-primary">
-                        <Vote className="w-3 h-3 sm:mr-1" />
-                        <span className="hidden sm:inline">Votar</span>
+                      <Link to={`/empresa/${slug}`}>
+                        <Button variant="ghost" size="sm" className="h-7 sm:h-8 px-2 text-xs">
+                          <Eye className="w-3 h-3 sm:mr-1" />
+                          <span className="hidden sm:inline">Ver</span>
+                        </Button>
+                      </Link>
+                      <Button
+                        size="sm"
+                        disabled={voted || isVoting}
+                        onClick={() => vote(slug)}
+                        className="h-7 sm:h-8 px-2 sm:px-3 text-xs bg-gradient-primary disabled:opacity-70"
+                      >
+                        {isVoting ? (
+                          <Loader2 className="w-3 h-3 sm:mr-1 animate-spin" />
+                        ) : voted ? (
+                          <Check className="w-3 h-3 sm:mr-1" />
+                        ) : (
+                          <Vote className="w-3 h-3 sm:mr-1" />
+                        )}
+                        <span className="hidden sm:inline">{voted ? "Votado" : "Votar"}</span>
                       </Button>
                     </div>
                   </div>
                 </div>
               </div>
-            </Card>)}
+            </Card>;
+          })}
         </div>
 
         {/* View All Button */}

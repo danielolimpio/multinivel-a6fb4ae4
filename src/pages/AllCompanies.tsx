@@ -3,13 +3,15 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
-import { Vote, Trophy, Eye, ArrowLeft, Search, Filter } from "lucide-react";
+import { Vote, Trophy, Eye, ArrowLeft, Search, Filter, Check, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
+import { companyNameToSlug } from "@/lib/companySlug";
 
 // Import all company logos
 import hinode from "@/assets/logos/hinode.jpeg";
@@ -323,6 +325,8 @@ export default function AllCompanies() {
   const [hoveredVoter, setHoveredVoter] = useState<{ companyId: number; voterIndex: number } | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const { counts } = useCompanyVoteCounts();
+  const { vote, hasVoted, voting } = useCompanyVote();
 
   const categories = ["all", "Cosméticos", "Nutrição", "Suplementos", "Cuidados Pessoais", "Múltiplas Categorias", "Aloe Vera", "Utilidades Domésticas", "Eletrodomésticos", "Tecnologia", "Purificadores", "Medicina Tradicional", "Bem-estar", "Serviços Financeiros", "Utensílios de Cozinha", "Serviços Essenciais"];
 
@@ -411,7 +415,11 @@ export default function AllCompanies() {
 
           {/* Companies Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {filteredCompanies.map((company, index) => (
+            {filteredCompanies.map((company, index) => {
+              const liveVotes = company.votes + (counts[company.slug] ?? 0);
+              const voted = hasVoted(company.slug);
+              const isVoting = voting === company.slug;
+              return (
               <Card 
                 key={company.id} 
                 className="p-6 hover:shadow-card transition-all duration-300 hover:scale-[1.02] animate-fade-in"
@@ -444,7 +452,7 @@ export default function AllCompanies() {
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-medium text-foreground">
-                        {company.votes.toLocaleString()} votos
+                        {liveVotes.toLocaleString()} votos
                       </span>
                       <span className="text-xs text-muted-foreground">
                         #{company.position}º lugar
@@ -453,11 +461,11 @@ export default function AllCompanies() {
                     
                     {/* Animated Progress Bar */}
                     <Progress 
-                      value={(company.votes / company.maxVotes) * 100} 
+                      value={(liveVotes / company.maxVotes) * 100} 
                       className="h-3 animate-progress-fill"
                     />
                     <div className="flex justify-between text-xs text-muted-foreground">
-                      <span>{((company.votes / company.maxVotes) * 100).toFixed(1)}%</span>
+                      <span>{((liveVotes / company.maxVotes) * 100).toFixed(1)}%</span>
                       <span>Meta: {company.maxVotes.toLocaleString()}</span>
                     </div>
                   </div>
@@ -502,14 +510,26 @@ export default function AllCompanies() {
                         Ver Detalhes
                       </Button>
                     </Link>
-                    <Button size="sm" className="flex-1 bg-gradient-primary">
-                      <Vote className="w-4 h-4 mr-2" />
-                      Votar Agora
+                    <Button
+                      size="sm"
+                      disabled={voted || isVoting}
+                      onClick={() => vote(company.slug)}
+                      className="flex-1 bg-gradient-primary disabled:opacity-70"
+                    >
+                      {isVoting ? (
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      ) : voted ? (
+                        <Check className="w-4 h-4 mr-2" />
+                      ) : (
+                        <Vote className="w-4 h-4 mr-2" />
+                      )}
+                      {voted ? "Voto Registrado" : "Votar Agora"}
                     </Button>
                   </div>
                 </div>
               </Card>
-            ))}
+              );
+            })}
           </div>
 
           {/* No Results */}
