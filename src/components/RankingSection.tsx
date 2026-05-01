@@ -177,6 +177,11 @@ export function RankingSection() {
           {topCompanies.map((company, index) => {
           const slug = companyNameToSlug(company.name);
           const liveVotes = company.votes + (counts[slug] ?? 0);
+          const totalVotes = topCompanies.reduce(
+            (sum, c) => sum + c.votes + (counts[companyNameToSlug(c.name)] ?? 0),
+            0,
+          );
+          const sharePct = totalVotes > 0 ? (liveVotes / totalVotes) * 100 : 0;
           const voted = hasVoted(slug);
           const isVoting = voting === slug;
           return <Card key={company.id} className="p-2.5 sm:p-3 md:p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in" style={{
@@ -200,12 +205,12 @@ export function RankingSection() {
                     </div>
                   </div>
 
-                  {/* Progress Bar */}
+                  {/* Progress Bar — share of total votes */}
                   <div className="mb-3">
-                    <Progress value={liveVotes / company.maxVotes * 100} className="h-2 animate-progress-fill" />
+                    <Progress value={sharePct} className="h-2 animate-progress-fill" />
                     <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                      <span>{(liveVotes / company.maxVotes * 100).toFixed(1)}%</span>
-                      <span>Meta: {company.maxVotes.toLocaleString()}</span>
+                      <span>{sharePct.toFixed(1)}% do total</span>
+                      <span>{totalVotes.toLocaleString()} votos no ranking</span>
                     </div>
                   </div>
 
