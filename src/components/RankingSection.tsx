@@ -173,10 +173,11 @@ export function RankingSection() {
         </div>
 
         {/* Compact Ranking Grid */}
-        {(() => null)()}
-        {/* Total votes across all listed companies (base + live deltas) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
-          {(() => null)()}
+          {(() => {
+            // computed inside map below
+            return null;
+          })()}
           {topCompanies.map((company, index) => {
           const slug = companyNameToSlug(company.name);
           const liveVotes = company.votes + (counts[slug] ?? 0);
