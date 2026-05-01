@@ -415,7 +415,11 @@ export default function AllCompanies() {
 
           {/* Companies Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {filteredCompanies.map((company, index) => (
+            {filteredCompanies.map((company, index) => {
+              const liveVotes = company.votes + (counts[company.slug] ?? 0);
+              const voted = hasVoted(company.slug);
+              const isVoting = voting === company.slug;
+              return (
               <Card 
                 key={company.id} 
                 className="p-6 hover:shadow-card transition-all duration-300 hover:scale-[1.02] animate-fade-in"
@@ -448,7 +452,7 @@ export default function AllCompanies() {
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-medium text-foreground">
-                        {company.votes.toLocaleString()} votos
+                        {liveVotes.toLocaleString()} votos
                       </span>
                       <span className="text-xs text-muted-foreground">
                         #{company.position}º lugar
@@ -457,11 +461,11 @@ export default function AllCompanies() {
                     
                     {/* Animated Progress Bar */}
                     <Progress 
-                      value={(company.votes / company.maxVotes) * 100} 
+                      value={(liveVotes / company.maxVotes) * 100} 
                       className="h-3 animate-progress-fill"
                     />
                     <div className="flex justify-between text-xs text-muted-foreground">
-                      <span>{((company.votes / company.maxVotes) * 100).toFixed(1)}%</span>
+                      <span>{((liveVotes / company.maxVotes) * 100).toFixed(1)}%</span>
                       <span>Meta: {company.maxVotes.toLocaleString()}</span>
                     </div>
                   </div>
@@ -506,9 +510,20 @@ export default function AllCompanies() {
                         Ver Detalhes
                       </Button>
                     </Link>
-                    <Button size="sm" className="flex-1 bg-gradient-primary">
-                      <Vote className="w-4 h-4 mr-2" />
-                      Votar Agora
+                    <Button
+                      size="sm"
+                      disabled={voted || isVoting}
+                      onClick={() => vote(company.slug)}
+                      className="flex-1 bg-gradient-primary disabled:opacity-70"
+                    >
+                      {isVoting ? (
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      ) : voted ? (
+                        <Check className="w-4 h-4 mr-2" />
+                      ) : (
+                        <Vote className="w-4 h-4 mr-2" />
+                      )}
+                      {voted ? "Voto Registrado" : "Votar Agora"}
                     </Button>
                   </div>
                 </div>
