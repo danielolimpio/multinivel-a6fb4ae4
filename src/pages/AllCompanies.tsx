@@ -326,7 +326,7 @@ export default function AllCompanies() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const { counts } = useCompanyVoteCounts();
-  const { vote, hasVoted, voting } = useCompanyVote();
+  const { vote, hasVoted, voting, votedCompany } = useCompanyVote();
 
   const categories = ["all", "Cosméticos", "Nutrição", "Suplementos", "Cuidados Pessoais", "Múltiplas Categorias", "Aloe Vera", "Utilidades Domésticas", "Eletrodomésticos", "Tecnologia", "Purificadores", "Medicina Tradicional", "Bem-estar", "Serviços Financeiros", "Utensílios de Cozinha", "Serviços Essenciais"];
 
@@ -512,7 +512,7 @@ export default function AllCompanies() {
                     </Link>
                     <Button
                       size="sm"
-                      disabled={voted || isVoting}
+                      disabled={isVoting}
                       onClick={() => vote(company.slug)}
                       className="flex-1 bg-gradient-primary disabled:opacity-70"
                     >
@@ -523,7 +523,7 @@ export default function AllCompanies() {
                       ) : (
                         <Vote className="w-4 h-4 mr-2" />
                       )}
-                      {voted ? "Voto Registrado" : "Votar Agora"}
+                      {voted ? "Voto Registrado" : votedCompany ? "Trocar Voto" : "Votar Agora"}
                     </Button>
                   </div>
                 </div>

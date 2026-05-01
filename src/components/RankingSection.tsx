@@ -223,7 +223,7 @@ export function RankingSection() {
     voterIndex: number;
   } | null>(null);
   const { counts } = useCompanyVoteCounts();
-  const { vote, hasVoted, voting } = useCompanyVote();
+  const { vote, hasVoted, voting, votedCompany } = useCompanyVote();
   const getPositionColor = (position: number) => {
     switch (position) {
       case 1:
@@ -331,7 +331,7 @@ export function RankingSection() {
                       </Link>
                       <Button
                         size="sm"
-                        disabled={voted || isVoting}
+                        disabled={isVoting}
                         onClick={() => vote(slug)}
                         className="h-7 sm:h-8 px-2 sm:px-3 text-xs bg-gradient-primary disabled:opacity-70"
                       >
@@ -342,7 +342,9 @@ export function RankingSection() {
                         ) : (
                           <Vote className="w-3 h-3 sm:mr-1" />
                         )}
-                        <span className="hidden sm:inline">{voted ? "Votado" : "Votar"}</span>
+                        <span className="hidden sm:inline">
+                          {voted ? "Votado" : votedCompany ? "Trocar voto" : "Votar"}
+                        </span>
                       </Button>
                     </div>
                   </div>

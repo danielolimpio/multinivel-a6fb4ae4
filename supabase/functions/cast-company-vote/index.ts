@@ -57,18 +57,61 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
     );
 
-    // Check if already voted
+    // Find any existing vote for this voter (by fingerprint OR ip)
     const { data: existing } = await supabase
       .from("company_votes")
-      .select("id")
-      .eq("company_slug", slug)
-      .or(`ip_hash.eq.${ipHash},fingerprint.eq.${fpHash}`)
+      .select("id, company_slug")
+      .or(`fingerprint.eq.${fpHash},ip_hash.eq.${ipHash}`)
       .limit(1)
       .maybeSingle();
 
     if (existing) {
+      if (existing.company_slug === slug) {
+        return new Response(
+          JSON.stringify({
+            success: true,
+            unchanged: true,
+            votedSlug: slug,
+            message: "Você já votou nesta empresa.",
+          }),
+          {
+            status: 200,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          },
+        );
+      }
+
+      // Update existing vote -> change company
+      const { error: updateErr } = await supabase
+        .from("company_votes")
+        .update({
+          company_slug: slug,
+          ip_hash: ipHash,
+          fingerprint: fpHash,
+          user_agent: userAgent,
+          created_at: new Date().toISOString(),
+        })
+        .eq("id", existing.id);
+
+      if (updateErr) {
+        console.error("Update error:", updateErr);
+        return new Response(
+          JSON.stringify({ error: "Erro ao atualizar voto" }),
+          {
+            status: 500,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          },
+        );
+      }
+
       return new Response(
-        JSON.stringify({ success: false, alreadyVoted: true, message: "Você já votou nesta empresa." }),
+        JSON.stringify({
+          success: true,
+          changed: true,
+          previousSlug: existing.company_slug,
+          votedSlug: slug,
+          message: "Seu voto foi transferido para esta empresa.",
+        }),
         {
           status: 200,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -76,6 +119,7 @@ Deno.serve(async (req) => {
       );
     }
 
+    // No existing vote -> insert new
     const { error } = await supabase.from("company_votes").insert({
       company_slug: slug,
       ip_hash: ipHash,
@@ -84,15 +128,35 @@ Deno.serve(async (req) => {
     });
 
     if (error) {
-      // Unique violation -> treat as already voted
+      // Race condition: someone inserted in parallel — try to update instead
       if (error.code === "23505") {
-        return new Response(
-          JSON.stringify({ success: false, alreadyVoted: true, message: "Você já votou nesta empresa." }),
-          {
-            status: 200,
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
-          },
-        );
+        const { data: again } = await supabase
+          .from("company_votes")
+          .select("id, company_slug")
+          .or(`fingerprint.eq.${fpHash},ip_hash.eq.${ipHash}`)
+          .limit(1)
+          .maybeSingle();
+        if (again) {
+          if (again.company_slug !== slug) {
+            await supabase
+              .from("company_votes")
+              .update({
+                company_slug: slug,
+                ip_hash: ipHash,
+                fingerprint: fpHash,
+                user_agent: userAgent,
+                created_at: new Date().toISOString(),
+              })
+              .eq("id", again.id);
+          }
+          return new Response(
+            JSON.stringify({ success: true, changed: true, votedSlug: slug }),
+            {
+              status: 200,
+              headers: { ...corsHeaders, "Content-Type": "application/json" },
+            },
+          );
+        }
       }
       console.error("Insert error:", error);
       return new Response(
@@ -104,14 +168,8 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Return new count
-    const { count } = await supabase
-      .from("company_votes")
-      .select("*", { count: "exact", head: true })
-      .eq("company_slug", slug);
-
     return new Response(
-      JSON.stringify({ success: true, voteCount: count ?? 0 }),
+      JSON.stringify({ success: true, votedSlug: slug }),
       {
         status: 200,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
