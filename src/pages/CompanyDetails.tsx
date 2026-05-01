@@ -53,6 +53,7 @@ import {
 } from "lucide-react";
 import { useParams, Link } from "react-router-dom";
 import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
+import { SocialShare } from "@/components/SocialShare";
 
 // Import company logos
 import hinodeLogo from "@/assets/logos/hinode.jpeg";
