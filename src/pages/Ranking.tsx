@@ -25,10 +25,14 @@ import {
   Sparkles,
   Target,
   Zap,
-  Building2
+  Building2,
+  Check,
+  Loader2
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
+import { companyNameToSlug } from "@/lib/companySlug";
 
 // Import company logos
 import hinodeLogo from "@/assets/logos/hinode.jpeg";
