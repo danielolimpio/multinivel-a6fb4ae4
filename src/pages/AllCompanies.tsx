@@ -34,6 +34,9 @@ import royalprestige from "@/assets/logos/royalprestige.jpeg";
 import tupperware from "@/assets/logos/tupperware.jpeg";
 import utilitywarehouse from "@/assets/logos/utilitywarehouse.jpeg";
 
+const w = (i: number) => `https://randomuser.me/api/portraits/thumb/women/${i}.jpg`;
+const m = (i: number) => `https://randomuser.me/api/portraits/thumb/men/${i}.jpg`;
+
 // All 20 companies data
 const allCompanies = [
   {
