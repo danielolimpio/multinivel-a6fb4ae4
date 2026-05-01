@@ -3,7 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 
 const FP_KEY = "umn_voter_fp";
-const VOTED_KEY = "umn_voted_companies";
+const VOTED_COMPANY_KEY = "umn_voted_company";
 
 function getOrCreateFingerprint(): string {
   if (typeof window === "undefined") return "ssr";
@@ -20,20 +20,15 @@ function getOrCreateFingerprint(): string {
   return fp;
 }
 
-function getVotedSet(): Set<string> {
-  if (typeof window === "undefined") return new Set();
-  try {
-    const raw = localStorage.getItem(VOTED_KEY);
-    if (!raw) return new Set();
-    return new Set(JSON.parse(raw));
-  } catch {
-    return new Set();
-  }
+function getStoredVotedCompany(): string | null {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem(VOTED_COMPANY_KEY);
 }
 
-function persistVoted(set: Set<string>) {
+function persistVotedCompany(slug: string | null) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(VOTED_KEY, JSON.stringify(Array.from(set)));
+  if (slug) localStorage.setItem(VOTED_COMPANY_KEY, slug);
+  else localStorage.removeItem(VOTED_COMPANY_KEY);
 }
 
 export function useCompanyVoteCounts() {
@@ -56,7 +51,6 @@ export function useCompanyVoteCounts() {
 
   useEffect(() => {
     fetchCounts();
-    // Realtime subscription
     const channel = supabase
       .channel("company-votes-realtime")
       .on(
@@ -65,6 +59,34 @@ export function useCompanyVoteCounts() {
         (payload) => {
           const slug = (payload.new as any).company_slug as string;
           setCounts((prev) => ({ ...prev, [slug]: (prev[slug] ?? 0) + 1 }));
+        },
+      )
+      .on(
+        "postgres_changes",
+        { event: "UPDATE", schema: "public", table: "company_votes" },
+        (payload) => {
+          const newSlug = (payload.new as any).company_slug as string;
+          const oldSlug = (payload.old as any).company_slug as string | undefined;
+          if (oldSlug && oldSlug !== newSlug) {
+            setCounts((prev) => ({
+              ...prev,
+              [oldSlug]: Math.max(0, (prev[oldSlug] ?? 0) - 1),
+              [newSlug]: (prev[newSlug] ?? 0) + 1,
+            }));
+          }
+        },
+      )
+      .on(
+        "postgres_changes",
+        { event: "DELETE", schema: "public", table: "company_votes" },
+        (payload) => {
+          const slug = (payload.old as any).company_slug as string | undefined;
+          if (slug) {
+            setCounts((prev) => ({
+              ...prev,
+              [slug]: Math.max(0, (prev[slug] ?? 0) - 1),
+            }));
+          }
         },
       )
       .subscribe();
@@ -78,21 +100,21 @@ export function useCompanyVoteCounts() {
 }
 
 export function useCompanyVote() {
-  const [votedSet, setVotedSet] = useState<Set<string>>(() => getVotedSet());
+  const [votedCompany, setVotedCompany] = useState<string | null>(() => getStoredVotedCompany());
   const [voting, setVoting] = useState<string | null>(null);
 
   const hasVoted = useCallback(
-    (slug: string) => votedSet.has(slug),
-    [votedSet],
+    (slug: string) => votedCompany === slug,
+    [votedCompany],
   );
 
   const vote = useCallback(
     async (companySlug: string): Promise<boolean> => {
       const slug = companySlug.toLowerCase().trim();
-      if (votedSet.has(slug)) {
+      if (votedCompany === slug) {
         toast({
           title: "Voto já registrado",
-          description: "Você já votou nesta empresa neste navegador.",
+          description: "Você já votou nesta empresa.",
         });
         return false;
       }
@@ -103,26 +125,26 @@ export function useCompanyVote() {
           body: { company_slug: slug, fingerprint },
         });
         if (error) throw error;
-        if (data?.alreadyVoted) {
-          const next = new Set(votedSet);
-          next.add(slug);
-          setVotedSet(next);
-          persistVoted(next);
-          toast({
-            title: "Voto já registrado",
-            description: data.message ?? "Você já votou nesta empresa.",
-          });
-          return false;
-        }
+
         if (data?.success) {
-          const next = new Set(votedSet);
-          next.add(slug);
-          setVotedSet(next);
-          persistVoted(next);
-          toast({
-            title: "Voto computado!",
-            description: "Obrigado por votar. Sua opinião conta.",
-          });
+          setVotedCompany(slug);
+          persistVotedCompany(slug);
+          if (data.changed) {
+            toast({
+              title: "Voto transferido!",
+              description: "Seu voto agora vale para esta empresa.",
+            });
+          } else if (data.unchanged) {
+            toast({
+              title: "Voto já registrado",
+              description: "Você já votou nesta empresa.",
+            });
+          } else {
+            toast({
+              title: "Voto computado!",
+              description: "Obrigado por votar. Você pode trocar seu voto a qualquer momento.",
+            });
+          }
           return true;
         }
         throw new Error("Resposta inesperada");
@@ -138,8 +160,8 @@ export function useCompanyVote() {
         setVoting(null);
       }
     },
-    [votedSet],
+    [votedCompany],
   );
 
-  return { vote, hasVoted, voting };
+  return { vote, hasVoted, voting, votedCompany };
 }
