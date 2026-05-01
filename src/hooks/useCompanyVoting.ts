@@ -142,8 +142,24 @@ export function useCompanyVote() {
         if (error) throw error;
 
         if (data?.success) {
+          const previousSlug = votedCompany;
           setVotedCompany(slug);
           persistVotedCompany(slug);
+
+          // Optimistic count update for instant UI feedback
+          if (data.changed && previousSlug && previousSlug !== slug) {
+            applyCountsDelta((prev) => ({
+              ...prev,
+              [previousSlug]: Math.max(0, (prev[previousSlug] ?? 0) - 1),
+              [slug]: (prev[slug] ?? 0) + 1,
+            }));
+          } else if (!data.unchanged && !data.changed) {
+            applyCountsDelta((prev) => ({
+              ...prev,
+              [slug]: (prev[slug] ?? 0) + 1,
+            }));
+          }
+
           if (data.changed) {
             toast({
               title: "Voto transferido!",
