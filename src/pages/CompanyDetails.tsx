@@ -1091,39 +1091,55 @@ export default function CompanyDetails() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex flex-wrap gap-3">
-                  <Button
-                    size="lg"
-                    disabled={voting === company.slug}
-                    onClick={() => vote(company.slug)}
-                    className="bg-gradient-gold hover:opacity-90 disabled:opacity-70"
-                  >
-                    {voting === company.slug ? (
-                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                    ) : hasVoted(company.slug) ? (
-                      <Check className="w-5 h-5 mr-2" />
-                    ) : (
-                      <Vote className="w-5 h-5 mr-2" />
-                    )}
-                    {hasVoted(company.slug)
-                      ? "Voto Registrado"
-                      : votedCompany
-                        ? "Trocar Voto para Esta Empresa"
-                        : "Votar nesta Empresa"}
-                  </Button>
-                  <a href={company.website} target="_blank" rel="noopener noreferrer">
-                    <Button size="lg" variant="outline">
-                      <ExternalLink className="w-5 h-5 mr-2" />
-                      Site Oficial
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-wrap gap-3">
+                    <Button
+                      size="lg"
+                      disabled={voting === company.slug}
+                      onClick={() => vote(company.slug)}
+                      className="bg-gradient-gold hover:opacity-90 disabled:opacity-70"
+                    >
+                      {voting === company.slug ? (
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                      ) : hasVoted(company.slug) ? (
+                        <Check className="w-5 h-5 mr-2" />
+                      ) : (
+                        <Vote className="w-5 h-5 mr-2" />
+                      )}
+                      {hasVoted(company.slug)
+                        ? "Voto Registrado"
+                        : votedCompany
+                          ? "Trocar Voto para Esta Empresa"
+                          : "Votar nesta Empresa"}
                     </Button>
-                  </a>
-                  <Button size="lg" variant="ghost">
-                    <Share2 className="w-5 h-5 mr-2" />
-                    Compartilhar
-                  </Button>
-                  <Button size="lg" variant="ghost">
-                    <Bookmark className="w-5 h-5" />
-                  </Button>
+                    <a href={company.website} target="_blank" rel="noopener noreferrer">
+                      <Button size="lg" variant="outline">
+                        <ExternalLink className="w-5 h-5 mr-2" />
+                        Site Oficial
+                      </Button>
+                    </a>
+                    <Button size="lg" variant="ghost">
+                      <Bookmark className="w-5 h-5" />
+                    </Button>
+                  </div>
+
+                  {/* Premium social share — placed right below "Site Oficial" */}
+                  <Card className="p-4 bg-card/60 backdrop-blur-sm border-gold/20">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Share2 className="w-4 h-4 text-gold" />
+                      <span className="text-sm font-medium text-foreground">
+                        Compartilhar {company.name}
+                      </span>
+                    </div>
+                    <SocialShare
+                      url={`/empresa/${company.slug}`}
+                      title={`${company.name} — Universidade Multinível`}
+                      description={`Conheça ${company.name}: ranking, plano de marketing, produtos e oportunidades de negócio.`}
+                      image={company.logo}
+                      size="lg"
+                      centered={false}
+                    />
+                  </Card>
                 </div>
               </div>
 
