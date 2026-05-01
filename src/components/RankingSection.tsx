@@ -3,9 +3,11 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
-import { Vote, Trophy, ArrowRight, Eye } from "lucide-react";
+import { Vote, Trophy, ArrowRight, Eye, Check, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCompanyVote, useCompanyVoteCounts } from "@/hooks/useCompanyVoting";
+import { companyNameToSlug } from "@/lib/companySlug";
 
 // Import company logos
 import hinodeLogo from "@/assets/logos/hinode.jpeg";
