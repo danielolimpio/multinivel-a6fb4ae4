@@ -33,24 +33,26 @@ function persistVotedCompany(slug: string | null) {
 
 type CountsListener = (updater: (prev: Record<string, number>) => Record<string, number>) => void;
 const countsListeners = new Set<CountsListener>();
-const processedRowIds = new Set<string>();
+const recentSelfChanges = new Map<string, number>(); // slug -> expiry timestamp
 
 export function applyCountsDelta(updater: (prev: Record<string, number>) => Record<string, number>) {
   countsListeners.forEach((l) => l(updater));
 }
 
-function wasProcessed(id: string | undefined) {
-  if (!id) return false;
-  if (processedRowIds.has(id)) {
-    processedRowIds.delete(id);
-    return true;
-  }
-  return false;
+export function markSelfChange(slug: string) {
+  recentSelfChanges.set(slug, Date.now() + 4000);
 }
 
-function markProcessed(id: string) {
-  processedRowIds.add(id);
-  setTimeout(() => processedRowIds.delete(id), 30_000);
+function isRecentSelfChange(slug: string | undefined): boolean {
+  if (!slug) return false;
+  const expiry = recentSelfChanges.get(slug);
+  if (!expiry) return false;
+  if (Date.now() > expiry) {
+    recentSelfChanges.delete(slug);
+    return false;
+  }
+  recentSelfChanges.delete(slug);
+  return true;
 }
 
 export function useCompanyVoteCounts() {
