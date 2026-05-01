@@ -31,6 +31,13 @@ function persistVotedCompany(slug: string | null) {
   else localStorage.removeItem(VOTED_COMPANY_KEY);
 }
 
+type CountsListener = (updater: (prev: Record<string, number>) => Record<string, number>) => void;
+const countsListeners = new Set<CountsListener>();
+
+export function applyCountsDelta(updater: (prev: Record<string, number>) => Record<string, number>) {
+  countsListeners.forEach((l) => l(updater));
+}
+
 export function useCompanyVoteCounts() {
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
@@ -47,6 +54,14 @@ export function useCompanyVoteCounts() {
       setCounts(map);
     }
     setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    const listener: CountsListener = (updater) => setCounts(updater);
+    countsListeners.add(listener);
+    return () => {
+      countsListeners.delete(listener);
+    };
   }, []);
 
   useEffect(() => {
