@@ -984,7 +984,7 @@ const companiesData: Record<string, CompanyData> = {
 export default function CompanyDetails() {
   const { slug } = useParams<{ slug: string }>();
   const { counts } = useCompanyVoteCounts();
-  const { vote, hasVoted, voting } = useCompanyVote();
+  const { vote, hasVoted, voting, votedCompany } = useCompanyVote();
   
   const company = slug ? companiesData[slug] : null;
 
@@ -1093,7 +1093,7 @@ export default function CompanyDetails() {
                 <div className="flex flex-wrap gap-3">
                   <Button
                     size="lg"
-                    disabled={hasVoted(company.slug) || voting === company.slug}
+                    disabled={voting === company.slug}
                     onClick={() => vote(company.slug)}
                     className="bg-gradient-gold hover:opacity-90 disabled:opacity-70"
                   >
@@ -1104,7 +1104,11 @@ export default function CompanyDetails() {
                     ) : (
                       <Vote className="w-5 h-5 mr-2" />
                     )}
-                    {hasVoted(company.slug) ? "Voto Registrado" : "Votar nesta Empresa"}
+                    {hasVoted(company.slug)
+                      ? "Voto Registrado"
+                      : votedCompany
+                        ? "Trocar Voto para Esta Empresa"
+                        : "Votar nesta Empresa"}
                   </Button>
                   <a href={company.website} target="_blank" rel="noopener noreferrer">
                     <Button size="lg" variant="outline">

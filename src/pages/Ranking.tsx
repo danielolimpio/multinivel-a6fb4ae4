@@ -412,7 +412,7 @@ export default function Ranking() {
     voterIndex: number;
   } | null>(null);
   const { counts } = useCompanyVoteCounts();
-  const { vote, hasVoted, voting } = useCompanyVote();
+  const { vote, hasVoted, voting, votedCompany } = useCompanyVote();
 
   const getPositionStyle = (position: number) => {
     switch (position) {
@@ -659,12 +659,12 @@ export default function Ranking() {
                     </Link>
                     <Button
                       size="sm"
-                      disabled={voted || isVoting}
+                      disabled={isVoting}
                       onClick={() => vote(slug)}
                       className="flex-1 bg-gradient-gold hover:opacity-90 disabled:opacity-70"
                     >
                       {isVoting ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : voted ? <Check className="w-4 h-4 mr-1" /> : <Vote className="w-4 h-4 mr-1" />}
-                      {voted ? "Votado" : "Votar"}
+                      {voted ? "Votado" : votedCompany ? "Trocar voto" : "Votar"}
                     </Button>
                   </div>
                 </Card>
@@ -748,12 +748,12 @@ export default function Ranking() {
                       </Link>
                       <Button
                         size="sm"
-                        disabled={voted || isVoting}
+                        disabled={isVoting}
                         onClick={() => vote(slug)}
                         className="h-9 bg-gradient-gold hover:opacity-90 disabled:opacity-70"
                       >
                         {isVoting ? <Loader2 className="w-4 h-4 sm:mr-1 animate-spin" /> : voted ? <Check className="w-4 h-4 sm:mr-1" /> : <Vote className="w-4 h-4 sm:mr-1" />}
-                        <span className="hidden sm:inline">{voted ? "Votado" : "Votar"}</span>
+                        <span className="hidden sm:inline">{voted ? "Votado" : votedCompany ? "Trocar voto" : "Votar"}</span>
                       </Button>
                     </div>
                   </div>
