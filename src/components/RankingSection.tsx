@@ -173,10 +173,18 @@ export function RankingSection() {
         </div>
 
         {/* Compact Ranking Grid */}
+        {(() => null)()}
+        {/* Total votes across all listed companies (base + live deltas) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+          {(() => null)()}
           {topCompanies.map((company, index) => {
           const slug = companyNameToSlug(company.name);
           const liveVotes = company.votes + (counts[slug] ?? 0);
+          const totalVotes = topCompanies.reduce(
+            (sum, c) => sum + c.votes + (counts[companyNameToSlug(c.name)] ?? 0),
+            0,
+          );
+          const sharePct = totalVotes > 0 ? (liveVotes / totalVotes) * 100 : 0;
           const voted = hasVoted(slug);
           const isVoting = voting === slug;
           return <Card key={company.id} className="p-2.5 sm:p-3 md:p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in" style={{
