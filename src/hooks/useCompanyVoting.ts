@@ -33,9 +33,24 @@ function persistVotedCompany(slug: string | null) {
 
 type CountsListener = (updater: (prev: Record<string, number>) => Record<string, number>) => void;
 const countsListeners = new Set<CountsListener>();
+const processedRowIds = new Set<string>();
 
 export function applyCountsDelta(updater: (prev: Record<string, number>) => Record<string, number>) {
   countsListeners.forEach((l) => l(updater));
+}
+
+function wasProcessed(id: string | undefined) {
+  if (!id) return false;
+  if (processedRowIds.has(id)) {
+    processedRowIds.delete(id);
+    return true;
+  }
+  return false;
+}
+
+function markProcessed(id: string) {
+  processedRowIds.add(id);
+  setTimeout(() => processedRowIds.delete(id), 30_000);
 }
 
 export function useCompanyVoteCounts() {
