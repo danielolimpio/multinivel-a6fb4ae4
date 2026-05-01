@@ -46,7 +46,7 @@ export function useCompanyVoteCounts() {
       .select("company_slug, vote_count");
     if (!error && data) {
       const map: Record<string, number> = {};
-      (data as Array<{ company_slug: string; vote_count: number }>).forEach((row) => {
+      (data as unknown as Array<{ company_slug: string; vote_count: number }>).forEach((row) => {
         map[row.company_slug] = row.vote_count;
       });
       setCounts(map);
