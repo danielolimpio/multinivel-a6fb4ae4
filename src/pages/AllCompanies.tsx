@@ -528,7 +528,8 @@ export default function AllCompanies() {
                   </div>
                 </div>
               </Card>
-            ))}
+              );
+            })}
           </div>
 
           {/* No Results */}
