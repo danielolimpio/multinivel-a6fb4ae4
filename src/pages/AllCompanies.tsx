@@ -325,6 +325,8 @@ export default function AllCompanies() {
   const [hoveredVoter, setHoveredVoter] = useState<{ companyId: number; voterIndex: number } | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const { counts } = useCompanyVoteCounts();
+  const { vote, hasVoted, voting } = useCompanyVote();
 
   const categories = ["all", "Cosméticos", "Nutrição", "Suplementos", "Cuidados Pessoais", "Múltiplas Categorias", "Aloe Vera", "Utilidades Domésticas", "Eletrodomésticos", "Tecnologia", "Purificadores", "Medicina Tradicional", "Bem-estar", "Serviços Financeiros", "Utensílios de Cozinha", "Serviços Essenciais"];
 
