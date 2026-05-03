@@ -139,30 +139,15 @@ export function RankingSection() {
   } | null>(null);
   const { counts } = useCompanyVoteCounts();
   const { vote, hasVoted, voting, votedCompany } = useCompanyVote();
-  const getPositionColor = (position: number) => {
-    switch (position) {
-      case 1:
-        return "bg-gradient-to-r from-yellow-400 to-yellow-600";
-      case 2:
-        return "bg-gradient-to-r from-gray-300 to-gray-500";
-      case 3:
-        return "bg-gradient-to-r from-amber-600 to-amber-800";
-      default:
-        return "bg-primary";
-    }
-  };
-  const getPositionIcon = (position: number) => {
-    if (position <= 3) {
-      return <Trophy className="w-4 h-4 text-white" />;
-    }
-    return <span className="text-white font-bold text-sm">{position}</span>;
+  const getOrdinal = (position: number) => {
+    return `${position}º`;
   };
   return <section className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-6 sm:mb-8">
-          <Badge variant="secondary" className="mb-2 sm:mb-3 px-2 sm:px-3 py-1 bg-accent/10 text-accent text-xs sm:text-sm">
-            <Trophy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+          <Badge variant="secondary" className="mb-2 sm:mb-3 px-2 sm:px-3 py-1 bg-[hsl(var(--gold-light-bg))] text-primary border border-[hsl(40_85%_52%)]/40 text-xs sm:text-sm font-semibold">
+            <Trophy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-primary" />
             Ranking Atual
           </Badge>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 sm:mb-3">
@@ -190,8 +175,8 @@ export function RankingSection() {
         }}>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 md:gap-4">
                 {/* Position Badge */}
-                <div className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full ${getPositionColor(company.position)} shadow-md flex-shrink-0`}>
-                  {getPositionIcon(company.position)}
+                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border-2 border-transparent shadow-md flex-shrink-0" style={{ backgroundImage: 'linear-gradient(white, white), var(--gradient-gold)', backgroundOrigin: 'border-box', backgroundClip: 'padding-box, border-box' }}>
+                  <span className="text-primary font-bold text-sm sm:text-base">{getOrdinal(company.position)}</span>
                 </div>
 
                 {/* Company Info */}
@@ -261,18 +246,19 @@ export function RankingSection() {
                       </Link>
                       <Button
                         size="sm"
+                        variant="premium"
                         disabled={isVoting}
                         onClick={() => vote(slug)}
-                        className="h-7 sm:h-8 px-2 sm:px-3 text-xs bg-gradient-primary disabled:opacity-70"
+                        className="h-7 sm:h-8 px-2 sm:px-3 text-xs disabled:opacity-70 text-white font-bold"
                       >
                         {isVoting ? (
-                          <Loader2 className="w-3 h-3 sm:mr-1 animate-spin" />
+                          <Loader2 className="w-3 h-3 sm:mr-1 animate-spin text-white" />
                         ) : voted ? (
-                          <Check className="w-3 h-3 sm:mr-1" />
+                          <Check className="w-3 h-3 sm:mr-1 text-white" />
                         ) : (
-                          <Vote className="w-3 h-3 sm:mr-1" />
+                          <Vote className="w-3 h-3 sm:mr-1 text-white" />
                         )}
-                        <span className="hidden sm:inline">
+                        <span className="hidden sm:inline text-white font-bold">
                           {voted ? "Votado" : votedCompany ? "Trocar voto" : "Votar"}
                         </span>
                       </Button>
@@ -287,9 +273,9 @@ export function RankingSection() {
         {/* View All Button */}
         <div className="text-center">
           <Link to="/empresas">
-            <Button size="lg" variant="outline" className="px-6 py-4 border-2 bg-amber-600 hover:bg-amber-500">
+            <Button size="lg" variant="premium" className="px-6 py-4 text-white font-bold">
               Ver Todas as Empresas
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4 text-white" />
             </Button>
           </Link>
         </div>
