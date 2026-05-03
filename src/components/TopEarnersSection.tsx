@@ -132,9 +132,7 @@ export function TopEarnersSection() {
                 {topEarners.map((earner) => (
                   <div key={earner.rank} className="p-4 hover:bg-muted/50 transition-colors">
                     <div className="flex items-center gap-3">
-                      <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold flex-shrink-0 ${getRankBadgeColor(earner.rank)}`}>
-                        {earner.rank <= 3 ? <Crown className="w-4 h-4" /> : earner.rank}
-                      </div>
+                      {renderRank(earner.rank)}
                       <Avatar className="w-10 h-10 flex-shrink-0">
                         <AvatarImage src={earner.avatar} alt={earner.name} />
                         <AvatarFallback className="bg-accent text-accent-foreground text-xs">
@@ -192,9 +190,7 @@ export function TopEarnersSection() {
                     {topEarners.map((earner) => (
                       <tr key={earner.rank} className="border-b border-border hover:bg-muted/50 transition-colors">
                         <td className="p-3 lg:p-4">
-                          <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold ${getRankBadgeColor(earner.rank)}`}>
-                            {earner.rank <= 3 ? <Crown className="w-4 h-4" /> : earner.rank}
-                          </div>
+                          {renderRank(earner.rank)}
                         </td>
                         <td className="p-3 lg:p-4">
                           <div className="flex items-center gap-3">
