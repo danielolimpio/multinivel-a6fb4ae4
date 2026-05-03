@@ -452,7 +452,7 @@ export function Header() {
           <img 
             src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
             alt="Logo" 
-            className="h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 object-contain relative z-50" 
+            className="h-24 w-24 sm:h-32 sm:w-32 object-contain relative z-50" 
             style={{
               filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
             }}
