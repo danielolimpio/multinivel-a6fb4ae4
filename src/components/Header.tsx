@@ -446,9 +446,9 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main Header with Logo */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center py-2 sm:py-3">
+      {/* Main Header with Logo - overlaps into the next section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="flex items-center justify-center pt-2 sm:pt-3" style={{ marginBottom: '-2.5rem' }}>
           <img 
             src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
             alt="Logo" 
