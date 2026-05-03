@@ -8,7 +8,7 @@ export function AnnouncementBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-purple to-primary py-2.5 px-4">
+    <div className="relative w-full bg-gradient-blue-gold py-2.5 px-4 border-b border-[hsl(40_85%_52%)]/40 shadow-[0_2px_10px_-2px_hsl(40_85%_52%/0.3)]">
       <div className="container mx-auto flex items-center justify-center gap-2 text-sm md:text-base">
         <span className="text-white font-semibold">
           Universidade Multinível 2026.
