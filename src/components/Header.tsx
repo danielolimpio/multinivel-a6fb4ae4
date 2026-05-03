@@ -446,62 +446,17 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main Header with Stats and Logo */}
+      {/* Main Header with Logo */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 sm:h-24 lg:h-32 items-center justify-between relative">
-          {/* Left Stats - Desktop */}
-          <div className="hidden lg:flex flex-1 justify-start">
-            <div className="flex items-center space-x-2 bg-muted/50 px-3 py-2 rounded-lg">
-              <DollarSign className="h-4 w-4 text-gold" />
-              <div className="text-left">
-                <div className="text-base font-bold text-foreground">46 bilhões</div>
-                <div className="text-[10px] text-muted-foreground">{currentTranslations.totalCommission}</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Logo - Center */}
-          <div className="flex-shrink-0 mx-auto lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:mt-16">
-            <img 
-              src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
-              alt="Logo" 
-              className="h-24 w-24 sm:h-28 sm:w-28 lg:h-32 lg:w-32 object-contain relative z-50 mt-8 sm:mt-10 lg:mt-0" 
-              style={{
-                filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
-              }}
-            />
-          </div>
-
-          {/* Right Stats - Desktop */}
-          <div className="hidden lg:flex flex-1 justify-end">
-            <div className="flex items-center space-x-2 bg-muted/50 px-4 py-2 rounded-lg">
-              <DollarSign className="h-5 w-5 text-gold" />
-              <div className="text-left">
-                <div className="text-lg font-bold text-foreground">250 bilhões</div>
-                <div className="text-xs text-muted-foreground">{currentTranslations.totalSales}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Mobile Stats - Adjusted positioning */}
-        <div className="lg:hidden mt-8 pb-6">
-          <div className="grid grid-cols-2 gap-2 px-2">
-            <div className="flex items-center space-x-1 bg-muted/50 px-2 py-2 rounded-lg text-xs">
-              <DollarSign className="h-3 w-3 text-gold-medium" />
-              <div className="text-left">
-                <div className="font-bold text-xs">46bi</div>
-                <div className="text-[10px] text-muted-foreground">Comissões</div>
-              </div>
-            </div>
-            <div className="flex items-center space-x-1 bg-muted/50 px-2 py-2 rounded-lg text-xs justify-end">
-              <DollarSign className="h-3 w-3 text-gold-medium" />
-              <div className="text-left">
-                <div className="font-bold text-xs">250bi</div>
-                <div className="text-[10px] text-muted-foreground">Vendas</div>
-              </div>
-            </div>
-          </div>
+        <div className="flex items-center justify-center py-2 sm:py-3">
+          <img 
+            src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
+            alt="Logo" 
+            className="h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 object-contain relative z-50" 
+            style={{
+              filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
+            }}
+          />
         </div>
       </div>
     </header>
