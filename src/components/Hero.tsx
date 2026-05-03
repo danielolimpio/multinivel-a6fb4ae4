@@ -112,8 +112,8 @@ export function Hero() {
             <div className="space-y-4 sm:space-y-6 mb-8">
               {/* Ranking Feature */}
               <div className="flex items-start gap-3 p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center">
-                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 icon-premium rounded-lg flex items-center justify-center">
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-[hsl(40_85%_55%)]" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-semibold text-white mb-1 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
@@ -130,8 +130,8 @@ export function Hero() {
               
               {/* Momentum Feature */}
               <div className="flex items-start gap-3 p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-turquoise to-blue-500 rounded-lg flex items-center justify-center">
-                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 icon-premium rounded-lg flex items-center justify-center">
+                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[hsl(40_85%_55%)]" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-semibold text-white mb-1 flex items-center gap-2">
@@ -146,8 +146,8 @@ export function Hero() {
               
               {/* Income Disclaimer */}
               <div className="flex items-start gap-3 p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
-                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 icon-premium rounded-lg flex items-center justify-center">
+                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-[hsl(40_85%_55%)]" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-semibold text-white mb-1">
@@ -172,7 +172,7 @@ export function Hero() {
               <p className="text-xs sm:text-sm text-white/80 mb-2 sm:mb-3">
                 Os top earners são líderes definidos, alta liderança e, geralmente, fundadores da empresa e líderes principais.
               </p>
-              <Button variant="purple" size="sm" className="w-full text-xs sm:text-sm">
+              <Button variant="premium" size="sm" className="w-full text-xs sm:text-sm">
                 Top earners
               </Button>
             </div>
@@ -229,7 +229,7 @@ export function Hero() {
                   placeholder="Seu melhor e-mail"
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-yellow-400 focus:ring-yellow-400/20 text-sm"
                 />
-                <Button variant="default" size="sm" className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-semibold text-xs sm:text-sm">
+                <Button variant="premium" size="sm" className="w-full text-xs sm:text-sm">
                   Assinar Newsletter
                 </Button>
               </div>
