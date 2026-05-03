@@ -351,13 +351,10 @@ export function Header() {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Button variant="outline" size="sm" onClick={() => window.location.href = '/auth'}>
-                Login Afiliado
+              <Button variant="goldOutline" size="sm" onClick={() => window.location.href = '/auth'}>
+                Login
               </Button>
-              <Button variant="secondary" size="sm" onClick={() => window.location.href = '/admin/auth'}>
-                Login Admin
-              </Button>
-              <Button size="sm" className="bg-gradient-primary hover:opacity-90" onClick={() => window.location.href = '/auth'}>
+              <Button variant="registerPremium" size="sm" onClick={() => window.location.href = '/auth'}>
                 {currentTranslations.register}
               </Button>
             </div>
@@ -426,15 +423,10 @@ export function Header() {
                       </DropdownMenu>
                       
                       {/* Auth Buttons */}
-                      <div className="grid grid-cols-2 gap-2">
-                        <Button variant="outline" className="h-10 text-sm" onClick={() => { window.location.href = '/auth'; setIsMenuOpen(false); }}>
-                          Afiliado
-                        </Button>
-                        <Button variant="secondary" className="h-10 text-sm" onClick={() => { window.location.href = '/admin/auth'; setIsMenuOpen(false); }}>
-                          Admin
-                        </Button>
-                      </div>
-                      <Button className="w-full h-11 bg-gradient-primary hover:opacity-90 text-sm font-semibold" onClick={() => { window.location.href = '/auth'; setIsMenuOpen(false); }}>
+                      <Button variant="goldOutline" className="w-full h-10 text-sm" onClick={() => { window.location.href = '/auth'; setIsMenuOpen(false); }}>
+                        Login
+                      </Button>
+                      <Button variant="registerPremium" className="w-full h-11 text-sm font-bold" onClick={() => { window.location.href = '/auth'; setIsMenuOpen(false); }}>
                         {currentTranslations.register}
                       </Button>
                     </div>

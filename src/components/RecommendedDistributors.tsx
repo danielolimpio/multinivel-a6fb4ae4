@@ -136,10 +136,10 @@ export function RecommendedDistributors() {
 
               {/* Action Buttons */}
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" className="flex-1 text-xs sm:text-sm">
+                <Button variant="goldOutline" size="sm" className="flex-1 text-xs sm:text-sm">
                   Ver Perfil
                 </Button>
-                <Button size="sm" className="flex-1 bg-gradient-primary text-xs sm:text-sm">
+                <Button variant="premium" size="sm" className="flex-1 text-xs sm:text-sm text-white font-bold">
                   Conectar
                 </Button>
               </div>
@@ -149,7 +149,7 @@ export function RecommendedDistributors() {
 
         {/* View All Button */}
         <div className="text-center">
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button variant="premium" className="text-white font-bold">
             Ver todos os distribuidores recomendados
           </Button>
         </div>

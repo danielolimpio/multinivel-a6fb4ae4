@@ -90,14 +90,19 @@ export function TopEarnersSection() {
     }
   ];
 
-  const getRankBadgeColor = (rank: number) => {
-    switch (rank) {
-      case 1: return "bg-gradient-to-r from-yellow-400 to-yellow-600 text-white";
-      case 2: return "bg-gradient-to-r from-gray-300 to-gray-500 text-white";
-      case 3: return "bg-gradient-to-r from-amber-600 to-amber-800 text-white";
-      default: return "bg-primary text-primary-foreground";
-    }
+  const rankBadgeStyle = {
+    backgroundImage: 'linear-gradient(white, white), var(--gradient-gold)',
+    backgroundOrigin: 'border-box' as const,
+    backgroundClip: 'padding-box, border-box' as const,
   };
+  const renderRank = (rank: number) => (
+    <div
+      className="inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold border-2 border-transparent text-primary"
+      style={rankBadgeStyle}
+    >
+      {rank}º
+    </div>
+  );
 
   return (
     <section className="py-8 sm:py-16 pb-20 sm:pb-28 bg-background">
@@ -127,9 +132,7 @@ export function TopEarnersSection() {
                 {topEarners.map((earner) => (
                   <div key={earner.rank} className="p-4 hover:bg-muted/50 transition-colors">
                     <div className="flex items-center gap-3">
-                      <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold flex-shrink-0 ${getRankBadgeColor(earner.rank)}`}>
-                        {earner.rank <= 3 ? <Crown className="w-4 h-4" /> : earner.rank}
-                      </div>
+                      {renderRank(earner.rank)}
                       <Avatar className="w-10 h-10 flex-shrink-0">
                         <AvatarImage src={earner.avatar} alt={earner.name} />
                         <AvatarFallback className="bg-accent text-accent-foreground text-xs">
@@ -187,9 +190,7 @@ export function TopEarnersSection() {
                     {topEarners.map((earner) => (
                       <tr key={earner.rank} className="border-b border-border hover:bg-muted/50 transition-colors">
                         <td className="p-3 lg:p-4">
-                          <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold ${getRankBadgeColor(earner.rank)}`}>
-                            {earner.rank <= 3 ? <Crown className="w-4 h-4" /> : earner.rank}
-                          </div>
+                          {renderRank(earner.rank)}
                         </td>
                         <td className="p-3 lg:p-4">
                           <div className="flex items-center gap-3">

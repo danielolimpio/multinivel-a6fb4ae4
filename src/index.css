@@ -61,9 +61,13 @@ All colors MUST be HSL.
     --gradient-accent: linear-gradient(135deg, hsl(280 65% 60%), hsl(180 65% 50%));
     --gradient-hero: linear-gradient(135deg, hsl(207, 95%, 18%) 0%, hsl(272, 100%, 38%) 100%);
     --gradient-gold: linear-gradient(135deg, hsl(42 90% 58%), hsl(40 85% 52%), hsl(35 75% 45%));
+    --gradient-blue: linear-gradient(135deg, hsl(220 60% 15%), hsl(220 70% 25%), hsl(220 60% 18%));
+    --gradient-blue-gold: linear-gradient(135deg, hsl(220 60% 15%) 0%, hsl(220 65% 22%) 50%, hsl(40 85% 45%) 100%);
+    --gold-light-bg: 42 90% 88%;
     --shadow-elegant: 0 10px 30px -10px hsl(220 60% 15% / 0.2);
     --shadow-card: 0 4px 20px -5px hsl(220 60% 15% / 0.1);
     --shadow-gold: 0 8px 25px -8px hsl(40 85% 52% / 0.55);
+    --shadow-premium: 0 8px 25px -8px hsl(220 60% 15% / 0.5), 0 0 0 1px hsl(40 85% 52% / 0.4);
 
     --sidebar-background: 0 0% 98%;
 
@@ -172,6 +176,52 @@ All colors MUST be HSL.
   
   .bg-gradient-gold {
     background: var(--gradient-gold);
+  }
+
+  .bg-gradient-blue {
+    background: var(--gradient-blue);
+  }
+
+  .bg-gradient-blue-gold {
+    background: var(--gradient-blue-gold);
+  }
+
+  /* Premium button: blue gradient bg, thin gold border, white bold text */
+  .btn-premium {
+    background: var(--gradient-blue);
+    color: hsl(0 0% 100%);
+    font-weight: 700;
+    border: 1px solid transparent;
+    background-image: var(--gradient-blue), var(--gradient-gold);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: var(--shadow-premium);
+    transition: all 0.3s ease;
+  }
+  .btn-premium:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 12px 30px -8px hsl(220 60% 15% / 0.6), 0 0 0 1px hsl(40 85% 52% / 0.8);
+  }
+
+  /* Premium outline: transparent bg, thin gold border, bold text */
+  .btn-gold-outline {
+    background: transparent;
+    color: hsl(40 85% 45%);
+    font-weight: 700;
+    border: 1px solid;
+    border-image: var(--gradient-gold) 1;
+    transition: all 0.3s ease;
+  }
+  .btn-gold-outline:hover {
+    background: hsl(var(--gold-light-bg));
+  }
+
+  /* Gold gradient icon background with gold border */
+  .icon-premium {
+    background: var(--gradient-blue);
+    border: 1px solid;
+    border-image: var(--gradient-gold) 1;
+    box-shadow: 0 4px 12px -2px hsl(220 60% 15% / 0.4);
   }
 
   /* Stock ticker animation */
