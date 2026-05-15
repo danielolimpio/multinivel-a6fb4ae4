@@ -90,16 +90,8 @@ export function TopEarnersSection() {
     }
   ];
 
-  const rankBadgeStyle = {
-    backgroundImage: 'linear-gradient(white, white), var(--gradient-gold)',
-    backgroundOrigin: 'border-box' as const,
-    backgroundClip: 'padding-box, border-box' as const,
-  };
   const renderRank = (rank: number) => (
-    <div
-      className="inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold border-2 border-transparent text-primary"
-      style={rankBadgeStyle}
-    >
+    <div className="inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold border border-[hsl(40_85%_50%)] text-white bg-gradient-blue">
       {rank}º
     </div>
   );
