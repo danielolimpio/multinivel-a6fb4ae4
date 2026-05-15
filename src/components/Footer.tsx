@@ -115,7 +115,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 sm:mb-4 text-turquoise text-sm sm:text-base">Comunidade</h4>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-gradient-gold text-sm sm:text-base">Comunidade</h4>
               <ul className="space-y-1.5 sm:space-y-2">
                 {footerLinks.comunidade.map((link) => (
                   <li key={link.name}>
