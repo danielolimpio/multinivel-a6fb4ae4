@@ -249,7 +249,7 @@ export function TopEarnersSection() {
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4 lg:space-y-4">
               <Card className="p-3 sm:p-4 lg:p-6">
                 <h3 className="font-semibold text-foreground mb-2 sm:mb-3 lg:mb-4 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm lg:text-base">
-                  <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-accent flex-shrink-0" />
+                  <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[hsl(40_85%_50%)] flex-shrink-0" />
                   <span className="truncate">Ranking por categoria</span>
                 </h3>
                 <div className="space-y-2 sm:space-y-2.5 lg:space-y-3 text-[10px] sm:text-xs lg:text-sm">
