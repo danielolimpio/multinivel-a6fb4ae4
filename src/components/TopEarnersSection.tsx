@@ -90,16 +90,8 @@ export function TopEarnersSection() {
     }
   ];
 
-  const rankBadgeStyle = {
-    backgroundImage: 'linear-gradient(white, white), var(--gradient-gold)',
-    backgroundOrigin: 'border-box' as const,
-    backgroundClip: 'padding-box, border-box' as const,
-  };
   const renderRank = (rank: number) => (
-    <div
-      className="inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold border-2 border-transparent text-primary"
-      style={rankBadgeStyle}
-    >
+    <div className="inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold border border-[hsl(40_85%_50%)] text-white bg-gradient-blue">
       {rank}º
     </div>
   );
@@ -160,7 +152,7 @@ export function TopEarnersSection() {
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="text-right">
-                          <div className="text-accent font-semibold">{earner.monthlyEarnings}</div>
+                          <div className="text-gradient-gold font-semibold">{earner.monthlyEarnings}</div>
                           <div className="text-muted-foreground text-[10px]">mensal</div>
                         </div>
                         <div className="text-right">
@@ -213,7 +205,7 @@ export function TopEarnersSection() {
                           <span className="font-medium text-foreground text-sm">{earner.company}</span>
                         </td>
                         <td className="p-3 lg:p-4">
-                          <div className="flex items-center gap-1 text-accent font-semibold text-sm">
+                          <div className="flex items-center gap-1 text-gradient-gold font-semibold text-sm">
                             <DollarSign className="w-3 h-3" />
                             <span>{earner.monthlyEarnings}</span>
                           </div>
@@ -257,7 +249,7 @@ export function TopEarnersSection() {
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4 lg:space-y-4">
               <Card className="p-3 sm:p-4 lg:p-6">
                 <h3 className="font-semibold text-foreground mb-2 sm:mb-3 lg:mb-4 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm lg:text-base">
-                  <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-accent flex-shrink-0" />
+                  <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[hsl(40_85%_50%)] flex-shrink-0" />
                   <span className="truncate">Ranking por categoria</span>
                 </h3>
                 <div className="space-y-2 sm:space-y-2.5 lg:space-y-3 text-[10px] sm:text-xs lg:text-sm">
@@ -284,11 +276,11 @@ export function TopEarnersSection() {
                 <h3 className="font-semibold text-foreground mb-2 sm:mb-3 lg:mb-4 text-xs sm:text-sm lg:text-base">Estatísticas</h3>
                 <div className="space-y-2 sm:space-y-3 lg:space-y-4">
                   <div className="text-center">
-                    <div className="text-base sm:text-lg lg:text-2xl font-bold text-accent">R$ 2.4M+</div>
+                    <div className="text-base sm:text-lg lg:text-2xl font-bold text-primary">R$ 2.4M+</div>
                     <div className="text-[9px] sm:text-[10px] lg:text-sm text-muted-foreground">Renda distribuída</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-base sm:text-lg lg:text-2xl font-bold text-turquoise">1,247</div>
+                    <div className="text-base sm:text-lg lg:text-2xl font-bold text-primary">1,247</div>
                     <div className="text-[9px] sm:text-[10px] lg:text-sm text-muted-foreground">Distribuidores</div>
                   </div>
                   <div className="text-center">

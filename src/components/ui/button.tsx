@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -21,15 +21,15 @@ const buttonVariants = cva(
         gold: "bg-gradient-gold text-gold-foreground hover:opacity-90 shadow-gold",
         premium: "btn-premium hover:opacity-100",
         goldOutline: "btn-gold-outline",
-        registerPremium: "bg-gradient-blue text-white font-bold border border-[hsl(40_85%_50%)] hover:brightness-110 shadow-[0_8px_25px_-8px_hsl(40_85%_52%/0.5)]",
+        registerPremium: "btn-premium [&]:text-[hsl(40_85%_55%)] [&_svg]:text-[hsl(40_85%_55%)] hover:opacity-100",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        default: "h-10 px-4 py-2 rounded-full",
+        sm: "h-9 rounded-full px-3",
+        lg: "h-11 rounded-full px-8",
+        icon: "h-10 w-10 rounded-full",
       },
     },
     defaultVariants: {

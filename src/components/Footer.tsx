@@ -62,10 +62,7 @@ export function Footer() {
                 placeholder="Seu melhor e-mail"
                 className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
               />
-              <Button 
-                variant="secondary" 
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
-              >
+              <Button variant="registerPremium">
                 <Mail className="w-4 h-4 mr-2" />
                 Inscrever-se
               </Button>
@@ -102,7 +99,7 @@ export function Footer() {
 
             {/* Links Columns */}
             <div>
-              <h4 className="font-semibold mb-3 sm:mb-4 text-accent text-sm sm:text-base">Empresa</h4>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-gradient-gold text-sm sm:text-base">Empresa</h4>
               <ul className="space-y-1.5 sm:space-y-2">
                 {footerLinks.empresa.map((link) => (
                   <li key={link.name}>
@@ -118,7 +115,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 sm:mb-4 text-turquoise text-sm sm:text-base">Comunidade</h4>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-gradient-gold text-sm sm:text-base">Comunidade</h4>
               <ul className="space-y-1.5 sm:space-y-2">
                 {footerLinks.comunidade.map((link) => (
                   <li key={link.name}>
@@ -134,7 +131,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 sm:mb-4 text-accent text-sm sm:text-base">Recursos</h4>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-gradient-gold text-sm sm:text-base">Recursos</h4>
               <ul className="space-y-1.5 sm:space-y-2">
                 {footerLinks.recursos.map((link) => (
                   <li key={link.name}>
@@ -162,7 +159,7 @@ export function Footer() {
                 href="https://danielolimpio.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-accent hover:text-accent/80 transition-colors"
+                className="text-gradient-gold font-semibold hover:opacity-80 transition-opacity"
               >
                 DanielOlimpio
               </a>

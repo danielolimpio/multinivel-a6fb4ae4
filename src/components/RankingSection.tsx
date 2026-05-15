@@ -175,8 +175,8 @@ export function RankingSection() {
         }}>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 md:gap-4">
                 {/* Position Badge */}
-                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border-2 border-transparent shadow-md flex-shrink-0" style={{ backgroundImage: 'linear-gradient(white, white), var(--gradient-gold)', backgroundOrigin: 'border-box', backgroundClip: 'padding-box, border-box' }}>
-                  <span className="text-primary font-bold text-sm sm:text-base">{getOrdinal(company.position)}</span>
+                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[hsl(40_85%_50%)] shadow-md flex-shrink-0 bg-gradient-blue">
+                  <span className="text-white font-bold text-sm sm:text-base">{getOrdinal(company.position)}</span>
                 </div>
 
                 {/* Company Info */}
