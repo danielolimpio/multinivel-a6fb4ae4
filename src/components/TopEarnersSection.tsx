@@ -205,7 +205,7 @@ export function TopEarnersSection() {
                           <span className="font-medium text-foreground text-sm">{earner.company}</span>
                         </td>
                         <td className="p-3 lg:p-4">
-                          <div className="flex items-center gap-1 text-accent font-semibold text-sm">
+                          <div className="flex items-center gap-1 text-gradient-gold font-semibold text-sm">
                             <DollarSign className="w-3 h-3" />
                             <span>{earner.monthlyEarnings}</span>
                           </div>
