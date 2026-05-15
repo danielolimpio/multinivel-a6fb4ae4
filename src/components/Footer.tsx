@@ -99,7 +99,7 @@ export function Footer() {
 
             {/* Links Columns */}
             <div>
-              <h4 className="font-semibold mb-3 sm:mb-4 text-accent text-sm sm:text-base">Empresa</h4>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-gradient-gold text-sm sm:text-base">Empresa</h4>
               <ul className="space-y-1.5 sm:space-y-2">
                 {footerLinks.empresa.map((link) => (
                   <li key={link.name}>
