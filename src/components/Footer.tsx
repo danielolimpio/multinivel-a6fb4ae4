@@ -159,7 +159,7 @@ export function Footer() {
                 href="https://danielolimpio.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-accent hover:text-accent/80 transition-colors"
+                className="text-gradient-gold font-semibold hover:opacity-80 transition-opacity"
               >
                 DanielOlimpio
               </a>
