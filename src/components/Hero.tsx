@@ -112,7 +112,7 @@ export function Hero() {
             <div className="space-y-4 sm:space-y-6 mb-8">
               {/* Ranking Feature */}
               <div className="flex items-start gap-3 p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 icon-premium rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 icon-premium rounded-full flex items-center justify-center">
                   <Award className="w-4 h-4 sm:w-5 sm:h-5 text-[hsl(40_85%_55%)]" />
                 </div>
                 <div className="min-w-0">
@@ -130,7 +130,7 @@ export function Hero() {
               
               {/* Momentum Feature */}
               <div className="flex items-start gap-3 p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 icon-premium rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 icon-premium rounded-full flex items-center justify-center">
                   <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[hsl(40_85%_55%)]" />
                 </div>
                 <div className="min-w-0">
@@ -146,7 +146,7 @@ export function Hero() {
               
               {/* Income Disclaimer */}
               <div className="flex items-start gap-3 p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 icon-premium rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 icon-premium rounded-full flex items-center justify-center">
                   <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-[hsl(40_85%_55%)]" />
                 </div>
                 <div className="min-w-0">
