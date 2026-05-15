@@ -152,7 +152,7 @@ export function TopEarnersSection() {
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="text-right">
-                          <div className="text-accent font-semibold">{earner.monthlyEarnings}</div>
+                          <div className="text-gradient-gold font-semibold">{earner.monthlyEarnings}</div>
                           <div className="text-muted-foreground text-[10px]">mensal</div>
                         </div>
                         <div className="text-right">
