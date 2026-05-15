@@ -62,10 +62,7 @@ export function Footer() {
                 placeholder="Seu melhor e-mail"
                 className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
               />
-              <Button 
-                variant="secondary" 
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
-              >
+              <Button variant="registerPremium">
                 <Mail className="w-4 h-4 mr-2" />
                 Inscrever-se
               </Button>
