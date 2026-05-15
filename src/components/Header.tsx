@@ -316,12 +316,12 @@ export function Header() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-12 items-center justify-between">
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-6">
+            <nav className="hidden md:flex items-center space-x-6 top-nav">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-primary px-2 py-1 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-muted/50"
+                  className="px-2 py-1 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </a>
