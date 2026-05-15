@@ -21,7 +21,7 @@ const buttonVariants = cva(
         gold: "bg-gradient-gold text-gold-foreground hover:opacity-90 shadow-gold",
         premium: "btn-premium hover:opacity-100",
         goldOutline: "btn-gold-outline",
-        registerPremium: "bg-gradient-blue text-white font-bold border border-[hsl(40_85%_50%)] hover:brightness-110 shadow-[0_8px_25px_-8px_hsl(40_85%_52%/0.5)]",
+        registerPremium: "btn-premium [&]:text-[hsl(40_85%_55%)] [&_svg]:text-[hsl(40_85%_55%)] hover:opacity-100",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
