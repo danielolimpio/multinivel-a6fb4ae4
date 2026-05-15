@@ -332,7 +332,7 @@ export function Header() {
             <div className="hidden md:flex items-center space-x-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="gap-2">
+                  <Button variant="ghost" size="sm" className="gap-2 text-white hover:text-[hsl(40_85%_55%)] hover:bg-white/10 rounded-full">
                     <FlagIcon countryCode={selectedLanguage} size="sm" />
                     <Globe className="w-3 h-3" />
                     {selectedLanguage.toUpperCase()}
