@@ -276,11 +276,11 @@ export function TopEarnersSection() {
                 <h3 className="font-semibold text-foreground mb-2 sm:mb-3 lg:mb-4 text-xs sm:text-sm lg:text-base">Estatísticas</h3>
                 <div className="space-y-2 sm:space-y-3 lg:space-y-4">
                   <div className="text-center">
-                    <div className="text-base sm:text-lg lg:text-2xl font-bold text-accent">R$ 2.4M+</div>
+                    <div className="text-base sm:text-lg lg:text-2xl font-bold text-primary">R$ 2.4M+</div>
                     <div className="text-[9px] sm:text-[10px] lg:text-sm text-muted-foreground">Renda distribuída</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-base sm:text-lg lg:text-2xl font-bold text-turquoise">1,247</div>
+                    <div className="text-base sm:text-lg lg:text-2xl font-bold text-primary">1,247</div>
                     <div className="text-[9px] sm:text-[10px] lg:text-sm text-muted-foreground">Distribuidores</div>
                   </div>
                   <div className="text-center">
