@@ -34,7 +34,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground relative">
+    <footer className="bg-gradient-blue text-primary-foreground relative">
       {/* Logo positioned to overlap from above */}
       <div className="absolute left-1/2 transform -translate-x-1/2 -top-12 sm:-top-16 z-40">
         <img 
@@ -87,7 +87,7 @@ export function Footer() {
                     <a
                       key={social.name}
                       href={social.href}
-                      className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary-foreground/10 text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                      className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full icon-premium text-[hsl(40_85%_55%)] hover:brightness-125 transition-all"
                       aria-label={social.name}
                     >
                       <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -105,7 +105,7 @@ export function Footer() {
                   <li key={link.name}>
                     <a 
                       href={link.href}
-                      className="text-primary-foreground/80 hover:text-accent transition-colors text-xs sm:text-sm"
+                      className="text-primary-foreground/80 hover:text-[hsl(40_85%_55%)] transition-colors text-xs sm:text-sm"
                     >
                       {link.name}
                     </a>
@@ -121,7 +121,7 @@ export function Footer() {
                   <li key={link.name}>
                     <a 
                       href={link.href}
-                      className="text-primary-foreground/80 hover:text-turquoise transition-colors text-xs sm:text-sm"
+                      className="text-primary-foreground/80 hover:text-[hsl(40_85%_55%)] transition-colors text-xs sm:text-sm"
                     >
                       {link.name}
                     </a>
@@ -137,7 +137,7 @@ export function Footer() {
                   <li key={link.name}>
                     <a 
                       href={link.href}
-                      className="text-primary-foreground/80 hover:text-accent transition-colors text-xs sm:text-sm"
+                      className="text-primary-foreground/80 hover:text-[hsl(40_85%_55%)] transition-colors text-xs sm:text-sm"
                     >
                       {link.name}
                     </a>
@@ -165,12 +165,12 @@ export function Footer() {
               </a>
             </p>
             <div className="flex items-center gap-3 sm:gap-4">
-              <Button variant="ghost" size="sm" className="text-primary-foreground/60 hover:text-primary-foreground text-xs sm:text-sm h-8">
+              <Button variant="ghost" size="sm" className="text-primary-foreground/70 hover:text-[hsl(40_85%_55%)] hover:bg-transparent text-xs sm:text-sm h-8">
                 <Globe className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                 Português (BR)
               </Button>
-              <span className="text-primary-foreground/40 hidden sm:inline">|</span>
-              <a href="/privacidade" className="text-primary-foreground/60 hover:text-primary-foreground text-xs sm:text-sm">
+              <span className="text-[hsl(40_85%_55%)]/40 hidden sm:inline">|</span>
+              <a href="/privacidade" className="text-primary-foreground/70 hover:text-[hsl(40_85%_55%)] text-xs sm:text-sm">
                 LGPD
               </a>
             </div>
