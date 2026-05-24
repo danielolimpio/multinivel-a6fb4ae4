@@ -21,8 +21,8 @@ export function StatsPanel() {
                 className="p-4 sm:p-6 text-center hover:shadow-card transition-all duration-300 hover:scale-105 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-gold mb-3 sm:mb-4 shadow-gold">
-                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[hsl(220_60%_15%)]" />
+                <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full icon-premium mb-3 sm:mb-4">
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[hsl(40_85%_55%)]" />
                 </div>
                 <h3 className="text-lg sm:text-2xl font-bold text-primary mb-1">
                   {stat.value}

@@ -118,7 +118,7 @@ export function Hero() {
                 <div className="min-w-0">
                   <h3 className="font-semibold text-white mb-1 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                     <span>Ranking Global</span>
-                    <Badge variant="outline" className="text-xs border-yellow-400/50 text-yellow-400 w-fit">
+                    <Badge variant="outline" className="text-xs border-[hsl(40_85%_50%)] text-[hsl(40_85%_55%)] w-fit">
                       1.600+ empresas
                     </Badge>
                   </h3>

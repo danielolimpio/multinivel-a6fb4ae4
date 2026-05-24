@@ -203,25 +203,36 @@ All colors MUST be HSL.
     box-shadow: 0 12px 30px -8px hsl(220 60% 15% / 0.6), 0 0 0 1px hsl(40 85% 52% / 0.8);
   }
 
-  /* Premium outline: transparent bg, thin gold border, bold text */
+  /* Premium outline: transparent bg, thin gold border (rounded-friendly), bold text */
   .btn-gold-outline {
     background: transparent;
     color: hsl(40 85% 45%);
     font-weight: 700;
-    border: 1px solid;
-    border-image: var(--gradient-gold) 1;
+    border: 1px solid hsl(40 85% 50%);
     transition: all 0.3s ease;
   }
   .btn-gold-outline:hover {
     background: hsl(var(--gold-light-bg));
   }
 
-  /* Gold gradient icon background with gold border */
+  /* Blue gradient icon background with rounded gold border */
   .icon-premium {
     background: var(--gradient-blue);
-    border: 1px solid;
-    border-image: var(--gradient-gold) 1;
+    border: 1px solid hsl(40 85% 50%);
     box-shadow: 0 4px 12px -2px hsl(220 60% 15% / 0.4);
+  }
+
+  /* Top nav gold gradient hover border */
+  .top-nav-gold { background: var(--gradient-gold); }
+  .top-nav-gold a {
+    color: hsl(220 60% 15%);
+    font-weight: 600;
+    border: 1px solid transparent;
+  }
+  .top-nav-gold a:hover {
+    color: hsl(220 60% 15%);
+    border-color: hsl(40 85% 35%);
+    background: rgba(255,255,255,.15);
   }
 
   /* Stock ticker animation */
