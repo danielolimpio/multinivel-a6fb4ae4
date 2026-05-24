@@ -309,19 +309,18 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+    <header className="sticky top-0 z-50 w-full bg-gradient-blue border-b border-[hsl(40_85%_50%)]/40">
       {/* Top Menu */}
-      <div className="bg-gradient-blue border-b border-[hsl(40_85%_50%)]/40">
-        <style>{`.top-nav a{color:rgba(255,255,255,.85)}.top-nav a:hover{color:hsl(40 85% 55%);background:rgba(255,255,255,.08)}`}</style>
+      <div className="top-nav-gold border-b border-[hsl(40_85%_35%)]/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-12 items-center justify-between">
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-6 top-nav">
+            <nav className="hidden md:flex items-center space-x-2 top-nav-gold">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="px-2 py-1 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="px-3 py-1.5 rounded-full text-sm font-semibold transition-all duration-200"
                 >
                   {item.name}
                 </a>
@@ -332,7 +331,7 @@ export function Header() {
             <div className="hidden md:flex items-center space-x-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="gap-2 text-white hover:text-[hsl(40_85%_55%)] hover:bg-white/10 rounded-full">
+                  <Button variant="ghost" size="sm" className="gap-2 text-[hsl(220_60%_15%)] hover:text-[hsl(220_60%_15%)] hover:bg-white/20 rounded-full font-semibold">
                     <FlagIcon countryCode={selectedLanguage} size="sm" />
                     <Globe className="w-3 h-3" />
                     {selectedLanguage.toUpperCase()}
