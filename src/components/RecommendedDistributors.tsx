@@ -80,7 +80,7 @@ export function RecommendedDistributors() {
                   <Badge variant="secondary" className="mb-1 sm:mb-2 text-xs">
                     {distributor.company}
                   </Badge>
-                  <p className="text-xs sm:text-sm text-accent font-medium mb-1 sm:mb-2">
+                  <p className="text-xs sm:text-sm text-[hsl(40_85%_50%)] font-medium mb-1 sm:mb-2">
                     {distributor.title}
                   </p>
                   <div className="flex items-center gap-1 text-xs sm:text-sm text-muted-foreground">
@@ -128,7 +128,7 @@ export function RecommendedDistributors() {
                     <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
                     Volume mensal:
                   </span>
-                  <span className="font-medium text-accent">
+                  <span className="font-medium text-[hsl(40_85%_50%)]">
                     {distributor.monthlyVolume}
                   </span>
                 </div>

@@ -146,8 +146,8 @@ export function RankingSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-6 sm:mb-8">
-          <Badge variant="secondary" className="mb-2 sm:mb-3 px-2 sm:px-3 py-1 bg-[hsl(var(--gold-light-bg))] text-primary border border-[hsl(40_85%_52%)]/40 text-xs sm:text-sm font-semibold">
-            <Trophy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-primary" />
+          <Badge variant="secondary" className="mb-2 sm:mb-3 px-2 sm:px-3 py-1 bg-[hsl(var(--gold-light-bg))] text-primary border border-[hsl(40_85%_52%)]/40 text-xs sm:text-sm font-semibold hover:bg-gradient-blue hover:text-white hover:border-[hsl(40_85%_50%)] transition-colors group">
+            <Trophy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-primary group-hover:text-[hsl(40_85%_55%)]" />
             Ranking Atual
           </Badge>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 sm:mb-3">
