@@ -309,9 +309,9 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-blue border-b border-[hsl(40_85%_50%)]/40">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-[hsl(40_85%_50%)]/30 shadow-sm">
       {/* Top Menu */}
-      <div className="top-nav-gold border-b border-[hsl(40_85%_35%)]/60">
+      <div className="top-nav-gold border-b border-[hsl(40_85%_50%)]/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-12 items-center justify-between">
             {/* Desktop Navigation */}
@@ -351,7 +351,7 @@ export function Header() {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Button variant="goldOutline" size="sm" onClick={() => window.location.href = '/auth'}>
+              <Button variant="premium" size="sm" className="text-white" onClick={() => window.location.href = '/auth'}>
                 Login
               </Button>
               <Button variant="registerPremium" size="sm" onClick={() => window.location.href = '/auth'}>
