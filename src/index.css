@@ -222,17 +222,30 @@ All colors MUST be HSL.
     box-shadow: 0 4px 12px -2px hsl(220 60% 15% / 0.4);
   }
 
-  /* Top nav gold gradient hover border */
-  .top-nav-gold { background: var(--gradient-gold); }
+  /* Top nav — ice white */
+  .top-nav-gold { background: hsl(210 40% 98%); }
   .top-nav-gold a {
     color: hsl(220 60% 15%);
     font-weight: 600;
     border: 1px solid transparent;
   }
   .top-nav-gold a:hover {
+    color: hsl(40 85% 45%);
+    border-color: hsl(40 85% 50%);
+    background: hsl(var(--gold-light-bg) / 0.4);
+  }
+
+  /* Main header white nav */
+  .main-header-nav a {
     color: hsl(220 60% 15%);
-    border-color: hsl(40 85% 35%);
-    background: rgba(255,255,255,.15);
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .main-header-nav a:hover {
+    color: hsl(40 85% 45%);
+    border-color: hsl(40 85% 50%);
+    background: hsl(var(--gold-light-bg) / 0.4);
   }
 
   /* Stock ticker animation */
