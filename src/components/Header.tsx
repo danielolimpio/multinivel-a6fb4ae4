@@ -408,7 +408,7 @@ export function Header() {
                             <ChevronDown className="h-4 w-4" />
                           </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="center" className="w-[248px] sm:w-[288px] max-h-[300px] overflow-y-auto">
+                        <DropdownMenuContent align="center" sideOffset={8} className="z-[100] w-[248px] sm:w-[288px] max-h-[300px] overflow-y-auto bg-popover">
                           {languages.map((language) => (
                             <DropdownMenuItem
                               key={language.code}
