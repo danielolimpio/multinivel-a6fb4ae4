@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Search, Crown, TrendingUp, DollarSign } from "lucide-react";
-import { SolarienBanner } from "@/components/SolarienBanner";
 
 export function TopEarnersSection() {
   const topEarners = [
@@ -14,7 +13,7 @@ export function TopEarnersSection() {
       company: "Hinode",
       monthlyEarnings: "R$ 89.500",
       totalEarnings: "R$ 2.4M",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces",
       country: "BR",
       isVerified: true
     },
@@ -24,7 +23,7 @@ export function TopEarnersSection() {
       company: "Herbalife", 
       monthlyEarnings: "R$ 67.200",
       totalEarnings: "R$ 1.8M",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=faces",
       country: "BR",
       isVerified: true
     },
@@ -34,7 +33,7 @@ export function TopEarnersSection() {
       company: "Jeunesse",
       monthlyEarnings: "R$ 54.800",
       totalEarnings: "R$ 1.5M", 
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=faces",
       country: "BR",
       isVerified: true
     },
@@ -44,7 +43,7 @@ export function TopEarnersSection() {
       company: "4Life",
       monthlyEarnings: "R$ 48.300",
       totalEarnings: "R$ 1.2M",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=faces",
       country: "BR", 
       isVerified: false
     },
@@ -54,7 +53,7 @@ export function TopEarnersSection() {
       company: "Nu Skin",
       monthlyEarnings: "R$ 41.700",
       totalEarnings: "R$ 980K",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=faces",
       country: "BR",
       isVerified: true
     },
@@ -64,7 +63,7 @@ export function TopEarnersSection() {
       company: "Amway",
       monthlyEarnings: "R$ 38.900",
       totalEarnings: "R$ 850K",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=faces",
       country: "BR",
       isVerified: false
     },
@@ -74,7 +73,7 @@ export function TopEarnersSection() {
       company: "Natura", 
       monthlyEarnings: "R$ 35.600",
       totalEarnings: "R$ 720K",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&crop=faces",
       country: "BR",
       isVerified: true
     },
@@ -84,7 +83,7 @@ export function TopEarnersSection() {
       company: "Mary Kay",
       monthlyEarnings: "R$ 32.400",
       totalEarnings: "R$ 650K",
-      avatar: "/placeholder.svg", 
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=faces", 
       country: "BR",
       isVerified: false
     }
