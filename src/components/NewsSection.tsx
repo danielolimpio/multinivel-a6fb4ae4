@@ -53,7 +53,7 @@ export function NewsSection() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="px-2 py-1 bg-gold-medium text-gold-foreground text-xs font-medium rounded">
+                    <span className="px-2.5 py-1 bg-gradient-blue text-[hsl(40_85%_60%)] text-xs font-semibold rounded border border-[hsl(40_85%_50%)] shadow-md">
                       {article.category}
                     </span>
                   </div>
