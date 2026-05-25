@@ -289,10 +289,6 @@ export function TopEarnersSection() {
                 </div>
               </Card>
             </div>
-            
-            <div className="hidden lg:block mt-4">
-              <SolarienBanner />
-            </div>
           </div>
         </div>
       </div>
