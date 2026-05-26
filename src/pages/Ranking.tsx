@@ -7,11 +7,9 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
 import { 
-  Trophy, 
-  Crown, 
-  Medal, 
-  Award, 
-  Star, 
+  Trophy,
+  Star,
+
   TrendingUp, 
   Users, 
   Globe, 
