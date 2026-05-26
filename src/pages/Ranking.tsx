@@ -647,21 +647,23 @@ export default function Ranking() {
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-b from-muted/50 to-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <Card className="p-8 sm:p-12 bg-gradient-to-br from-primary/5 via-gold/5 to-accent/5 border-gold/20">
+            <Card className="p-8 sm:p-12 bg-gradient-to-br from-primary/5 via-[hsl(40_85%_50%)]/5 to-accent/5 border-[hsl(40_85%_50%)]/30">
               <div className="text-center max-w-2xl mx-auto">
-                <Trophy className="w-16 h-16 text-gold mx-auto mb-6" />
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                <div className="w-20 h-20 rounded-full icon-premium flex items-center justify-center mx-auto mb-6">
+                  <Trophy className="w-10 h-10 text-[hsl(40_85%_55%)]" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gradient-blue">
                   Sua Empresa Não Está no Ranking?
                 </h2>
                 <p className="text-muted-foreground mb-8">
-                  Se você representa uma empresa de Marketing de Rede legítima e deseja participar do nosso ranking, 
+                  Se você representa uma empresa de Marketing de Rede legítima e deseja participar do nosso ranking,
                   entre em contato conosco. Avaliamos cada solicitação com critérios rigorosos de qualidade.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="bg-gradient-gold hover:opacity-90">
+                  <Button size="lg" variant="premium" className="text-white font-bold">
                     Solicitar Inclusão
                   </Button>
-                  <Button size="lg" variant="outline" className="border-gold/50 hover:bg-gold/10">
+                  <Button size="lg" variant="goldOutline">
                     Conhecer Critérios
                   </Button>
                 </div>
