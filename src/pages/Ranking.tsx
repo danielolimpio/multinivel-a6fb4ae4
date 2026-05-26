@@ -414,31 +414,7 @@ export default function Ranking() {
   const { counts } = useCompanyVoteCounts();
   const { vote, hasVoted, voting, votedCompany } = useCompanyVote();
 
-  const getPositionStyle = (position: number) => {
-    switch (position) {
-      case 1:
-        return "bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 shadow-[0_0_30px_rgba(251,191,36,0.4)]";
-      case 2:
-        return "bg-gradient-to-br from-gray-300 via-gray-400 to-gray-500 shadow-[0_0_20px_rgba(156,163,175,0.3)]";
-      case 3:
-        return "bg-gradient-to-br from-amber-600 via-amber-700 to-amber-800 shadow-[0_0_20px_rgba(217,119,6,0.3)]";
-      default:
-        return "bg-gradient-primary";
-    }
-  };
-
-  const getPositionIcon = (position: number) => {
-    switch (position) {
-      case 1:
-        return <Crown className="w-6 h-6 text-white drop-shadow-lg" />;
-      case 2:
-        return <Medal className="w-5 h-5 text-white drop-shadow-lg" />;
-      case 3:
-        return <Award className="w-5 h-5 text-white drop-shadow-lg" />;
-      default:
-        return <span className="text-white font-bold text-lg">{position}</span>;
-    }
-  };
+  const getOrdinal = (position: number) => `${position}º`;
 
   const getTrendIcon = (current: number, previous: number) => {
     if (current < previous) return <ArrowUp className="w-4 h-4 text-green-500" />;
