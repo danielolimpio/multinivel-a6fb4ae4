@@ -448,18 +448,17 @@ export default function Ranking() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
               {/* Badge */}
-              <Badge className="mb-6 px-4 py-2 bg-gradient-gold text-white border-0 text-sm font-medium">
+              <Badge className="mb-6 px-4 py-2 badge-premium text-sm">
                 <Trophy className="w-4 h-4 mr-2" />
                 Ranking Oficial 2025
               </Badge>
 
               {/* Title */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                Top Empresas de{" "}
-                <span className="bg-gradient-gold bg-clip-text text-transparent">
-                  Marketing de Rede
-                </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <span className="text-foreground">Top Empresas de </span>
+                <span className="text-gradient-blue">Marketing de Rede</span>
               </h1>
+
 
               {/* Subtitle */}
               <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
