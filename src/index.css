@@ -248,6 +248,32 @@ All colors MUST be HSL.
     background: hsl(var(--gold-light-bg) / 0.4);
   }
 
+  /* Badge premium: blue gradient bg, gold border, gold text — matches homepage */
+  .badge-premium {
+    background: var(--gradient-blue);
+    color: hsl(40 85% 55%);
+    border: 1px solid hsl(40 85% 50%);
+    font-weight: 600;
+  }
+  .badge-premium svg { color: hsl(40 85% 55%); }
+
+  /* Heading gradient: blue-to-blue with subtle premium feel */
+  .text-gradient-blue {
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Position badge — blue gradient, gold border, gold number (used in rankings) */
+  .position-badge {
+    background: var(--gradient-blue);
+    border: 1px solid hsl(40 85% 50%);
+    color: hsl(40 85% 55%);
+    box-shadow: 0 4px 12px -2px hsl(220 60% 15% / 0.4);
+  }
+
   /* Stock ticker animation */
   .ticker-scroll {
     animation: ticker-scroll 60s linear infinite;
