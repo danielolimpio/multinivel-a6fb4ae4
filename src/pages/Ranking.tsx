@@ -470,8 +470,10 @@ export default function Ranking() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-12">
                 {stats.map((stat, index) => (
                   <Card key={index} className="p-4 sm:p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-gold transition-all duration-300">
-                    <stat.icon className="w-8 h-8 text-gold mx-auto mb-3" />
-                    <p className="text-2xl sm:text-3xl font-bold text-foreground">{stat.value}</p>
+                    <div className="w-12 h-12 rounded-full icon-premium flex items-center justify-center mx-auto mb-3">
+                      <stat.icon className="w-6 h-6 text-[hsl(40_85%_55%)]" />
+                    </div>
+                    <p className="text-2xl sm:text-3xl font-bold text-gradient-blue">{stat.value}</p>
                     <p className="text-xs sm:text-sm text-muted-foreground">{stat.label}</p>
                   </Card>
                 ))}
@@ -484,45 +486,29 @@ export default function Ranking() {
         <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <Badge variant="outline" className="mb-4 border-gold/50 text-gold">
+              <Badge className="mb-4 badge-premium px-4 py-2">
                 <Sparkles className="w-4 h-4 mr-2" />
                 Como Funciona
               </Badge>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gradient-blue">
                 Metodologia do Ranking
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="p-6 text-center hover:shadow-card transition-all duration-300 group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-gold flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Vote className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Votos da Comunidade</h3>
-                <p className="text-sm text-muted-foreground">
-                  Cada voto conta! Nossa comunidade avalia as empresas com base em suas experiências reais.
-                </p>
-              </Card>
-
-              <Card className="p-6 text-center hover:shadow-card transition-all duration-300 group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-gold flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Critérios Objetivos</h3>
-                <p className="text-sm text-muted-foreground">
-                  Analisamos planos de compensação, produtos, suporte e reputação no mercado.
-                </p>
-              </Card>
-
-              <Card className="p-6 text-center hover:shadow-card transition-all duration-300 group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-gold flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Atualização em Tempo Real</h3>
-                <p className="text-sm text-muted-foreground">
-                  O ranking é atualizado constantemente para refletir as últimas tendências do mercado.
-                </p>
-              </Card>
+              {[
+                { icon: Vote, title: "Votos da Comunidade", desc: "Cada voto conta! Nossa comunidade avalia as empresas com base em suas experiências reais." },
+                { icon: Target, title: "Critérios Objetivos", desc: "Analisamos planos de compensação, produtos, suporte e reputação no mercado." },
+                { icon: Zap, title: "Atualização em Tempo Real", desc: "O ranking é atualizado constantemente para refletir as últimas tendências do mercado." },
+              ].map((item, i) => (
+                <Card key={i} className="p-6 text-center hover:shadow-card transition-all duration-300 group">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full icon-premium flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <item.icon className="w-8 h-8 text-[hsl(40_85%_55%)]" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
@@ -533,219 +519,130 @@ export default function Ranking() {
             {/* Section Header */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10 gap-4">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground flex items-center gap-3">
-                  <Trophy className="w-8 h-8 text-gold" />
-                  Ranking Completo
+                <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                  <Trophy className="w-8 h-8 text-[hsl(40_85%_50%)]" />
+                  <span className="text-gradient-blue">Ranking Completo</span>
                 </h2>
                 <p className="text-muted-foreground mt-1">Atualizado em tempo real • Últimos 30 dias</p>
               </div>
-              <Badge className="self-start sm:self-auto px-4 py-2 bg-accent/10 text-accent">
+              <Badge className="self-start sm:self-auto badge-premium px-4 py-2">
                 <TrendingUp className="w-4 h-4 mr-2" />
                 {rankingData.length} empresas listadas
               </Badge>
             </div>
 
-            {/* Top 3 Podium */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              {rankingData.slice(0, 3).map((company, index) => {
-                const slug = company.slug ?? companyNameToSlug(company.name);
-                const liveVotes = company.votes + (counts[slug] ?? 0);
-                const voted = hasVoted(slug);
-                const isVoting = voting === slug;
-                return (
-                <Card 
-                  key={company.id}
-                  className={`relative overflow-hidden p-6 hover:shadow-gold transition-all duration-300 ${
-                    index === 0 ? 'md:order-2 md:scale-105 md:-mt-4' : index === 1 ? 'md:order-1' : 'md:order-3'
-                  }`}
-                >
-                  {/* Position Badge */}
-                  <div className={`absolute top-4 right-4 w-12 h-12 rounded-full ${getPositionStyle(company.position)} flex items-center justify-center`}>
-                    {getPositionIcon(company.position)}
-                  </div>
-
-                  {/* Trend */}
-                  <div className="flex items-center gap-1 mb-4">
-                    {getTrendIcon(company.position, company.previousPosition)}
-                    <span className="text-xs text-muted-foreground">
-                      {getTrendText(company.position, company.previousPosition)} posição
-                    </span>
-                  </div>
-
-                  {/* Company Info */}
-                  <div className="flex items-center gap-4 mb-4">
-                    <img 
-                      src={company.logo} 
-                      alt={company.name} 
-                      className="w-20 h-20 rounded-xl object-cover bg-muted shadow-lg"
-                    />
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground">{company.name}</h3>
-                      <Badge variant="secondary" className="text-xs mt-1">
-                        {company.category}
-                      </Badge>
-                    </div>
-                  </div>
-
-                  {/* Rating */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-4 h-4 ${i < Math.floor(company.rating) ? 'text-gold fill-gold' : 'text-muted-foreground'}`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm font-medium text-foreground">{company.rating}</span>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                    {company.description}
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="space-y-2 mb-4">
-                    {company.highlights.slice(0, 2).map((highlight, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-muted-foreground">
-                        <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
-                        {highlight}
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Progress Bar */}
-                  <div className="mb-4">
-                    <div className="flex justify-between text-xs text-muted-foreground mb-1">
-                      <span>{liveVotes.toLocaleString()} votos</span>
-                      <span>{((liveVotes / company.maxVotes) * 100).toFixed(0)}%</span>
-                    </div>
-                    <Progress value={(liveVotes / company.maxVotes) * 100} className="h-2" />
-                  </div>
-
-                  {/* Actions */}
-                  <div className="flex gap-2">
-                    <Link to={`/empresa/${slug}`} className="flex-1">
-                      <Button variant="outline" size="sm" className="w-full">
-                        <Eye className="w-4 h-4 mr-1" />
-                        Detalhes
-                      </Button>
-                    </Link>
-                    <Button
-                      size="sm"
-                      disabled={isVoting}
-                      onClick={() => vote(slug)}
-                      className="flex-1 bg-gradient-gold hover:opacity-90 disabled:opacity-70"
-                    >
-                      {isVoting ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : voted ? <Check className="w-4 h-4 mr-1" /> : <Vote className="w-4 h-4 mr-1" />}
-                      {voted ? "Votado" : votedCompany ? "Trocar voto" : "Votar"}
-                    </Button>
-                  </div>
-                </Card>
-                );
-              })}
-            </div>
-
-            {/* Rest of Ranking */}
-            <div className="space-y-4">
-              {rankingData.slice(3).map((company, index) => {
+            {/* Unified Ranking Grid — same card style as homepage RankingSection */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 mb-8">
+              {rankingData.map((company, index) => {
                 const slug = (company as any).slug ?? companyNameToSlug(company.name);
                 const liveVotes = company.votes + (counts[slug] ?? 0);
+                const totalVotes = rankingData.reduce(
+                  (sum, c) => sum + c.votes + (counts[((c as any).slug ?? companyNameToSlug(c.name))] ?? 0),
+                  0,
+                );
+                const sharePct = totalVotes > 0 ? (liveVotes / totalVotes) * 100 : 0;
                 const voted = hasVoted(slug);
                 const isVoting = voting === slug;
                 return (
-                <Card 
-                  key={company.id}
-                  className="p-4 sm:p-6 hover:shadow-card transition-all duration-300 animate-fade-in"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    {/* Position */}
-                    <div className={`flex items-center justify-center w-12 h-12 rounded-full ${getPositionStyle(company.position)} flex-shrink-0`}>
-                      {getPositionIcon(company.position)}
-                    </div>
+                  <Card
+                    key={company.id}
+                    className="p-2.5 sm:p-3 md:p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in"
+                    style={{ animationDelay: `${index * 30}ms` }}
+                  >
+                    <div className="relative">
+                      {/* Mobile-only position badge — top-left */}
+                      <div className="absolute top-0 left-0 sm:hidden flex items-center justify-center w-10 h-10 rounded-full position-badge z-10">
+                        <span className="font-bold text-sm">{getOrdinal(company.position)}</span>
+                      </div>
 
-                    {/* Trend */}
-                    <div className="flex items-center gap-1 sm:w-20 flex-shrink-0">
-                      {getTrendIcon(company.position, company.previousPosition)}
-                      <span className="text-xs text-muted-foreground">
-                        {getTrendText(company.position, company.previousPosition)}
-                      </span>
-                    </div>
-
-                    {/* Company Info */}
-                    <div className="flex items-center gap-4 flex-1 min-w-0">
-                      <img 
-                        src={company.logo} 
-                        alt={company.name} 
-                        className="w-16 h-16 rounded-lg object-cover bg-muted flex-shrink-0 shadow-md"
-                      />
-                      <div className="min-w-0 flex-1">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <h3 className="font-semibold text-foreground">{company.name}</h3>
-                          <Badge variant="secondary" className="text-xs">
-                            {company.category}
-                          </Badge>
+                      <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3 sm:gap-4">
+                        {/* Desktop position badge */}
+                        <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-full position-badge flex-shrink-0">
+                          <span className="font-bold text-base">{getOrdinal(company.position)}</span>
                         </div>
-                        <p className="text-sm text-muted-foreground truncate mt-1">
-                          {company.description}
-                        </p>
+
+                        <div className="flex-1 min-w-0 w-full">
+                          {/* Mobile: centered logo+name. Desktop: row */}
+                          <div className="flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-2 sm:gap-3 mb-3">
+                            <img
+                              src={company.logo}
+                              alt={`${company.name} logo`}
+                              className="w-20 h-20 sm:w-14 sm:h-14 rounded-lg object-cover bg-muted flex-shrink-0 shadow-md"
+                            />
+                            <div className="min-w-0 flex-1">
+                              <h3 className="font-bold text-foreground text-xl sm:text-lg">{company.name}</h3>
+                              <p className="text-sm text-muted-foreground">
+                                {liveVotes.toLocaleString()} votos
+                              </p>
+                            </div>
+                            <div className="flex items-center gap-2 sm:ml-auto">
+                              <div className="flex items-center gap-1">
+                                <Star className="w-4 h-4 text-[hsl(40_85%_50%)] fill-[hsl(40_85%_50%)]" />
+                                <span className="text-sm font-medium">{company.rating}</span>
+                              </div>
+                              <div className="flex items-center gap-1">
+                                {getTrendIcon(company.position, company.previousPosition)}
+                                <span className="text-xs text-muted-foreground">
+                                  {getTrendText(company.position, company.previousPosition)}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Progress bar */}
+                          <div className="mb-3">
+                            <Progress value={sharePct} className="h-2 animate-progress-fill" />
+                            <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                              <span>{sharePct.toFixed(1)}% do total</span>
+                              <span>{totalVotes.toLocaleString()} votos no ranking</span>
+                            </div>
+                          </div>
+
+                          {/* Actions */}
+                          <div className="flex justify-end items-center gap-2">
+                            <Link to={`/empresa/${slug}`}>
+                              <Button variant="ghost" size="sm" className="h-9 sm:h-8 px-3 text-xs">
+                                <Eye className="w-4 h-4 sm:w-3 sm:h-3 sm:mr-1" />
+                                <span className="hidden sm:inline">Ver</span>
+                              </Button>
+                            </Link>
+                            <Button
+                              size="sm"
+                              variant="premium"
+                              disabled={isVoting}
+                              onClick={() => vote(slug)}
+                              className="h-10 sm:h-8 px-5 sm:px-3 text-sm sm:text-xs disabled:opacity-70 text-white font-bold"
+                            >
+                              {isVoting ? (
+                                <Loader2 className="w-4 h-4 sm:w-3 sm:h-3 mr-1.5 sm:mr-1 animate-spin text-white" />
+                              ) : voted ? (
+                                <Check className="w-4 h-4 sm:w-3 sm:h-3 mr-1.5 sm:mr-1 text-white" />
+                              ) : (
+                                <Vote className="w-4 h-4 sm:w-3 sm:h-3 mr-1.5 sm:mr-1 text-white" />
+                              )}
+                              <span className="text-white font-bold">
+                                {voted ? "Votado" : votedCompany ? "Trocar voto" : "Votar"}
+                              </span>
+                            </Button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-
-                    {/* Rating */}
-                    <div className="flex items-center gap-1 flex-shrink-0">
-                      <Star className="w-4 h-4 text-gold fill-gold" />
-                      <span className="text-sm font-medium">{company.rating}</span>
-                    </div>
-
-                    {/* Votes */}
-                    <div className="text-right flex-shrink-0 hidden md:block">
-                      <p className="font-semibold text-foreground">{liveVotes.toLocaleString()}</p>
-                      <p className="text-xs text-muted-foreground">votos</p>
-                    </div>
-
-                    {/* Progress (hidden on mobile) */}
-                    <div className="w-32 hidden lg:block flex-shrink-0">
-                      <Progress value={(liveVotes / company.maxVotes) * 100} className="h-2" />
-                      <p className="text-xs text-muted-foreground text-right mt-1">
-                        {((liveVotes / company.maxVotes) * 100).toFixed(0)}%
-                      </p>
-                    </div>
-
-                    {/* Actions */}
-                    <div className="flex gap-2 flex-shrink-0">
-                      <Link to={`/empresa/${slug}`}>
-                        <Button variant="ghost" size="sm" className="h-9">
-                          <Eye className="w-4 h-4" />
-                        </Button>
-                      </Link>
-                      <Button
-                        size="sm"
-                        disabled={isVoting}
-                        onClick={() => vote(slug)}
-                        className="h-9 bg-gradient-gold hover:opacity-90 disabled:opacity-70"
-                      >
-                        {isVoting ? <Loader2 className="w-4 h-4 sm:mr-1 animate-spin" /> : voted ? <Check className="w-4 h-4 sm:mr-1" /> : <Vote className="w-4 h-4 sm:mr-1" />}
-                        <span className="hidden sm:inline">{voted ? "Votado" : votedCompany ? "Trocar voto" : "Votar"}</span>
-                      </Button>
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
                 );
               })}
             </div>
 
             {/* Load More */}
             <div className="text-center mt-10">
-              <Button variant="outline" size="lg" className="px-8 border-gold/50 hover:bg-gold/10 hover:border-gold">
+              <Button variant="goldOutline" size="lg" className="px-8">
                 Carregar Mais Empresas
                 <TrendingUp className="w-4 h-4 ml-2" />
               </Button>
             </div>
           </div>
         </section>
+
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-b from-muted/50 to-background">
