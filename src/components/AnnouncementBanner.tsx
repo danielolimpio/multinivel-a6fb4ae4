@@ -8,8 +8,22 @@ export function AnnouncementBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="relative w-full bg-gradient-blue py-2.5 px-4 border-b border-[hsl(40_85%_52%)]/40 shadow-[0_2px_10px_-2px_hsl(40_85%_52%/0.3)]">
-      <div className="container mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm md:text-base">
+    <div className="relative w-full bg-gradient-blue py-2 px-8 border-b border-[hsl(40_85%_52%)]/40 shadow-[0_2px_10px_-2px_hsl(40_85%_52%/0.3)]">
+      {/* Mobile: 2 compact lines */}
+      <div className="container mx-auto md:hidden text-center text-[11px] leading-tight">
+        <div className="text-[hsl(40_85%_60%)] font-semibold">
+          Universidade Multinível 2026 — Pesquisa de Marketing e Vendas aberta
+        </div>
+        <Link
+          to="/quiz/papel-no-mmn/"
+          className="inline-flex items-center gap-0.5 text-[hsl(40_85%_60%)] font-semibold hover:underline mt-0.5"
+        >
+          Responda agora
+          <ChevronRight className="h-3 w-3" />
+        </Link>
+      </div>
+      {/* Desktop: single line */}
+      <div className="container mx-auto hidden md:flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm md:text-base">
         <span className="text-[hsl(40_85%_60%)] font-semibold">
           Universidade Multinível 2026.
         </span>
