@@ -359,12 +359,32 @@ export function Header() {
               </Button>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden ml-auto">
+            {/* Mobile actions: Login, Cadastre-se, Hamburger */}
+            <div className="md:hidden ml-auto flex items-center gap-1.5">
+              <Button
+                variant="premium"
+                size="sm"
+                className="h-8 px-3 text-xs text-white"
+                onClick={() => window.location.href = '/auth'}
+              >
+                Login
+              </Button>
+              <Button
+                variant="registerPremium"
+                size="sm"
+                className="h-8 px-3 text-xs"
+                onClick={() => window.location.href = '/auth'}
+              >
+                {currentTranslations.register}
+              </Button>
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="h-14 w-14">
-                    <Menu className="h-10 w-10 text-primary" />
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-10 w-10 hover:bg-gradient-blue hover:text-[hsl(40_85%_60%)] focus-visible:bg-gradient-blue data-[state=open]:bg-gradient-blue data-[state=open]:text-[hsl(40_85%_60%)]"
+                  >
+                    <Menu className="h-7 w-7 text-primary" />
                     <span className="sr-only">Abrir menu</span>
                   </Button>
                 </SheetTrigger>
