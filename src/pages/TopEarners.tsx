@@ -165,8 +165,9 @@ const TopEarners = () => {
                       {e.name}
                     </p>
                     <p className="text-xs text-muted-foreground mt-0.5">
-                      {e.company}
+                      <CompanyLink company={e.company} />
                     </p>
+
                     <div className="mt-2 grid grid-cols-2 gap-2 text-xs">
                       <div className="flex items-center gap-1">
                         <DollarSign className="w-3 h-3 text-[hsl(40_85%_55%)]" />
