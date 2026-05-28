@@ -104,6 +104,10 @@ export const routes: RouteRecord[] = [
         element: <Ranking />,
       },
       {
+        path: 'top-earners',
+        element: <TopEarners />,
+      },
+      {
         path: 'empresas',
         element: <AllCompanies />,
       },
