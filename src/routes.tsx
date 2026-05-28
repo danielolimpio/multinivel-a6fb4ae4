@@ -28,6 +28,7 @@ import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import NotFound from './pages/NotFound';
 import QuizPage from './pages/QuizPage';
+import TopEarners from './pages/TopEarners';
 import QuizResult from './pages/QuizResult';
 import { quizQuestions } from './data/quizData';
 
