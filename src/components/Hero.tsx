@@ -173,8 +173,8 @@ export function Hero() {
               <p className="text-xs sm:text-sm text-white/80 mb-2 sm:mb-3">
                 Os top earners são líderes definidos, alta liderança e, geralmente, fundadores da empresa e líderes principais.
               </p>
-              <Button variant="premium" size="sm" className="w-full text-xs sm:text-sm">
-                Top earners
+              <Button asChild variant="premium" size="sm" className="w-full text-xs sm:text-sm">
+                <Link to="/top-earners/">Top earners</Link>
               </Button>
             </div>
 
