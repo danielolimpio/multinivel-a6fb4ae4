@@ -6,7 +6,24 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Crown, Search, TrendingUp, DollarSign, Trophy } from "lucide-react";
-import { topEarnersGlobal } from "@/data/topEarnersGlobal";
+import { topEarnersGlobal, companyWebsites } from "@/data/topEarnersGlobal";
+
+
+const CompanyLink = ({ company, className }: { company: string; className?: string }) => {
+  const url = companyWebsites[company];
+  if (!url) return <span className={className}>{company}</span>;
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      className={`${className ?? ""} underline-offset-2 hover:underline hover:text-[hsl(40_85%_55%)] transition-colors`}
+      title={`Visitar site oficial de ${company}`}
+    >
+      {company}
+    </a>
+  );
+};
 
 const getInitials = (name: string) =>
   name
@@ -118,7 +135,8 @@ const TopEarners = () => {
                     <td className="px-4 py-3 text-right font-semibold text-[hsl(40_85%_45%)] whitespace-nowrap">
                       {e.yearly}
                     </td>
-                    <td className="px-4 py-3 text-muted-foreground">{e.company}</td>
+                    <td className="px-4 py-3 text-muted-foreground"><CompanyLink company={e.company} /></td>
+
                   </tr>
                 ))}
               </tbody>
@@ -147,8 +165,9 @@ const TopEarners = () => {
                       {e.name}
                     </p>
                     <p className="text-xs text-muted-foreground mt-0.5">
-                      {e.company}
+                      <CompanyLink company={e.company} />
                     </p>
+
                     <div className="mt-2 grid grid-cols-2 gap-2 text-xs">
                       <div className="flex items-center gap-1">
                         <DollarSign className="w-3 h-3 text-[hsl(40_85%_55%)]" />
