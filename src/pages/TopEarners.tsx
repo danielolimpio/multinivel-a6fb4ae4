@@ -7,6 +7,23 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Crown, Search, TrendingUp, DollarSign, Trophy } from "lucide-react";
 import { topEarnersGlobal } from "@/data/topEarnersGlobal";
+import { topEarnersGlobal, companyWebsites } from "@/data/topEarnersGlobal";
+
+const CompanyLink = ({ company, className }: { company: string; className?: string }) => {
+  const url = companyWebsites[company];
+  if (!url) return <span className={className}>{company}</span>;
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      className={`${className ?? ""} underline-offset-2 hover:underline hover:text-[hsl(40_85%_55%)] transition-colors`}
+      title={`Visitar site oficial de ${company}`}
+    >
+      {company}
+    </a>
+  );
+};
 
 const getInitials = (name: string) =>
   name
