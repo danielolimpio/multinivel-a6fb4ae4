@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Star, TrendingUp, Users, Award, Target, Shield, Zap, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FlagIcon } from "@/components/FlagIcon";
 import heroBackground from "@/assets/hero-background.webp";
 
