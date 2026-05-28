@@ -135,7 +135,8 @@ const TopEarners = () => {
                     <td className="px-4 py-3 text-right font-semibold text-[hsl(40_85%_45%)] whitespace-nowrap">
                       {e.yearly}
                     </td>
-                    <td className="px-4 py-3 text-muted-foreground">{e.company}</td>
+                    <td className="px-4 py-3 text-muted-foreground"><CompanyLink company={e.company} /></td>
+
                   </tr>
                 ))}
               </tbody>
