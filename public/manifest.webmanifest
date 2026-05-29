@@ -1,0 +1,16 @@
+{
+  "name": "Multinível - Universidade Multinível 2026",
+  "short_name": "Multinível",
+  "description": "Ranking, comparativo e pesquisa do Marketing Multinível e Vendas Diretas.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a1a3a",
+  "theme_color": "#0a1a3a",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
