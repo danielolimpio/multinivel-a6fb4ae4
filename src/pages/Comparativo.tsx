@@ -481,14 +481,14 @@ export default function Comparativo() {
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
-              <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-accent/10 text-accent border-accent/20">
+              <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-gold/10 text-gold border-gold/20">
                 <Building2 className="w-4 h-4 mr-2" />
                 Ferramenta de Comparação
               </Badge>
               
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
                 Compare Empresas de{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                <span className="bg-gradient-blue bg-clip-text text-transparent">
                   Marketing Multinível
                 </span>
               </h1>
@@ -728,7 +728,7 @@ export default function Comparativo() {
                 <p className="text-muted-foreground mb-6">
                   Selecione até 3 empresas para ver uma comparação detalhada
                 </p>
-                <Button onClick={() => setShowSearch(true)}>
+                <Button onClick={() => setShowSearch(true)} className="bg-gradient-gold hover:opacity-90 text-gold-foreground">
                   <Search className="h-4 w-4 mr-2" />
                   Começar a Comparar
                 </Button>
