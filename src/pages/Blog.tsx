@@ -10,11 +10,11 @@ import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 
 const categories = [
-  { name: "Educação Financeira", count: 2, color: "bg-gold-medium text-gold-foreground" },
-  { name: "Empreendedorismo", count: 0, color: "bg-purple text-purple-foreground" },
+  { name: "Educação Financeira", count: 2, color: "bg-gradient-gold text-gold-foreground" },
+  { name: "Empreendedorismo", count: 0, color: "bg-gradient-gold text-gold-foreground" },
   { name: "Carreira", count: 0, color: "bg-turquoise text-turquoise-foreground" },
-  { name: "Tecnologia", count: 0, color: "bg-accent text-accent-foreground" },
-  { name: "Inovação Social", count: 0, color: "bg-primary text-primary-foreground" },
+  { name: "Tecnologia", count: 0, color: "bg-gradient-gold text-gold-foreground" },
+  { name: "Inovação Social", count: 0, color: "bg-gradient-blue text-white" },
 ];
 
 const topCompanies = [
@@ -84,7 +84,7 @@ export default function Blog() {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 pt-16 sm:pt-20">
         {/* Page Header */}
         <div className="mb-8 sm:mb-12 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 text-gradient-gold">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 text-gradient-blue">
             Blog UniversidadeMN
           </h1>
           <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">

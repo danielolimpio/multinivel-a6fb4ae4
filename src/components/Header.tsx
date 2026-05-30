@@ -359,8 +359,8 @@ export function Header() {
               </Button>
             </div>
 
-            {/* Mobile actions: Login, Cadastre-se, Hamburger */}
-            <div className="md:hidden ml-auto flex items-center gap-1.5">
+            {/* Mobile actions: Login, Cadastre-se centralizados + Hamburger */}
+            <div className="md:hidden w-full flex items-center justify-center gap-2">
               <Button
                 variant="premium"
                 size="sm"

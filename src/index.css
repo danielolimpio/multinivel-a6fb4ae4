@@ -35,13 +35,13 @@ All colors MUST be HSL.
     --muted: 220 15% 96%;
     --muted-foreground: 220 15% 55%;
 
-    /* Accent - Turquesa/Púrpura para highlights */
-    --accent: 280 65% 60%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Gold (substituiu o roxo em toda a paleta) */
+    --accent: 40 85% 52%;
+    --accent-foreground: 0 0% 0%;
 
-    /* Purple highlight - Cor roxa especifica #8750f7 */
-    --purple: 267 89% 64%;
-    --purple-foreground: 0 0% 100%;
+    /* Purple alias mantido apontando para gold para evitar roxo residual */
+    --purple: 40 85% 52%;
+    --purple-foreground: 0 0% 0%;
 
     /* Turquoise highlight */
     --turquoise: 180 65% 50%;
@@ -105,11 +105,11 @@ All colors MUST be HSL.
     --muted: 220 40% 18%;
     --muted-foreground: 220 15% 65%;
 
-    --accent: 280 65% 70%;
-    --accent-foreground: 220 60% 15%;
+    --accent: 42 90% 58%;
+    --accent-foreground: 0 0% 0%;
 
-    --purple: 267 89% 74%;
-    --purple-foreground: 220 60% 15%;
+    --purple: 42 90% 58%;
+    --purple-foreground: 0 0% 0%;
 
     --turquoise: 180 65% 60%;
     --turquoise-foreground: 220 60% 15%;
@@ -119,7 +119,7 @@ All colors MUST be HSL.
 
     --border: 220 40% 25%;
     --input: 220 40% 20%;
-    --ring: 280 65% 70%;
+    --ring: 42 90% 58%;
     
     --gradient-primary: linear-gradient(135deg, hsl(40 85% 52%), hsl(35 75% 45%));
     --gradient-accent: linear-gradient(135deg, hsl(280 65% 70%), hsl(180 65% 60%));
