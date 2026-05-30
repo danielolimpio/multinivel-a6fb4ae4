@@ -131,8 +131,8 @@ export default function Contato() {
                     <Card className="border-gold/20 bg-card/50 backdrop-blur-sm hover:shadow-gold transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="p-3 rounded-xl bg-gradient-gold shadow-gold">
-                            <Mail className="w-6 h-6 text-gold-foreground" />
+                          <div className="p-3 rounded-xl icon-premium">
+                            <Mail className="w-6 h-6 text-gold" />
                           </div>
                           <div>
                             <h3 className="text-lg font-bold text-foreground mb-1">E-mail</h3>
@@ -146,8 +146,8 @@ export default function Contato() {
                     <Card className="border-gold/20 bg-card/50 backdrop-blur-sm hover:shadow-gold transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="p-3 rounded-xl bg-gradient-gold shadow-gold">
-                            <Globe className="w-6 h-6 text-gold-foreground" />
+                          <div className="p-3 rounded-xl icon-premium">
+                            <Globe className="w-6 h-6 text-gold" />
                           </div>
                           <div>
                             <h3 className="text-lg font-bold text-foreground mb-1">Redes Sociais</h3>
@@ -161,8 +161,8 @@ export default function Contato() {
                     <Card className="border-gold/20 bg-card/50 backdrop-blur-sm hover:shadow-gold transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="p-3 rounded-xl bg-gradient-gold shadow-gold">
-                            <Clock className="w-6 h-6 text-gold-foreground" />
+                          <div className="p-3 rounded-xl icon-premium">
+                            <Clock className="w-6 h-6 text-gold" />
                           </div>
                           <div>
                             <h3 className="text-lg font-bold text-foreground mb-1">Horário de Atendimento</h3>
@@ -176,8 +176,8 @@ export default function Contato() {
                     <Card className="border-gold/20 bg-card/50 backdrop-blur-sm hover:shadow-gold transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="p-3 rounded-xl bg-gradient-gold shadow-gold">
-                            <MapPin className="w-6 h-6 text-gold-foreground" />
+                          <div className="p-3 rounded-xl icon-premium">
+                            <MapPin className="w-6 h-6 text-gold" />
                           </div>
                           <div>
                             <h3 className="text-lg font-bold text-foreground mb-1">Localização</h3>
