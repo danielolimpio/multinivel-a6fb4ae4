@@ -728,7 +728,7 @@ export default function Comparativo() {
                 <p className="text-muted-foreground mb-6">
                   Selecione até 3 empresas para ver uma comparação detalhada
                 </p>
-                <Button onClick={() => setShowSearch(true)}>
+                <Button onClick={() => setShowSearch(true)} className="bg-gradient-gold hover:opacity-90 text-gold-foreground">
                   <Search className="h-4 w-4 mr-2" />
                   Começar a Comparar
                 </Button>
