@@ -200,7 +200,9 @@ export default function Blog() {
             {/* Categories Card */}
             <Card className="p-6">
               <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-gold-medium" style={{ color: 'hsl(43 96% 56%)' }} />
+                <span className="p-2 rounded-lg icon-premium inline-flex">
+                  <TrendingUp className="w-4 h-4 text-gold" />
+                </span>
                 Categorias
               </h3>
               <div className="space-y-3">
