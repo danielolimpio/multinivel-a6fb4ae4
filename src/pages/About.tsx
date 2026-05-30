@@ -83,7 +83,7 @@ const About = () => {
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                  Sobre a <span className="text-transparent bg-clip-text bg-gradient-gold">Universidade Multinível</span>
+                  Sobre a <span className="text-transparent bg-clip-text bg-gradient-blue">Universidade Multinível</span>
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-gold font-medium mb-8">
@@ -100,8 +100,8 @@ const About = () => {
                 <Card className="border-gold/20 bg-card/50 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-8 md:p-12">
                     <div className="flex items-start gap-4 mb-6">
-                      <div className="p-3 rounded-xl bg-gradient-gold shadow-gold">
-                        <Rocket className="w-6 h-6 text-gold-foreground" />
+                      <div className="p-3 rounded-xl icon-premium">
+                        <Rocket className="w-6 h-6 text-[hsl(40_85%_55%)]" />
                       </div>
                       <h2 className="text-2xl md:text-3xl font-bold text-foreground">Nossa História</h2>
                     </div>
@@ -138,8 +138,8 @@ const About = () => {
                   <Card className="border-gold/20 bg-card hover:shadow-gold transition-all duration-300 group">
                     <CardContent className="p-8">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="p-4 rounded-2xl bg-gradient-gold shadow-gold group-hover:scale-110 transition-transform duration-300">
-                          <Target className="w-8 h-8 text-gold-foreground" />
+                        <div className="p-4 rounded-2xl icon-premium group-hover:scale-110 transition-transform duration-300">
+                          <Target className="w-8 h-8 text-[hsl(40_85%_55%)]" />
                         </div>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground">Nossa Missão</h2>
                       </div>
@@ -153,8 +153,8 @@ const About = () => {
                   <Card className="border-gold/20 bg-card hover:shadow-gold transition-all duration-300 group">
                     <CardContent className="p-8">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="p-4 rounded-2xl bg-gradient-gold shadow-gold group-hover:scale-110 transition-transform duration-300">
-                          <Eye className="w-8 h-8 text-gold-foreground" />
+                        <div className="p-4 rounded-2xl icon-premium group-hover:scale-110 transition-transform duration-300">
+                          <Eye className="w-8 h-8 text-[hsl(40_85%_55%)]" />
                         </div>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground">Nossa Visão</h2>
                       </div>
@@ -184,8 +184,8 @@ const About = () => {
                   {values.map((value, index) => (
                     <Card key={index} className="border-gold/20 bg-card hover:shadow-gold transition-all duration-300 hover:-translate-y-1 group">
                       <CardContent className="p-6">
-                        <div className="p-3 rounded-xl bg-gradient-gold shadow-gold w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
-                          <value.icon className="w-6 h-6 text-gold-foreground" />
+                        <div className="p-3 rounded-xl icon-premium w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
+                          <value.icon className="w-6 h-6 text-[hsl(40_85%_55%)]" />
                         </div>
                         <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
                         <p className="text-muted-foreground leading-relaxed">{value.description}</p>
@@ -216,8 +216,8 @@ const About = () => {
                   {services.map((service, index) => (
                     <Card key={index} className="border-gold/20 bg-card hover:shadow-gold transition-all duration-300 hover:-translate-y-1 group h-full">
                       <CardContent className="p-6 flex flex-col h-full">
-                        <div className="p-3 rounded-xl bg-gradient-gold shadow-gold w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
-                          <service.icon className="w-5 h-5 text-gold-foreground" />
+                        <div className="p-3 rounded-xl icon-premium w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
+                          <service.icon className="w-5 h-5 text-[hsl(40_85%_55%)]" />
                         </div>
                         <h3 className="text-lg font-bold text-foreground mb-3">{service.title}</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed flex-grow">{service.description}</p>
@@ -261,10 +261,10 @@ const About = () => {
                                 href={social.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full bg-gradient-gold shadow-gold hover:scale-110 transition-transform duration-300"
+                                className="p-3 rounded-full icon-premium hover:scale-110 transition-transform duration-300"
                                 title={social.label}
                               >
-                                <social.icon className="w-5 h-5 text-gold-foreground" />
+                                <social.icon className="w-5 h-5 text-[hsl(40_85%_55%)]" />
                               </a>
                             ))}
                           </div>
@@ -312,8 +312,8 @@ const About = () => {
                 <Card className="border-gold/30 bg-gradient-to-br from-gold/5 to-gold-dark/5 overflow-hidden relative">
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--gold)/0.1),transparent_70%)]" />
                   <CardContent className="p-10 md:p-14 relative z-10">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-gold shadow-gold mb-6">
-                      <Lightbulb className="w-5 h-5 text-gold-foreground" />
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full icon-premium mb-6">
+                      <Lightbulb className="w-5 h-5 text-[hsl(40_85%_55%)]" />
                     </div>
                     
                     <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Universidade Multinível</h2>
