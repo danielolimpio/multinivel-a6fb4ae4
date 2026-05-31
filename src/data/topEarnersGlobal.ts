@@ -7,6 +7,10 @@ export interface TopEarner {
   avatar?: string;
 }
 
+// Remove WordPress thumbnail size suffix (e.g. "-34x34", "-150x150") to load the original full-resolution image.
+export const upgradeAvatar = (url?: string): string | undefined =>
+  url?.replace(/-\d+x\d+(?=\.(jpe?g|png|webp|gif)$)/i, "");
+
 // Mapeamento empresa → site oficial
 export const companyWebsites: Record<string, string> = {
   "Vida Divina": "https://vidadivina.com/",
