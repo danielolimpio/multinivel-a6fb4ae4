@@ -118,8 +118,8 @@ export default function Contato() {
                           />
                         </div>
                         
-                        <Button type="submit" className="w-full bg-gradient-gold hover:opacity-90 text-gold-foreground">
-                          <Send className="w-4 h-4 mr-2" />
+                        <Button type="submit" className="w-full btn-premium">
+                          <Send className="w-4 h-4 mr-2" style={{ color: 'hsl(40 85% 55%)' }} />
                           Enviar Mensagem
                         </Button>
                       </form>
