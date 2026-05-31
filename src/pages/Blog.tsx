@@ -84,8 +84,9 @@ export default function Blog() {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 pt-16 sm:pt-20">
         {/* Page Header */}
         <div className="mb-8 sm:mb-12 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 text-gradient-blue">
-            Blog UniversidadeMN
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4">
+            <span className="text-gradient-gold">Blog</span>{" "}
+            <span className="text-gradient-blue">UniversidadeMN</span>
           </h1>
           <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Conteúdo exclusivo sobre educação financeira, empreendedorismo, carreira, tecnologia e inovação social no marketing de rede
