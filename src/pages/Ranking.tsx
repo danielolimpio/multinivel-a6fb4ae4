@@ -453,7 +453,7 @@ export default function Ranking() {
 
               {/* Title */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                <span className="text-foreground">Top Empresas de </span>
+                <span className="text-gradient-gold">Top Empresas de </span>
                 <span className="text-gradient-blue">Marketing de Rede</span>
               </h1>
 
