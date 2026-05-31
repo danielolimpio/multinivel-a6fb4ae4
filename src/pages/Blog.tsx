@@ -35,7 +35,7 @@ const blogPosts = [
     author: "Equipe UniversidadeMN",
     date: "08 Jan 2026",
     category: "Educação Financeira",
-    categoryColor: "bg-gold-medium text-gold-foreground",
+    categoryColor: "bg-gradient-blue text-[hsl(40_85%_60%)] border border-[hsl(40_85%_50%)] shadow-md",
     views: 1247,
     readTime: "18 min",
   },
