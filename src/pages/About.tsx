@@ -77,13 +77,13 @@ const About = () => {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gold)/0.1),transparent_50%)]" />
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-4xl mx-auto text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 mb-6">
-                  <Sparkles className="w-4 h-4 text-gold" />
-                  <span className="text-sm font-medium text-gold">Universidade Multinível</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-premium mb-6">
+                  <Sparkles className="w-4 h-4" style={{ color: 'hsl(40 85% 55%)' }} />
+                  <span className="text-sm font-medium text-white">Universidade Multinível</span>
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                  Sobre a <span className="text-transparent bg-clip-text bg-gradient-blue">Universidade Multinível</span>
+                  <span className="text-gradient-gold">Sobre a</span> <span className="text-transparent bg-clip-text bg-gradient-blue">Universidade Multinível</span>
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-gold font-medium mb-8">
@@ -173,9 +173,9 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 mb-4">
-                    <Heart className="w-4 h-4 text-gold" />
-                    <span className="text-sm font-medium text-gold">Princípios</span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-premium mb-4">
+                    <Heart className="w-4 h-4" style={{ color: 'hsl(40 85% 55%)' }} />
+                    <span className="text-sm font-medium text-white">Princípios</span>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-foreground">Nossos Valores</h2>
                 </div>
@@ -202,9 +202,9 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 mb-4">
-                    <Zap className="w-4 h-4 text-gold" />
-                    <span className="text-sm font-medium text-gold">Ecossistema</span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-premium mb-4">
+                    <Zap className="w-4 h-4" style={{ color: 'hsl(40 85% 55%)' }} />
+                    <span className="text-sm font-medium text-white">Ecossistema</span>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">O Que Fazemos</h2>
                   <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -234,9 +234,9 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 mb-4">
-                    <GraduationCap className="w-4 h-4 text-gold" />
-                    <span className="text-sm font-medium text-gold">Fundador</span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-premium mb-4">
+                    <GraduationCap className="w-4 h-4" style={{ color: 'hsl(40 85% 55%)' }} />
+                    <span className="text-sm font-medium text-white">Fundador</span>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-foreground">Quem é Daniel Olimpio</h2>
                 </div>

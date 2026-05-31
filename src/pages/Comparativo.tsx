@@ -481,8 +481,8 @@ export default function Comparativo() {
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
-              <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-gold/10 text-gold border-gold/20">
-                <Building2 className="w-4 h-4 mr-2" />
+              <Badge className="mb-4 px-4 py-1.5 badge-premium text-white">
+                <Building2 className="w-4 h-4 mr-2" style={{ color: 'hsl(40 85% 55%)' }} />
                 Ferramenta de Comparação
               </Badge>
               

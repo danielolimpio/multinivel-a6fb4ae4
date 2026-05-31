@@ -198,10 +198,10 @@ export default function Blog() {
           {/* Sidebar */}
           <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
             {/* Categories Card */}
-            <Card className="p-6">
+            <Card className="p-6 border-[hsl(40_85%_50%)]/40">
               <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
                 <span className="p-2 rounded-lg icon-premium inline-flex">
-                  <TrendingUp className="w-4 h-4 text-gold" />
+                  <TrendingUp className="w-4 h-4 text-[hsl(40_85%_55%)]" />
                 </span>
                 Categorias
               </h3>
@@ -222,10 +222,10 @@ export default function Blog() {
             </Card>
 
             {/* Top Companies Ranking */}
-            <Card className="p-6">
+            <Card className="p-6 border-[hsl(40_85%_50%)]/40">
               <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
                 <span className="p-2 rounded-lg icon-premium inline-flex">
-                  <Trophy className="w-4 h-4 text-gold" />
+                  <Trophy className="w-4 h-4 text-[hsl(40_85%_55%)]" />
                 </span>
                 Top 5 Empresas
               </h3>

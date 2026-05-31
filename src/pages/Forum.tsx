@@ -18,7 +18,7 @@ const questions = [
     content: "Considerando a publicidade efetiva...",
     author: {
       name: "João Silva",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=faces",
       reputation: 245
     },
     category: "Desenvolvimento",
@@ -35,7 +35,7 @@ const questions = [
     content: "Considerando oportunidades de negócio...",
     author: {
       name: "Maria Santos",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=faces",
       reputation: 189
     },
     category: "Desenvolvimento",
@@ -52,7 +52,7 @@ const questions = [
     content: "Preciso de dicas práticas para networking...",
     author: {
       name: "Pedro Costa",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=200&h=200&fit=crop&crop=faces",
       reputation: 312
     },
     category: "Networking",
@@ -69,7 +69,7 @@ const questions = [
     content: "Está sendo um período desafiador...",
     author: {
       name: "Ana Lima",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=faces",
       reputation: 456
     },
     category: "Motivação",
@@ -86,7 +86,7 @@ const questions = [
     content: "Com o trabalho remoto se tornando comum...",
     author: {
       name: "Carlos Ferreira",
-      avatar: "/placeholder.svg",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=faces",
       reputation: 598
     },
     category: "Liderança",
