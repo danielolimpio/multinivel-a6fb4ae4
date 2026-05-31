@@ -67,7 +67,7 @@ export default function Contato() {
                   <Card className="border-gold/20 bg-card/50 backdrop-blur-sm">
                     <CardContent className="p-8">
                       <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
-                        <Send className="w-6 h-6 text-gold" />
+                        <Send className="w-6 h-6 text-[hsl(40_85%_55%)]" />
                         Envie sua Mensagem
                       </h2>
                       
@@ -132,7 +132,7 @@ export default function Contato() {
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-xl icon-premium">
-                            <Mail className="w-6 h-6 text-gold" />
+                            <Mail className="w-6 h-6 text-[hsl(40_85%_55%)]" />
                           </div>
                           <div>
                             <h3 className="text-lg font-bold text-foreground mb-1">E-mail</h3>
@@ -147,7 +147,7 @@ export default function Contato() {
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-xl icon-premium">
-                            <Globe className="w-6 h-6 text-gold" />
+                            <Globe className="w-6 h-6 text-[hsl(40_85%_55%)]" />
                           </div>
                           <div>
                             <h3 className="text-lg font-bold text-foreground mb-1">Redes Sociais</h3>
@@ -162,7 +162,7 @@ export default function Contato() {
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-xl icon-premium">
-                            <Clock className="w-6 h-6 text-gold" />
+                            <Clock className="w-6 h-6 text-[hsl(40_85%_55%)]" />
                           </div>
                           <div>
                             <h3 className="text-lg font-bold text-foreground mb-1">Horário de Atendimento</h3>
@@ -177,7 +177,7 @@ export default function Contato() {
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-xl icon-premium">
-                            <MapPin className="w-6 h-6 text-gold" />
+                            <MapPin className="w-6 h-6 text-[hsl(40_85%_55%)]" />
                           </div>
                           <div>
                             <h3 className="text-lg font-bold text-foreground mb-1">Localização</h3>
