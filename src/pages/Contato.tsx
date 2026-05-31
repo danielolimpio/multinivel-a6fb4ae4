@@ -47,7 +47,7 @@ export default function Contato() {
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                  Entre em <span className="text-transparent bg-clip-text bg-gradient-blue">Contato</span>
+                  <span className="text-gradient-gold">Entre em</span> <span className="text-transparent bg-clip-text bg-gradient-blue">Contato</span>
                 </h1>
                 
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

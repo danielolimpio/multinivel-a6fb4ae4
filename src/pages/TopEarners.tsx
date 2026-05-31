@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Crown, Search, TrendingUp, DollarSign, Trophy } from "lucide-react";
-import { topEarnersGlobal, companyWebsites } from "@/data/topEarnersGlobal";
+import { topEarnersGlobal, companyWebsites, upgradeAvatar } from "@/data/topEarnersGlobal";
 
 
 const CompanyLink = ({ company, className }: { company: string; className?: string }) => {
@@ -121,7 +121,7 @@ const TopEarners = () => {
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-3">
                         <Avatar className="w-9 h-9 ring-1 ring-[hsl(40_85%_50%)]/50">
-                          {e.avatar && <AvatarImage src={e.avatar} alt={e.name} />}
+                          {e.avatar && <AvatarImage src={upgradeAvatar(e.avatar)} alt={e.name} />}
                           <AvatarFallback className="bg-gradient-blue text-[hsl(40_85%_60%)] text-xs">
                             {getInitials(e.name)}
                           </AvatarFallback>
@@ -155,7 +155,7 @@ const TopEarners = () => {
                     {e.rank}
                   </span>
                   <Avatar className="w-10 h-10 ring-1 ring-[hsl(40_85%_50%)]/50 shrink-0">
-                    {e.avatar && <AvatarImage src={e.avatar} alt={e.name} />}
+                    {e.avatar && <AvatarImage src={upgradeAvatar(e.avatar)} alt={e.name} />}
                     <AvatarFallback className="bg-gradient-blue text-[hsl(40_85%_60%)] text-xs">
                       {getInitials(e.name)}
                     </AvatarFallback>
