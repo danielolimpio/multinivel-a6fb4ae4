@@ -70,7 +70,7 @@ export function TopEarnersSection() {
                     <div className="flex items-center gap-3">
                       {renderRank(earner.rank)}
                       <Avatar className="w-10 h-10 flex-shrink-0 ring-1 ring-[hsl(40_85%_50%)]/50">
-                        {earner.avatar && <AvatarImage src={earner.avatar} alt={earner.name} />}
+                        {earner.avatar && <AvatarImage src={upgradeAvatar(earner.avatar)} alt={earner.name} />}
                         <AvatarFallback className="bg-gradient-blue text-[hsl(40_85%_60%)] text-xs">
                           {getInitials(earner.name)}
                         </AvatarFallback>
@@ -117,7 +117,7 @@ export function TopEarnersSection() {
                         <td className="p-3 lg:p-4">
                           <div className="flex items-center gap-3">
                             <Avatar className="w-10 h-10 flex-shrink-0 ring-1 ring-[hsl(40_85%_50%)]/50">
-                              {earner.avatar && <AvatarImage src={earner.avatar} alt={earner.name} />}
+                              {earner.avatar && <AvatarImage src={upgradeAvatar(earner.avatar)} alt={earner.name} />}
                               <AvatarFallback className="bg-gradient-blue text-[hsl(40_85%_60%)] text-xs">
                                 {getInitials(earner.name)}
                               </AvatarFallback>
