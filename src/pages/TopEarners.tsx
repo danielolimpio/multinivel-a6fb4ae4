@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Crown, Search, TrendingUp, DollarSign, Trophy } from "lucide-react";
-import { topEarnersGlobal, companyWebsites } from "@/data/topEarnersGlobal";
+import { topEarnersGlobal, companyWebsites, upgradeAvatar } from "@/data/topEarnersGlobal";
 
 
 const CompanyLink = ({ company, className }: { company: string; className?: string }) => {
