@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Search, TrendingUp, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
-import { topEarnersGlobal, companyWebsites } from "@/data/topEarnersGlobal";
+import { topEarnersGlobal, companyWebsites, upgradeAvatar } from "@/data/topEarnersGlobal";
 
 const getInitials = (name: string) =>
   name
