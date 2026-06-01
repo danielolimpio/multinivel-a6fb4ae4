@@ -340,21 +340,8 @@ export default function AllCompanies() {
     return matchesSearch && matchesCategory;
   });
 
-  const getPositionColor = (position: number) => {
-    switch (position) {
-      case 1: return "bg-gradient-to-r from-yellow-400 to-yellow-600";
-      case 2: return "bg-gradient-to-r from-gray-300 to-gray-500";
-      case 3: return "bg-gradient-to-r from-amber-600 to-amber-800";
-      default: return "bg-primary";
-    }
-  };
+  const getOrdinal = (position: number) => `${position}º`;
 
-  const getPositionIcon = (position: number) => {
-    if (position <= 3) {
-      return <Trophy className="w-4 h-4 text-white" />;
-    }
-    return <span className="text-white font-bold text-sm">{position}</span>;
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -418,7 +405,7 @@ export default function AllCompanies() {
           </div>
 
           {/* Companies Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
             {(() => {
               const totalVotes = filteredCompanies.reduce(
                 (acc, c) => acc + c.votes + (counts[c.slug] ?? 0),
@@ -430,124 +417,112 @@ export default function AllCompanies() {
               const voted = hasVoted(company.slug);
               const isVoting = voting === company.slug;
               return (
-              <Card 
-                key={company.id} 
-                className="p-6 hover:shadow-card transition-all duration-300 hover:scale-[1.02] animate-fade-in"
+              <Card
+                key={company.id}
+                className="p-3 sm:p-4 hover:shadow-card transition-all duration-300 hover:scale-[1.01] animate-fade-in"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className="space-y-4">
-                  {/* Header */}
-                  <div className="flex items-center gap-4">
-                    <div className={`flex items-center justify-center w-12 h-12 rounded-full ${getPositionColor(company.position)} shadow-md flex-shrink-0`}>
-                      {getPositionIcon(company.position)}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-1">
-                        <img 
-                          src={company.logo} 
-                          alt={`${company.name} logo`}
-                          className="w-10 h-10 rounded object-cover bg-muted flex-shrink-0"
-                        />
-                        <div className="min-w-0 flex-1">
-                          <h3 className="font-semibold text-foreground text-lg">{company.name}</h3>
-                          <Badge variant="secondary" className="text-xs">
-                            {company.category}
-                          </Badge>
-                        </div>
-                        {/* Premium social share — small icons aligned right of the logo */}
-                        <SocialShare
-                          url={`/empresa/${company.slug}`}
-                          title={`${company.name} — Ranking de Marketing de Rede`}
-                          description={`Confira ${company.name} no ranking das melhores empresas de marketing multinível.`}
-                          image={company.logo}
-                          size="sm"
-                          centered
-                          className="ml-auto"
-                        />
-                      </div>
-                    </div>
+                {/* Top row: large logo + name + share */}
+                <div className="flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-3 mb-3">
+                  <img
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    className="w-24 h-24 sm:w-20 sm:h-20 rounded-lg object-cover bg-muted flex-shrink-0 shadow-md"
+                  />
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-bold text-foreground text-xl sm:text-lg">{company.name}</h3>
+                    <Badge variant="secondary" className="text-xs mt-1">
+                      {company.category}
+                    </Badge>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {liveVotes.toLocaleString()} votos
+                    </p>
                   </div>
+                  <SocialShare
+                    url={`/empresa/${company.slug}`}
+                    title={`${company.name} — Ranking de Marketing de Rede`}
+                    description={`Confira ${company.name} no ranking das melhores empresas de marketing multinível.`}
+                    image={company.logo}
+                    size="sm"
+                    centered
+                    className="sm:ml-auto"
+                  />
+                </div>
 
-                  {/* Stats */}
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-foreground">
-                        {liveVotes.toLocaleString()} votos
-                      </span>
-                      <span className="text-xs text-muted-foreground">
-                        #{company.position}º lugar
-                      </span>
-                    </div>
-                    
-                    {/* Animated Progress Bar */}
-                    <Progress 
-                      value={sharePct} 
-                      className="h-3 animate-progress-fill"
-                    />
-                    <div className="flex justify-between text-xs text-muted-foreground">
+                {/* Ranking badge + progress bar (badge centered vertically with bar) */}
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(40_85%_50%)] shadow-md bg-gradient-blue flex-shrink-0">
+                    <span className="text-white font-bold text-sm">{getOrdinal(company.position)}</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <Progress value={sharePct} className="h-2 animate-progress-fill" />
+                    <div className="flex justify-between text-xs text-muted-foreground mt-1">
                       <span>{sharePct.toFixed(1)}% do total</span>
-                      <span>Total: {totalVotes.toLocaleString()} votos</span>
+                      <span>{totalVotes.toLocaleString()} votos</span>
                     </div>
-                  </div>
-
-                  {/* Recent Voters */}
-                  <div className="space-y-2">
-                    <span className="text-xs text-muted-foreground">Últimos votos:</span>
-                    <div className="flex -space-x-1">
-                      {company.recentVoters.slice(0, 5).map((voter, voterIndex) => (
-                        <div
-                          key={voterIndex}
-                          className="relative"
-                          onMouseEnter={() => setHoveredVoter({ companyId: company.id, voterIndex })}
-                          onMouseLeave={() => setHoveredVoter(null)}
-                        >
-                          <Avatar className="w-8 h-8 border-2 border-background shadow-sm cursor-pointer hover:scale-110 transition-transform">
-                            <AvatarImage src={voter.avatar} alt={voter.name} />
-                            <AvatarFallback className="text-xs bg-accent text-accent-foreground">
-                              {voter.name.split(' ').map(n => n[0]).join('')}
-                            </AvatarFallback>
-                          </Avatar>
-                          
-                          {/* Tooltip */}
-                          {hoveredVoter?.companyId === company.id && hoveredVoter?.voterIndex === voterIndex && (
-                            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10">
-                              <div className="bg-popover text-popover-foreground px-3 py-2 rounded shadow-lg text-xs whitespace-nowrap border">
-                                <p className="font-medium">{voter.name}</p>
-                                <p className="text-muted-foreground">{voter.city}</p>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Actions */}
-                  <div className="flex gap-2 pt-2">
-                    <Link to={`/empresa/${company.slug}`} className="flex-1">
-                      <Button variant="outline" size="sm" className="w-full">
-                        <Eye className="w-4 h-4 mr-2" />
-                        Ver Detalhes
-                      </Button>
-                    </Link>
-                    <Button
-                      size="sm"
-                      disabled={isVoting}
-                      onClick={() => vote(company.slug)}
-                      className="flex-1 bg-gradient-primary disabled:opacity-70"
-                    >
-                      {isVoting ? (
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      ) : voted ? (
-                        <Check className="w-4 h-4 mr-2" />
-                      ) : (
-                        <Vote className="w-4 h-4 mr-2" />
-                      )}
-                      {voted ? "Voto Registrado" : votedCompany ? "Trocar Voto" : "Votar Agora"}
-                    </Button>
                   </div>
                 </div>
+
+                {/* Recent voters */}
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs text-muted-foreground hidden sm:inline">Últimos votos:</span>
+                  <div className="flex -space-x-1">
+                    {company.recentVoters.slice(0, 5).map((voter, voterIndex) => (
+                      <div
+                        key={voterIndex}
+                        className="relative"
+                        onMouseEnter={() => setHoveredVoter({ companyId: company.id, voterIndex })}
+                        onMouseLeave={() => setHoveredVoter(null)}
+                      >
+                        <Avatar className="w-6 h-6 border-2 border-background shadow-sm cursor-pointer hover:scale-110 transition-transform">
+                          <AvatarImage src={voter.avatar} alt={voter.name} loading="lazy" decoding="async" />
+                          <AvatarFallback className="text-xs bg-accent text-accent-foreground">
+                            {voter.name.split(' ').map(n => n[0]).join('')}
+                          </AvatarFallback>
+                        </Avatar>
+                        {hoveredVoter?.companyId === company.id && hoveredVoter?.voterIndex === voterIndex && (
+                          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10">
+                            <div className="bg-popover text-popover-foreground px-2 py-1 rounded shadow-lg text-xs whitespace-nowrap border">
+                              <p className="font-medium">{voter.name}</p>
+                              <p className="text-muted-foreground">{voter.city}</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex gap-2">
+                  <Link to={`/empresa/${company.slug}`}>
+                    <Button variant="ghost" size="sm" className="h-9 px-3 text-xs">
+                      <Eye className="w-4 h-4 sm:mr-1" />
+                      <span className="hidden sm:inline">Ver</span>
+                    </Button>
+                  </Link>
+                  <Button
+                    size="sm"
+                    variant="premium"
+                    disabled={isVoting}
+                    onClick={() => vote(company.slug)}
+                    className="flex-1 h-9 px-3 text-xs disabled:opacity-70 text-white font-bold"
+                  >
+                    {isVoting ? (
+                      <Loader2 className="w-4 h-4 mr-1.5 animate-spin text-white" />
+                    ) : voted ? (
+                      <Check className="w-4 h-4 mr-1.5 text-white" />
+                    ) : (
+                      <Vote className="w-4 h-4 mr-1.5 text-white" />
+                    )}
+                    <span className="text-white font-bold">
+                      {voted ? "Votado" : votedCompany ? "Trocar voto" : "Votar"}
+                    </span>
+                  </Button>
+                </div>
               </Card>
+
+
               );
             });
             })()}
