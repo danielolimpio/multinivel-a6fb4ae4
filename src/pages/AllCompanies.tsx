@@ -340,21 +340,8 @@ export default function AllCompanies() {
     return matchesSearch && matchesCategory;
   });
 
-  const getPositionColor = (position: number) => {
-    switch (position) {
-      case 1: return "bg-gradient-to-r from-yellow-400 to-yellow-600";
-      case 2: return "bg-gradient-to-r from-gray-300 to-gray-500";
-      case 3: return "bg-gradient-to-r from-amber-600 to-amber-800";
-      default: return "bg-primary";
-    }
-  };
+  const getOrdinal = (position: number) => `${position}º`;
 
-  const getPositionIcon = (position: number) => {
-    if (position <= 3) {
-      return <Trophy className="w-4 h-4 text-white" />;
-    }
-    return <span className="text-white font-bold text-sm">{position}</span>;
-  };
 
   return (
     <div className="min-h-screen bg-background">
