@@ -15,11 +15,15 @@ type BeforeInstallPromptEvent = Event & {
 export function initPwaInstall(): void {
   if (typeof window === "undefined") return;
 
-  // Don't interfere with the Lovable editor preview.
+  // Don't interfere with the Lovable editor preview (iframe sandboxes).
+  // IMPORTANT: don't match the bare "lovable.app" — published apps like
+  // multinivel.lovable.app must register the SW so the install icon appears.
+  const host = window.location.hostname;
   const isPreviewHost =
-    window.location.hostname.includes("id-preview--") ||
-    window.location.hostname.includes("lovableproject.com") ||
-    window.location.hostname.includes("lovable.app");
+    host.includes("id-preview--") ||
+    host.includes("lovableproject.com") ||
+    host.endsWith(".sandbox.lovable.dev");
+
 
   let inIframe = false;
   try {
