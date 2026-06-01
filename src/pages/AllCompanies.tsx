@@ -522,18 +522,7 @@ export default function AllCompanies() {
                 </div>
               </Card>
 
-                      {isVoting ? (
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      ) : voted ? (
-                        <Check className="w-4 h-4 mr-2" />
-                      ) : (
-                        <Vote className="w-4 h-4 mr-2" />
-                      )}
-                      {voted ? "Voto Registrado" : votedCompany ? "Trocar Voto" : "Votar Agora"}
-                    </Button>
-                  </div>
-                </div>
-              </Card>
+
               );
             });
             })()}
