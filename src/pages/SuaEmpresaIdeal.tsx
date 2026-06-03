@@ -686,7 +686,7 @@ export default function SuaEmpresaIdeal() {
   }
 
   if (!question) {
-    navigate("/network?pergunta=1");
+    navigate(questionRoutes[1]);
     return null;
   }
 
@@ -695,7 +695,7 @@ export default function SuaEmpresaIdeal() {
       <SEO 
         title={`Pergunta ${currentQuestion} de ${questions.length}: ${question.title} | Sua Empresa Ideal`}
         description={question.metaDescription}
-        canonical={`/network?pergunta=${currentQuestion}`}
+        canonical={questionRoutes[currentQuestion]}
       />
       
       <Header />
