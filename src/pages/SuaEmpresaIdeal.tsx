@@ -665,7 +665,7 @@ export default function SuaEmpresaIdeal() {
                     onClick={() => {
                       setAnswers({});
                       setShowResult(false);
-                      setSearchParams({ pergunta: "1" });
+                      navigate(questionRoutes[1]);
                     }}
                   >
                     Refazer Quiz
