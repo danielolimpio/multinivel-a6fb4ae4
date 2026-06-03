@@ -220,18 +220,22 @@ const Auth = ({ userType = "affiliate" }: AuthProps) => {
     >
       <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-blue-900/70 to-blue-800/75 backdrop-blur-sm" />
       <div className="relative z-10 w-full flex items-center justify-center">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold text-primary">
-            {userType === "admin" ? "Área Administrativa" : "Universidade Multinível"}
-          </CardTitle>
+      <Card className="w-full max-w-md relative overflow-visible mt-20">
+        <img
+          src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png"
+          alt="Universidade Multinível"
+          className="absolute left-1/2 -translate-x-1/2 -top-20 h-32 w-32 object-contain z-20"
+          style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.25))' }}
+        />
+        <CardHeader className="text-center pt-16">
           <CardDescription>
-            {userType === "admin" 
+            {userType === "admin"
               ? "Acesso restrito para administradores"
               : "Faça login ou crie sua conta para acessar a plataforma"
             }
           </CardDescription>
         </CardHeader>
+
         <CardContent>
               <Tabs defaultValue="login" className="w-full">
                 {userType === "affiliate" && (
