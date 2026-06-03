@@ -75,6 +75,7 @@ const companySlugs = [
 const articleSlugs = [
   'como-ganhar-dinheiro-com-marketing-multinivel-em-2026',
   'marketing-de-rede-guia-completo-para-iniciantes',
+  'network-marketing-tudo-sobre-multinivel-sistemas-mmn-relacionamento',
 ];
 
 export const routes: RouteRecord[] = [
