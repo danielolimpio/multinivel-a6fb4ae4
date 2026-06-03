@@ -1310,11 +1310,12 @@ const articles: Record<string, {
           No Brasil, Dinastia é um exemplo de empresa que cresceu adaptando o plano de compensação à realidade econômica local.
         </p>
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-          Plataformas como o Clube Multinível conectam distribuidores a diversas oportunidades, centralizando a oferta nacional.
+          Plataformas como o Clube Multinível conectam distribuidores a diversas oportunidades, centralizando a oferta nacional. Dados oficiais do setor podem ser consultados na <a href="https://www.abevd.org.br/" target="_blank" rel="noopener noreferrer" className="text-gold-medium hover:underline font-medium">ABEVD — Associação Brasileira de Empresas de Vendas Diretas</a>, que reúne estatísticas anuais do mercado brasileiro.
         </p>
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
           Para ver a lista completa, consulte nosso <Link to="/ranking/" className="text-gold-medium hover:underline font-medium">ranking de empresas</Link> com avaliação atualizada do mercado.
         </p>
+
 
         <h2 className="text-2xl font-bold text-foreground mt-10 mb-6 flex items-center gap-3">
           <Rocket className="w-7 h-7 text-gold-medium" />
