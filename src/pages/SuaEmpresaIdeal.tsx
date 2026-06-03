@@ -597,7 +597,7 @@ export default function SuaEmpresaIdeal() {
         <SEO 
           title={`Sua Empresa Ideal: ${recommendedCompany.name} | Marketing Multinível`}
           description={`Baseado em suas respostas, ${recommendedCompany.name} é a empresa de marketing multinível ideal para seu perfil.`}
-          canonical="/sua-empresa-ideal"
+          canonical="/network"
         />
         
         <Header />
