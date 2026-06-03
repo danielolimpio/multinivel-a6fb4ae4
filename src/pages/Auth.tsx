@@ -214,7 +214,12 @@ const Auth = ({ userType = "affiliate" }: AuthProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-primary flex items-center justify-center p-4">
+    <div
+      className="min-h-screen flex items-center justify-center p-4 relative bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/auth/auth-bg.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-blue-900/70 to-blue-800/75 backdrop-blur-sm" />
+      <div className="relative z-10 w-full flex items-center justify-center">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold text-primary">
