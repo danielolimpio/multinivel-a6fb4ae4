@@ -16,7 +16,7 @@ import {
 } from "@/data/quizData";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, BookOpen, GraduationCap, Lightbulb, HelpCircle, ArrowRight } from "lucide-react";
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+
 import { QuizFAQSchema } from "@/components/QuizFAQSchema";
 import { useQuizResponses } from "@/hooks/useQuizResponses";
 
@@ -147,7 +147,7 @@ const QuizPage = () => {
         pageTitle={question.title}
         pageUrl={`${SITE_URL}/quiz/${slug}/`}
       />
-      <AnnouncementBanner />
+      
       <Header />
       
       <main className="container mx-auto px-4 py-8 max-w-4xl">

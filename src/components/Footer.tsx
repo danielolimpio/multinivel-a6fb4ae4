@@ -16,7 +16,7 @@ export function Footer() {
       { name: "Fórum", href: "/forum" },
       { name: "Blog", href: "/blog" },
       { name: "Comparativo", href: "/comparativo" },
-      { name: "Network", href: "/sua-empresa-ideal" },
+      { name: "Network", href: "/network" },
       { name: "FAQ", href: "/faq" }
     ],
     recursos: [

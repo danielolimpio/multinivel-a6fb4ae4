@@ -304,7 +304,7 @@ export function Header() {
     { name: "Blog", href: "/blog" },
     { name: currentTranslations.forum, href: "/forum" },
     { name: currentTranslations.community, href: "/comparativo" },
-    { name: currentTranslations.testimonials, href: "/sua-empresa-ideal" },
+    { name: currentTranslations.testimonials, href: "/network" },
     { name: currentTranslations.contact, href: "/contato" },
   ];
 

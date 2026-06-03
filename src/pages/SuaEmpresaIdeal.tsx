@@ -597,7 +597,7 @@ export default function SuaEmpresaIdeal() {
         <SEO 
           title={`Sua Empresa Ideal: ${recommendedCompany.name} | Marketing Multinível`}
           description={`Baseado em suas respostas, ${recommendedCompany.name} é a empresa de marketing multinível ideal para seu perfil.`}
-          canonical="/sua-empresa-ideal"
+          canonical="/network"
         />
         
         <Header />
@@ -667,7 +667,7 @@ export default function SuaEmpresaIdeal() {
   }
 
   if (!question) {
-    navigate("/sua-empresa-ideal?pergunta=1");
+    navigate("/network?pergunta=1");
     return null;
   }
 
@@ -676,7 +676,7 @@ export default function SuaEmpresaIdeal() {
       <SEO 
         title={`Pergunta ${currentQuestion} de ${questions.length}: ${question.title} | Sua Empresa Ideal`}
         description={question.metaDescription}
-        canonical={`/sua-empresa-ideal?pergunta=${currentQuestion}`}
+        canonical={`/network?pergunta=${currentQuestion}`}
       />
       
       <Header />

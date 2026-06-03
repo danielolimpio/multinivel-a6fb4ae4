@@ -5,6 +5,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/toaster';
 import { Toaster as Sonner } from '@/components/ui/sonner';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { AnnouncementBanner } from '@/components/AnnouncementBanner';
 
 // Pages
 import Index from './pages/Index';
@@ -42,6 +43,7 @@ function RootLayout() {
         <Toaster />
         <Sonner />
         <ScrollToTop />
+        <AnnouncementBanner />
         <Outlet />
       </TooltipProvider>
     </QueryClientProvider>
@@ -115,6 +117,10 @@ export const routes: RouteRecord[] = [
       {
         path: 'comparativo',
         element: <Comparativo />,
+      },
+      {
+        path: 'network',
+        element: <SuaEmpresaIdeal />,
       },
       {
         path: 'sua-empresa-ideal',

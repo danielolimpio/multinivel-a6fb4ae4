@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+
 import { useQuizResponses } from "@/hooks/useQuizResponses";
 import { quizQuestions } from "@/data/quizData";
 import { 
@@ -215,7 +215,7 @@ const QuizResult = () => {
         canonical="/quiz/resultado/"
         noindex={true}
       />
-      <AnnouncementBanner />
+      
       <Header />
       
       <main className="container mx-auto px-4 py-8 max-w-5xl">
@@ -459,7 +459,13 @@ const QuizResult = () => {
               <RotateCcw className="h-4 w-4" />
               Refazer Quiz
             </Button>
-            <Button asChild>
+            <Button asChild className="bg-gradient-primary">
+              <Link to="/network/">
+                <Target className="h-4 w-4 mr-2" />
+                Descobrir Sua Empresa Ideal
+              </Link>
+            </Button>
+            <Button asChild variant="outline">
               <Link to="/blog/">
                 <TrendingUp className="h-4 w-4 mr-2" />
                 Explorar Conteúdos
