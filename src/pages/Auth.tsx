@@ -286,9 +286,18 @@ const Auth = ({ userType = "affiliate" }: AuthProps) => {
                     </Button>
                   </div>
                 </div>
-                <Button type="submit" className="w-full" disabled={loading}>
+                <Button type="submit" variant="premium" className="w-full" disabled={loading}>
                   {loading ? "Entrando..." : "Entrar"}
                 </Button>
+                <div className="text-center">
+                  <button
+                    type="button"
+                    onClick={() => { setResetEmail(email); setShowForgot(true); }}
+                    className="text-sm text-primary hover:text-accent underline-offset-4 hover:underline"
+                  >
+                    Esqueceu sua senha?
+                  </button>
+                </div>
               </form>
             </TabsContent>
             
