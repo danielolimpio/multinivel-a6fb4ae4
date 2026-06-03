@@ -4,8 +4,9 @@ import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen, AlertTriangle, CheckCircle2, Lightbulb, Target, TrendingUp, ExternalLink, HelpCircle, Users, Rocket, Brain, ListChecks, Wrench, ShieldCheck, MessageCircle, Trophy } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Share2, BookOpen, AlertTriangle, CheckCircle2, Lightbulb, Target, TrendingUp, ExternalLink, HelpCircle, Users, Rocket, Brain, ListChecks, Wrench, ShieldCheck, MessageCircle, Trophy } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import { AuthorByline, AuthorBioCard, AUTHOR_NAME } from "@/components/AuthorBio";
 
 // Article data
 const articles: Record<string, {
@@ -1549,11 +1550,11 @@ export default function ArticlePage() {
               {article.title}
             </h1>
 
+            <div className="mb-6">
+              <AuthorByline />
+            </div>
+
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
-              <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                <span>{article.author}</span>
-              </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
                 <span>{article.date}</span>
@@ -1575,18 +1576,8 @@ export default function ArticlePage() {
             {article.content}
           </div>
 
-          {/* Author Card */}
-          <Card className="p-6 mt-12 flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center text-gold-foreground font-bold text-xl">
-              UN
-            </div>
-            <div>
-              <p className="font-bold text-foreground">{article.author}</p>
-              <p className="text-sm text-muted-foreground">
-                Portal de referência em Marketing de Rede no Brasil
-              </p>
-            </div>
-          </Card>
+          {/* Author Bio */}
+          <AuthorBioCard />
         </article>
       </main>
 
