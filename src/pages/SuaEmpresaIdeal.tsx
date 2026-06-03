@@ -709,9 +709,9 @@ export default function SuaEmpresaIdeal() {
                   Quiz Sua Empresa Ideal
                 </Badge>
                 
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                   {question.title}
-                </h1>
+                </h2>
                 
                 <p className="text-muted-foreground text-lg">
                   {question.metaDescription}
