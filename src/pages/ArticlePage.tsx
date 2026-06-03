@@ -1394,8 +1394,9 @@ const articles: Record<string, {
         <h2 className="text-2xl font-bold text-foreground mt-10 mb-6">Conclusão: Posicione-se no Topo do Mercado Global</h2>
 
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-          O Network Marketing não é moda passageira. É um modelo de distribuição consolidado que movimenta bilhões de dólares por ano no mundo.
+          O Network Marketing não é moda passageira. É um modelo de distribuição consolidado que movimenta bilhões de dólares por ano no mundo, conforme relatórios globais da <a href="https://wfdsa.org/global-statistics/" target="_blank" rel="noopener noreferrer" className="text-gold-medium hover:underline font-medium">WFDSA — World Federation of Direct Selling Associations</a>.
         </p>
+
 
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
           Seja você um distribuidor em busca da melhor empresa, ou um empreendedor pronto para lançar a própria rede, o conhecimento é a sua maior alavanca.
