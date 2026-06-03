@@ -1310,11 +1310,12 @@ const articles: Record<string, {
           No Brasil, Dinastia é um exemplo de empresa que cresceu adaptando o plano de compensação à realidade econômica local.
         </p>
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-          Plataformas como o Clube Multinível conectam distribuidores a diversas oportunidades, centralizando a oferta nacional.
+          Plataformas como o Clube Multinível conectam distribuidores a diversas oportunidades, centralizando a oferta nacional. Dados oficiais do setor podem ser consultados na <a href="https://www.abevd.org.br/" target="_blank" rel="noopener noreferrer" className="text-gold-medium hover:underline font-medium">ABEVD — Associação Brasileira de Empresas de Vendas Diretas</a>, que reúne estatísticas anuais do mercado brasileiro.
         </p>
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
           Para ver a lista completa, consulte nosso <Link to="/ranking/" className="text-gold-medium hover:underline font-medium">ranking de empresas</Link> com avaliação atualizada do mercado.
         </p>
+
 
         <h2 className="text-2xl font-bold text-foreground mt-10 mb-6 flex items-center gap-3">
           <Rocket className="w-7 h-7 text-gold-medium" />
@@ -1345,8 +1346,9 @@ const articles: Record<string, {
           O setor opera sob escrutínio rigoroso. O foco deve ser sempre a venda do produto ao consumidor final, nunca o recrutamento puro.
         </p>
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-          Termos de uso claros e departamento jurídico especializado são obrigatórios para diferenciar sua empresa de esquemas de pirâmide.
+          Termos de uso claros e departamento jurídico especializado são obrigatórios para diferenciar sua empresa de esquemas de pirâmide. O <a href="https://www.dsa.org/" target="_blank" rel="noopener noreferrer" className="text-gold-medium hover:underline font-medium">Code of Ethics da Direct Selling Association (DSA)</a> serve como referência internacional de boas práticas.
         </p>
+
 
         <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Passo 5 — Apresentação e treinamento</h3>
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
@@ -1392,8 +1394,9 @@ const articles: Record<string, {
         <h2 className="text-2xl font-bold text-foreground mt-10 mb-6">Conclusão: Posicione-se no Topo do Mercado Global</h2>
 
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-          O Network Marketing não é moda passageira. É um modelo de distribuição consolidado que movimenta bilhões de dólares por ano no mundo.
+          O Network Marketing não é moda passageira. É um modelo de distribuição consolidado que movimenta bilhões de dólares por ano no mundo, conforme relatórios globais da <a href="https://wfdsa.org/global-statistics/" target="_blank" rel="noopener noreferrer" className="text-gold-medium hover:underline font-medium">WFDSA — World Federation of Direct Selling Associations</a>.
         </p>
+
 
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
           Seja você um distribuidor em busca da melhor empresa, ou um empreendedor pronto para lançar a própria rede, o conhecimento é a sua maior alavanca.
