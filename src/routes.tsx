@@ -123,6 +123,38 @@ export const routes: RouteRecord[] = [
         element: <SuaEmpresaIdeal />,
       },
       {
+        path: 'network/categorias-de-produtos-marketing-multinivel',
+        element: <SuaEmpresaIdeal />,
+      },
+      {
+        path: 'network/tempo-dedicacao-marketing-multinivel',
+        element: <SuaEmpresaIdeal />,
+      },
+      {
+        path: 'network/experiencia-vendas-diretas',
+        element: <SuaEmpresaIdeal />,
+      },
+      {
+        path: 'network/investimento-inicial-marketing-multinivel',
+        element: <SuaEmpresaIdeal />,
+      },
+      {
+        path: 'network/trabalhar-em-equipe-mmn',
+        element: <SuaEmpresaIdeal />,
+      },
+      {
+        path: 'network/melhores-empresas-marketing-multinivel',
+        element: <SuaEmpresaIdeal />,
+      },
+      {
+        path: 'network/treinamento-marketing-multinivel',
+        element: <SuaEmpresaIdeal />,
+      },
+      {
+        path: 'network/marketing-multinivel-internacional',
+        element: <SuaEmpresaIdeal />,
+      },
+      {
         path: 'sua-empresa-ideal',
         element: <SuaEmpresaIdeal />,
       },
