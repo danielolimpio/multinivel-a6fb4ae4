@@ -16,7 +16,7 @@ import {
 } from "@/data/quizData";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, BookOpen, GraduationCap, Lightbulb, HelpCircle, ArrowRight } from "lucide-react";
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+
 import { QuizFAQSchema } from "@/components/QuizFAQSchema";
 import { useQuizResponses } from "@/hooks/useQuizResponses";
 
