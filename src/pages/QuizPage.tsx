@@ -147,7 +147,7 @@ const QuizPage = () => {
         pageTitle={question.title}
         pageUrl={`${SITE_URL}/quiz/${slug}/`}
       />
-      <AnnouncementBanner />
+      
       <Header />
       
       <main className="container mx-auto px-4 py-8 max-w-4xl">
