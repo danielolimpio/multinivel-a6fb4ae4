@@ -15,6 +15,9 @@ interface AuthProps {
 
 const Auth = ({ userType = "affiliate" }: AuthProps) => {
   const [email, setEmail] = useState("");
+  const [resetEmail, setResetEmail] = useState("");
+  const [showForgot, setShowForgot] = useState(false);
+  const [resetLoading, setResetLoading] = useState(false);
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
