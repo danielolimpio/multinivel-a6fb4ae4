@@ -459,7 +459,13 @@ const QuizResult = () => {
               <RotateCcw className="h-4 w-4" />
               Refazer Quiz
             </Button>
-            <Button asChild>
+            <Button asChild className="bg-gradient-primary">
+              <Link to="/network/">
+                <Target className="h-4 w-4 mr-2" />
+                Descobrir Sua Empresa Ideal
+              </Link>
+            </Button>
+            <Button asChild variant="outline">
               <Link to="/blog/">
                 <TrendingUp className="h-4 w-4 mr-2" />
                 Explorar Conteúdos
