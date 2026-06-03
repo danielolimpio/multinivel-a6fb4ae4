@@ -359,6 +359,7 @@ const Auth = ({ userType = "affiliate" }: AuthProps) => {
           </Tabs>
         </CardContent>
       </Card>
+      </div>
     </div>
   );
 };
