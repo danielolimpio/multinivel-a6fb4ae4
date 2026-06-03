@@ -667,7 +667,7 @@ export default function SuaEmpresaIdeal() {
   }
 
   if (!question) {
-    navigate("/sua-empresa-ideal?pergunta=1");
+    navigate("/network?pergunta=1");
     return null;
   }
 
