@@ -119,6 +119,10 @@ export const routes: RouteRecord[] = [
         element: <Comparativo />,
       },
       {
+        path: 'network',
+        element: <SuaEmpresaIdeal />,
+      },
+      {
         path: 'sua-empresa-ideal',
         element: <SuaEmpresaIdeal />,
       },
