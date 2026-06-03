@@ -1346,8 +1346,9 @@ const articles: Record<string, {
           O setor opera sob escrutínio rigoroso. O foco deve ser sempre a venda do produto ao consumidor final, nunca o recrutamento puro.
         </p>
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-          Termos de uso claros e departamento jurídico especializado são obrigatórios para diferenciar sua empresa de esquemas de pirâmide.
+          Termos de uso claros e departamento jurídico especializado são obrigatórios para diferenciar sua empresa de esquemas de pirâmide. O <a href="https://www.dsa.org/" target="_blank" rel="noopener noreferrer" className="text-gold-medium hover:underline font-medium">Code of Ethics da Direct Selling Association (DSA)</a> serve como referência internacional de boas práticas.
         </p>
+
 
         <h3 className="text-xl font-bold text-foreground mt-8 mb-4">Passo 5 — Apresentação e treinamento</h3>
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
