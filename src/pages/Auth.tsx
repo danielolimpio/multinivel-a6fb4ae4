@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { Eye, EyeOff } from "lucide-react";
 
@@ -15,6 +16,9 @@ interface AuthProps {
 
 const Auth = ({ userType = "affiliate" }: AuthProps) => {
   const [email, setEmail] = useState("");
+  const [resetEmail, setResetEmail] = useState("");
+  const [showForgot, setShowForgot] = useState(false);
+  const [resetLoading, setResetLoading] = useState(false);
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
@@ -213,6 +217,30 @@ const Auth = ({ userType = "affiliate" }: AuthProps) => {
     }
   };
 
+  const handleResetPassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setResetLoading(true);
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+      if (error) throw error;
+      toast({
+        title: "Email enviado",
+        description: "Verifique sua caixa de entrada para redefinir sua senha.",
+      });
+      setShowForgot(false);
+    } catch (error: any) {
+      toast({
+        title: "Erro ao enviar email",
+        description: error.message,
+        variant: "destructive",
+      });
+    } finally {
+      setResetLoading(false);
+    }
+  };
+
   return (
     <div
       className="min-h-screen flex items-center justify-center p-4 relative bg-cover bg-center"
@@ -283,9 +311,18 @@ const Auth = ({ userType = "affiliate" }: AuthProps) => {
                     </Button>
                   </div>
                 </div>
-                <Button type="submit" className="w-full" disabled={loading}>
+                <Button type="submit" variant="premium" className="w-full" disabled={loading}>
                   {loading ? "Entrando..." : "Entrar"}
                 </Button>
+                <div className="text-center">
+                  <button
+                    type="button"
+                    onClick={() => { setResetEmail(email); setShowForgot(true); }}
+                    className="text-sm text-primary hover:text-accent underline-offset-4 hover:underline"
+                  >
+                    Esqueceu sua senha?
+                  </button>
+                </div>
               </form>
             </TabsContent>
             
@@ -364,6 +401,34 @@ const Auth = ({ userType = "affiliate" }: AuthProps) => {
         </CardContent>
       </Card>
       </div>
+
+      <Dialog open={showForgot} onOpenChange={setShowForgot}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Recuperar senha</DialogTitle>
+            <DialogDescription>
+              Informe seu email cadastrado. Enviaremos um link para você redefinir sua senha.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleResetPassword} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="resetEmail">Email</Label>
+              <Input
+                id="resetEmail"
+                type="email"
+                value={resetEmail}
+                onChange={(e) => setResetEmail(e.target.value)}
+                required
+              />
+            </div>
+            <DialogFooter>
+              <Button type="submit" variant="premium" className="w-full" disabled={resetLoading}>
+                {resetLoading ? "Enviando..." : "Enviar link de recuperação"}
+              </Button>
+            </DialogFooter>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

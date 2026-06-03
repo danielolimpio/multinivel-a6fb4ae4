@@ -688,6 +688,11 @@ export default function SuaEmpresaIdeal() {
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl mx-auto">
+              {/* Page Title */}
+              <h1 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient-blue mb-8">
+                Descobrir sua Empresa Ideal
+              </h1>
+
               {/* Progress Section */}
               <div className="mb-8">
                 <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
@@ -704,9 +709,9 @@ export default function SuaEmpresaIdeal() {
                   Quiz Sua Empresa Ideal
                 </Badge>
                 
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                   {question.title}
-                </h1>
+                </h2>
                 
                 <p className="text-muted-foreground text-lg">
                   {question.metaDescription}
