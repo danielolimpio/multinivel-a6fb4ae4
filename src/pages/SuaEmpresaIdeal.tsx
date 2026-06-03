@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -525,13 +525,32 @@ const companyProfiles = {
   }
 };
 
+// Map question id -> route path (1: /network, 10: /sua-empresa-ideal, middle: /network/<slug>/)
+export const questionRoutes: Record<number, string> = {
+  1: "/network/",
+  2: "/network/categorias-de-produtos-marketing-multinivel/",
+  3: "/network/tempo-dedicacao-marketing-multinivel/",
+  4: "/network/experiencia-vendas-diretas/",
+  5: "/network/investimento-inicial-marketing-multinivel/",
+  6: "/network/trabalhar-em-equipe-mmn/",
+  7: "/network/melhores-empresas-marketing-multinivel/",
+  8: "/network/treinamento-marketing-multinivel/",
+  9: "/network/marketing-multinivel-internacional/",
+  10: "/sua-empresa-ideal/",
+};
+
+function getQuestionIdFromPath(pathname: string): number {
+  const normalized = pathname.endsWith("/") ? pathname : `${pathname}/`;
+  const entry = Object.entries(questionRoutes).find(([, p]) => p === normalized);
+  return entry ? parseInt(entry[0]) : 1;
+}
+
 export default function SuaEmpresaIdeal() {
-  const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
-  
-  const currentQuestionParam = searchParams.get("pergunta");
-  const currentQuestion = currentQuestionParam ? parseInt(currentQuestionParam) : 1;
-  
+  const location = useLocation();
+
+  const currentQuestion = getQuestionIdFromPath(location.pathname);
+
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [showResult, setShowResult] = useState(false);
 
@@ -548,13 +567,13 @@ export default function SuaEmpresaIdeal() {
     if (isLastQuestion) {
       setShowResult(true);
     } else {
-      setSearchParams({ pergunta: String(currentQuestion + 1) });
+      navigate(questionRoutes[currentQuestion + 1]);
     }
   };
 
   const goToPrevious = () => {
     if (currentQuestion > 1) {
-      setSearchParams({ pergunta: String(currentQuestion - 1) });
+      navigate(questionRoutes[currentQuestion - 1]);
     }
   };
 
@@ -646,7 +665,7 @@ export default function SuaEmpresaIdeal() {
                     onClick={() => {
                       setAnswers({});
                       setShowResult(false);
-                      setSearchParams({ pergunta: "1" });
+                      navigate(questionRoutes[1]);
                     }}
                   >
                     Refazer Quiz
@@ -667,7 +686,7 @@ export default function SuaEmpresaIdeal() {
   }
 
   if (!question) {
-    navigate("/network?pergunta=1");
+    navigate(questionRoutes[1]);
     return null;
   }
 
@@ -676,7 +695,7 @@ export default function SuaEmpresaIdeal() {
       <SEO 
         title={`Pergunta ${currentQuestion} de ${questions.length}: ${question.title} | Sua Empresa Ideal`}
         description={question.metaDescription}
-        canonical={`/network?pergunta=${currentQuestion}`}
+        canonical={questionRoutes[currentQuestion]}
       />
       
       <Header />
