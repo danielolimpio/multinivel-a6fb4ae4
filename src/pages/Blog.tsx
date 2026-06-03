@@ -52,6 +52,19 @@ const blogPosts = [
     views: 856,
     readTime: "22 min",
   },
+  {
+    id: 3,
+    slug: "network-marketing-tudo-sobre-multinivel-sistemas-mmn-relacionamento",
+    title: "Network Marketing: Tudo sobre Marketing Multinível, Sistemas MMN e Marketing de Relacionamento",
+    excerpt: "Guia completo sobre Network Marketing: sistemas MMN, empresas confiáveis, planos de compensação, CRM de relacionamento e como montar sua própria rede.",
+    image: "/images/artigos/network-marketing-tudo-sobre-mmn-relacionamento.jpg",
+    author: "Equipe UniversidadeMN",
+    date: "03 Jun 2026",
+    category: "Educação Financeira",
+    categoryColor: "bg-gradient-blue text-[hsl(40_85%_60%)] border border-[hsl(40_85%_50%)] shadow-md",
+    views: 412,
+    readTime: "24 min",
+  },
 ];
 
 export default function Blog() {
