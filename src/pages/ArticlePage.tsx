@@ -1305,9 +1305,9 @@ const articles: Record<string, {
           A Juice Plus atua em suplementos à base de frutas e vegetais, com apelo em saúde preventiva e plano generoso.
         </p>
 
-        <h3 className="text-xl font-bold text-foreground mt-8 mb-4">O cenário nacional: Dinastia, Mark e Clube Multinível</h3>
+        <h3 className="text-xl font-bold text-foreground mt-8 mb-4">O cenário nacional: Dinastia e Clube Multinível</h3>
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-          No Brasil, Dinastia e Mark são exemplos de empresas que cresceram adaptando o plano de compensação à realidade econômica local.
+          No Brasil, Dinastia é um exemplo de empresa que cresceu adaptando o plano de compensação à realidade econômica local.
         </p>
         <p className="text-lg leading-relaxed text-muted-foreground mb-6">
           Plataformas como o Clube Multinível conectam distribuidores a diversas oportunidades, centralizando a oferta nacional.
