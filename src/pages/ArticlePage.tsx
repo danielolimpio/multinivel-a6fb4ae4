@@ -4,8 +4,9 @@ import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen, AlertTriangle, CheckCircle2, Lightbulb, Target, TrendingUp, ExternalLink, HelpCircle, Users, Rocket, Brain, ListChecks, Wrench, ShieldCheck, MessageCircle, Trophy } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Share2, BookOpen, AlertTriangle, CheckCircle2, Lightbulb, Target, TrendingUp, ExternalLink, HelpCircle, Users, Rocket, Brain, ListChecks, Wrench, ShieldCheck, MessageCircle, Trophy } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import { AuthorByline, AuthorBioCard, AUTHOR_NAME } from "@/components/AuthorBio";
 
 // Article data
 const articles: Record<string, {
