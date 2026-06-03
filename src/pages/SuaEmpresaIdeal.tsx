@@ -676,7 +676,7 @@ export default function SuaEmpresaIdeal() {
       <SEO 
         title={`Pergunta ${currentQuestion} de ${questions.length}: ${question.title} | Sua Empresa Ideal`}
         description={question.metaDescription}
-        canonical={`/sua-empresa-ideal?pergunta=${currentQuestion}`}
+        canonical={`/network?pergunta=${currentQuestion}`}
       />
       
       <Header />
