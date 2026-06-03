@@ -11,7 +11,7 @@ export function NewsSection() {
       title: "Network Marketing: Tudo sobre Marketing Multinível, Sistemas MMN e Marketing de Relacionamento",
       excerpt: "Guia completo sobre Network Marketing: sistemas MMN, empresas confiáveis, planos de compensação, CRM de relacionamento e como montar sua própria rede.",
       image: "/images/artigos/network-marketing-tudo-sobre-mmn-relacionamento.jpg",
-      author: "Equipe UniversidadeMN",
+      author: "Daniel Olímpio",
       date: "03 Jun 2026",
       sortDate: new Date("2026-06-03").getTime(),
       category: "Educação Financeira"
@@ -22,7 +22,7 @@ export function NewsSection() {
       title: "Marketing de Rede: Guia Completo para Iniciantes",
       excerpt: "Comece do zero no network marketing com este guia prático: estrutura, mindset, recrutamento e erros que arruínam novos empreendedores.",
       image: "/images/artigos/marketing-de-rede-guia-completo-iniciantes.jpg",
-      author: "Equipe UniversidadeMN",
+      author: "Daniel Olímpio",
       date: "09 Jan 2026",
       sortDate: new Date("2026-01-09").getTime(),
       category: "Educação Financeira"
@@ -33,7 +33,7 @@ export function NewsSection() {
       title: "Como Ganhar Dinheiro com Marketing Multinível em 2026",
       excerpt: "Descubra estratégias reais para lucrar com MMN em 2026, evitando golpes e construindo renda passiva com ética e consistência.",
       image: "/images/artigos/como-ganhar-dinheiro-mmn-2026.jpg",
-      author: "Equipe UniversidadeMN",
+      author: "Daniel Olímpio",
       date: "08 Jan 2026",
       sortDate: new Date("2026-01-08").getTime(),
       category: "Educação Financeira"
