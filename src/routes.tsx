@@ -43,6 +43,7 @@ function RootLayout() {
         <Toaster />
         <Sonner />
         <ScrollToTop />
+        <AnnouncementBanner />
         <Outlet />
       </TooltipProvider>
     </QueryClientProvider>
