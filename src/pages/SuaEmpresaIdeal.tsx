@@ -688,6 +688,11 @@ export default function SuaEmpresaIdeal() {
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl mx-auto">
+              {/* Page Title */}
+              <h1 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient-blue mb-8">
+                Descobrir sua Empresa Ideal
+              </h1>
+
               {/* Progress Section */}
               <div className="mb-8">
                 <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">

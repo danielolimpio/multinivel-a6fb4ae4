@@ -39,7 +39,7 @@ export function Header() {
       news: "Notícias",
       forum: "Fórum",
       community: "Comparativo",
-      testimonials: "Sua Empresa Ideal",
+      testimonials: "Network",
       contact: "Contato",
       login: "Entrar",
       register: "Cadastre-se",
