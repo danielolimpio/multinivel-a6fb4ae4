@@ -454,8 +454,9 @@ export default function AllCompanies() {
                   <div className="min-w-0 flex-1">
                     <h3 className="font-bold text-foreground text-xl sm:text-lg">{company.name}</h3>
                     <Badge variant="secondary" className="text-xs mt-1">
-                      {company.category}
+                      {mapCategory(company.category)}
                     </Badge>
+
                     <p className="text-sm text-muted-foreground mt-1">
                       {liveVotes.toLocaleString()} votos
                     </p>
