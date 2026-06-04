@@ -114,10 +114,10 @@ const recentPosts = [
 ];
 
 const topMembers = [
-  { name: "William Doe", questions: 45 },
-  { name: "Emily Anderson", questions: 38 },
-  { name: "John Smith", questions: 32 },
-  { name: "Sarah Wilson", questions: 28 }
+  { name: "João Silva", questions: 45 },
+  { name: "Maria Oliveira", questions: 38 },
+  { name: "Carlos Souza", questions: 32 },
+  { name: "Ana Pereira", questions: 28 }
 ];
 
 const popularTags = [
@@ -125,16 +125,17 @@ const popularTags = [
 ];
 
 const Forum = () => {
-  const [activeFilter, setActiveFilter] = useState("Recent Questions");
+  const [activeFilter, setActiveFilter] = useState("Recentes");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filters = [
-    "Recent Questions",
-    "Most Answered", 
-    "Unanswered Questions",
-    "Most Visited",
-    "Featured Questions"
+    "Recentes",
+    "Mais Respondidas",
+    "Sem Resposta",
+    "Mais Vistas",
+    "Em Destaque"
   ];
+
 
   return (
     <>
