@@ -8,25 +8,24 @@ export function AnnouncementBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="relative w-full bg-gradient-blue py-2 px-8 border-b border-[hsl(40_85%_52%)]/40 shadow-[0_2px_10px_-2px_hsl(40_85%_52%/0.3)]">
-      {/* Mobile: 2 lines, full text */}
-      <div className="container mx-auto md:hidden pr-7 text-center">
-        <div className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 text-sm leading-tight">
-          <span className="text-[hsl(40_85%_60%)] font-semibold">
-            Universidade Multinível 2026.
-          </span>
-          <span className="text-[hsl(40_85%_60%)]">
-            Pesquisa de Marketing e Vendas aberta.
-          </span>
+    <div className="relative w-full bg-gradient-blue py-2 px-3 md:px-8 border-b border-[hsl(40_85%_52%)]/40 shadow-[0_2px_10px_-2px_hsl(40_85%_52%/0.3)]">
+      {/* Mobile: 2 lines */}
+      <div className="container mx-auto md:hidden pr-6 text-center">
+        <div className="text-[13px] leading-tight text-[hsl(40_85%_60%)] font-semibold">
+          Universidade Multinível 2026.
+        </div>
+        <div className="text-[13px] leading-tight text-[hsl(40_85%_60%)] flex items-center justify-center gap-1 flex-wrap">
+          <span>Pesquisa de Marketing e Vendas aberta.</span>
           <Link
             to="/quiz/papel-no-mmn/"
-            className="inline-flex items-center gap-0.5 text-[hsl(40_85%_60%)] font-semibold hover:underline whitespace-nowrap"
+            className="inline-flex items-center gap-0.5 font-semibold hover:underline whitespace-nowrap"
           >
             Responder
             <ChevronRight className="h-3.5 w-3.5" />
           </Link>
         </div>
       </div>
+
       {/* Desktop: single line */}
       <div className="container mx-auto hidden md:flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm md:text-base">
         <span className="text-[hsl(40_85%_60%)] font-semibold">

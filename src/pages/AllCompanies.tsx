@@ -332,13 +332,35 @@ export default function AllCompanies() {
   const { counts } = useCompanyVoteCounts();
   const { vote, hasVoted, voting, votedCompany } = useCompanyVote();
 
-  const categories = ["all", "Cosméticos", "Nutrição", "Suplementos", "Cuidados Pessoais", "Múltiplas Categorias", "Aloe Vera", "Utilidades Domésticas", "Eletrodomésticos", "Tecnologia", "Purificadores", "Medicina Tradicional", "Bem-estar", "Serviços Financeiros", "Utensílios de Cozinha", "Serviços Essenciais"];
+  const categories = ["all", "Saúde & Nutrição", "Beleza & Estética", "Casa & Utilidades", "Moda & Acessórios", "Serviços & Digital"];
+
+  const mapCategory = (cat: string): string => {
+    const map: Record<string, string> = {
+      "Nutrição": "Saúde & Nutrição",
+      "Suplementos": "Saúde & Nutrição",
+      "Aloe Vera": "Saúde & Nutrição",
+      "Bem-estar": "Saúde & Nutrição",
+      "Medicina Tradicional": "Saúde & Nutrição",
+      "Cosméticos": "Beleza & Estética",
+      "Cuidados Pessoais": "Beleza & Estética",
+      "Eletrodomésticos": "Casa & Utilidades",
+      "Utilidades Domésticas": "Casa & Utilidades",
+      "Utensílios de Cozinha": "Casa & Utilidades",
+      "Purificadores": "Casa & Utilidades",
+      "Tecnologia": "Serviços & Digital",
+      "Serviços Financeiros": "Serviços & Digital",
+      "Serviços Essenciais": "Serviços & Digital",
+      "Múltiplas Categorias": "Serviços & Digital",
+    };
+    return map[cat] || cat;
+  };
 
   const filteredCompanies = allCompanies.filter(company => {
     const matchesSearch = company.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === "all" || company.category === selectedCategory;
+    const matchesCategory = selectedCategory === "all" || mapCategory(company.category) === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
 
   const getOrdinal = (position: number) => `${position}º`;
 
@@ -432,8 +454,9 @@ export default function AllCompanies() {
                   <div className="min-w-0 flex-1">
                     <h3 className="font-bold text-foreground text-xl sm:text-lg">{company.name}</h3>
                     <Badge variant="secondary" className="text-xs mt-1">
-                      {company.category}
+                      {mapCategory(company.category)}
                     </Badge>
+
                     <p className="text-sm text-muted-foreground mt-1">
                       {liveVotes.toLocaleString()} votos
                     </p>
