@@ -9,7 +9,18 @@ import { FlagIcon } from "@/components/FlagIcon";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState('pt');
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const q = searchQuery.trim();
+    if (!q) return;
+    window.location.href = `/blog?q=${encodeURIComponent(q)}`;
+    setIsSearchOpen(false);
+  };
+
   
   const languages = [
     { code: 'pt', name: 'Portugal' },
