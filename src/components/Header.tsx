@@ -512,6 +512,27 @@ export function Header() {
           />
         </div>
       </div>
+
+      {/* Search Dialog */}
+      <Dialog open={isSearchOpen} onOpenChange={setIsSearchOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Pesquisar</DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handleSearch} className="flex items-center gap-2 mt-2">
+            <Search className="h-4 w-4 text-muted-foreground" />
+            <Input
+              autoFocus
+              placeholder="Digite sua busca..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <Button type="submit" variant="premium" size="sm" className="text-white">
+              Buscar
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </header>
   );
 }
