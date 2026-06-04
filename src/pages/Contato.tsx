@@ -65,7 +65,7 @@ export default function Contato() {
                   
                   {/* Contact Form */}
                   <Card className="border-gold/20 bg-card/50 backdrop-blur-sm">
-                    <CardContent className="p-8">
+                    <CardContent className="p-5 sm:p-8">
                       <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
                         <Send className="w-6 h-6 text-[hsl(40_85%_55%)]" />
                         Envie sua Mensagem
