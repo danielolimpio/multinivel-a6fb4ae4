@@ -1,13 +1,26 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe, DollarSign, ChevronDown } from "lucide-react";
+import { Menu, X, Globe, DollarSign, ChevronDown, Search } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 import { FlagIcon } from "@/components/FlagIcon";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState('pt');
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const q = searchQuery.trim();
+    if (!q) return;
+    window.location.href = `/blog?q=${encodeURIComponent(q)}`;
+    setIsSearchOpen(false);
+  };
+
   
   const languages = [
     { code: 'pt', name: 'Portugal' },
@@ -328,7 +341,16 @@ export function Header() {
             </nav>
 
             {/* Desktop Actions */}
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-3">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-9 w-9 text-[hsl(220_60%_15%)] hover:text-[hsl(220_60%_15%)] hover:bg-white/20 rounded-full"
+                onClick={() => setIsSearchOpen(true)}
+                aria-label="Pesquisar"
+              >
+                <Search className="h-4 w-4" />
+              </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="sm" className="gap-2 text-[hsl(220_60%_15%)] hover:text-[hsl(220_60%_15%)] hover:bg-white/20 rounded-full font-semibold">
@@ -359,32 +381,41 @@ export function Header() {
               </Button>
             </div>
 
-            {/* Mobile actions: Login, Cadastre-se centralizados + Hamburger */}
-            <div className="md:hidden w-full flex items-center justify-center gap-2">
-              <Button
-                variant="premium"
-                size="sm"
-                className="h-8 px-3 text-xs text-white"
-                onClick={() => window.location.href = '/auth'}
-              >
-                Login
-              </Button>
-              <Button
-                variant="registerPremium"
-                size="sm"
-                className="h-8 px-3 text-xs"
-                onClick={() => window.location.href = '/auth'}
-              >
-                {currentTranslations.register}
-              </Button>
+            {/* Mobile actions: language (left of hamburger) + hamburger + search */}
+            <div className="md:hidden w-full flex items-center justify-end gap-2">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-10 w-10 text-[hsl(220_60%_15%)] hover:bg-white/20 rounded-full gap-1"
+                    aria-label="Idioma"
+                  >
+                    <Globe className="h-4 w-4" />
+                    <FlagIcon countryCode={selectedLanguage} size="sm" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="z-[100] max-h-[300px] overflow-y-auto bg-popover">
+                  {languages.map((language) => (
+                    <DropdownMenuItem
+                      key={language.code}
+                      onClick={() => setSelectedLanguage(language.code)}
+                      className="flex items-center gap-2 cursor-pointer py-2"
+                    >
+                      <FlagIcon countryCode={language.code} size="sm" />
+                      <span className="text-sm">{language.name}</span>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-10 w-10 hover:bg-gradient-blue hover:text-[hsl(40_85%_60%)] focus-visible:bg-gradient-blue data-[state=open]:bg-gradient-blue data-[state=open]:text-[hsl(40_85%_60%)]"
+                    className="h-12 w-12 hover:bg-gradient-blue hover:text-[hsl(40_85%_60%)] focus-visible:bg-gradient-blue data-[state=open]:bg-gradient-blue data-[state=open]:text-[hsl(40_85%_60%)]"
                   >
-                    <Menu className="h-7 w-7 text-primary" />
+                    <Menu className="h-8 w-8 text-primary" />
                     <span className="sr-only">Abrir menu</span>
                   </Button>
                 </SheetTrigger>
@@ -398,6 +429,7 @@ export function Header() {
                         className="h-14 w-14 object-contain" 
                       />
                     </div>
+
                     
                     {/* Navigation Links */}
                     <div className="flex-1 overflow-y-auto py-4">
@@ -453,6 +485,15 @@ export function Header() {
                   </div>
                 </SheetContent>
               </Sheet>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-10 w-10 text-[hsl(220_60%_15%)] hover:bg-white/20 rounded-full"
+                onClick={() => setIsSearchOpen(true)}
+                aria-label="Pesquisar"
+              >
+                <Search className="h-5 w-5" />
+              </Button>
             </div>
           </div>
         </div>
@@ -471,6 +512,27 @@ export function Header() {
           />
         </div>
       </div>
+
+      {/* Search Dialog */}
+      <Dialog open={isSearchOpen} onOpenChange={setIsSearchOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Pesquisar</DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handleSearch} className="flex items-center gap-2 mt-2">
+            <Search className="h-4 w-4 text-muted-foreground" />
+            <Input
+              autoFocus
+              placeholder="Digite sua busca..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <Button type="submit" variant="premium" size="sm" className="text-white">
+              Buscar
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </header>
   );
 }
