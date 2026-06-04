@@ -485,6 +485,15 @@ export function Header() {
                   </div>
                 </SheetContent>
               </Sheet>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-10 w-10 text-[hsl(220_60%_15%)] hover:bg-white/20 rounded-full"
+                onClick={() => setIsSearchOpen(true)}
+                aria-label="Pesquisar"
+              >
+                <Search className="h-5 w-5" />
+              </Button>
             </div>
           </div>
         </div>
