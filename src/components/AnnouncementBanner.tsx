@@ -9,18 +9,23 @@ export function AnnouncementBanner() {
 
   return (
     <div className="relative w-full bg-gradient-blue py-2 px-8 border-b border-[hsl(40_85%_52%)]/40 shadow-[0_2px_10px_-2px_hsl(40_85%_52%/0.3)]">
-      {/* Mobile: 2 lines */}
-      <div className="container mx-auto md:hidden text-center text-[13px] leading-snug pr-6">
-        <div className="text-[hsl(40_85%_60%)] font-semibold">
-          Universidade Multinível 2026 — Pesquisa aberta
+      {/* Mobile: 2 lines, full text */}
+      <div className="container mx-auto md:hidden pr-7 text-center">
+        <div className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 text-sm leading-tight">
+          <span className="text-[hsl(40_85%_60%)] font-semibold">
+            Universidade Multinível 2026.
+          </span>
+          <span className="text-[hsl(40_85%_60%)]">
+            Pesquisa de Marketing e Vendas aberta.
+          </span>
+          <Link
+            to="/quiz/papel-no-mmn/"
+            className="inline-flex items-center gap-0.5 text-[hsl(40_85%_60%)] font-semibold hover:underline whitespace-nowrap"
+          >
+            Responder
+            <ChevronRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
-        <Link
-          to="/quiz/papel-no-mmn/"
-          className="inline-flex items-center gap-0.5 text-[hsl(40_85%_60%)] font-semibold hover:underline"
-        >
-          Responda agora
-          <ChevronRight className="h-3.5 w-3.5" />
-        </Link>
       </div>
       {/* Desktop: single line */}
       <div className="container mx-auto hidden md:flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm md:text-base">
