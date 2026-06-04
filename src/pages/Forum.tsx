@@ -151,8 +151,8 @@ const Forum = () => {
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl sm:text-4xl font-bold mb-4">Bem-vindo ao Fórum</h1>
             <p className="text-lg sm:text-xl mb-6">Faça perguntas, obtenha respostas sem complicação</p>
-            <Button size="lg" variant="secondary">
-              Criar Nova Conta
+            <Button asChild size="lg" variant="registerPremium">
+              <a href="/auth">Criar Nova Conta</a>
             </Button>
           </div>
         </div>
@@ -166,13 +166,14 @@ const Forum = () => {
               placeholder="Tem uma pergunta? Faça ou encontre uma resposta..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 h-12"
+              className="pl-10 pr-40 h-12"
             />
             <Button className="absolute right-2 top-1/2 transform -translate-y-1/2" size="sm">
               Fazer Pergunta 💬
             </Button>
           </div>
         </div>
+
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Main Content */}
