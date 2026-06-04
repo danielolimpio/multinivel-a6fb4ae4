@@ -136,8 +136,8 @@ export default function Contato() {
                           </div>
                           <div>
                             <h3 className="text-lg font-bold text-foreground mb-1">E-mail</h3>
-                            <p className="text-muted-foreground">contato@universidademultinivel.com</p>
-                            <p className="text-muted-foreground">parcerias@universidademultinivel.com</p>
+                            <p className="text-muted-foreground break-all">contato@universidademultinivel.com</p>
+                            <p className="text-muted-foreground break-all">parcerias@universidademultinivel.com</p>
                           </div>
                         </div>
                       </CardContent>
