@@ -20,6 +20,9 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
+      - name: Verificar links internos e sitemap
+        run: node scripts/check-links.mjs
+
       - name: Build SSG do projeto
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
