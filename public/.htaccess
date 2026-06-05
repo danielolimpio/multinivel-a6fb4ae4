@@ -33,7 +33,17 @@ RewriteRule ^(.+?)/?$ $1/index.html [L]
 # Servir index.html da raiz
 RewriteRule ^$ index.html [L]
 
-# Qualquer outra requisição inválida deve retornar 404
+# SPA fallback: para rotas não pré-renderizadas, servir o index.html (SPA hidrata e roteia)
+# Evita 404 em rotas válidas que falharam no pre-render (ex.: /ranking/, /comparativo/, /contato/)
+# Não interfere em arquivos/assets reais (já tratados acima).
+# Excluímos extensões de assets para que requests a arquivos inexistentes (.js/.css/.png ausentes)
+# retornem 404 real, em vez de HTML.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(js|mjs|css|map|json|xml|txt|ico|png|jpe?g|gif|webp|svg|woff2?|ttf|otf|eot|mp4|webm|pdf|zip)$ [NC]
+RewriteRule ^ /index.html [L]
+
+# Qualquer requisição a arquivo estático inexistente retorna 404
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ - [R=404,L]
