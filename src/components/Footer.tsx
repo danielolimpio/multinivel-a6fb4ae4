@@ -21,6 +21,7 @@ export function Footer() {
     ],
     recursos: [
       { name: "Todas as Empresas", href: "/empresas" },
+      { name: "Top Earners", href: "/top-earners" },
       { name: "Como Funciona", href: "/como-funciona" },
       { name: "Suporte", href: "/suporte" }
     ]
