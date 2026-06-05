@@ -211,7 +211,7 @@ export function Hero() {
                     </div>
                   ))}
                 </div>
-                <div className="text-white/70 text-[10px] sm:text-xs">agora</div>
+                <div className="text-white/90 text-[10px] sm:text-xs">agora</div>
               </div>
             </div>
 
