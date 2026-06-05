@@ -211,7 +211,7 @@ export function Hero() {
                     </div>
                   ))}
                 </div>
-                <div className="text-white/70 text-[10px] sm:text-xs">agora</div>
+                <div className="text-white/90 text-[10px] sm:text-xs">agora</div>
               </div>
             </div>
 
@@ -228,7 +228,7 @@ export function Hero() {
                 <Input 
                   type="email" 
                   placeholder="Seu melhor e-mail"
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-yellow-400 focus:ring-yellow-400/20 text-sm"
+                  className="bg-white/20 border-white/40 text-white placeholder:text-white/90 focus:border-yellow-400 focus:ring-yellow-400/20 text-sm"
                 />
                 <Button variant="premium" size="sm" className="w-full text-xs sm:text-sm">
                   Assinar Newsletter
