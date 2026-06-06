@@ -70,6 +70,8 @@ export function StockTicker() {
               <img 
                 src={companyLogos[stock.ticker]} 
                 alt={stock.name}
+                width={64}
+                height={64}
                 className="w-6 h-6 object-contain"
                 onError={(e) => {
                   // Fallback para texto se a imagem não carregar
@@ -99,6 +101,8 @@ export function StockTicker() {
               <img 
                 src={companyLogos[stock.ticker]} 
                 alt={stock.name}
+                width={64}
+                height={64}
                 className="w-6 h-6 object-contain"
                 onError={(e) => {
                   // Fallback para texto se a imagem não carregar

@@ -41,6 +41,9 @@ export function Footer() {
         <img 
           src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
           alt="Logo" 
+          width={512}
+          height={512}
+          loading="lazy"
           className="h-24 w-24 sm:h-32 sm:w-32 object-contain" 
           style={{
             filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'

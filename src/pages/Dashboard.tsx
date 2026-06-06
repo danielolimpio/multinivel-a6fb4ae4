@@ -201,6 +201,8 @@ const Dashboard = () => {
               <img 
                 src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
                 alt="Logo" 
+                width={512}
+                height={512}
                 className="h-12 w-12 object-contain" 
               />
               <div>

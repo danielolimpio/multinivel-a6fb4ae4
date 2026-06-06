@@ -190,7 +190,7 @@ export function RankingSection() {
                   <div className="flex-1 min-w-0 w-full">
                     {/* Mobile: centered logo + name (big). Desktop: row */}
                     <div className="flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-2 sm:gap-3 mb-3">
-                      <img src={company.logo} alt={`${company.name} logo`} className="w-20 h-20 sm:w-14 sm:h-14 rounded-lg object-cover bg-muted flex-shrink-0 shadow-md" />
+                      <img src={company.logo} alt={`${company.name} logo`} width={200} height={200} loading="lazy" className="w-20 h-20 sm:w-14 sm:h-14 rounded-lg object-cover bg-muted flex-shrink-0 shadow-md" />
                       <div className="min-w-0 flex-1">
                         <h3 className="font-bold text-foreground text-xl sm:text-lg">{company.name}</h3>
                         <p className="text-sm text-muted-foreground">

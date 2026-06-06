@@ -1042,6 +1042,8 @@ export default function CompanyDetails() {
                   <img 
                     src={company.logo} 
                     alt={`Logo ${company.name}`} 
+                    width={400}
+                    height={400}
                     className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl object-cover shadow-xl"
                   />
                   <div className="flex-1">

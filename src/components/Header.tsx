@@ -426,6 +426,8 @@ export function Header() {
                       <img 
                         src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
                         alt="Logo" 
+                        width={512}
+                        height={512}
                         className="h-14 w-14 object-contain" 
                       />
                     </div>
@@ -505,6 +507,8 @@ export function Header() {
           <img 
             src="/lovable-uploads/c97e9d14-38f3-4d57-893a-6c9fb7a9b604.png" 
             alt="Logo" 
+            width={512}
+            height={512}
             className="h-24 w-24 sm:h-32 sm:w-32 object-contain relative z-50" 
             style={{
               filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'

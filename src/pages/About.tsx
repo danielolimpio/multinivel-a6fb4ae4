@@ -250,6 +250,9 @@ const About = () => {
                           <img 
                             src={danielPhoto} 
                             alt="Daniel Olimpio - Fundador da Universidade Multinível" 
+                            width={800}
+                            height={800}
+                            loading="lazy"
                             className="w-full h-full object-cover"
                           />
                         </div>
