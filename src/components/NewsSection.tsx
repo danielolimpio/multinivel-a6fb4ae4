@@ -63,6 +63,9 @@ export function NewsSection() {
                   <img 
                     src={article.image} 
                     alt={article.title}
+                    width={1600}
+                    height={900}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-3 left-3">

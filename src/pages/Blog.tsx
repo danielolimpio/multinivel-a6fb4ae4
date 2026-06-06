@@ -154,6 +154,9 @@ export default function Blog() {
                         <img 
                           src={post.image} 
                           alt={post.title}
+                          width={1600}
+                          height={900}
+                          loading="lazy"
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
