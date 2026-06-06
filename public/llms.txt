@@ -1,0 +1,42 @@
+# Universidade Multinível
+
+> Portal de referência em Marketing de Rede no Brasil. Ranking de empresas, análises, comparativos, quiz para descobrir sua empresa ideal, notícias e fórum da comunidade.
+
+## Páginas Principais
+
+- [Início](/): Ranking de empresas de marketing multinível, notícias e recursos para empreendedores.
+- [Ranking](/ranking/): Top empresas de MMN no Brasil com pontuação e avaliações atualizadas.
+- [Top Earners](/top-earners/): Os profissionais mais bem-sucedidos do marketing de rede no mundo.
+- [Empresas](/empresas/): Catálogo de empresas de vendas diretas com perfis detalhados.
+- [Comparativo](/comparativo/): Compare lado a lado até 3 empresas de multinível.
+- [Blog](/blog/): Artigos, guias e estratégias sobre marketing de rede.
+- [Fórum](/forum/): Comunidade de discussão sobre marketing multinível.
+- [Sobre](/sobre/): Quem somos e nossa missão no setor de vendas diretas.
+- [Como Funciona](/como-funciona/): Entenda como o nosso ranking e sistema de avaliação funcionam.
+- [FAQ](/faq/): Perguntas frequentes sobre marketing de rede e nossa plataforma.
+- [Contato](/contato/): Entre em contato com a equipe da Universidade Multinível.
+- [Suporte](/suporte/): Central de ajuda e suporte aos usuários.
+- [Privacidade](/privacidade/): Política de privacidade e proteção de dados.
+- [Termos](/termos/): Termos de uso e condições da plataforma.
+
+## Quiz — Descubra Sua Empresa Ideal
+
+- [Quiz — Começar](/network/): Questionário interativo para descobrir qual empresa de multinível combina com seu perfil.
+- [Quiz — Categorias de Produtos](/network/categorias-de-produtos-marketing-multinivel/): Escolha os segmentos de produtos que mais te interessam.
+- [Quiz — Resultado](/sua-empresa-ideal/): Diagnóstico final com a empresa ideal indicada para você.
+
+## Artigos
+
+- [Como Ganhar Dinheiro com Marketing Multinível em 2026](/artigo/como-ganhar-dinheiro-com-marketing-multinivel-em-2026/): Guia prático com estratégias validadas para iniciantes.
+- [Marketing de Rede: Guia Completo para Iniciantes](/artigo/marketing-de-rede-guia-completo-para-iniciantes/): Tudo o que você precisa saber para começar no MMN.
+- [Network Marketing: Tudo sobre Multinível](/artigo/network-marketing-tudo-sobre-multinivel-sistemas-mmn-relacionamento/): Conceitos, sistemas e relacionamento no marketing de rede.
+
+## Empresas Destaque
+
+- [Hinode](/empresa/hinode/): Cosméticos e perfumaria, líder no Brasil em vendas diretas.
+- [Herbalife](/empresa/herbalife/): Nutrição e suplementos alimentares globais.
+- [Amway](/empresa/amway/): Gigante global de produtos de saúde e beleza.
+
+## Quiz de Proficiência
+
+- [Quiz de Proficiência](/quiz/papel-no-mmn/): Avalie suas habilidades em marketing de rede em 21 perguntas sobre tráfego pago, geração de leads, automação, liderança e mais.
