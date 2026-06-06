@@ -54,14 +54,20 @@ export function Hero() {
     return () => clearInterval(interval);
   }, [visitors]);
   return <section 
-    className="relative pt-4 sm:pt-6 md:pt-10 pb-12 sm:pb-16 overflow-hidden border-t border-b border-yellow-400/60"
-    style={{
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${heroBackground})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    }}
+    className="relative pt-4 sm:pt-6 md:pt-10 pb-12 sm:pb-16 overflow-hidden border-t border-b border-yellow-400/60 bg-black"
   >
+      {/* LCP background image — eager + high priority */}
+      <img
+        src={heroBackground}
+        alt=""
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+        decoding="async"
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover -z-10"
+      />
+      <div className="absolute inset-0 bg-black/70 -z-10" aria-hidden="true"></div>
       {/* Linha dourada superior */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
       
