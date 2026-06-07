@@ -6,6 +6,7 @@ import { RankingSection } from "@/components/RankingSection";
 import { NewsSection } from "@/components/NewsSection";
 import { RecommendedDistributors } from "@/components/RecommendedDistributors";
 import { TopEarnersSection } from "@/components/TopEarnersSection";
+import { SeoContentSection } from "@/components/SeoContentSection";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 
