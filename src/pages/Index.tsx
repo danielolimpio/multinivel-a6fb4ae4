@@ -27,6 +27,7 @@ const Index = () => {
         <NewsSection />
         <RecommendedDistributors />
         <TopEarnersSection />
+        <SeoContentSection />
       </main>
       <Footer />
     </div>
