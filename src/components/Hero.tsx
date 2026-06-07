@@ -105,15 +105,15 @@ export function Hero() {
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 text-white">
             <div className="mb-3 sm:mb-4">
-              <span className="text-xs sm:text-sm font-medium text-white/80">Est. Year 2010</span>
+              <span className="text-xs sm:text-sm font-medium text-white/80">Autoridade desde 2014 · +20 anos de experiência no setor</span>
             </div>
             
             <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-              Portal de Marketing de Rede
+              Marketing Multinível, MMN e Marketing de Rede: o portal autoridade do Brasil
             </h1>
             
             <p className="text-sm sm:text-base lg:text-lg text-white/90 mb-6 sm:mb-8 leading-relaxed max-w-xl">
-              O portal de referência em Marketing de Rede no Brasil, oferecendo ranking, análises e oportunidades de renda para empresas e distribuidores.
+              Referência em Network Marketing (MLM) no Brasil: ranking das melhores empresas de Marketing Multinível, comparativos de planos de compensação, top earners globais, análises de vendas diretas e tudo sobre a diferença entre marketing multinível e pirâmide financeira.
             </p>
 
             <div className="space-y-4 sm:space-y-6 mb-8">
