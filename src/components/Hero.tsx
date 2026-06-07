@@ -100,7 +100,7 @@ export function Hero() {
         </svg>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 items-start">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 text-white">
