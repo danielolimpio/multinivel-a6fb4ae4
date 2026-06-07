@@ -54,7 +54,7 @@ export function Hero() {
     return () => clearInterval(interval);
   }, [visitors]);
   return <section 
-    className="relative pt-4 sm:pt-6 md:pt-10 pb-12 sm:pb-16 overflow-hidden border-t border-b border-yellow-400/60 bg-black"
+    className="relative pt-4 sm:pt-6 md:pt-10 pb-12 sm:pb-16 overflow-hidden border-t border-b border-yellow-400/60 bg-black isolate"
   >
       {/* LCP background image — eager + high priority */}
       <img
@@ -65,9 +65,9 @@ export function Hero() {
         fetchPriority="high"
         decoding="async"
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover -z-10"
+        className="absolute inset-0 w-full h-full object-cover z-0"
       />
-      <div className="absolute inset-0 bg-black/70 -z-10" aria-hidden="true"></div>
+      <div className="absolute inset-0 bg-black/60 z-0" aria-hidden="true"></div>
       {/* Linha dourada superior */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
       
@@ -100,7 +100,7 @@ export function Hero() {
         </svg>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 items-start">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 text-white">
