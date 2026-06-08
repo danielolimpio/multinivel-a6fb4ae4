@@ -68,86 +68,91 @@ export function SeoContentSection() {
   ];
 
   return (
-    <section
-      className="relative isolate py-16 sm:py-24 overflow-hidden border-t border-b border-[hsl(40_85%_50%)]/40"
-    >
-      {/* Background image */}
-      <img
-        src={seoBg}
-        alt=""
-        aria-hidden="true"
-        width={1920}
-        height={1064}
-        loading="lazy"
-        decoding="async"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
-      {/* Premium dark overlay for contrast */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 z-0 bg-gradient-to-b from-[#040912]/92 via-[#06101f]/88 to-[#040912]/95"
-      />
+    <>
+      {/* Top section — Network Marketing background */}
+      <section
+        className="relative isolate py-16 sm:py-24 overflow-hidden border-t border-b border-[hsl(40_85%_50%)]/40"
+      >
+        <img
+          src={seoBg}
+          alt=""
+          aria-hidden="true"
+          width={1920}
+          height={1064}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-0 bg-gradient-to-b from-[#040912]/92 via-[#06101f]/88 to-[#040912]/95"
+        />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
-        <header className="text-center mb-14">
-          <span className="inline-block text-xs font-semibold tracking-[0.18em] uppercase text-white mb-4">
-            Autoridade em MMN desde 2014 · +20 anos de experiência
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-5 text-gradient-gold leading-tight">
-            Tudo sobre Marketing Multinível, MMN, MLM e Marketing de Rede
-          </h2>
-          <p className="text-white/85 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-            A Universidade Multinível é o portal brasileiro de referência em Network Marketing e vendas diretas. Reunimos ranking das melhores empresas de marketing multinível do Brasil, comparativos de planos de compensação, análises de top earners, notícias do setor e o quiz que descobre a empresa ideal para o seu perfil.
-          </p>
-          <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-[hsl(40_85%_55%)] to-transparent" />
-        </header>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
+          <header className="text-center mb-14">
+            <span className="inline-block text-xs font-semibold tracking-[0.18em] uppercase text-white mb-4">
+              Autoridade em MMN desde 2014 · +20 anos de experiência
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-5 text-gradient-gold leading-tight">
+              Tudo sobre Marketing Multinível, MMN, MLM e Marketing de Rede
+            </h2>
+            <p className="text-white/85 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+              A Universidade Multinível é o portal brasileiro de referência em Network Marketing e vendas diretas. Reunimos ranking das melhores empresas de marketing multinível do Brasil, comparativos de planos de compensação, análises de top earners, notícias do setor e o quiz que descobre a empresa ideal para o seu perfil.
+            </p>
+            <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-[hsl(40_85%_55%)] to-transparent" />
+          </header>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
-          {cards.map((c) => (
-            <article
-              key={c.title}
-              className="group relative rounded-xl p-6 sm:p-7 bg-white/[0.04] backdrop-blur-sm border border-white/15 hover:border-[hsl(40_85%_55%)]/50 transition-colors duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
-            >
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-white">
-                {c.title}
-              </h3>
-              <p className="text-white/80 leading-relaxed text-sm sm:text-base">
-                {c.body}
-              </p>
-            </article>
-          ))}
+          <div className="grid md:grid-cols-2 gap-6">
+            {cards.map((c) => (
+              <article
+                key={c.title}
+                className="group relative rounded-xl p-6 sm:p-7 bg-white/[0.04] backdrop-blur-sm border border-white/15 hover:border-[hsl(40_85%_55%)]/50 transition-colors duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
+              >
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 text-white">
+                  {c.title}
+                </h3>
+                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
+                  {c.body}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className="rounded-2xl bg-black/30 backdrop-blur-sm border border-white/10 p-6 sm:p-10">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-white">
+      {/* FAQ section — clean default background */}
+      <section className="bg-background py-16 sm:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-foreground">
             Perguntas frequentes sobre Marketing Multinível
           </h2>
           <div className="space-y-6">
             {faqs.map((faq) => (
-              <div key={faq.q} className="border-b border-white/10 pb-5 last:border-b-0">
-                <h3 className="font-semibold text-lg mb-2 text-white">{faq.q}</h3>
-                <p className="text-white/80 leading-relaxed">{faq.a}</p>
+              <div key={faq.q} className="border-b border-border pb-5 last:border-b-0">
+                <h3 className="font-semibold text-lg mb-2 text-foreground">{faq.q}</h3>
+                <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* FAQPage JSON-LD for Google rich results */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: faqs.map((f) => ({
-                "@type": "Question",
-                name: f.q,
-                acceptedAnswer: { "@type": "Answer", text: f.a },
-              })),
-            }),
-          }}
-        />
-      </div>
-    </section>
+          {/* FAQPage JSON-LD for Google rich results */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: faqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              }),
+            }}
+          />
+        </div>
+      </section>
+    </>
   );
 }
+
