@@ -1,10 +1,8 @@
+import seoBg from "@/assets/seo-section-bg.webp";
+
 /**
  * SEO content section for the homepage.
- *
- * Targets the highest-volume Marketing Multinível / MMN / MLM / Network Marketing
- * keywords identified via Semrush (BR database) and reinforces E-E-A-T
- * (Experience, Expertise, Authoritativeness, Trustworthiness) with explicit
- * mentions of the portal's authority since 2014 and 20+ years of sector experience.
+ * Premium dark layout over Network Marketing event background.
  */
 export function SeoContentSection() {
   const faqs = [
@@ -34,57 +32,101 @@ export function SeoContentSection() {
     },
   ];
 
+  const cards = [
+    {
+      title: "O que é Marketing Multinível (MMN)?",
+      body: (
+        <>
+          <strong className="text-white">Marketing Multinível</strong> — também chamado de <strong className="text-white">MMN</strong>, <strong className="text-white">MLM</strong> (<em>multilevel marketing</em>), <strong className="text-white">Network Marketing</strong> ou <strong className="text-white">Marketing de Rede</strong> — é um modelo de vendas diretas em que distribuidores independentes comercializam produtos e formam redes, sendo remunerados pelas próprias vendas e pelo desempenho da equipe.
+        </>
+      ),
+    },
+    {
+      title: "Diferença entre Multinível e Pirâmide",
+      body: (
+        <>
+          A pirâmide financeira é ilegal porque depende apenas do recrutamento, sem produto real. O <strong className="text-white">marketing multinível legítimo</strong> tem produto consumido pelo cliente final, plano de compensação transparente e é regulamentado pela ABEVD. Saber identificar a diferença é o primeiro passo para escolher bem.
+        </>
+      ),
+    },
+    {
+      title: "Ranking das melhores empresas de MMN",
+      body: (
+        <>
+          Avaliamos mais de 1.600 empresas de <strong className="text-white">marketing multinível e vendas diretas</strong> no Brasil e no mundo: Hinode, Herbalife, Amway, Jeunesse, Nu Skin, doTERRA e centenas de outras. Veja posições atualizadas em tempo real, votos da comunidade e <em>momentum</em> de mercado.
+        </>
+      ),
+    },
+    {
+      title: "Top Earners do Network Marketing",
+      body: (
+        <>
+          Conheça os maiores <strong className="text-white">top earners</strong> do <strong className="text-white">network marketing</strong> mundial, seus ganhos, empresas, estratégias de recrutamento, conteúdo e duplicação. Cases reais de quem construiu renda de 6 e 7 dígitos no <strong className="text-white">MLM</strong>.
+        </>
+      ),
+    },
+  ];
+
   return (
-    <section className="bg-background py-16 sm:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-        <header className="text-center mb-12">
-          <span className="inline-block text-xs font-semibold tracking-wider uppercase text-[hsl(40_85%_55%)] mb-3">
+    <section
+      className="relative isolate py-16 sm:py-24 overflow-hidden border-t border-b border-[hsl(40_85%_50%)]/40"
+    >
+      {/* Background image */}
+      <img
+        src={seoBg}
+        alt=""
+        aria-hidden="true"
+        width={1920}
+        height={1064}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
+      {/* Premium dark overlay for contrast */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0 bg-gradient-to-b from-[#040912]/92 via-[#06101f]/88 to-[#040912]/95"
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
+        <header className="text-center mb-14">
+          <span className="inline-block text-xs font-semibold tracking-[0.18em] uppercase text-white mb-4">
             Autoridade em MMN desde 2014 · +20 anos de experiência
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gradient-gold">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-5 text-gradient-gold leading-tight">
             Tudo sobre Marketing Multinível, MMN, MLM e Marketing de Rede
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-3xl mx-auto">
+          <p className="text-white/85 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
             A Universidade Multinível é o portal brasileiro de referência em Network Marketing e vendas diretas. Reunimos ranking das melhores empresas de marketing multinível do Brasil, comparativos de planos de compensação, análises de top earners, notícias do setor e o quiz que descobre a empresa ideal para o seu perfil.
           </p>
+          <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-[hsl(40_85%_55%)] to-transparent" />
         </header>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <article>
-            <h3 className="text-xl font-bold mb-3">O que é Marketing Multinível (MMN)?</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              <strong>Marketing Multinível</strong> — também chamado de <strong>MMN</strong>, <strong>MLM</strong> (<em>multilevel marketing</em>), <strong>Network Marketing</strong> ou <strong>Marketing de Rede</strong> — é um modelo de vendas diretas em que distribuidores independentes comercializam produtos e formam redes, sendo remunerados pelas próprias vendas e pelo desempenho da equipe.
-            </p>
-          </article>
-          <article>
-            <h3 className="text-xl font-bold mb-3">Diferença entre Multinível e Pirâmide</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              A pirâmide financeira é ilegal porque depende apenas do recrutamento, sem produto real. O <strong>marketing multinível legítimo</strong> tem produto consumido pelo cliente final, plano de compensação transparente e é regulamentado pela ABEVD. Saber identificar a diferença é o primeiro passo para escolher bem.
-            </p>
-          </article>
-          <article>
-            <h3 className="text-xl font-bold mb-3">Ranking das melhores empresas de MMN</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Avaliamos mais de 1.600 empresas de <strong>marketing multinível e vendas diretas</strong> no Brasil e no mundo: Hinode, Herbalife, Amway, Jeunesse, Nu Skin, doTERRA e centenas de outras. Veja posições atualizadas em tempo real, votos da comunidade e <em>momentum</em> de mercado.
-            </p>
-          </article>
-          <article>
-            <h3 className="text-xl font-bold mb-3">Top Earners do Network Marketing</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Conheça os maiores <strong>top earners</strong> do <strong>network marketing</strong> mundial, seus ganhos, empresas, estratégias de recrutamento, conteúdo e duplicação. Cases reais de quem construiu renda de 6 e 7 dígitos no <strong>MLM</strong>.
-            </p>
-          </article>
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          {cards.map((c) => (
+            <article
+              key={c.title}
+              className="group relative rounded-xl p-6 sm:p-7 bg-white/[0.04] backdrop-blur-sm border border-white/15 hover:border-[hsl(40_85%_55%)]/50 transition-colors duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
+            >
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-white">
+                {c.title}
+              </h3>
+              <p className="text-white/80 leading-relaxed text-sm sm:text-base">
+                {c.body}
+              </p>
+            </article>
+          ))}
         </div>
 
-        <div className="border-t border-[hsl(40_85%_50%)]/30 pt-12">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
+        <div className="rounded-2xl bg-black/30 backdrop-blur-sm border border-white/10 p-6 sm:p-10">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-white">
             Perguntas frequentes sobre Marketing Multinível
           </h2>
           <div className="space-y-6">
             {faqs.map((faq) => (
-              <div key={faq.q} className="border-b border-border pb-5">
-                <h3 className="font-semibold text-lg mb-2 text-foreground">{faq.q}</h3>
-                <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
+              <div key={faq.q} className="border-b border-white/10 pb-5 last:border-b-0">
+                <h3 className="font-semibold text-lg mb-2 text-white">{faq.q}</h3>
+                <p className="text-white/80 leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
