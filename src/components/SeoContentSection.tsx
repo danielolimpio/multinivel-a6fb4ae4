@@ -87,6 +87,30 @@ export function SeoContentSection() {
           aria-hidden="true"
           className="absolute inset-0 z-0 bg-gradient-to-b from-[#02050a]/98 via-[#040d1a]/97 to-[#02050a]/99"
         />
+        {/* Premium dotted overlay */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-0 pointer-events-none opacity-[0.55] mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "radial-gradient(hsl(40 85% 65% / 0.42) 1px, transparent 1.2px)",
+            backgroundSize: "6px 6px",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(rgba(255,255,255,0.08) 0.6px, transparent 0.9px)",
+            backgroundSize: "4px 4px",
+            maskImage:
+              "radial-gradient(ellipse at center, black 55%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse at center, black 55%, transparent 100%)",
+          }}
+        />
+
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
           <header className="text-center mb-14">
