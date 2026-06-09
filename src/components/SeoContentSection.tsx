@@ -87,13 +87,13 @@ export function SeoContentSection() {
           aria-hidden="true"
           className="absolute inset-0 z-0 bg-gradient-to-b from-[#02050a]/98 via-[#040d1a]/97 to-[#02050a]/99"
         />
-        {/* Premium dotted overlay */}
+        {/* Premium dark dotted overlay */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-0 pointer-events-none opacity-[0.55] mix-blend-overlay"
+          className="absolute inset-0 z-0 pointer-events-none opacity-[0.75] mix-blend-multiply"
           style={{
             backgroundImage:
-              "radial-gradient(hsl(40 85% 65% / 0.42) 1px, transparent 1.2px)",
+              "radial-gradient(rgba(2,5,10,0.85) 1px, transparent 1.2px)",
             backgroundSize: "6px 6px",
           }}
         />
@@ -102,7 +102,7 @@ export function SeoContentSection() {
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(rgba(255,255,255,0.08) 0.6px, transparent 0.9px)",
+              "radial-gradient(rgba(0,0,0,0.55) 0.6px, transparent 0.9px)",
             backgroundSize: "4px 4px",
             maskImage:
               "radial-gradient(ellipse at center, black 55%, transparent 100%)",
