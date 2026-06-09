@@ -85,7 +85,7 @@ export function SeoContentSection() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-0 bg-gradient-to-b from-[#040912]/96 via-[#06101f]/94 to-[#040912]/98"
+          className="absolute inset-0 z-0 bg-gradient-to-b from-[#02050a]/98 via-[#040d1a]/97 to-[#02050a]/99"
         />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
