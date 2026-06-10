@@ -110,17 +110,25 @@ export function SeoContentSection() {
               "radial-gradient(ellipse at center, black 55%, transparent 100%)",
           }}
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-[58%] z-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.86) 34%, rgba(0,0,0,0.56) 58%, transparent 82%)",
+          }}
+        />
 
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
           <header className="text-center mb-14">
-            <span className="inline-block text-xs font-semibold tracking-[0.18em] uppercase text-white mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.18em] uppercase text-white mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
               Autoridade em MMN desde 2014 · +20 anos de experiência
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-5 text-gradient-gold leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-5 text-gradient-gold leading-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.98)]">
               Tudo sobre Marketing Multinível, MMN, MLM e Marketing de Rede
             </h2>
-            <p className="text-white/85 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-white/95 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed drop-shadow-[0_3px_14px_rgba(0,0,0,0.98)]">
               A Universidade Multinível é o portal brasileiro de referência em Network Marketing e vendas diretas. Reunimos ranking das melhores empresas de marketing multinível do Brasil, comparativos de planos de compensação, análises de top earners, notícias do setor e o quiz que descobre a empresa ideal para o seu perfil.
             </p>
             <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-[hsl(40_85%_55%)] to-transparent" />
