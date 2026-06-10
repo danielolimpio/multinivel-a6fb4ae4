@@ -155,7 +155,6 @@ const categories: FaqCategory[] = [
   },
   {
     title: "Planos de Compensação no Marketing Multinível",
-    answer: "",
     description:
       "Plano unilevel, binário, matricial, híbrido, breakaway e australiano: como funciona cada plano de compensação no MMN, vantagens, desvantagens e exemplos.",
     faqs: [
