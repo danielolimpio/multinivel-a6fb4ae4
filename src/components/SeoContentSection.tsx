@@ -1,4 +1,6 @@
 import seoBg from "@/assets/seo-section-bg.webp";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Sparkles, HelpCircle } from "lucide-react";
 
 /**
  * SEO content section for the homepage.
@@ -152,20 +154,68 @@ export function SeoContentSection() {
         </div>
       </section>
 
-      {/* FAQ section — clean default background */}
-      <section className="bg-background py-16 sm:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-foreground">
-            Perguntas frequentes sobre Marketing Multinível
-          </h2>
-          <div className="space-y-6">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="border-b border-border pb-5 last:border-b-0">
-                <h3 className="font-semibold text-lg mb-2 text-foreground">{faq.q}</h3>
-                <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
-              </div>
+      {/* FAQ section — premium */}
+      <section className="relative bg-background py-20 sm:py-28 overflow-hidden">
+        {/* Premium background ornaments */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none opacity-[0.35]"
+          style={{
+            backgroundImage:
+              "radial-gradient(hsl(220 60% 15% / 0.08) 1px, transparent 1.2px)",
+            backgroundSize: "22px 22px",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -top-32 left-1/2 -translate-x-1/2 h-72 w-[42rem] rounded-full blur-3xl opacity-20"
+          style={{ background: "var(--gradient-gold)" }}
+        />
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
+          {/* Premium header */}
+          <header className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-[0.18em] uppercase border border-[hsl(40_85%_50%)]/40 bg-[hsl(40_85%_50%)]/5 text-[hsl(35_75%_45%)] shadow-[0_2px_12px_-2px_hsl(40_85%_52%/0.25)]">
+              <Sparkles className="w-3.5 h-3.5" />
+              FAQ Premium
+            </span>
+            <h2 className="mt-5 text-3xl sm:text-4xl font-bold leading-tight text-foreground">
+              Perguntas frequentes sobre{" "}
+              <span className="text-gradient-gold">Marketing Multinível</span>
+            </h2>
+            <div className="mx-auto mt-5 h-px w-28 bg-gradient-to-r from-transparent via-[hsl(40_85%_55%)] to-transparent" />
+          </header>
+
+          {/* Premium accordion */}
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, i) => (
+              <AccordionItem
+                key={faq.q}
+                value={`faq-${i}`}
+                className="group relative rounded-2xl border-0 bg-card overflow-hidden shadow-[0_4px_20px_-8px_hsl(220_60%_15%/0.12)] hover:shadow-[0_12px_40px_-12px_hsl(40_85%_52%/0.35)] transition-all duration-500"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(hsl(var(--card)), hsl(var(--card))), var(--gradient-gold)",
+                  backgroundOrigin: "border-box",
+                  backgroundClip: "padding-box, border-box",
+                  border: "1px solid transparent",
+                }}
+              >
+                <AccordionTrigger className="px-6 py-5 text-left text-base sm:text-lg font-semibold text-foreground hover:no-underline data-[state=open]:text-[hsl(35_75%_38%)]">
+                  <span className="flex items-start gap-4 pr-4">
+                    <span className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-lg bg-gradient-gold text-gold-foreground text-xs font-bold flex items-center justify-center shadow-[0_4px_12px_-2px_hsl(40_85%_52%/0.5)]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span>{faq.q}</span>
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 pl-[4.5rem] text-muted-foreground leading-relaxed text-[0.95rem]">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
+
 
           {/* FAQPage JSON-LD for Google rich results */}
           <script
