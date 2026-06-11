@@ -1,4 +1,6 @@
 import seoBg from "@/assets/seo-section-bg.webp";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Sparkles, HelpCircle } from "lucide-react";
 
 /**
  * SEO content section for the homepage.
