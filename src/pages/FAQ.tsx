@@ -531,17 +531,51 @@ export default function FAQ() {
 
       <Header />
 
-      <main className="min-h-screen bg-background py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-              <HelpCircle className="w-8 h-8 text-primary" />
+      <main className="relative min-h-screen bg-background py-20 sm:py-28 overflow-hidden">
+        {/* Premium background ornaments */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none opacity-[0.4]"
+          style={{
+            backgroundImage:
+              "radial-gradient(hsl(220 60% 15% / 0.07) 1px, transparent 1.2px)",
+            backgroundSize: "22px 22px",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-[60rem] rounded-full blur-3xl opacity-20"
+          style={{ background: "var(--gradient-gold)" }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute top-1/2 -right-32 h-80 w-80 rounded-full blur-3xl opacity-10"
+          style={{ background: "var(--gradient-blue)" }}
+        />
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Premium Header */}
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-[0.18em] uppercase border border-[hsl(40_85%_50%)]/40 bg-[hsl(40_85%_50%)]/5 text-[hsl(35_75%_45%)] shadow-[0_2px_12px_-2px_hsl(40_85%_52%/0.25)] mb-6">
+              <Sparkles className="w-3.5 h-3.5" />
+              Base de Conhecimento Premium
+            </span>
+            <div
+              className="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-6 shadow-[0_12px_40px_-8px_hsl(40_85%_52%/0.6)]"
+              style={{ background: "var(--gradient-gold)" }}
+            >
+              <HelpCircle className="w-10 h-10 text-gold-foreground" strokeWidth={2.2} />
+              <span className="absolute -inset-1 rounded-2xl bg-[hsl(40_85%_55%)]/20 blur-xl -z-10" />
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              FAQ — Marketing Multinível, MMN, MLM, Marketing de Rede e Marketing de Relacionamento
+            <h1 className="text-3xl sm:text-5xl font-bold text-foreground mb-5 leading-tight max-w-4xl mx-auto">
+              FAQ —{" "}
+              <span className="text-gradient-gold">
+                Marketing Multinível, MMN, MLM
+              </span>{" "}
+              e Marketing de Rede
             </h1>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
+            <div className="mx-auto mb-6 h-px w-32 bg-gradient-to-r from-transparent via-[hsl(40_85%_55%)] to-transparent" />
+            <p className="text-muted-foreground max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
               Mais de 80 perguntas e respostas sobre marketing multinível, network marketing,
               vendas diretas, planos de compensação, melhores empresas de MMN do Brasil e do
               mundo, top earners, tráfego pago, recrutamento online, legalidade, ABEVD,
@@ -549,61 +583,126 @@ export default function FAQ() {
             </p>
           </div>
 
-          {/* Categorized FAQ */}
-          <div className="max-w-4xl mx-auto space-y-10">
+          {/* Premium Categorized FAQ */}
+          <div className="max-w-4xl mx-auto space-y-8">
             {categories.map((category, ci) => (
-              <Card key={ci} className="p-6 sm:p-8">
-                <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                  {category.title}
-                </h2>
-                <p className="text-sm text-muted-foreground mb-6">
-                  {category.description}
-                </p>
-                <Accordion type="single" collapsible className="w-full">
-                  {category.faqs.map((faq, index) => (
-                    <AccordionItem key={index} value={`item-${ci}-${index}`}>
-                      <AccordionTrigger className="text-left text-base sm:text-lg font-medium">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground leading-relaxed">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </Card>
+              <div
+                key={ci}
+                className="group relative rounded-3xl overflow-hidden shadow-[0_8px_30px_-12px_hsl(220_60%_15%/0.18)] hover:shadow-[0_20px_50px_-12px_hsl(40_85%_52%/0.3)] transition-all duration-500"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(hsl(var(--card)), hsl(var(--card))), var(--gradient-gold)",
+                  backgroundOrigin: "border-box",
+                  backgroundClip: "padding-box, border-box",
+                  border: "1.5px solid transparent",
+                }}
+              >
+                {/* Gold accent top bar */}
+                <div className="h-1 w-full" style={{ background: "var(--gradient-gold)" }} />
+
+                <div className="p-6 sm:p-9">
+                  {/* Category header with badge */}
+                  <div className="flex items-start gap-4 mb-6 pb-6 border-b border-[hsl(40_85%_50%)]/15">
+                    <div
+                      className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center shadow-[0_4px_14px_-2px_hsl(40_85%_52%/0.45)]"
+                      style={{ background: "var(--gradient-gold)" }}
+                    >
+                      <span className="text-gold-foreground font-bold text-base">
+                        {String(ci + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold tracking-[0.14em] uppercase bg-[hsl(40_85%_50%)]/10 text-[hsl(35_75%_38%)] border border-[hsl(40_85%_50%)]/25 mb-2">
+                        <BookOpen className="w-3 h-3" />
+                        Categoria {ci + 1}
+                      </span>
+                      <h2 className="text-xl sm:text-2xl font-bold text-foreground leading-tight">
+                        {category.title}
+                      </h2>
+                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                        {category.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Premium accordion */}
+                  <Accordion type="single" collapsible className="w-full space-y-2">
+                    {category.faqs.map((faq, index) => (
+                      <AccordionItem
+                        key={index}
+                        value={`item-${ci}-${index}`}
+                        className="border border-border/60 rounded-xl px-4 sm:px-5 bg-background/50 hover:border-[hsl(40_85%_50%)]/40 hover:bg-[hsl(40_85%_50%)]/[0.03] transition-all duration-300 data-[state=open]:border-[hsl(40_85%_50%)]/60 data-[state=open]:bg-[hsl(40_85%_50%)]/[0.04] data-[state=open]:shadow-[0_4px_18px_-6px_hsl(40_85%_52%/0.25)]"
+                      >
+                        <AccordionTrigger className="text-left text-sm sm:text-base font-semibold text-foreground hover:no-underline py-4 data-[state=open]:text-[hsl(35_75%_38%)]">
+                          <span className="flex items-start gap-3 pr-3">
+                            <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-md bg-[hsl(40_85%_50%)]/10 border border-[hsl(40_85%_50%)]/30 text-[hsl(35_75%_38%)] text-[10px] font-bold flex items-center justify-center">
+                              {index + 1}
+                            </span>
+                            <span>{faq.question}</span>
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground leading-relaxed pl-9 pb-4 text-[0.92rem]">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              </div>
             ))}
           </div>
 
-          {/* Still Have Questions */}
-          <div className="mt-12 text-center">
-            <Card className="max-w-2xl mx-auto p-8 bg-primary/5 border-primary/20">
-              <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h2 className="text-xl font-semibold text-foreground mb-2">
-                Ainda tem dúvidas sobre Marketing Multinível?
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                Nossa equipe está pronta para ajudar você a escolher a melhor empresa de MMN e
-                a estruturar seu negócio de marketing de rede. Entre em contato!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contato">
-                  <Button className="w-full sm:w-auto">
-                    <Mail className="w-4 h-4 mr-2" />
-                    Fale Conosco
-                  </Button>
-                </Link>
-                <Link to="/forum">
-                  <Button variant="outline" className="w-full sm:w-auto">
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Acesse o Fórum
-                  </Button>
-                </Link>
+          {/* Premium "Still Have Questions" */}
+          <div className="mt-16 text-center">
+            <div
+              className="relative max-w-2xl mx-auto p-10 rounded-3xl overflow-hidden shadow-[0_20px_50px_-12px_hsl(40_85%_52%/0.3)]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(hsl(var(--card)), hsl(var(--card))), var(--gradient-gold)",
+                backgroundOrigin: "border-box",
+                backgroundClip: "padding-box, border-box",
+                border: "1.5px solid transparent",
+              }}
+            >
+              <div
+                aria-hidden="true"
+                className="absolute -top-24 left-1/2 -translate-x-1/2 h-48 w-96 rounded-full blur-3xl opacity-25"
+                style={{ background: "var(--gradient-gold)" }}
+              />
+              <div className="relative">
+                <div
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-5 shadow-[0_8px_24px_-4px_hsl(40_85%_52%/0.5)]"
+                  style={{ background: "var(--gradient-gold)" }}
+                >
+                  <MessageCircle className="w-8 h-8 text-gold-foreground" strokeWidth={2.2} />
+                </div>
+                <h2 className="text-2xl font-bold text-foreground mb-3">
+                  Ainda tem dúvidas sobre Marketing Multinível?
+                </h2>
+                <p className="text-muted-foreground mb-7 leading-relaxed">
+                  Nossa equipe está pronta para ajudar você a escolher a melhor empresa de MMN e
+                  a estruturar seu negócio de marketing de rede. Entre em contato!
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Link to="/contato">
+                    <Button variant="premium" className="w-full sm:w-auto">
+                      <Mail className="w-4 h-4 mr-2" />
+                      Fale Conosco
+                    </Button>
+                  </Link>
+                  <Link to="/forum">
+                    <Button variant="goldOutline" className="w-full sm:w-auto">
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      Acesse o Fórum
+                    </Button>
+                  </Link>
+                </div>
               </div>
-            </Card>
+            </div>
           </div>
         </div>
       </main>
+
 
       {/* FAQPage JSON-LD for Google rich results */}
       <script
