@@ -30,6 +30,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import NotFound from './pages/NotFound';
 import QuizPage from './pages/QuizPage';
 import TopEarners from './pages/TopEarners';
+import Top100 from './pages/Top100';
 import QuizResult from './pages/QuizResult';
 import { quizQuestions } from './data/quizData';
 
@@ -109,6 +110,10 @@ export const routes: RouteRecord[] = [
       {
         path: 'top-earners',
         element: <TopEarners />,
+      },
+      {
+        path: 'top-100',
+        element: <Top100 />,
       },
       {
         path: 'empresas',

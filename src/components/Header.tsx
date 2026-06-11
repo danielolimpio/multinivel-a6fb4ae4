@@ -314,6 +314,7 @@ export function Header() {
     { name: currentTranslations.home, href: "/" },
     { name: currentTranslations.about, href: "/sobre" },
     { name: currentTranslations.ranking, href: "/ranking" },
+    { name: "Top 100", href: "/top-100" },
     { name: "Blog", href: "/blog" },
     { name: currentTranslations.forum, href: "/forum" },
     { name: currentTranslations.community, href: "/comparativo" },
