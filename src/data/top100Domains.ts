@@ -25,7 +25,7 @@ export const top100Domains: Record<string, string> = {
   "JoyMain Int.": "jmtop.cn",
   "Perfect China": "perfect99.com",
   "Sunhope": "sunhope.cn",
-  "New Era Health": "neweraco.cn",
+  "New Era Health": "newerahealth.com",
   "Vivint Smart Home": "vivint.com",
   "Ambit Energy": "ambitenergy.com",
   "O Boticario": "boticario.com.br",
@@ -100,6 +100,7 @@ export const top100Domains: Record<string, string> = {
   "Color Street (Out Of MLM)": "colorstreet.com",
   "Pure Romance (Out of MLM)": "pureromance.com",
   "Seacret Direct (VIÁGO)": "seacretdirect.com",
+  "Seacret Direct (VI\\u00c1GO)": "seacretdirect.com",
   "Just International": "just.ch",
   "Noevir": "noevir.co.jp",
 };
