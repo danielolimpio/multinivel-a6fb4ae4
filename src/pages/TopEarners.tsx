@@ -7,9 +7,23 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Crown, Search, TrendingUp, DollarSign, Trophy } from "lucide-react";
 import { topEarnersGlobal, companyWebsites, upgradeAvatar } from "@/data/topEarnersGlobal";
+import { Link } from "react-router-dom";
+import { internalCompanyUrl } from "@/data/companySlugs";
 
 
 const CompanyLink = ({ company, className }: { company: string; className?: string }) => {
+  const internal = internalCompanyUrl(company);
+  if (internal) {
+    return (
+      <Link
+        to={internal}
+        className={`${className ?? ""} underline-offset-2 hover:underline hover:text-[hsl(40_85%_55%)] transition-colors font-medium`}
+        title={`Ver página completa de ${company}`}
+      >
+        {company}
+      </Link>
+    );
+  }
   const url = companyWebsites[company];
   if (!url) return <span className={className}>{company}</span>;
   return (

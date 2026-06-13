@@ -32,6 +32,7 @@ import QuizPage from './pages/QuizPage';
 import TopEarners from './pages/TopEarners';
 import Top100 from './pages/Top100';
 import QuizResult from './pages/QuizResult';
+import Amway from './pages/empresas/Amway';
 import { quizQuestions } from './data/quizData';
 
 const queryClient = new QueryClient();
@@ -187,12 +188,18 @@ export const routes: RouteRecord[] = [
         path: 'como-funciona',
         element: <ComoFunciona />,
       },
+      // Dedicated premium company pages (must come before the generic /:slug route)
+      {
+        path: 'empresa/amway',
+        element: <Amway />,
+        entry: 'src/pages/empresas/Amway.tsx',
+      },
       // Dynamic company pages - pre-rendered with getStaticPaths
       {
         path: 'empresa/:slug',
         element: <CompanyDetails />,
         entry: 'src/pages/CompanyDetails.tsx',
-        getStaticPaths: () => companySlugs.map(slug => `/empresa/${slug}`),
+        getStaticPaths: () => companySlugs.filter((s) => s !== 'amway').map((slug) => `/empresa/${slug}`),
       },
       // Dynamic article pages - pre-rendered with getStaticPaths
       {
