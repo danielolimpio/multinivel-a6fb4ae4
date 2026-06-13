@@ -30,6 +30,8 @@ import {
   TOTAL_REVENUE_2025_M,
 } from "@/data/top100DirectSales";
 import { CompanyLogo } from "@/components/CompanyLogo";
+import { Link } from "react-router-dom";
+import { internalCompanyUrl } from "@/data/companySlugs";
 
 
 const fmtRevenue = (m: number) => {
@@ -363,14 +365,27 @@ const Top100 = () => {
                         <div className="flex items-center gap-3">
                           <CompanyLogo name={c.name} size={44} />
                           <div className="min-w-0">
-                            <a
-                              href={c.url}
-                              target="_blank"
-                              rel="noopener noreferrer nofollow"
-                              className="font-bold text-foreground hover:text-[hsl(40_85%_45%)] transition-colors"
-                            >
-                              {c.name}
-                            </a>
+                            {(() => {
+                              const internal = internalCompanyUrl(c.name);
+                              return internal ? (
+                                <Link
+                                  to={internal}
+                                  className="font-bold text-foreground hover:text-[hsl(40_85%_45%)] transition-colors"
+                                  title={`Ver página completa de ${c.name}`}
+                                >
+                                  {c.name}
+                                </Link>
+                              ) : (
+                                <a
+                                  href={c.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer nofollow"
+                                  className="font-bold text-foreground hover:text-[hsl(40_85%_45%)] transition-colors"
+                                >
+                                  {c.name}
+                                </a>
+                              );
+                            })()}
                             {c.verified && (
                               <Badge
                                 variant="secondary"
