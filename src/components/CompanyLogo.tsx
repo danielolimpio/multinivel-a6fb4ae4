@@ -30,9 +30,9 @@ const gradientFor = (name: string) => {
 /**
  * Premium round company logo.
  * Source chain (best → fallback):
- *  1) logo.dev (high-res official brand logos, public demo token)
+ *  1) logo.dev with fallback=404, so it never shows generated lettermarks
  *  2) Clearbit logo API (high-res PNG)
- *  3) Initials on a deterministic brand-tinted gradient
+ *  3) Initials only if every official logo source fails
  *
  * The Google favicon endpoint is intentionally avoided because it often
  * returns a generic globe placeholder when no favicon is registered.
@@ -46,9 +46,9 @@ export const CompanyLogo = ({ name, size = 44, className = "" }: CompanyLogoProp
 
   const src =
     stage === 0
-      ? `https://img.logo.dev/${domain}?token=${LOGO_DEV_TOKEN}&size=240&format=png&retina=true`
+      ? `https://img.logo.dev/${domain}?token=${LOGO_DEV_TOKEN}&size=512&format=png&retina=true&fallback=404`
       : stage === 1
-        ? `https://logo.clearbit.com/${domain}?size=256&format=png`
+        ? `https://logo.clearbit.com/${domain}?size=512&format=png`
         : "";
 
   const showImage = stage < 2 && !!domain;
@@ -60,7 +60,7 @@ export const CompanyLogo = ({ name, size = 44, className = "" }: CompanyLogoProp
       style={{
         width: size,
         height: size,
-        background: showImage ? bg : bg,
+        background: `radial-gradient(circle at 35% 28%, hsl(0 0% 100% / 0.98), hsl(42 90% 96% / 0.94) 58%, hsl(220 42% 18% / 0.9))`,
       }}
       aria-hidden="true"
     >
@@ -72,7 +72,7 @@ export const CompanyLogo = ({ name, size = 44, className = "" }: CompanyLogoProp
           decoding="async"
           width={size}
           height={size}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-contain p-[3px] bg-white"
           onError={() => setStage((s) => (s === 0 ? 1 : 2))}
           onLoad={(e) => {
             // Detect transparent / near-empty logos returned by some providers:
