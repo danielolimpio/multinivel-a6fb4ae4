@@ -29,34 +29,31 @@ import {
   TOTAL_REVENUE_2024_M,
   TOTAL_REVENUE_2025_M,
 } from "@/data/top100DirectSales";
+import { CompanyLogo } from "@/components/CompanyLogo";
+
 
 const fmtRevenue = (m: number) => {
   if (m >= 1000) return `US$ ${(m / 1000).toFixed(2)} bi`;
   return `US$ ${m} mi`;
 };
 
-const RankBadge = ({ rank }: { rank: number }) => {
-  if (rank === 1)
-    return (
-      <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gradient-gold text-[hsl(220_60%_15%)] font-black shadow-gold">
-        <Crown className="w-4 h-4" />
-      </span>
-    );
-  if (rank <= 3)
-    return (
-      <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gradient-gold text-[hsl(220_60%_15%)] font-black shadow-gold">
-        {rank}
-      </span>
-    );
-  if (rank <= 10)
-    return (
-      <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border-2 border-[hsl(40_85%_55%)] text-[hsl(40_85%_45%)] font-bold bg-[hsl(40_85%_95%)]">
-        {rank}
-      </span>
-    );
+const RankNumber = ({ rank }: { rank: number }) => {
+  const isTop1 = rank === 1;
+  const isTop3 = rank <= 3;
+  const isTop10 = rank <= 10;
+  const base =
+    "tabular-nums font-black leading-none flex items-center gap-1";
+  const color = isTop3
+    ? "text-transparent bg-clip-text bg-gradient-gold drop-shadow-[0_1px_0_hsl(40_85%_30%/0.25)]"
+    : isTop10
+      ? "text-[hsl(40_85%_42%)]"
+      : "text-foreground/70";
+  const size = isTop3 ? "text-2xl" : "text-xl";
   return (
-    <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-foreground/80 font-semibold bg-card">
+    <span className={`${base} ${color} ${size}`}>
+      {isTop1 && <Crown className="w-4 h-4 text-[hsl(40_85%_50%)]" />}
       {rank}
+      <span className={`text-[10px] font-bold ${isTop3 ? "text-[hsl(40_85%_45%)]" : "text-muted-foreground"}`}>º</span>
     </span>
   );
 };
@@ -359,30 +356,35 @@ const Top100 = () => {
                         i % 2 === 0 ? "bg-background" : "bg-muted/30"
                       }`}
                     >
-                      <td className="px-4 py-3">
-                        <RankBadge rank={c.rank} />
+                      <td className="px-4 py-3 align-middle">
+                        <RankNumber rank={c.rank} />
                       </td>
                       <td className="px-4 py-3">
-                        <a
-                          href={c.url}
-                          target="_blank"
-                          rel="noopener noreferrer nofollow"
-                          className="font-bold text-foreground hover:text-[hsl(40_85%_45%)] transition-colors"
-                        >
-                          {c.name}
-                        </a>
-                        {c.verified && (
-                          <Badge
-                            variant="secondary"
-                            className="ml-2 align-middle gap-1 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20"
-                          >
-                            <CheckCircle2 className="w-3 h-3" />
-                            Verificada
-                          </Badge>
-                        )}
-                        <div className="md:hidden mt-1 text-xs text-muted-foreground">
-                          <span className="mr-1">{c.flag}</span>
-                          {c.country}
+                        <div className="flex items-center gap-3">
+                          <CompanyLogo name={c.name} size={44} />
+                          <div className="min-w-0">
+                            <a
+                              href={c.url}
+                              target="_blank"
+                              rel="noopener noreferrer nofollow"
+                              className="font-bold text-foreground hover:text-[hsl(40_85%_45%)] transition-colors"
+                            >
+                              {c.name}
+                            </a>
+                            {c.verified && (
+                              <Badge
+                                variant="secondary"
+                                className="ml-2 align-middle gap-1 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20"
+                              >
+                                <CheckCircle2 className="w-3 h-3" />
+                                Verificada
+                              </Badge>
+                            )}
+                            <div className="md:hidden mt-1 text-xs text-muted-foreground">
+                              <span className="mr-1">{c.flag}</span>
+                              {c.country}
+                            </div>
+                          </div>
                         </div>
                       </td>
                       <td className="px-4 py-3 hidden md:table-cell">
