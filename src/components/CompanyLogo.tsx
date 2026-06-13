@@ -10,6 +10,7 @@ interface CompanyLogoProps {
 const initialsOf = (name: string) =>
   name
     .replace(/\(.*?\)/g, "")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
     .trim()
     .split(/\s+/)
     .slice(0, 2)
@@ -17,28 +18,53 @@ const initialsOf = (name: string) =>
     .join("")
     .toUpperCase();
 
+// Deterministic premium gradient per company (used as backdrop / fallback).
+const gradientFor = (name: string) => {
+  let h = 0;
+  for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+  const hue = h % 360;
+  const hue2 = (hue + 35) % 360;
+  return `linear-gradient(135deg, hsl(${hue} 70% 32%), hsl(${hue2} 75% 22%))`;
+};
+
 /**
- * Round company logo avatar. Tries the official Clearbit logo for the mapped
- * domain at high resolution; falls back to Google s2 favicon, then initials.
+ * Premium round company logo.
+ * Source chain (best → fallback):
+ *  1) logo.dev (high-res official brand logos, public demo token)
+ *  2) Clearbit logo API (high-res PNG)
+ *  3) Initials on a deterministic brand-tinted gradient
+ *
+ * The Google favicon endpoint is intentionally avoided because it often
+ * returns a generic globe placeholder when no favicon is registered.
  */
-export const CompanyLogo = ({ name, size = 40, className = "" }: CompanyLogoProps) => {
+export const CompanyLogo = ({ name, size = 44, className = "" }: CompanyLogoProps) => {
   const domain = top100Domains[name];
   const [stage, setStage] = useState<0 | 1 | 2>(domain ? 0 : 2);
 
+  // logo.dev public demo token (documented at https://www.logo.dev)
+  const LOGO_DEV_TOKEN = "pk_X-1ZO13GSgeOoUrIuJ6GMQ";
+
   const src =
     stage === 0
-      ? `https://logo.clearbit.com/${domain}?size=128`
+      ? `https://img.logo.dev/${domain}?token=${LOGO_DEV_TOKEN}&size=240&format=png&retina=true`
       : stage === 1
-        ? `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+        ? `https://logo.clearbit.com/${domain}?size=256&format=png`
         : "";
+
+  const showImage = stage < 2 && !!domain;
+  const bg = gradientFor(name);
 
   return (
     <span
-      className={`relative inline-flex items-center justify-center shrink-0 rounded-full overflow-hidden bg-white ring-2 ring-[hsl(40_85%_55%)]/60 shadow-[0_2px_10px_-2px_hsl(220_60%_15%/0.25)] ${className}`}
-      style={{ width: size, height: size }}
+      className={`relative inline-flex items-center justify-center shrink-0 rounded-full overflow-hidden ring-2 ring-[hsl(40_85%_55%)]/70 shadow-[0_4px_14px_-4px_hsl(220_60%_15%/0.45),inset_0_0_0_1px_rgba(255,255,255,0.18)] ${className}`}
+      style={{
+        width: size,
+        height: size,
+        background: showImage ? bg : bg,
+      }}
       aria-hidden="true"
     >
-      {stage < 2 ? (
+      {showImage ? (
         <img
           src={src}
           alt=""
@@ -46,14 +72,33 @@ export const CompanyLogo = ({ name, size = 40, className = "" }: CompanyLogoProp
           decoding="async"
           width={size}
           height={size}
-          className="w-full h-full object-contain p-1"
+          className="absolute inset-0 w-full h-full object-cover"
           onError={() => setStage((s) => (s === 0 ? 1 : 2))}
+          onLoad={(e) => {
+            // Detect transparent / near-empty logos returned by some providers:
+            // if natural size is suspiciously tiny, fall back.
+            const img = e.currentTarget;
+            if (img.naturalWidth < 16 || img.naturalHeight < 16) {
+              setStage((s) => (s === 0 ? 1 : 2));
+            }
+          }}
         />
       ) : (
-        <span className="text-[10px] font-black text-[hsl(220_60%_15%)] tracking-tight">
-          {initialsOf(name)}
+        <span
+          className="font-black text-white tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]"
+          style={{ fontSize: Math.max(11, Math.round(size * 0.36)) }}
+        >
+          {initialsOf(name) || "•"}
         </span>
       )}
+      {/* subtle inner gold rim for premium feel */}
+      <span
+        className="pointer-events-none absolute inset-0 rounded-full"
+        style={{
+          boxShadow:
+            "inset 0 0 0 1px hsl(40 85% 60% / 0.35), inset 0 0 8px hsl(40 85% 55% / 0.15)",
+        }}
+      />
     </span>
   );
 };
