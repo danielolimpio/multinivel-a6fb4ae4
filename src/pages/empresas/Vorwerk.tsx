@@ -24,10 +24,10 @@ const data: CompanyPremiumData = {
     { icon: "map", label: "País de Origem", value: "Alemanha 🇩🇪", hint: "Wuppertal" },
     { icon: "globe", label: "Países & Territórios", value: "70+", hint: "Europa, Ásia, Américas" },
     { icon: "users", label: "Consultores", value: "640 mil+", hint: "Presenters e representantes" },
-    { icon: "package", label: "Marcas Principais", value: "Thermomix, Kobold", text: "" } as { icon: string; label: string; value: string; hint: string },
+    { icon: "package", label: "Marcas Principais", value: "Thermomix, Kobold", hint: "Eletrodomésticos premium alemães" },
     { icon: "dollar", label: "Faturamento 2025", value: "US$ 3 bi", hint: "Fonte: Business For Home" },
     { icon: "factory", label: "Funcionários Globais", value: "11.000+", hint: "P&D, fábricas e operações" },
-  ].map((s) => ({ ...s, hint: s.hint || "Eletrodomésticos premium alemães" })),
+  ],
   aboutHtml: `
     <p>A <strong>Vorwerk SE & Co. KG</strong> é uma empresa familiar alemã fundada em <strong>1883</strong> em Wuppertal pelos irmãos <em>Carl e Adolf Vorwerk</em>. Hoje, com mais de <strong>140 anos de história</strong>, é uma das maiores e mais respeitadas empresas de venda direta do mundo, ocupando o <strong>Top 5 mundial</strong> no ranking Business For Home 2026.</p>
     <p>A Vorwerk é a casa dos icônicos <strong>Thermomix</strong> (o robô de cozinha multifuncional mais vendido do mundo, com mais de 8 milhões de unidades vendidas) e <strong>Kobold</strong> (aspiradores e sistemas de limpeza premium). Fatura mais de <strong>US$ 3 bilhões anuais</strong> e mantém uma rede de mais de <strong>640 mil consultores</strong> em mais de <strong>70 países</strong>.</p>
