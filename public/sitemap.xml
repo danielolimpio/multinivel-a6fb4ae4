@@ -300,7 +300,13 @@
     <priority>0.9</priority>
   </url>
   
-  <!-- Páginas de Empresas (19 empresas com slugs corretos) -->
+  <!-- Páginas de Empresas (com slugs corretos) -->
+  <url>
+    <loc>https://www.universidademultinivel.com/empresa/natura/</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://www.universidademultinivel.com/empresa/hinode/</loc>
     <lastmod>2026-01-07</lastmod>

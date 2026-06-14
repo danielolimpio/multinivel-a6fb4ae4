@@ -4,6 +4,16 @@
 // external link.
 export const companySlugs: Record<string, string> = {
   Amway: "amway",
+  Herbalife: "herbalife",
+  Natura: "natura",
+  "Natura and Co": "natura",
+  Vorwerk: "vorwerk",
+  "Mary Kay": "mary-kay",
+  "Nu Skin": "nu-skin",
+  "Forever Living Products": "forever-living",
+  Oriflame: "oriflame",
+  Primerica: "primerica",
+  Hinode: "hinode",
 };
 
 export const internalCompanyUrl = (name: string): string | null => {

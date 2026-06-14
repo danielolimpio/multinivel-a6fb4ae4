@@ -33,6 +33,15 @@ import TopEarners from './pages/TopEarners';
 import Top100 from './pages/Top100';
 import QuizResult from './pages/QuizResult';
 import Amway from './pages/empresas/Amway';
+import Herbalife from './pages/empresas/Herbalife';
+import Natura from './pages/empresas/Natura';
+import Vorwerk from './pages/empresas/Vorwerk';
+import MaryKay from './pages/empresas/MaryKay';
+import NuSkin from './pages/empresas/NuSkin';
+import ForeverLiving from './pages/empresas/ForeverLiving';
+import Oriflame from './pages/empresas/Oriflame';
+import Primerica from './pages/empresas/Primerica';
+import Hinode from './pages/empresas/Hinode';
 import { quizQuestions } from './data/quizData';
 
 const queryClient = new QueryClient();
@@ -189,17 +198,24 @@ export const routes: RouteRecord[] = [
         element: <ComoFunciona />,
       },
       // Dedicated premium company pages (must come before the generic /:slug route)
-      {
-        path: 'empresa/amway',
-        element: <Amway />,
-        entry: 'src/pages/empresas/Amway.tsx',
-      },
+      { path: 'empresa/amway', element: <Amway />, entry: 'src/pages/empresas/Amway.tsx' },
+      { path: 'empresa/herbalife', element: <Herbalife />, entry: 'src/pages/empresas/Herbalife.tsx' },
+      { path: 'empresa/natura', element: <Natura />, entry: 'src/pages/empresas/Natura.tsx' },
+      { path: 'empresa/vorwerk', element: <Vorwerk />, entry: 'src/pages/empresas/Vorwerk.tsx' },
+      { path: 'empresa/mary-kay', element: <MaryKay />, entry: 'src/pages/empresas/MaryKay.tsx' },
+      { path: 'empresa/nu-skin', element: <NuSkin />, entry: 'src/pages/empresas/NuSkin.tsx' },
+      { path: 'empresa/forever-living', element: <ForeverLiving />, entry: 'src/pages/empresas/ForeverLiving.tsx' },
+      { path: 'empresa/oriflame', element: <Oriflame />, entry: 'src/pages/empresas/Oriflame.tsx' },
+      { path: 'empresa/primerica', element: <Primerica />, entry: 'src/pages/empresas/Primerica.tsx' },
+      { path: 'empresa/hinode', element: <Hinode />, entry: 'src/pages/empresas/Hinode.tsx' },
       // Dynamic company pages - pre-rendered with getStaticPaths
       {
         path: 'empresa/:slug',
         element: <CompanyDetails />,
         entry: 'src/pages/CompanyDetails.tsx',
-        getStaticPaths: () => companySlugs.filter((s) => s !== 'amway').map((slug) => `/empresa/${slug}`),
+        getStaticPaths: () => companySlugs
+          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode'].includes(s))
+          .map((slug) => `/empresa/${slug}`),
       },
       // Dynamic article pages - pre-rendered with getStaticPaths
       {

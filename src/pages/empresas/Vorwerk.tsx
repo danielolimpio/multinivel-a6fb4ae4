@@ -1,0 +1,137 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "Vorwerk",
+  slug: "vorwerk",
+  officialUrl: "https://corporate.vorwerk.com/",
+  domain: "vorwerk.com",
+  seoTitle: "Vorwerk: A Gigante Alemã da Venda Direta | Thermomix e Kobold | 2026",
+  seoDescription:
+    "Vorwerk é uma das maiores empresas de venda direta do mundo com US$ 3 bi de receita. Casa do Thermomix e Kobold, opera em 70+ países. Conheça a história alemã, produtos premium e plano de carreira.",
+  rankingLabel: "TOP 5 MUNDIAL • BUSINESS FOR HOME 2026",
+  heroHeadlineSuffix: "A Centenária Alemã do Thermomix e Kobold",
+  heroParagraph:
+    "Fundada em 1883 em Wuppertal, Alemanha, a Vorwerk é uma das mais antigas e prestigiadas empresas de venda direta do mundo. Famosa pelo robô de cozinha Thermomix e pelos aspiradores Kobold, fatura mais de US$ 3 bilhões anuais com presença em mais de 70 países.",
+  heroBadges: [
+    { label: "Receita verificada", icon: "check" },
+    { label: "140+ anos", icon: "calendar" },
+    { label: "70+ países", icon: "globe" },
+    { label: "640 mil consultores", icon: "users" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking Mundial 2026", value: "Top 5", hint: "Maior MMN da Europa" },
+    { icon: "calendar", label: "Fundação", value: "1883", hint: "140+ anos de tradição" },
+    { icon: "map", label: "País de Origem", value: "Alemanha 🇩🇪", hint: "Wuppertal" },
+    { icon: "globe", label: "Países & Territórios", value: "70+", hint: "Europa, Ásia, Américas" },
+    { icon: "users", label: "Consultores", value: "640 mil+", hint: "Presenters e representantes" },
+    { icon: "package", label: "Marcas Principais", value: "Thermomix, Kobold", hint: "Eletrodomésticos premium alemães" },
+    { icon: "dollar", label: "Faturamento 2025", value: "US$ 3 bi", hint: "Fonte: Business For Home" },
+    { icon: "factory", label: "Funcionários Globais", value: "11.000+", hint: "P&D, fábricas e operações" },
+  ],
+  aboutHtml: `
+    <p>A <strong>Vorwerk SE & Co. KG</strong> é uma empresa familiar alemã fundada em <strong>1883</strong> em Wuppertal pelos irmãos <em>Carl e Adolf Vorwerk</em>. Hoje, com mais de <strong>140 anos de história</strong>, é uma das maiores e mais respeitadas empresas de venda direta do mundo, ocupando o <strong>Top 5 mundial</strong> no ranking Business For Home 2026.</p>
+    <p>A Vorwerk é a casa dos icônicos <strong>Thermomix</strong> (o robô de cozinha multifuncional mais vendido do mundo, com mais de 8 milhões de unidades vendidas) e <strong>Kobold</strong> (aspiradores e sistemas de limpeza premium). Fatura mais de <strong>US$ 3 bilhões anuais</strong> e mantém uma rede de mais de <strong>640 mil consultores</strong> em mais de <strong>70 países</strong>.</p>
+    <p>Empresa <strong>100% familiar</strong> (sem capital aberto), a Vorwerk é referência mundial em <strong>engenharia alemã, durabilidade e demonstrações em casa</strong>. Mantém fábricas próprias na Alemanha e França, mais de 11.000 funcionários globais e o modelo "in-home demonstration" — em que o consultor leva o produto até a cozinha do cliente para testar pessoalmente.</p>
+  `,
+  milestones: [
+    { year: "1883", title: "Fundação em Wuppertal", text: "Carl Vorwerk funda uma fábrica de tapetes em Wuppertal, Alemanha." },
+    { year: "1930", title: "Lançamento do Kobold", text: "É lançado o primeiro aspirador de pó Kobold, criado a partir de motores excedentes da produção de tapetes." },
+    { year: "1938", title: "Modelo de venda direta", text: "A Vorwerk adota a venda direta porta a porta, criando o modelo de demonstração em domicílio que ficaria icônico." },
+    { year: "1961", title: "Nasce o Thermomix", text: "Lançamento do primeiro Thermomix (TM 2200), criando uma nova categoria de robô de cozinha multifuncional." },
+    { year: "2004", title: "Thermomix TM31", text: "Lançamento do TM31, primeiro Thermomix realmente global — virando fenômeno mundial." },
+    { year: "2014", title: "Thermomix TM5 + Cookidoo", text: "Lançamento do TM5 com Wi-Fi e da plataforma Cookidoo, com receitas guiadas online." },
+    { year: "2019", title: "Thermomix TM6", text: "TM6 chega com tela colorida, 20+ funções e conexão internet — mais vendido da história." },
+    { year: "2024", title: "Thermomix TM7", text: "Lançado o novo TM7, com nova interface, IA e novas funções premium." },
+    { year: "2026", title: "Liderança europeia", text: "Vorwerk mantém Top 5 mundial com US$ 3 bilhões em receita e mais de 8 milhões de Thermomix vendidos no mundo." },
+  ],
+  productsIntro:
+    "Foco em <strong>pouco produto, alta tecnologia e alto ticket</strong>: a Vorwerk vende eletrodomésticos premium com vida útil de 15-20 anos.",
+  productLines: [
+    { name: "Thermomix TM7", tag: "Robô de Cozinha Premium", color: "from-amber-500/15 to-amber-700/5",
+      text: "O robô de cozinha multifuncional mais vendido do mundo. Substitui 20+ aparelhos: pica, mistura, cozinha, frita, fermenta, pesa, faz iogurte, pão, sopas e muito mais. Com tela touch, conexão Wi-Fi e mais de 100.000 receitas guiadas na plataforma Cookidoo.",
+      items: ["Thermomix TM7", "TM6", "Cookidoo (assinatura)", "Acessórios", "Garantia 2 anos"] },
+    { name: "Kobold VR300 / VK7", tag: "Sistema de Limpeza Premium", color: "from-sky-500/15 to-sky-700/5",
+      text: "Linha alemã premium de aspiradores e sistemas de limpeza. Aspiradores robôs (VR300), verticais (VB100) e o icônico aspirador multiuso Kobold VK7 com mais de 20 acessórios.",
+      items: ["VK7 Multiuso", "VR300 Robô", "VB100 Vertical", "Limpador a vapor SP600", "Saco de pó FP100"] },
+    { name: "Cookidoo", tag: "Plataforma Digital", color: "from-rose-500/15 to-rose-700/5",
+      text: "Plataforma de assinatura com mais de 100 mil receitas guiadas passo a passo, integrada ao Thermomix. Atualizada semanalmente com chefs convidados.",
+      items: ["App iOS/Android", "Web Cookidoo", "Receitas guiadas", "Planejador de menu", "Lista de compras"] },
+    { name: "JAFRA Cosmetics", tag: "Cosméticos (subsidiária)", color: "from-fuchsia-500/15 to-fuchsia-700/5",
+      text: "A JAFRA Cosmetics, adquirida pela Vorwerk em 2004, é uma marca global de cosméticos e perfumaria com forte presença no México, EUA e Europa.",
+      items: ["Skin Care", "Maquiagem", "Perfumaria Royal Jelly", "Body Care"] },
+  ],
+  planTitle: "Plano de Negócios Vorwerk — Consultor Independente",
+  planIntro:
+    "A Vorwerk opera com um plano de <strong>comissão direta + bônus de equipe</strong>, focado em vendas pessoais de alto ticket (Thermomix). Consultores ganham <strong>20% a 30% por venda</strong> mais bônus progressivos por equipe.",
+  planRanks: [
+    { rank: "Consultor", payout: "20% por venda", text: "Cadastro como consultor independente após treinamento certificado." },
+    { rank: "Consultor Sênior", payout: "25% por venda", text: "Mantém 4 vendas/mês por 3 meses consecutivos." },
+    { rank: "Líder de Equipe", payout: "+ 4% override", text: "Recruta e treina 3 consultores qualificados." },
+    { rank: "Líder Sênior", payout: "+ 6% override", text: "5 consultores ativos na primeira linha." },
+    { rank: "Gerente", payout: "+ 8% override", text: "Estrutura de equipe consolidada com sub-líderes." },
+    { rank: "Gerente Regional", payout: "+ Bônus Trimestrais", text: "Responsável por região geográfica com múltiplas equipes." },
+    { rank: "Diretor", payout: "Topo do Plano", text: "Liderança nacional com benefícios, viagens e prêmios em carros." },
+  ],
+  pros: [
+    "Marca premium centenária com altíssimo prestígio",
+    "Produto Thermomix com vida útil de 15+ anos e marketing boca a boca forte",
+    "Alto ticket médio (€ 1.500+) com altas comissões por venda",
+    "Engenharia alemã com garantia estendida",
+    "Modelo de demonstração em casa testado há décadas",
+    "Plataforma Cookidoo gera recorrência (assinatura mensal)",
+  ],
+  cons: [
+    "Produto de altíssimo valor — vendas mais raras e ciclo mais longo",
+    "Treinamento certificado obrigatório antes de iniciar",
+    "Necessidade de demonstração presencial limita escala digital pura",
+    "Plano de equipe menos agressivo que MMNs binários",
+    "Operação no Brasil ainda em escala menor que Europa e México",
+  ],
+  countries: [
+    "🇩🇪 Alemanha", "🇫🇷 França", "🇮🇹 Itália", "🇪🇸 Espanha", "🇵🇹 Portugal", "🇬🇧 Reino Unido",
+    "🇦🇹 Áustria", "🇨🇭 Suíça", "🇧🇪 Bélgica", "🇳🇱 Países Baixos", "🇵🇱 Polônia", "🇨🇿 Tchéquia",
+    "🇷🇺 Rússia", "🇹🇷 Turquia", "🇺🇸 EUA", "🇨🇦 Canadá", "🇲🇽 México", "🇧🇷 Brasil",
+    "🇦🇷 Argentina", "🇨🇱 Chile", "🇨🇳 China", "🇯🇵 Japão", "🇰🇷 Coreia do Sul", "🇦🇺 Austrália",
+  ],
+  awards: [
+    "Top 5 Direct Selling News Global 100 — 2026",
+    "iF Design Award (Thermomix TM6/TM7)",
+    "Red Dot Design Award (Kobold)",
+    "German Brand Award — Best of Best",
+    "Top Employer Europe (várias edições)",
+    "Stevie Award for Customer Service",
+  ],
+  certifications: [
+    "ISO 9001 (Gestão da Qualidade)",
+    "ISO 14001 (Gestão Ambiental)",
+    "ISO 50001 (Eficiência Energética)",
+    "TÜV Rheinland (segurança elétrica)",
+    "GS Mark (Geprüfte Sicherheit)",
+    "Energy Star",
+  ],
+  faqs: [
+    { q: "O que é o Thermomix da Vorwerk?",
+      a: "O Thermomix é o robô de cozinha multifuncional mais vendido do mundo. Substitui mais de 20 eletrodomésticos: pica, mistura, cozinha, frita, fermenta, faz pão, iogurte, sopas, sucos, etc. O modelo atual TM7 tem tela touch, Wi-Fi e acesso à plataforma Cookidoo com mais de 100.000 receitas." },
+    { q: "Quanto custa um Thermomix?",
+      a: "O Thermomix TM7 custa entre € 1.499 e € 1.599 na Europa, com financiamento direto pela Vorwerk. No Brasil ainda não há venda oficial direta, sendo comercializado via importação." },
+    { q: "A Vorwerk é uma empresa séria?",
+      a: "Sim. A Vorwerk é uma empresa familiar alemã fundada em 1883, com mais de 140 anos de história. Faz parte do ranking Top 5 mundial Business For Home 2026, fatura mais de US$ 3 bilhões anuais e tem mais de 11.000 funcionários no mundo todo." },
+    { q: "Como ser consultor da Vorwerk?",
+      a: "Para ser consultor Thermomix ou Kobold é necessário passar por treinamento certificado da Vorwerk (presencial ou online, dependendo do país). Após certificação, o consultor recebe entre 20% e 30% de comissão por venda, mais bônus se montar equipe." },
+    { q: "Em quais países a Vorwerk opera?",
+      a: "A Vorwerk está presente em mais de 70 países, com forte concentração na Europa (Alemanha, França, Itália, Espanha, Portugal) e expansão na Ásia, EUA, México e América Latina." },
+    { q: "Quanto fatura a Vorwerk?",
+      a: "Em 2025 a Vorwerk faturou mais de US$ 3 bilhões, mantendo posição no Top 5 mundial do ranking Business For Home 2026 das maiores empresas de vendas diretas." },
+    { q: "Qual a diferença entre Thermomix e Kobold?",
+      a: "Thermomix é a linha de robôs de cozinha multifuncionais. Kobold é a linha de aspiradores e sistemas de limpeza premium (incluindo robôs aspiradores, verticais e o lendário VK7 multiuso)." },
+  ],
+  founders: ["Carl Vorwerk", "Adolf Vorwerk"],
+  foundingDate: "1883-01-01",
+  foundingLocation: "Wuppertal, Alemanha",
+  employees: 11000,
+  alternateNames: ["Vorwerk SE & Co. KG", "Vorwerk Group"],
+  wikipediaUrl: "https://pt.wikipedia.org/wiki/Vorwerk_(empresa)",
+};
+
+const Vorwerk = () => <CompanyPremiumPage data={data} />;
+export default Vorwerk;
