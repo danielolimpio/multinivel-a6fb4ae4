@@ -72,7 +72,7 @@ export const CompanyLogo = ({ name, size = 44, className = "" }: CompanyLogoProp
           decoding="async"
           width={size}
           height={size}
-          className="absolute inset-0 w-full h-full object-contain p-[3px] bg-white"
+          className="absolute inset-0 w-full h-full object-cover bg-white"
           onError={() => setStage((s) => (s === 0 ? 1 : 2))}
           onLoad={(e) => {
             // Detect transparent / near-empty logos returned by some providers:
