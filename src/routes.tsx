@@ -225,13 +225,23 @@ export const routes: RouteRecord[] = [
       { path: 'empresa/oriflame', element: <Oriflame />, entry: 'src/pages/empresas/Oriflame.tsx' },
       { path: 'empresa/primerica', element: <Primerica />, entry: 'src/pages/empresas/Primerica.tsx' },
       { path: 'empresa/hinode', element: <Hinode />, entry: 'src/pages/empresas/Hinode.tsx' },
+      { path: 'empresa/exp-realty', element: <EXPRealty />, entry: 'src/pages/empresas/EXPRealty.tsx' },
+      { path: 'empresa/pm-international', element: <PMInternational />, entry: 'src/pages/empresas/PMInternational.tsx' },
+      { path: 'empresa/coway', element: <Coway />, entry: 'src/pages/empresas/Coway.tsx' },
+      { path: 'empresa/infinitus', element: <Infinitus />, entry: 'src/pages/empresas/Infinitus.tsx' },
+      { path: 'empresa/sunrun', element: <Sunrun />, entry: 'src/pages/empresas/Sunrun.tsx' },
+      { path: 'empresa/utility-warehouse', element: <UtilityWarehouse />, entry: 'src/pages/empresas/UtilityWarehouse.tsx' },
+      { path: 'empresa/doterra', element: <DoTerra />, entry: 'src/pages/empresas/DoTerra.tsx' },
+      { path: 'empresa/world-financial-group', element: <WorldFinancialGroup />, entry: 'src/pages/empresas/WorldFinancialGroup.tsx' },
+      { path: 'empresa/real-brokerage', element: <REALBrokerage />, entry: 'src/pages/empresas/REALBrokerage.tsx' },
+      { path: 'empresa/melaleuca', element: <Melaleuca />, entry: 'src/pages/empresas/Melaleuca.tsx' },
       // Dynamic company pages - pre-rendered with getStaticPaths
       {
         path: 'empresa/:slug',
         element: <CompanyDetails />,
         entry: 'src/pages/CompanyDetails.tsx',
         getStaticPaths: () => companySlugs
-          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode'].includes(s))
+          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode','exp-realty','pm-international','coway','infinitus','sunrun','utility-warehouse','doterra','world-financial-group','real-brokerage','melaleuca'].includes(s))
           .map((slug) => `/empresa/${slug}`),
       },
       // Dynamic article pages - pre-rendered with getStaticPaths
