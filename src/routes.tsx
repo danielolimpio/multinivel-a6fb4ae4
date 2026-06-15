@@ -92,6 +92,13 @@ const companySlugs = [
   'royal-prestige',
   'tupperware',
   'utility-warehouse',
+  'exp-realty',
+  'pm-international',
+  'sunrun',
+  'doterra',
+  'world-financial-group',
+  'real-brokerage',
+  'natura',
 ];
 
 // List of all article slugs for static generation
