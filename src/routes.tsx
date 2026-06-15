@@ -42,6 +42,16 @@ import ForeverLiving from './pages/empresas/ForeverLiving';
 import Oriflame from './pages/empresas/Oriflame';
 import Primerica from './pages/empresas/Primerica';
 import Hinode from './pages/empresas/Hinode';
+import EXPRealty from './pages/empresas/EXPRealty';
+import PMInternational from './pages/empresas/PMInternational';
+import Coway from './pages/empresas/Coway';
+import Infinitus from './pages/empresas/Infinitus';
+import Sunrun from './pages/empresas/Sunrun';
+import UtilityWarehouse from './pages/empresas/UtilityWarehouse';
+import DoTerra from './pages/empresas/DoTerra';
+import WorldFinancialGroup from './pages/empresas/WorldFinancialGroup';
+import REALBrokerage from './pages/empresas/REALBrokerage';
+import Melaleuca from './pages/empresas/Melaleuca';
 import { quizQuestions } from './data/quizData';
 
 const queryClient = new QueryClient();
