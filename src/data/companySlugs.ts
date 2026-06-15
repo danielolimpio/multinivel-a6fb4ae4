@@ -14,6 +14,16 @@ export const companySlugs: Record<string, string> = {
   Oriflame: "oriflame",
   Primerica: "primerica",
   Hinode: "hinode",
+  "eXp Realty": "exp-realty",
+  "PM-International": "pm-international",
+  Coway: "coway",
+  Infinitus: "infinitus",
+  Sunrun: "sunrun",
+  "Utility Warehouse": "utility-warehouse",
+  DoTerra: "doterra",
+  "World Financial Group": "world-financial-group",
+  "REAL Brokerage": "real-brokerage",
+  Melaleuca: "melaleuca",
 };
 
 export const internalCompanyUrl = (name: string): string | null => {

@@ -1,0 +1,141 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "DoTerra",
+  slug: "doterra",
+  officialUrl: "https://www.doterra.com/",
+  domain: "doterra.com",
+  seoTitle: "doTERRA: Líder Mundial em Óleos Essenciais | Top 13 Mundial 2026",
+  seoDescription:
+    "doTERRA é líder mundial em óleos essenciais terapêuticos certificados CPTG, com US$ 2 bi em receita, 7 mi de Wellness Advocates e parcerias éticas Co-Impact Sourcing em 40+ países produtores.",
+  rankingLabel: "TOP 13 MUNDIAL • BUSINESS FOR HOME 2026",
+  heroHeadlineSuffix: "A Líder Mundial em Óleos Essenciais",
+  heroParagraph:
+    "Fundada em 2008 em Utah, a doTERRA é a maior empresa de óleos essenciais do mundo, criadora do padrão CPTG® Certified Pure Tested Grade e líder em parcerias éticas Co-Impact Sourcing com pequenos produtores em 40+ países.",
+  heroBadges: [
+    { label: "CPTG® Certified", icon: "check" },
+    { label: "Desde 2008", icon: "calendar" },
+    { label: "100+ países", icon: "globe" },
+    { label: "7 mi+ Wellness Advocates", icon: "users" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking Mundial 2026", value: "Top 13", hint: "Líder mundial em óleos essenciais" },
+    { icon: "calendar", label: "Fundação", value: "2008", hint: "Pleasant Grove, Utah (EUA)" },
+    { icon: "map", label: "País de Origem", value: "EUA 🇺🇸", hint: "Utah, EUA" },
+    { icon: "globe", label: "Países", value: "100+", hint: "Vendas globais e Co-Impact em 40+ produtores" },
+    { icon: "users", label: "Wellness Advocates", value: "7.000.000+", hint: "Maior rede de aromaterapia do mundo" },
+    { icon: "package", label: "Óleos & Produtos", value: "150+", hint: "Singles, blends, suplementos, skincare" },
+    { icon: "dollar", label: "Faturamento 2025", value: "US$ 2,0 bi", hint: "Fonte: Business For Home" },
+    { icon: "factory", label: "Co-Impact Sourcing", value: "40+ países", hint: "Comércio justo com produtores locais" },
+  ],
+  aboutHtml: `
+    <p>A <strong>doTERRA International</strong> é uma empresa americana fundada em <strong>2008</strong> em <em>Pleasant Grove, Utah</em>, por um grupo de executivos da indústria de aromaterapia, com a missão de elevar o padrão de qualidade dos óleos essenciais e levar essa tradição milenar para o mundo moderno. O nome vem do latim "<em>Dōterra</em>" = "Presente da Terra".</p>
+    <p>Hoje é a <strong>maior empresa de óleos essenciais do mundo</strong>, com <strong>US$ 2 bilhões em receita anual</strong>, mais de <strong>7 milhões de Wellness Advocates</strong> e vendas em <strong>100+ países</strong>. Está no <strong>Top 13 do ranking Business For Home 2026</strong>.</p>
+    <p>É a criadora do padrão <strong>CPTG® Certified Pure Tested Grade</strong> — uma série de testes de pureza (GC/MS, FTIR, isótopos, microbiologia) que se tornou referência da indústria. Também lidera o movimento <strong>Co-Impact Sourcing®</strong>, modelo de comércio justo com pequenos agricultores em 40+ países, e mantém a <strong>doTERRA Healing Hands Foundation</strong>, que já investiu milhões em projetos sociais.</p>
+  `,
+  timelineTitle: "Do Utah para a liderança mundial em aromaterapia",
+  milestones: [
+    { year: "2008", title: "Fundação", text: "Sete fundadores criam a doTERRA com 25 óleos essenciais iniciais." },
+    { year: "2009", title: "Padrão CPTG®", text: "Lança o protocolo Certified Pure Tested Grade — o padrão mais rigoroso da indústria." },
+    { year: "2012", title: "Co-Impact Sourcing®", text: "Inicia parcerias diretas com produtores em Madagáscar, Nepal e Bulgária." },
+    { year: "2015", title: "Healing Hands Foundation", text: "Cria a fundação sem fins lucrativos que constrói escolas, poços e clínicas." },
+    { year: "2017", title: "US$ 1 bi", text: "Atinge marca histórica de US$ 1 bilhão em receita anual." },
+    { year: "2019", title: "Expansão para o Brasil", text: "doTERRA Brasil é lançada oficialmente." },
+    { year: "2022", title: "Healing Hands 150+ projetos", text: "Mais de 150 projetos sociais ativos em todos os continentes." },
+    { year: "2026", title: "Top 13 mundial", text: "Mantém liderança absoluta em óleos essenciais com US$ 2 bi." },
+  ],
+  productsIntro:
+    "Mais de <strong>150 óleos essenciais e blends</strong>, suplementos nutricionais, skincare natural e produtos para o lar — todos certificados <strong>CPTG®</strong>.",
+  productLines: [
+    { name: "Óleos Singles", tag: "Carro-chefe", color: "from-emerald-500/15 to-emerald-700/5",
+      text: "Óleos essenciais puros de plantas individuais, extraídos por destilação a vapor ou prensagem a frio.",
+      items: ["Lavender", "Lemon", "Peppermint", "Tea Tree", "Frankincense", "Oregano", "Eucalyptus"] },
+    { name: "Blends Proprietários", tag: "Sinergias Exclusivas", color: "from-amber-500/15 to-amber-700/5",
+      text: "Misturas patenteadas como OnGuard (imunidade) e Deep Blue (alívio muscular).",
+      items: ["OnGuard", "Deep Blue", "Breathe", "DigestZen", "Balance", "Serenity"] },
+    { name: "dōTERRA SPA & SKIN", tag: "Skincare Natural", color: "from-rose-500/15 to-rose-700/5",
+      text: "Linha de cuidados com a pele formulada com óleos essenciais e ingredientes botânicos.",
+      items: ["Yarrow|Pom", "Veráge", "Hand & Body Lotion", "Bath Bar"] },
+    { name: "Suplementos LLV", tag: "Lifelong Vitality", color: "from-fuchsia-500/15 to-fuchsia-700/5",
+      text: "Pack Lifelong Vitality (LLV) com Alpha CRS+, xEO Mega e Microplex VMz — produto mais vendido da empresa.",
+      items: ["Alpha CRS+", "xEO Mega", "Microplex VMz", "PB Assist+", "TerraZyme"] },
+  ],
+  planTitle: "Plano de Compensação doTERRA (Unilevel + Power of 3)",
+  planIntro:
+    "Plano unilevel com <strong>Fast Start Bonus (20%)</strong>, <strong>Power of 3 Bonus</strong>, <strong>Unilevel em 7 níveis</strong> e <strong>Leadership Pools (Diamond+)</strong>. Já distribuiu mais de US$ 7 bilhões em pagamentos.",
+  planRanks: [
+    { rank: "Wellness Advocate", payout: "25% desconto", text: "Membro inicial — desconto e Loyalty Rewards Program (LRP)." },
+    { rank: "Manager", payout: "+ Fast Start 20%", text: "Patrocina novos membros e ganha 20% nos pedidos das primeiras 60 dias." },
+    { rank: "Director", payout: "+ Power of 3 Bonus", text: "Equipe com 3 linhas qualificadas — ganha US$ 50 a US$ 1.500/mês extra." },
+    { rank: "Elite", payout: "+ Bônus Liderança", text: "3.000 OV em estrutura — começa a ganhar overrides." },
+    { rank: "Premier", payout: "+ Unilevel 3 níveis", text: "5.000 OV — ativa bônus em 3 níveis de profundidade." },
+    { rank: "Silver", payout: "+ Unilevel 5 níveis", text: "Primeira graduação de liderança séria — eventos exclusivos." },
+    { rank: "Gold/Platinum", payout: "+ Leadership Pool", text: "Topo intermediário com pool corporativo." },
+    { rank: "Diamond / Blue Diamond / Presidential Diamond", payout: "Topo da carreira", text: "Rendas de US$ 30k a 200k+ mensais entre os top líderes globais." },
+  ],
+  pros: [
+    "Padrão de pureza CPTG® é referência mundial",
+    "Co-Impact Sourcing com comércio justo (impacto social real)",
+    "Produtos com alta recompra e Loyalty Rewards Program",
+    "Healing Hands Foundation com impacto humanitário comprovado",
+    "Eventos massivos (Convention) com 30k+ pessoas em Salt Lake City",
+    "Forte comunidade feminina e materiais de treinamento",
+  ],
+  cons: [
+    "Ticket dos óleos é alto comparado a marcas comuns",
+    "Marca pouco regulamentada como medicamento — atenção ao discurso",
+    "Concorrência forte com Young Living (rivalidade histórica)",
+    "Plano exige volume mensal pessoal (LRP recomendado)",
+    "Disputas legais com Young Living desde 2013",
+  ],
+  presenceIntro:
+    "Vende em 100+ países; opera com escritórios em <strong>EUA, Reino Unido, Austrália, Japão, Coreia, Taiwan, México, Brasil, Itália e África do Sul</strong>.",
+  countries: [
+    "🇺🇸 EUA", "🇨🇦 Canadá", "🇲🇽 México", "🇧🇷 Brasil", "🇬🇧 Reino Unido", "🇮🇪 Irlanda",
+    "🇫🇷 França", "🇩🇪 Alemanha", "🇮🇹 Itália", "🇪🇸 Espanha", "🇵🇹 Portugal", "🇳🇱 Holanda",
+    "🇸🇪 Suécia", "🇳🇴 Noruega", "🇯🇵 Japão", "🇰🇷 Coreia do Sul", "🇹🇼 Taiwan", "🇭🇰 Hong Kong",
+    "🇸🇬 Singapura", "🇲🇾 Malásia", "🇹🇭 Tailândia", "🇮🇩 Indonésia", "🇦🇺 Austrália", "🇳🇿 Nova Zelândia",
+    "🇿🇦 África do Sul", "🇦🇪 Emirados Árabes",
+  ],
+  awards: [
+    "Top 13 Direct Selling News Global 100 — 2026",
+    "ASTA Award (American Spice Trade Association)",
+    "EY Entrepreneur of the Year (Utah)",
+    "Inc. 5000 Fastest Growing Companies",
+    "Healing Hands Foundation — Humanitarian Award",
+  ],
+  certifications: [
+    "CPTG® Certified Pure Tested Grade (padrão proprietário)",
+    "GC/MS Testing em todos os lotes",
+    "ISO 9001",
+    "NSF International",
+    "Co-Impact Sourcing® (comércio justo)",
+  ],
+  faqs: [
+    { q: "O que é doTERRA?",
+      a: "É a maior empresa de óleos essenciais do mundo, fundada em 2008 em Utah (EUA). Criadora do padrão CPTG® de pureza e líder no movimento Co-Impact Sourcing de comércio justo com pequenos produtores em 40+ países." },
+    { q: "Quanto fatura a doTERRA?",
+      a: "Em 2025 a doTERRA faturou aproximadamente US$ 2 bilhões, ocupando posição no Top 13 do ranking mundial Business For Home 2026." },
+    { q: "O que significa CPTG®?",
+      a: "Certified Pure Tested Grade — uma bateria de testes de pureza (GC/MS, FTIR, organolepético, microbiológico, isótopos) que cada lote de óleo essencial doTERRA passa antes de ser liberado." },
+    { q: "Quais são os óleos essenciais mais vendidos da doTERRA?",
+      a: "Lavender, Lemon, Peppermint, Frankincense, Tea Tree, OnGuard (imunidade), Deep Blue (muscular), Breathe (respiratório) e DigestZen (digestivo)." },
+    { q: "Quanto custa começar na doTERRA?",
+      a: "A inscrição como Wellness Advocate custa US$ 35 (varia por país) + um kit inicial que vai de US$ 150 a US$ 550. Não há renovação obrigatória além da anual." },
+    { q: "Como funciona o plano de marketing doTERRA?",
+      a: "É um plano unilevel com 7 níveis + Fast Start Bonus (20%), Power of 3 Bonus, Leadership Performance Pools (Diamond+) e bônus de liderança. Diamond+ chega a US$ 100k/mês entre os top líderes." },
+    { q: "O que é Co-Impact Sourcing®?",
+      a: "Modelo de fornecimento ético da doTERRA, em que a empresa paga preço justo direto aos pequenos produtores, investe em escolas, poços e infraestrutura local em mais de 40 países produtores." },
+    { q: "Qual a diferença entre doTERRA e Young Living?",
+      a: "São as duas maiores marcas de óleos essenciais do mundo. Young Living foi fundada antes (1993) e tem fazendas próprias (Seed-to-Seal). A doTERRA aposta no modelo Co-Impact Sourcing com produtores parceiros e tem o padrão CPTG®." },
+  ],
+  founders: ["David Stirling", "Emily Wright", "David Hill", "Corey Lindley", "Greg Cook"],
+  foundingDate: "2008-04-25",
+  foundingLocation: "Pleasant Grove, Utah, EUA",
+  employees: 3500,
+  alternateNames: ["doTERRA International LLC"],
+  wikipediaUrl: "https://en.wikipedia.org/wiki/Doterra",
+};
+
+const DoTerra = () => <CompanyPremiumPage data={data} />;
+export default DoTerra;
