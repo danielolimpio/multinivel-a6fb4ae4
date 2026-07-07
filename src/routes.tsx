@@ -245,13 +245,18 @@ export const routes: RouteRecord[] = [
       { path: 'empresa/world-financial-group', element: <WorldFinancialGroup />, entry: 'src/pages/empresas/WorldFinancialGroup.tsx' },
       { path: 'empresa/real-brokerage', element: <REALBrokerage />, entry: 'src/pages/empresas/REALBrokerage.tsx' },
       { path: 'empresa/melaleuca', element: <Melaleuca />, entry: 'src/pages/empresas/Melaleuca.tsx' },
+      { path: 'empresa/young-living', element: <YoungLiving />, entry: 'src/pages/empresas/YoungLiving.tsx' },
+      { path: 'empresa/atomy', element: <Atomy />, entry: 'src/pages/empresas/Atomy.tsx' },
+      { path: 'empresa/joymain', element: <JoyMain />, entry: 'src/pages/empresas/JoyMain.tsx' },
+      { path: 'empresa/perfect-china', element: <PerfectChina />, entry: 'src/pages/empresas/PerfectChina.tsx' },
+      { path: 'empresa/sunhope', element: <Sunhope />, entry: 'src/pages/empresas/Sunhope.tsx' },
       // Dynamic company pages - pre-rendered with getStaticPaths
       {
         path: 'empresa/:slug',
         element: <CompanyDetails />,
         entry: 'src/pages/CompanyDetails.tsx',
         getStaticPaths: () => companySlugs
-          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode','exp-realty','pm-international','coway','infinitus','sunrun','utility-warehouse','doterra','world-financial-group','real-brokerage','melaleuca'].includes(s))
+          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode','exp-realty','pm-international','coway','infinitus','sunrun','utility-warehouse','doterra','world-financial-group','real-brokerage','melaleuca','young-living','atomy','joymain','perfect-china','sunhope'].includes(s))
           .map((slug) => `/empresa/${slug}`),
       },
       // Dynamic article pages - pre-rendered with getStaticPaths
