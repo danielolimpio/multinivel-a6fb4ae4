@@ -555,7 +555,7 @@ export const CompanyPremiumPage = ({ data }: { data: CompanyPremiumData }) => {
                 Comparar empresas
               </Button>
             </Link>
-            <Link to="/quiz/comece/">
+            <Link to="/quiz/papel-no-mmn/">
               <Button variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 gap-2">
                 Descobrir minha empresa ideal
               </Button>
