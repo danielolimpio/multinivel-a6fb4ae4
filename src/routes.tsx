@@ -52,6 +52,11 @@ import DoTerra from './pages/empresas/DoTerra';
 import WorldFinancialGroup from './pages/empresas/WorldFinancialGroup';
 import REALBrokerage from './pages/empresas/REALBrokerage';
 import Melaleuca from './pages/empresas/Melaleuca';
+import YoungLiving from './pages/empresas/YoungLiving';
+import Atomy from './pages/empresas/Atomy';
+import JoyMain from './pages/empresas/JoyMain';
+import PerfectChina from './pages/empresas/PerfectChina';
+import Sunhope from './pages/empresas/Sunhope';
 import { quizQuestions } from './data/quizData';
 
 const queryClient = new QueryClient();
