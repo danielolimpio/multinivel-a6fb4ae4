@@ -104,6 +104,11 @@ const companySlugs = [
   'world-financial-group',
   'real-brokerage',
   'natura',
+  'young-living',
+  'atomy',
+  'joymain',
+  'perfect-china',
+  'sunhope',
 ];
 
 // List of all article slugs for static generation
