@@ -24,6 +24,11 @@ export const companySlugs: Record<string, string> = {
   "World Financial Group": "world-financial-group",
   "REAL Brokerage": "real-brokerage",
   Melaleuca: "melaleuca",
+  "Young Living": "young-living",
+  Atomy: "atomy",
+  "JoyMain Int.": "joymain",
+  "Perfect China": "perfect-china",
+  Sunhope: "sunhope",
 };
 
 export const internalCompanyUrl = (name: string): string | null => {
