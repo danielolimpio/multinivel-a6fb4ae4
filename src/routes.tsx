@@ -57,6 +57,12 @@ import Atomy from './pages/empresas/Atomy';
 import JoyMain from './pages/empresas/JoyMain';
 import PerfectChina from './pages/empresas/PerfectChina';
 import Sunhope from './pages/empresas/Sunhope';
+import NewEraHealth from './pages/empresas/NewEraHealth';
+import VivintSmartHome from './pages/empresas/VivintSmartHome';
+import AmbitEnergy from './pages/empresas/AmbitEnergy';
+import OBoticario from './pages/empresas/OBoticario';
+import FamilyFirstLife from './pages/empresas/FamilyFirstLife';
+import USANA from './pages/empresas/USANA';
 import { quizQuestions } from './data/quizData';
 
 const queryClient = new QueryClient();
@@ -109,6 +115,12 @@ const companySlugs = [
   'joymain',
   'perfect-china',
   'sunhope',
+  'new-era-health',
+  'vivint-smart-home',
+  'ambit-energy',
+  'o-boticario',
+  'family-first-life',
+  'usana',
 ];
 
 // List of all article slugs for static generation
@@ -250,13 +262,19 @@ export const routes: RouteRecord[] = [
       { path: 'empresa/joymain', element: <JoyMain />, entry: 'src/pages/empresas/JoyMain.tsx' },
       { path: 'empresa/perfect-china', element: <PerfectChina />, entry: 'src/pages/empresas/PerfectChina.tsx' },
       { path: 'empresa/sunhope', element: <Sunhope />, entry: 'src/pages/empresas/Sunhope.tsx' },
+      { path: 'empresa/new-era-health', element: <NewEraHealth />, entry: 'src/pages/empresas/NewEraHealth.tsx' },
+      { path: 'empresa/vivint-smart-home', element: <VivintSmartHome />, entry: 'src/pages/empresas/VivintSmartHome.tsx' },
+      { path: 'empresa/ambit-energy', element: <AmbitEnergy />, entry: 'src/pages/empresas/AmbitEnergy.tsx' },
+      { path: 'empresa/o-boticario', element: <OBoticario />, entry: 'src/pages/empresas/OBoticario.tsx' },
+      { path: 'empresa/family-first-life', element: <FamilyFirstLife />, entry: 'src/pages/empresas/FamilyFirstLife.tsx' },
+      { path: 'empresa/usana', element: <USANA />, entry: 'src/pages/empresas/USANA.tsx' },
       // Dynamic company pages - pre-rendered with getStaticPaths
       {
         path: 'empresa/:slug',
         element: <CompanyDetails />,
         entry: 'src/pages/CompanyDetails.tsx',
         getStaticPaths: () => companySlugs
-          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode','exp-realty','pm-international','coway','infinitus','sunrun','utility-warehouse','doterra','world-financial-group','real-brokerage','melaleuca','young-living','atomy','joymain','perfect-china','sunhope'].includes(s))
+          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode','exp-realty','pm-international','coway','infinitus','sunrun','utility-warehouse','doterra','world-financial-group','real-brokerage','melaleuca','young-living','atomy','joymain','perfect-china','sunhope','new-era-health','vivint-smart-home','ambit-energy','o-boticario','family-first-life','usana'].includes(s))
           .map((slug) => `/empresa/${slug}`),
       },
       // Dynamic article pages - pre-rendered with getStaticPaths
