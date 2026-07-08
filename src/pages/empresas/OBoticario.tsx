@@ -1,0 +1,141 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "O Boticário",
+  slug: "o-boticario",
+  officialUrl: "https://www.boticario.com.br/",
+  domain: "boticario.com.br",
+  seoTitle: "O Boticário: Maior Franquia de Beleza do Brasil | Ranking 2026",
+  seoDescription:
+    "O Boticário é a maior empresa brasileira de cosméticos com vendas diretas e franquias, US$ 2,5 bilhões em receita, 4 mil lojas, 1 milhão de revendedoras e presença em mais de 15 países.",
+  rankingLabel: "TOP 15 MUNDIAL • MAIOR FRANQUIA DE BELEZA DO BRASIL",
+  heroHeadlineSuffix: "A Gigante Brasileira de Cosméticos e Perfumaria",
+  heroParagraph:
+    "Fundada em 1977 em Curitiba por Miguel Krigsner, O Boticário é a maior rede de franquias de beleza do Brasil e da América Latina, integrante do Grupo Boticário (Botik), com operação omnichannel que une franquias físicas, e-commerce e revenda direta.",
+  heroBadges: [
+    { label: "48 anos", icon: "calendar" },
+    { label: "15+ países", icon: "globe" },
+    { label: "1 mi de revendedoras", icon: "users" },
+    { label: "Grupo Boticário", icon: "check" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking Mundial 2026", value: "Top 15", hint: "DSN Global 100 (Grupo Boticário)" },
+    { icon: "calendar", label: "Fundação", value: "1977", hint: "Curitiba, Paraná (Brasil)" },
+    { icon: "map", label: "País de Origem", value: "Brasil 🇧🇷", hint: "Sede em São José dos Pinhais (PR)" },
+    { icon: "globe", label: "Países", value: "15+", hint: "América, Europa, África, Oriente Médio" },
+    { icon: "users", label: "Revendedoras", value: "1 milhão+", hint: "Consultoras diretas ativas" },
+    { icon: "package", label: "Produtos", value: "1.500+", hint: "Perfumaria, maquiagem, skincare" },
+    { icon: "dollar", label: "Faturamento 2025", value: "US$ 2,5 bi", hint: "Grupo Boticário consolidado" },
+    { icon: "building", label: "Lojas", value: "4.000+", hint: "Maior franquia de beleza do mundo" },
+  ],
+  aboutHtml: `
+    <p>O <strong>Boticário</strong> foi fundado em <strong>1977</strong> pelo farmacêutico bioquímico <em>Miguel Krigsner</em> em Curitiba (PR), como uma pequena farmácia de manipulação. Em 1979 nasceu a primeira loja de perfumes no aeroporto de Curitiba — o embrião da que viria a ser a <strong>maior rede de franquias de beleza do mundo</strong>.</p>
+    <p>Hoje é parte do <strong>Grupo Boticário</strong> (rebrandeado como <em>Botik</em> em algumas divisões), que reúne as marcas <strong>O Boticário, Eudora, Quem Disse Berenice, The Beauty Box, Vult e Multi B</strong>. O grupo opera um modelo <strong>omnichannel único</strong> combinando franquias físicas, e-commerce e venda direta por revendedoras (VD).</p>
+    <p>Com receita consolidada de <strong>US$ 2,5 bilhões em 2025</strong>, mais de <strong>4.000 lojas</strong>, <strong>1 milhão de revendedoras diretas</strong> e presença em <strong>15+ países</strong>, é a maior empresa brasileira de cosméticos e uma das maiores do mundo.</p>
+  `,
+  timelineTitle: "Da farmácia de manipulação em Curitiba à maior franquia de beleza do mundo",
+  milestones: [
+    { year: "1977", title: "Fundação em Curitiba", text: "Miguel Krigsner abre farmácia de manipulação no centro de Curitiba." },
+    { year: "1979", title: "Primeira loja", text: "Abre a primeira loja de perfumes O Boticário no Aeroporto Afonso Pena." },
+    { year: "1980", title: "Modelo de franquias", text: "Lança pioneiramente o modelo de franquias no Brasil." },
+    { year: "1986", title: "Internacionalização", text: "Abre primeira loja fora do Brasil (Portugal)." },
+    { year: "2010", title: "Grupo Boticário", text: "Cria holding e lança as marcas Eudora e Quem Disse Berenice." },
+    { year: "2019", title: "Beauty Box + Vult", text: "Adquire Vult (maquiagem popular) e amplia o portfólio omnichannel." },
+    { year: "2022", title: "Rebranding Grupo Boticário", text: "Grupo se torna 'Boticário' e reforça foco em beleza inclusiva." },
+    { year: "2026", title: "US$ 2,5 bi + Top 15 mundial", text: "Consolida-se como maior grupo de beleza do Brasil e Top 15 global." },
+  ],
+  productsIntro:
+    "Portfólio omnichannel com <strong>1.500+ produtos</strong> em perfumaria (carro-chefe), maquiagem, skincare, cabelo e cuidados masculinos — vendidos em 4.000+ lojas, e-commerce próprio e por 1 milhão de revendedoras.",
+  productLines: [
+    { name: "Perfumaria", tag: "Carro-chefe", color: "from-rose-500/15 to-rose-700/5",
+      text: "Fragrâncias icônicas que colocaram O Boticário como referência nacional em perfumes.",
+      items: ["Malbec", "Lily", "Zaad", "Egeo", "Coffee Woman/Man", "Portinari", "Floratta"] },
+    { name: "Maquiagem", tag: "Beleza colorida", color: "from-fuchsia-500/15 to-fuchsia-700/5",
+      text: "Linhas de maquiagem O Boticário, Make B, Quem Disse Berenice e Vult (marca popular).",
+      items: ["Make B", "Intense", "Match", "Vult Batons", "QDB Máscaras"] },
+    { name: "Cuidados com a Pele", tag: "Skincare", color: "from-emerald-500/15 to-emerald-700/5",
+      text: "Linhas anti-idade, hidratação, proteção solar e tratamentos faciais com biotecnologia brasileira.",
+      items: ["Botik", "Nativa SPA", "Match", "Cuide-se Bem", "Malbec Skincare"] },
+    { name: "Cuidados Masculinos", tag: "Man care", color: "from-slate-500/15 to-slate-700/5",
+      text: "Perfumaria, barba, cabelo e skincare masculino — mercado onde O Boticário lidera no Brasil.",
+      items: ["Malbec (linha completa)", "Zaad", "Barba de Respeito", "Egeo Man"] },
+  ],
+  planTitle: "Plano de Compensação O Boticário (Revenda Direta + Franquias)",
+  planIntro:
+    "Modelo <strong>híbrido único</strong>: revenda direta (VD) com desconto direto para revendedoras + sistema de franquias tradicional para lojas físicas. Consultoras compram com desconto e revendem, sem obrigatoriedade de recrutamento.",
+  planRanks: [
+    { rank: "Consultora VD", payout: "30-40% desconto", text: "Cadastro gratuito — compra com desconto direto e revende com margem." },
+    { rank: "Consultora Premium", payout: "+ Bônus de metas", text: "Cumpre metas trimestrais e desbloqueia bônus em produtos." },
+    { rank: "Consultora Coordenadora", payout: "+ Comissão sobre equipe", text: "Recruta e treina outras consultoras (modelo similar ao Boti Prime)." },
+    { rank: "Franqueado Loja Compact", payout: "Investimento R$ 250-400 mil", text: "Loja de rua ou galeria com até 40m² — margem sobre venda." },
+    { rank: "Franqueado Loja Padrão", payout: "Investimento R$ 500-800 mil", text: "Loja em shopping ou rua nobre — 60-80m²." },
+    { rank: "Franqueado Multi-loja", payout: "Rede regional", text: "Empresários com múltiplas franquias (grandes cidades)." },
+  ],
+  pros: [
+    "Marca 100% brasileira com 48 anos de credibilidade",
+    "Portfólio omnichannel (loja, VD, e-commerce, marketplace)",
+    "Perfumaria com fórmulas exclusivas e brasileiríssimas",
+    "Sem cobrança de mensalidade nem taxa oculta na VD",
+    "Suporte logístico e treinamento gratuitos",
+    "Rentabilidade excelente para franqueados (payback 24-36 meses)",
+  ],
+  cons: [
+    "Sem plano MMN clássico (revenda direta apenas)",
+    "Franquia exige investimento alto (R$ 250 mil+)",
+    "Concorrência interna: Natura, Avon, Eudora, Vult",
+    "Margem menor que MMN puro na modalidade VD",
+    "Cotas mínimas de compra podem sobrar estoque",
+  ],
+  presenceIntro:
+    "Presente em <strong>Brasil (matriz), América Latina, Portugal, França, Angola, Moçambique, Cabo Verde, EUA, Emirados Árabes Unidos, Japão</strong> e diversos outros mercados via lojas próprias, franquias internacionais e e-commerce cross-border.",
+  countries: [
+    "🇧🇷 Brasil", "🇵🇹 Portugal", "🇫🇷 França", "🇦🇴 Angola", "🇲🇿 Moçambique", "🇨🇻 Cabo Verde",
+    "🇺🇸 EUA", "🇦🇪 Emirados Árabes", "🇯🇵 Japão", "🇨🇴 Colômbia", "🇵🇪 Peru", "🇺🇾 Uruguai",
+    "🇵🇾 Paraguai", "🇧🇴 Bolívia", "🇨🇱 Chile", "🇻🇪 Venezuela",
+  ],
+  awards: [
+    "Marca Mais Amada do Brasil (Datafolha, várias edições)",
+    "Prêmio ABF de Franquia (múltiplas edições)",
+    "Empresas Mais Éticas do Mundo (Ethisphere)",
+    "Top of Mind Folha (categoria Perfumaria)",
+    "Reclame Aqui RA1000 (várias edições)",
+  ],
+  certifications: [
+    "ANVISA (todos os produtos)",
+    "ISO 14001 (gestão ambiental)",
+    "Cruelty Free (Peta certified)",
+    "Fundação Grupo Boticário de Proteção à Natureza",
+    "B Corporation (em avaliação para algumas divisões)",
+  ],
+  faqs: [
+    { q: "O que é O Boticário?",
+      a: "É a maior empresa brasileira de cosméticos e perfumaria, fundada em 1977 em Curitiba por Miguel Krigsner. Opera com modelo omnichannel: 4.000+ franquias, e-commerce, marketplace e 1 milhão de revendedoras diretas (VD)." },
+    { q: "Quanto fatura O Boticário em 2026?",
+      a: "O Grupo Boticário faturou US$ 2,5 bilhões em 2025, consolidando as marcas O Boticário, Eudora, Quem Disse Berenice, Vult, The Beauty Box e Multi B. É a maior empresa de beleza do Brasil." },
+    { q: "Como se tornar revendedora do Boticário?",
+      a: "Basta acessar o site oficial, cadastrar-se gratuitamente como Consultora VD (Venda Direta) e começar a comprar com 30-40% de desconto direto para revenda. Não há mensalidade nem obrigatoriedade de recrutamento." },
+    { q: "Quanto custa uma franquia do Boticário?",
+      a: "Loja Compact: R$ 250-400 mil. Loja Padrão (shopping): R$ 500-800 mil. Royalties: 4% do faturamento. Fundo de propaganda: 3%. Payback médio: 24 a 36 meses." },
+    { q: "Qual a diferença entre O Boticário e Natura?",
+      a: "Natura é 100% venda direta MMN (sem lojas físicas próprias em massa). O Boticário é omnichannel: opera franquias, e-commerce e revenda direta simultaneamente. Ambas são brasileiras e figuram entre as maiores do mundo." },
+    { q: "O Boticário faz teste em animais?",
+      a: "Não. O Boticário é certificado Cruelty Free pela PETA desde 2012 e mantém o Instituto de Proteção à Natureza (fundação ambiental própria)." },
+    { q: "Quais são os perfumes mais famosos do Boticário?",
+      a: "Malbec (masculino, campeão de vendas), Lily (feminino icônico), Zaad, Egeo Choc, Coffee Woman e Man, Floratta Red, Portinari e Egeo Dolce. A perfumaria é o carro-chefe da marca." },
+    { q: "O Boticário opera fora do Brasil?",
+      a: "Sim. Está presente em 15+ países, incluindo Portugal, França, EUA, Emirados Árabes, Angola, Moçambique, Cabo Verde, Colômbia, Peru, Chile e Japão via franquias internacionais e e-commerce cross-border." },
+    { q: "Quanto ganha uma revendedora do Boticário?",
+      a: "A margem sobre venda é de 30-40%. Uma consultora ativa média fatura R$ 800-2.500/mês em revenda. Consultoras Premium com equipe podem ultrapassar R$ 5.000/mês." },
+    { q: "O Boticário é uma pirâmide financeira?",
+      a: "Não. É uma empresa 100% de produto físico com franquias reais reguladas pela ABF (Associação Brasileira de Franchising) e revenda direta com desconto real — modelo tradicional e legalizado há 48 anos." },
+  ],
+  founders: ["Miguel Krigsner"],
+  foundingDate: "1977-03-22",
+  foundingLocation: "Curitiba, Paraná, Brasil",
+  employees: 8000,
+  alternateNames: ["Boticário", "Grupo Boticário", "Botik"],
+  wikipediaUrl: "https://pt.wikipedia.org/wiki/O_Botic%C3%A1rio",
+};
+
+const OBoticario = () => <CompanyPremiumPage data={data} />;
+export default OBoticario;

@@ -1,0 +1,141 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "Ambit Energy",
+  slug: "ambit-energy",
+  officialUrl: "https://www.ambitenergy.com/",
+  domain: "ambitenergy.com",
+  seoTitle: "Ambit Energy: Maior MMN de Energia dos EUA | Ranking Mundial 2026",
+  seoDescription:
+    "Ambit Energy é a maior empresa de vendas diretas de energia elétrica e gás natural do mundo, com US$ 1,3 bilhão em receita, 1 milhão de clientes e presença nos EUA e Canadá desde 2006.",
+  rankingLabel: "TOP 28 MUNDIAL • DSN GLOBAL 100 2026",
+  heroHeadlineSuffix: "Energia Elétrica e Gás Natural em Vendas Diretas",
+  heroParagraph:
+    "Fundada em 2006 no Texas, a Ambit Energy foi pioneira em usar o modelo de marketing multinível para revender energia elétrica e gás natural nos mercados desregulamentados dos EUA. É subsidiária da Vistra Corp (NYSE: VST).",
+  heroBadges: [
+    { label: "20 anos", icon: "calendar" },
+    { label: "18 estados + Canadá", icon: "globe" },
+    { label: "1 mi de clientes", icon: "users" },
+    { label: "Vistra Corp", icon: "check" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking Mundial 2026", value: "Top 28", hint: "DSN Global 100" },
+    { icon: "calendar", label: "Fundação", value: "2006", hint: "Dallas, Texas (EUA)" },
+    { icon: "map", label: "País de Origem", value: "EUA 🇺🇸", hint: "Sede em Dallas, Texas" },
+    { icon: "globe", label: "Mercados", value: "18 estados + Canadá", hint: "Mercados desregulamentados" },
+    { icon: "users", label: "Clientes", value: "1 milhão+", hint: "Residenciais e comerciais" },
+    { icon: "package", label: "Produtos", value: "Energia & Gás", hint: "Planos fixos e variáveis" },
+    { icon: "dollar", label: "Faturamento 2025", value: "US$ 1,3 bi", hint: "Fonte: DSN Global 100" },
+    { icon: "building", label: "Grupo controlador", value: "Vistra Corp", hint: "NYSE: VST, Fortune 500" },
+  ],
+  aboutHtml: `
+    <p>A <strong>Ambit Energy</strong> é uma multinacional americana fundada em <strong>2006</strong> por <em>Jere Thompson Jr.</em> e <em>Chris Chambless</em> em <strong>Dallas, Texas</strong>. Foi pioneira em aplicar o modelo <strong>MMN à venda de energia elétrica e gás natural</strong> nos mercados desregulamentados norte-americanos.</p>
+    <p>Em vez de vender produtos físicos, a Ambit oferece <strong>planos de energia com preços competitivos</strong>. Consultores independentes ganham comissões residuais sempre que seus clientes pagam a conta de luz ou gás — criando um modelo de <strong>renda recorrente mensal excepcionalmente estável</strong>.</p>
+    <p>Faturou <strong>US$ 1,3 bilhão em 2025</strong> e ocupa o <strong>Top 28 do ranking DSN Global 100 2026</strong>. Foi adquirida em 2019 pela <strong>Vistra Corp (NYSE: VST)</strong>, uma das maiores geradoras de energia dos EUA, garantindo estabilidade e escala.</p>
+  `,
+  timelineTitle: "Da startup texana à líder mundial em energia MMN",
+  milestones: [
+    { year: "2006", title: "Fundação em Dallas", text: "Jere Thompson Jr. e Chris Chambless fundam a Ambit no Texas." },
+    { year: "2010", title: "Inc. 500 Fastest Growing", text: "Nomeada empresa privada de crescimento mais rápido dos EUA pela Inc. Magazine." },
+    { year: "2013", title: "US$ 1 bilhão", text: "Cruza a marca de US$ 1 bi em receita anual." },
+    { year: "2015", title: "Expansão para Canadá", text: "Inicia operações em Ontário e Alberta." },
+    { year: "2019", title: "Aquisição pela Vistra", text: "Vistra Corp compra a Ambit por US$ 475 milhões." },
+    { year: "2022", title: "1 milhão de clientes", text: "Atinge marca histórica de 1 milhão de consumidores ativos." },
+    { year: "2026", title: "Top 28 mundial", text: "Consolida-se como maior MMN de energia do mundo, com US$ 1,3 bi." },
+  ],
+  productsIntro:
+    "A Ambit vende <strong>eletricidade e gás natural</strong> em mercados desregulamentados dos EUA e Canadá. O consultor não estoca produto — ele indica clientes que passam a comprar energia diretamente da Ambit em substituição à concessionária tradicional.",
+  productLines: [
+    { name: "Energia Elétrica Residencial", tag: "Carro-chefe", color: "from-yellow-500/15 to-yellow-700/5",
+      text: "Planos residenciais fixos (12, 24 ou 36 meses) e variáveis com preços competitivos versus concessionárias.",
+      items: ["Guaranteed Savings Plan", "Fixed Rate 12/24 meses", "Green Energy 100% renovável", "Ambit Cash Back"] },
+    { name: "Gás Natural Residencial", tag: "Recorrente", color: "from-orange-500/15 to-orange-700/5",
+      text: "Fornecimento de gás natural encanado em estados que permitem desregulamentação.",
+      items: ["Gás Natural Fixo", "Gás Natural Variável", "Gás Natural Verde (offset)"] },
+    { name: "Ambit Business", tag: "PME & Enterprise", color: "from-emerald-500/15 to-emerald-700/5",
+      text: "Planos comerciais para pequenas, médias e grandes empresas, com contratos até 60 meses.",
+      items: ["Small Business Plans", "Enterprise Contracts", "Consultoria energética"] },
+    { name: "Ambit Rewards", tag: "Benefícios", color: "from-purple-500/15 to-purple-700/5",
+      text: "Programa de fidelidade — clientes acumulam pontos e ganham noites de hotel gratuitas (Free Nights Program).",
+      items: ["Free Nights Hotel", "Cash Back", "Referral Bonus"] },
+  ],
+  planTitle: "Plano de Compensação Ambit Energy (Unilevel + Residual de Energia)",
+  planIntro:
+    "Modelo unilevel com foco em <strong>renda residual mensal</strong>. Consultores ganham percentual sobre a conta de energia de cada cliente e da rede até 7 níveis de profundidade, além de bônus de patrocínio (Jump Start Bonus).",
+  planRanks: [
+    { rank: "Consultor", payout: "1-3% conta cliente", text: "Cadastro US$ 429 — recebe residual sobre clientes pessoais." },
+    { rank: "Regional Consultant", payout: "+ Jump Start Bonus", text: "5 clientes + 3 consultores em 8 dias — bônus US$ 100." },
+    { rank: "Senior Consultant", payout: "+ Team Overrides", text: "Comissões residuais sobre a estrutura direta." },
+    { rank: "Executive Consultant", payout: "+ Overrides até 5 níveis", text: "Rede consolidada com múltiplas legs ativas." },
+    { rank: "National Consultant", payout: "+ Leadership Bonus", text: "US$ 5.000-15.000/mês em residuals maduros." },
+    { rank: "Senior National / Executive National", payout: "+ Elite Global Pool", text: "Top 1% — residual mensal de 6 dígitos." },
+  ],
+  pros: [
+    "Renda residual verdadeira (cliente paga conta todo mês)",
+    "Produto essencial — todo mundo usa energia elétrica",
+    "Sem estoque, sem entrega, sem logística",
+    "Programa Free Nights fideliza cliente",
+    "Backup da Vistra Corp (Fortune 500) — solidez extrema",
+    "Retenção de cliente altíssima (5+ anos em média)",
+  ],
+  cons: [
+    "Operação restrita a estados desregulamentados dos EUA + Canadá",
+    "Comissões pequenas por cliente (US$ 0,50-2/mês)",
+    "Requer volume alto para renda expressiva",
+    "Não opera no Brasil nem América Latina",
+    "Preço da energia pode oscilar e prejudicar retenção",
+  ],
+  presenceIntro:
+    "Atua nos <strong>18 estados americanos desregulamentados</strong> em energia elétrica e/ou gás, além de <strong>Ontário e Alberta no Canadá</strong>. Não opera em mercados regulados como Brasil.",
+  countries: [
+    "🇺🇸 Texas", "🇺🇸 Nova York", "🇺🇸 Pensilvânia", "🇺🇸 Illinois", "🇺🇸 Ohio", "🇺🇸 Nova Jersey",
+    "🇺🇸 Maryland", "🇺🇸 Connecticut", "🇺🇸 Massachusetts", "🇺🇸 Rhode Island", "🇺🇸 Delaware",
+    "🇺🇸 Virgínia", "🇺🇸 Distrito de Columbia", "🇺🇸 Maine", "🇺🇸 Nova Hampshire", "🇺🇸 Michigan",
+    "🇺🇸 Califórnia", "🇺🇸 Indiana", "🇨🇦 Ontário", "🇨🇦 Alberta",
+  ],
+  awards: [
+    "Inc. Magazine — Empresa Privada Mais Rápida dos EUA (2010)",
+    "DSN Global 100 — Top 30 (desde 2013)",
+    "Ernst & Young Entrepreneur of the Year",
+    "Dallas Business Journal Best Places to Work",
+    "Stevie Award for Sales & Customer Service",
+  ],
+  certifications: [
+    "Licenciada em 18 estados (PUC)",
+    "PJM & ERCOT Certified",
+    "ISO 27001 (segurança da informação)",
+    "Better Business Bureau A+",
+    "ENERGY STAR Partner",
+  ],
+  faqs: [
+    { q: "O que é a Ambit Energy?",
+      a: "É a maior empresa de vendas diretas de energia elétrica e gás natural do mundo, fundada em 2006 no Texas. Consultores indicam clientes que passam a comprar energia da Ambit em vez da concessionária tradicional." },
+    { q: "Quanto fatura a Ambit Energy em 2026?",
+      a: "Em 2025 a Ambit faturou US$ 1,3 bilhão, ocupando o Top 28 do ranking Direct Selling News Global 100 2026. É a maior MMN de energia do mundo." },
+    { q: "A Ambit Energy opera no Brasil?",
+      a: "Não. A Ambit opera apenas em mercados de energia desregulamentados — 18 estados dos EUA e as províncias canadenses de Ontário e Alberta. No Brasil, o mercado ainda é majoritariamente regulado (concessionárias)." },
+    { q: "Como funciona a renda residual da Ambit Energy?",
+      a: "O consultor recebe uma pequena comissão (US$ 0,50-2/mês) sobre a conta de energia de cada cliente indicado — todo mês, enquanto o cliente permanecer ativo. Como energia é um serviço essencial, a retenção é altíssima." },
+    { q: "Quanto custa entrar na Ambit Energy?",
+      a: "O kit inicial custa US$ 429 (Consultor Business Presentation Kit + website replicado). Manutenção anual de US$ 24,95." },
+    { q: "Ambit Energy é uma pirâmide financeira?",
+      a: "Não. Vende um serviço essencial (energia elétrica) para clientes finais reais em mercados regulados por comissões estaduais (PUC). É subsidiária da Vistra Corp, empresa Fortune 500 listada na NYSE." },
+    { q: "Como funciona o Ambit Free Nights Program?",
+      a: "É o programa de fidelidade da marca — clientes acumulam noites gratuitas de hotel em resorts parceiros conforme pagam suas contas de energia. Grande diferencial competitivo versus concessionárias." },
+    { q: "Qual a diferença entre Ambit Energy e Stream Energy?",
+      a: "Ambas são MMN de energia texanas. A Stream faturava US$ 1 bi e faliu tecnicamente em 2018 (Chapter 11); a Ambit é maior, foi adquirida pela Vistra e segue sólida com US$ 1,3 bi anual." },
+    { q: "Vale a pena ser consultor Ambit Energy em 2026?",
+      a: "Se você mora nos EUA ou Canadá em mercado desregulamentado, é uma das melhores oportunidades de renda residual verdadeira do mercado MMN. Fora desses mercados, não é acessível." },
+    { q: "Quem é o dono da Ambit Energy hoje?",
+      a: "Desde 2019, a Ambit Energy é uma subsidiária da Vistra Corp (NYSE: VST), uma das maiores geradoras de energia dos EUA e integrante do S&P 500." },
+  ],
+  founders: ["Jere Thompson Jr.", "Chris Chambless"],
+  foundingDate: "2006-03-01",
+  foundingLocation: "Dallas, Texas, EUA",
+  employees: 900,
+  alternateNames: ["Ambit"],
+  wikipediaUrl: "https://en.wikipedia.org/wiki/Ambit_Energy",
+};
+
+const AmbitEnergy = () => <CompanyPremiumPage data={data} />;
+export default AmbitEnergy;

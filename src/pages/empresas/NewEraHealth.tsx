@@ -1,0 +1,141 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "New Era Health",
+  slug: "new-era-health",
+  officialUrl: "https://www.neweraglobal.com/",
+  domain: "neweraglobal.com",
+  seoTitle: "New Era Health: Nova Era Saúde e Bem-Estar | Ranking Mundial 2026",
+  seoDescription:
+    "New Era Health (Nova Era) é uma multinacional chinesa de saúde e bem-estar com mais de US$ 1,4 bilhão em receita, produtos de nutrição, cosméticos e wellness distribuídos em mais de 20 países.",
+  rankingLabel: "TOP 25 MUNDIAL • BUSINESS FOR HOME 2026",
+  heroHeadlineSuffix: "A Gigante Chinesa de Saúde e Wellness",
+  heroParagraph:
+    "Fundada em 1995 em Pequim, a New Era Health Industry Group é uma das maiores empresas chinesas de vendas diretas em saúde e bem-estar, com produtos de nutrição, suplementos, cosméticos e cuidados pessoais distribuídos em mais de 20 países.",
+  heroBadges: [
+    { label: "30+ anos", icon: "calendar" },
+    { label: "20+ países", icon: "globe" },
+    { label: "3 mi de consultores", icon: "users" },
+    { label: "Empresa estatal", icon: "check" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking Mundial 2026", value: "Top 25", hint: "Business For Home Global 200" },
+    { icon: "calendar", label: "Fundação", value: "1995", hint: "Pequim, China" },
+    { icon: "map", label: "País de Origem", value: "China 🇨🇳", hint: "Empresa estatal (SOE)" },
+    { icon: "globe", label: "Países", value: "20+", hint: "Ásia, América, Europa, África" },
+    { icon: "users", label: "Consultores", value: "3 milhões+", hint: "Distribuidores ativos" },
+    { icon: "package", label: "Produtos", value: "300+", hint: "Nutrição, cosméticos, wellness" },
+    { icon: "dollar", label: "Faturamento 2025", value: "US$ 1,4 bi", hint: "Fonte: DSN Global 100" },
+    { icon: "factory", label: "Fábricas", value: "8", hint: "Certificação GMP internacional" },
+  ],
+  aboutHtml: `
+    <p>A <strong>New Era Health Industry Group</strong> (Xīn Shí Dài Jiànkāng) é uma multinacional chinesa fundada em <strong>1995</strong> como subsidiária da <em>China New Era Group</em> — um dos maiores conglomerados estatais da China. É considerada uma das <strong>maiores empresas de vendas diretas de saúde da Ásia</strong>.</p>
+    <p>Especializada em <strong>suplementos nutricionais, cosméticos anti-idade, cuidados pessoais e produtos wellness</strong>, a New Era combina medicina tradicional chinesa (MTC) com biotecnologia moderna. Sua sede fica em Pequim, com <strong>oito fábricas com certificação GMP</strong> distribuídas pela China.</p>
+    <p>Com faturamento anual de <strong>US$ 1,4 bilhão</strong> em 2025, a empresa figura no <strong>Top 25 do ranking Business For Home 2026</strong> e no Direct Selling News Global 100, operando em mais de <strong>20 países</strong> com <strong>3 milhões de consultores</strong> ativos.</p>
+  `,
+  timelineTitle: "Da fundação estatal em Pequim à liderança asiática de wellness",
+  milestones: [
+    { year: "1995", title: "Fundação em Pequim", text: "Criada como braço de saúde do grupo estatal China New Era." },
+    { year: "2001", title: "Licença de venda direta", text: "Torna-se uma das primeiras empresas licenciadas para MMN na China." },
+    { year: "2005", title: "Expansão internacional", text: "Início das operações no Sudeste Asiático." },
+    { year: "2012", title: "US$ 500 milhões", text: "Cruza a marca de meio bilhão em receita global." },
+    { year: "2018", title: "US$ 1 bilhão", text: "Entra para o clube das MMN bilionárias." },
+    { year: "2023", title: "Reestruturação regulatória", text: "Adapta-se ao novo marco regulatório chinês para vendas diretas." },
+    { year: "2026", title: "Top 25 mundial", text: "Consolida-se como uma das 5 maiores MMN chinesas em receita global." },
+  ],
+  productsIntro:
+    "Portfólio focado em <strong>saúde integrativa</strong>: suplementos nutricionais premium, cosméticos anti-idade com biotecnologia, cuidados pessoais naturais e linhas de wellness baseadas em medicina tradicional chinesa.",
+  productLines: [
+    { name: "Nutrição & Suplementos", tag: "Carro-chefe", color: "from-emerald-500/15 to-emerald-700/5",
+      text: "Cápsulas, pós e bebidas funcionais baseadas em ervas chinesas, colágeno, probióticos e proteínas vegetais.",
+      items: ["Colágeno Marinho", "Pó de Cordyceps", "Probióticos", "Ganoderma", "Bebida Funcional Anti-idade"] },
+    { name: "Cosméticos & Anti-idade", tag: "Beleza premium", color: "from-rose-500/15 to-rose-700/5",
+      text: "Skincare com biotecnologia — peptídeos, células-tronco vegetais e extratos herbais orientais.",
+      items: ["Sérum Anti-idade", "Creme Facial Peptídeo", "Máscara Ginseng", "Linha Whitening"] },
+    { name: "Cuidados Pessoais", tag: "Wellness diário", color: "from-amber-500/15 to-amber-700/5",
+      text: "Higiene bucal, cuidado capilar e corporal com ingredientes naturais.",
+      items: ["Creme Dental Herbal", "Shampoo Ginseng", "Sabonete Detox", "Loção Corporal"] },
+    { name: "Home & Ambiente", tag: "Casa saudável", color: "from-sky-500/15 to-sky-700/5",
+      text: "Purificadores de água, filtros, produtos ecológicos e wellness para o lar.",
+      items: ["Purificador de Água", "Filtro de Ar", "Detergente Ecológico"] },
+  ],
+  planTitle: "Plano de Compensação New Era Health (Binário Híbrido)",
+  planIntro:
+    "Estrutura binária híbrida com bônus rápido de patrocínio, comissão de equipe, bônus de liderança em profundidade e prêmios de reconhecimento — típica dos gigantes MMN asiáticos.",
+  planRanks: [
+    { rank: "Consultor", payout: "20% desconto direto", text: "Cadastro básico com kit inicial de produtos." },
+    { rank: "Bronze", payout: "10% comissão binária", text: "Primeira qualificação mensal com PV pessoal." },
+    { rank: "Silver", payout: "+ Bônus de patrocínio", text: "Duas legs balanceadas com produção mínima." },
+    { rank: "Gold", payout: "+ Bônus de liderança", text: "Volume de grupo consolidado em nível intermediário." },
+    { rank: "Platinum / Diamond", payout: "+ Rank Advancement Bonus", text: "Diamantes recebem parte do pool global." },
+    { rank: "Crown / Ambassador", payout: "Global Leadership Pool", text: "Elite mundial da marca — top 1% dos consultores." },
+  ],
+  pros: [
+    "Empresa estatal chinesa (baixo risco de fechamento)",
+    "Portfólio amplo unindo MTC e biotecnologia",
+    "Presença consolidada na Ásia — mercado de US$ 30 bi",
+    "Certificação GMP internacional em todas as fábricas",
+    "Modelo binário paga rápido com equipe pequena",
+    "Alta recompra em suplementos e cosméticos",
+  ],
+  cons: [
+    "Presença ainda tímida no Brasil e América Latina",
+    "Regulação chinesa restringe expansão agressiva",
+    "Material de marketing majoritariamente em mandarim",
+    "Concorrência forte com Infinitus, Perfect China e Sunhope",
+    "Plano binário exige balanceamento constante",
+  ],
+  presenceIntro:
+    "Opera com escritórios diretos em <strong>China, Sudeste Asiático e África</strong>, e via modelo NFR/parceiros em <strong>América Latina, Europa e Oceania</strong>.",
+  countries: [
+    "🇨🇳 China", "🇭🇰 Hong Kong", "🇹🇼 Taiwan", "🇯🇵 Japão", "🇰🇷 Coreia do Sul", "🇸🇬 Singapura",
+    "🇲🇾 Malásia", "🇹🇭 Tailândia", "🇻🇳 Vietnã", "🇵🇭 Filipinas", "🇮🇩 Indonésia", "🇮🇳 Índia",
+    "🇦🇺 Austrália", "🇳🇬 Nigéria", "🇿🇦 África do Sul", "🇦🇪 Emirados Árabes", "🇺🇸 EUA", "🇨🇦 Canadá",
+    "🇲🇽 México", "🇧🇷 Brasil", "🇷🇺 Rússia",
+  ],
+  awards: [
+    "Direct Selling News Global 100 — 2026 (Top 25)",
+    "Business For Home — Rising Star Asia",
+    "China Top 500 Enterprises",
+    "GMP Excellence Award (China Food & Drug Administration)",
+    "Best Direct Selling Brand — China Health Association",
+  ],
+  certifications: [
+    "GMP (Good Manufacturing Practice)",
+    "ISO 9001 e ISO 22000",
+    "HACCP",
+    "China NMPA (medicamentos e cosméticos)",
+    "Halal Certified (linhas selecionadas)",
+  ],
+  faqs: [
+    { q: "O que é a New Era Health?",
+      a: "É uma multinacional chinesa de vendas diretas fundada em 1995 em Pequim, subsidiária do grupo estatal China New Era, especializada em nutrição, cosméticos e wellness com base em medicina tradicional chinesa e biotecnologia." },
+    { q: "Quanto fatura a New Era Health em 2026?",
+      a: "Em 2025, a New Era Health faturou US$ 1,4 bilhão, ocupando o Top 25 do ranking mundial Business For Home 2026 e figurando entre as maiores MMN da China." },
+    { q: "New Era Health é confiável e segura para trabalhar?",
+      a: "Sim. É uma empresa estatal com mais de 30 anos, 8 fábricas GMP, presença em 20+ países e faturamento bilionário. Está entre as MMN chinesas mais reguladas e estáveis." },
+    { q: "A New Era Health opera no Brasil?",
+      a: "A empresa possui operação limitada no Brasil via modelo NFR (Not For Resale) e parceiros regionais. A expansão latino-americana está em fase inicial." },
+    { q: "Quais os principais produtos da New Era Health?",
+      a: "Colágeno marinho, cordyceps em pó, probióticos, ganoderma, séruns anti-idade com peptídeos, cremes com ginseng e purificadores de água." },
+    { q: "Como funciona o plano de marketing multinível da New Era Health?",
+      a: "Modelo binário híbrido: comissão binária (até 10%), bônus de patrocínio rápido, bônus de liderança em profundidade e participação no Global Leadership Pool para ranks Diamond em diante." },
+    { q: "Qual a diferença entre New Era Health e Infinitus?",
+      a: "Ambas são gigantes chinesas de wellness. A Infinitus é do grupo Lee Kum Kee (privado, US$ 3 bi+), enquanto a New Era é estatal (US$ 1,4 bi). A Infinitus tem mais presença global; a New Era é referência interna no mercado chinês regulado." },
+    { q: "Quanto custa começar na New Era Health?",
+      a: "O kit inicial de consultor varia entre US$ 100 e US$ 300 (dependendo do país), com necessidade de manutenção mensal em PV pessoal para receber comissões." },
+    { q: "A New Era Health tem produtos aprovados pela ANVISA?",
+      a: "Alguns produtos importados possuem registro no Brasil via distribuidores parceiros. A linha completa está regulamentada na China pela NMPA e em outros mercados por órgãos locais." },
+    { q: "Vale a pena entrar na New Era Health em 2026?",
+      a: "É uma boa oportunidade para quem tem rede na Ásia ou comunidades asiáticas no Ocidente. No Brasil, a operação ainda é limitada, o que pode ser vantagem (mercado azul) ou desvantagem (baixa demanda de marca)." },
+  ],
+  founders: ["China New Era Group"],
+  foundingDate: "1995-06-01",
+  foundingLocation: "Pequim, China",
+  employees: 8000,
+  alternateNames: ["Nova Era Saúde", "Xin Shi Dai", "New Era Health Industry Group"],
+  wikipediaUrl: "https://en.wikipedia.org/wiki/China_New_Era_Group",
+};
+
+const NewEraHealth = () => <CompanyPremiumPage data={data} />;
+export default NewEraHealth;
