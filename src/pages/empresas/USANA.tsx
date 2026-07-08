@@ -1,0 +1,143 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "USANA Health Sciences",
+  slug: "usana",
+  officialUrl: "https://www.usana.com/",
+  domain: "usana.com",
+  seoTitle: "USANA Health Sciences: Suplementos Nutricionais Premium | Ranking 2026",
+  seoDescription:
+    "USANA Health Sciences é uma das maiores empresas de nutrição celular do mundo, com US$ 900 milhões em receita, 500 mil associados, presença em 24 países e ações listadas na NYSE (USNA).",
+  rankingLabel: "TOP 26 MUNDIAL • DSN GLOBAL 100 2026",
+  heroHeadlineSuffix: "Nutrição Celular de Alta Performance",
+  heroParagraph:
+    "Fundada em 1992 pelo Dr. Myron Wentz em Salt Lake City (Utah), a USANA Health Sciences é uma das empresas mais respeitadas em nutrição celular e suplementação premium, com produtos usados por mais de 900 atletas olímpicos e listada na NYSE (USNA).",
+  heroBadges: [
+    { label: "33 anos", icon: "calendar" },
+    { label: "24 países", icon: "globe" },
+    { label: "500 mil associados", icon: "users" },
+    { label: "NYSE: USNA", icon: "check" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking Mundial 2026", value: "Top 26", hint: "DSN Global 100" },
+    { icon: "calendar", label: "Fundação", value: "1992", hint: "Salt Lake City, Utah (EUA)" },
+    { icon: "map", label: "País de Origem", value: "EUA 🇺🇸", hint: "Sede em Salt Lake City, Utah" },
+    { icon: "globe", label: "Países", value: "24", hint: "Américas, Ásia, Oceania, Europa" },
+    { icon: "users", label: "Associados", value: "500 mil+", hint: "Distribuidores e clientes preferenciais" },
+    { icon: "package", label: "Produtos", value: "100+", hint: "Nutrição, energia, skincare Celavive" },
+    { icon: "dollar", label: "Faturamento 2025", value: "US$ 900 mi", hint: "Fonte: relatório NYSE" },
+    { icon: "factory", label: "Fábrica própria", value: "Utah, EUA", hint: "Padrão farmacêutico cGMP" },
+  ],
+  aboutHtml: `
+    <p>A <strong>USANA Health Sciences</strong> (NYSE: USNA) é uma multinacional americana fundada em <strong>1992</strong> pelo microbiologista <em>Dr. Myron Wentz</em>, ganhador do prêmio Albert Einstein em Ciência (2007). Está sediada em <strong>Salt Lake City, Utah</strong> e é reconhecida mundialmente pelo <strong>padrão farmacêutico cGMP</strong> de fabricação — uma raridade no setor de suplementos.</p>
+    <p>Seu produto mais famoso é o <strong>Essentials (CellSentials)</strong> — um combo de multivitamínico + antioxidantes que é <strong>#1 no ranking NutriSearch Comparative Guide</strong> há mais de 20 edições consecutivas. A USANA é a <strong>Suplementação Oficial de mais de 900 atletas olímpicos e profissionais</strong>, incluindo WTA, PGA Tour, Sony Open e Miss América.</p>
+    <p>Com receita de <strong>US$ 900 milhões em 2025</strong> e presença em <strong>24 países</strong>, ocupa o <strong>Top 26 do DSN Global 100 2026</strong>. É listada na <strong>Bolsa de Nova York (USNA)</strong> desde 1993, o que garante total transparência financeira.</p>
+  `,
+  timelineTitle: "Do laboratório do Dr. Wentz à referência mundial em nutrição celular",
+  milestones: [
+    { year: "1992", title: "Fundação por Dr. Myron Wentz", text: "Microbiologista funda a USANA em Salt Lake City com foco em nutrição celular." },
+    { year: "1993", title: "IPO na NYSE", text: "Abre capital na Bolsa de Nova York (símbolo USNA)." },
+    { year: "1996", title: "Expansão internacional", text: "Inicia operações no Canadá e Austrália." },
+    { year: "2007", title: "Prêmio Albert Einstein", text: "Dr. Wentz recebe o prêmio Albert Einstein por contribuições à ciência." },
+    { year: "2015", title: "Aquisição BabyCare (China)", text: "Compra a BabyCare Ltd., ganhando forte penetração no mercado chinês." },
+    { year: "2016", title: "Celavive", text: "Lança a linha skincare Celavive com tecnologia InCelligence." },
+    { year: "2020", title: "Fábrica ampliada", text: "Expansão da fábrica de Utah — capacidade dobrada em nutrição." },
+    { year: "2026", title: "Top 26 mundial", text: "US$ 900 mi em receita, 24 países, 500 mil associados e liderança em nutrição olímpica." },
+  ],
+  productsIntro:
+    "Portfólio focado em <strong>nutrição celular de alta absorção</strong>: suplementos multivitamínicos, antioxidantes, ômegas, energia, controle de peso, saúde digestiva e skincare Celavive — todos fabricados na fábrica própria em Utah com <strong>padrão farmacêutico cGMP</strong>.",
+  productLines: [
+    { name: "CellSentials & Essentials", tag: "Carro-chefe", color: "from-emerald-500/15 to-emerald-700/5",
+      text: "Combo #1 mundial de multivitamínico + antioxidantes segundo NutriSearch — vendido em milhões de kits/mês.",
+      items: ["Vita Antioxidant", "Core Minerals", "MyHealthPak (personalizado)", "Rev3 Energy"] },
+    { name: "Nutrição Direcionada", tag: "Wellness alvo", color: "from-blue-500/15 to-blue-700/5",
+      text: "Suplementos específicos para saúde ocular, cerebral, óssea, cardiovascular e digestiva.",
+      items: ["Visionex", "BiOmega (Ômega 3)", "CoQuinone 30", "Probiotic", "MagneCal D"] },
+    { name: "Peso & Performance", tag: "Fitness", color: "from-rose-500/15 to-rose-700/5",
+      text: "Programa Reset & Active Nutrition para controle de peso e alta performance esportiva.",
+      items: ["Nutrimeal Shake", "Reset Program", "Nutrition Bars", "Hydrate", "Rev3 Surge"] },
+    { name: "Celavive Skincare", tag: "Beleza premium", color: "from-fuchsia-500/15 to-fuchsia-700/5",
+      text: "Linha skincare com tecnologia InCelligence — comunicação celular para pele jovem e saudável.",
+      items: ["Perfecting Toner", "Vitalizing Serum", "Hydrating Eye Essence", "Firming Cream"] },
+  ],
+  planTitle: "Plano de Compensação USANA (Binário Balanceado + Matching Bonus)",
+  planIntro:
+    "Modelo <strong>binário puro balanceado</strong> com comissão semanal (Weekly Commissions), Matching Bonus (até 6 gerações), Leadership Bonus e Elite Bonus para top performers — considerado um dos planos mais estáveis do mercado MMN.",
+  planRanks: [
+    { rank: "Associado Preferencial", payout: "20% desconto atacado", text: "Cadastro básico — compra com desconto para consumo pessoal." },
+    { rank: "Associate", payout: "Comissão binária 10-20%", text: "Ativa 100 SVP mensais em cada perna — recebe pagamento semanal." },
+    { rank: "Believer / Achiever", payout: "+ Bônus de patrocínio", text: "Legs qualificadas — desbloqueia Matching Bonus." },
+    { rank: "Gold / Ruby / Emerald", payout: "+ Matching Bonus até 6 gerações", text: "Recebe 100% da comissão binária dos frontline diretos." },
+    { rank: "Diamond / Platinum PaceSetter", payout: "+ Leadership Bonus 3%", text: "Elite com múltiplas equipes ativas." },
+    { rank: "Star / Ruby Ambassador", payout: "Elite Bonus Pool", text: "Top 1% mundial — bônus quadrimestrais em 6 dígitos + viagens." },
+  ],
+  pros: [
+    "Produtos com padrão farmacêutico cGMP (raro em suplementos)",
+    "Ranking #1 NutriSearch há 20+ edições",
+    "Empresa listada na NYSE — total transparência financeira",
+    "Comissões semanais (mais rápido que a maioria dos MMN)",
+    "Suplementação oficial de 900+ atletas olímpicos",
+    "Plano binário balanceado paga com equipe pequena",
+  ],
+  cons: [
+    "Produtos com preço premium (US$ 100-200/mês por combo)",
+    "Manutenção mensal de 100 SVP obrigatória",
+    "Não opera no Brasil oficialmente (via NFR)",
+    "Plano binário exige balanceamento constante das legs",
+    "Concorrência forte com Herbalife, Amway Nutrilite e Isagenix",
+  ],
+  presenceIntro:
+    "Opera em <strong>24 países</strong> com escritórios próprios em América do Norte, Ásia-Pacífico e Europa. No Brasil, a atuação é via modelo NFR (Not For Resale) — brasileiros podem se cadastrar e importar produtos legalmente.",
+  countries: [
+    "🇺🇸 EUA", "🇨🇦 Canadá", "🇲🇽 México", "🇧🇷 Brasil (NFR)", "🇨🇴 Colômbia", "🇬🇧 Reino Unido",
+    "🇫🇷 França", "🇩🇪 Alemanha", "🇳🇱 Holanda", "🇧🇪 Bélgica", "🇨🇳 China", "🇭🇰 Hong Kong",
+    "🇹🇼 Taiwan", "🇯🇵 Japão", "🇰🇷 Coreia do Sul", "🇸🇬 Singapura", "🇲🇾 Malásia", "🇹🇭 Tailândia",
+    "🇮🇩 Indonésia", "🇵🇭 Filipinas", "🇦🇺 Austrália", "🇳🇿 Nova Zelândia", "🇮🇳 Índia", "🇻🇳 Vietnã",
+  ],
+  awards: [
+    "DSN Global 100 — Top 30 (desde 2008)",
+    "NutriSearch Comparative Guide — Gold Medal of Achievement (#1 há 20+ edições)",
+    "Forbes 200 Best Small Companies in America (7x consecutivas)",
+    "Utah Business Fastest Growing Companies",
+    "Dr. Myron Wentz — Prêmio Albert Einstein em Ciência (2007)",
+  ],
+  certifications: [
+    "cGMP (Farmacêutico) — FDA",
+    "NSF Certified for Sport",
+    "Informed-Sport (anti-doping)",
+    "ISO 17025 (laboratórios)",
+    "Halal Certified (linhas selecionadas)",
+    "Kosher Certified (linhas selecionadas)",
+  ],
+  faqs: [
+    { q: "O que é a USANA Health Sciences?",
+      a: "É uma multinacional americana de nutrição celular e suplementação premium, fundada em 1992 pelo Dr. Myron Wentz em Salt Lake City (Utah). Listada na NYSE (USNA) e reconhecida por produzir suplementos com padrão farmacêutico cGMP." },
+    { q: "Quanto fatura a USANA em 2026?",
+      a: "A USANA faturou US$ 900 milhões em 2025, ocupando o Top 26 do ranking Direct Selling News Global 100 2026. Ações listadas na NYSE (símbolo USNA)." },
+    { q: "A USANA opera no Brasil?",
+      a: "Sim, via modelo NFR (Not For Resale). O brasileiro pode se cadastrar, comprar produtos importados e indicar outros associados, mas não há escritório físico oficial no país." },
+    { q: "O que é o CellSentials da USANA?",
+      a: "É o produto carro-chefe da USANA: um combo de multivitamínico (Vita Antioxidant) + minerais quelatos (Core Minerals) considerado #1 do mundo pelo NutriSearch Comparative Guide há mais de 20 edições consecutivas." },
+    { q: "USANA é confiável ou é pirâmide financeira?",
+      a: "É totalmente confiável. É uma empresa listada há 30+ anos na NYSE (USNA), com balanço trimestral público, fábrica própria certificada cGMP e produto vendido para 900+ atletas olímpicos e ao público em geral." },
+    { q: "Quanto custa começar na USANA?",
+      a: "O Kit Business Development custa aproximadamente US$ 30. Manutenção mensal de 100 SVP (~US$ 100-150/mês em produtos para consumo próprio). Sem taxa de manutenção adicional." },
+    { q: "Qual a diferença entre USANA e Herbalife?",
+      a: "Herbalife foca em controle de peso e shakes (mercado massivo, marca mundial). USANA foca em nutrição celular premium com padrão farmacêutico cGMP e é ranqueada #1 pelo NutriSearch. Herbalife é maior (US$ 5+ bi vs US$ 900 mi), mas USANA tem melhor reputação técnica." },
+    { q: "Como funciona o plano binário balanceado da USANA?",
+      a: "Você constrói duas pernas de rede (esquerda e direita). Ganha 10-20% do menor volume semanal (leg pequena). Matching Bonus paga 100% da comissão dos frontline diretos até 6 gerações — considerado um dos planos mais generosos do mercado." },
+    { q: "Quais atletas olímpicos usam produtos USANA?",
+      a: "Mais de 900 atletas olímpicos e profissionais usam USANA como suplementação oficial, incluindo atletas da WTA (tênis feminino), PGA Tour, Sony Open, US Ski & Snowboard Team, Miss América e federações olímpicas de vários países." },
+    { q: "Vale a pena entrar na USANA em 2026?",
+      a: "Sim para quem valoriza produto premium com respaldo científico e quer plano binário estável com pagamento semanal. Melhor para quem tem rede em países onde a operação é oficial. No Brasil funciona via NFR com boa comunidade ativa." },
+  ],
+  founders: ["Dr. Myron Wentz"],
+  foundingDate: "1992-01-01",
+  foundingLocation: "Salt Lake City, Utah, EUA",
+  employees: 2000,
+  alternateNames: ["USANA", "USNA"],
+  wikipediaUrl: "https://en.wikipedia.org/wiki/USANA_Health_Sciences",
+};
+
+const USANA = () => <CompanyPremiumPage data={data} />;
+export default USANA;

@@ -1,0 +1,136 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "Vivint Smart Home",
+  slug: "vivint-smart-home",
+  officialUrl: "https://www.vivint.com/",
+  domain: "vivint.com",
+  seoTitle: "Vivint Smart Home: Líder em Segurança e Automação Residencial | 2026",
+  seoDescription:
+    "Vivint Smart Home é a maior empresa de vendas diretas de segurança residencial e automação da América do Norte, com US$ 1,7 bilhão em receita, 2 milhões de clientes e presença nos EUA e Canadá.",
+  rankingLabel: "TOP 22 MUNDIAL • DSN GLOBAL 100 2026",
+  heroHeadlineSuffix: "Segurança e Automação Residencial nº1 dos EUA",
+  heroParagraph:
+    "Fundada em 1999 em Utah, a Vivint Smart Home revolucionou o modelo D2D (Door-to-Door) de vendas diretas, tornando-se a maior empresa norte-americana em sistemas de segurança residencial, câmeras inteligentes e automação para casas conectadas.",
+  heroBadges: [
+    { label: "25+ anos", icon: "calendar" },
+    { label: "EUA & Canadá", icon: "globe" },
+    { label: "2 mi de clientes", icon: "users" },
+    { label: "NYSE: VVNT", icon: "check" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking Mundial 2026", value: "Top 22", hint: "DSN Global 100" },
+    { icon: "calendar", label: "Fundação", value: "1999", hint: "Provo, Utah (EUA)" },
+    { icon: "map", label: "País de Origem", value: "EUA 🇺🇸", hint: "Sede em Provo, Utah" },
+    { icon: "globe", label: "Países", value: "2", hint: "EUA e Canadá" },
+    { icon: "users", label: "Clientes ativos", value: "2 milhões+", hint: "Assinantes de segurança smart" },
+    { icon: "package", label: "Produtos", value: "50+", hint: "Câmeras, sensores, alarmes, hubs" },
+    { icon: "dollar", label: "Faturamento 2025", value: "US$ 1,7 bi", hint: "Fonte: DSN Global 100" },
+    { icon: "building", label: "Adquirida por", value: "NRG Energy", hint: "US$ 2,8 bi em 2023" },
+  ],
+  aboutHtml: `
+    <p>A <strong>Vivint Smart Home</strong> é uma multinacional americana fundada em <strong>1999</strong> por <em>Todd Pedersen</em> e <em>Keith Nellesen</em> em Provo, Utah. Começou como <strong>APX Alarm Security Solutions</strong>, rebatizando-se para Vivint em 2011 ao se posicionar como pioneira em <strong>smart home integrada</strong>.</p>
+    <p>É a <strong>maior empresa norte-americana de vendas diretas D2D (Door-to-Door)</strong> em segurança residencial, com um exército sazonal de mais de <strong>10.000 representantes</strong> que atuam nos verões dos EUA. Oferece câmeras, sensores, fechaduras inteligentes, termostatos e um hub central integrado por app.</p>
+    <p>Com receita de <strong>US$ 1,7 bilhão</strong> em 2025, ocupa o <strong>Top 22 do ranking Direct Selling News Global 100</strong>. Foi adquirida em 2023 pela <strong>NRG Energy (NYSE: NRG)</strong> por US$ 2,8 bilhões, mantendo operação e marca.</p>
+  `,
+  timelineTitle: "Da APX Alarm ao maior smart home dos EUA",
+  milestones: [
+    { year: "1999", title: "Fundação como APX Alarm", text: "Todd Pedersen e Keith Nellesen fundam a empresa em Provo, Utah." },
+    { year: "2011", title: "Rebranding para Vivint", text: "Adota nome Vivint e foca em smart home integrada." },
+    { year: "2012", title: "Aquisição pela Blackstone", text: "Blackstone Group compra por US$ 2 bilhões." },
+    { year: "2014", title: "Vivint Solar", text: "Cria braço de energia solar residencial (depois adquirido pela Sunrun)." },
+    { year: "2020", title: "IPO na NYSE", text: "Abre capital na Bolsa de Nova York (VVNT)." },
+    { year: "2023", title: "Aquisição pela NRG Energy", text: "NRG Energy compra a Vivint por US$ 2,8 bilhões." },
+    { year: "2026", title: "Top 22 mundial", text: "Consolida liderança em smart home + segurança nos EUA e Canadá." },
+  ],
+  productsIntro:
+    "Ecossistema completo de <strong>casa inteligente e segurança</strong>: câmeras HD com IA, sensores de porta/janela, fechaduras smart, termostatos, iluminação, hub central e monitoramento profissional 24/7.",
+  productLines: [
+    { name: "Segurança Residencial", tag: "Carro-chefe", color: "from-red-500/15 to-red-700/5",
+      text: "Sistemas completos de alarme com monitoramento profissional 24/7 e resposta emergencial.",
+      items: ["Painel Smart Hub", "Sensores de Porta/Janela", "Sirenes", "Monitoramento 24/7", "Botão de Pânico"] },
+    { name: "Câmeras Inteligentes", tag: "Vigilância IA", color: "from-blue-500/15 to-blue-700/5",
+      text: "Câmeras internas e externas com visão noturna, detecção de pessoas por IA e áudio bidirecional.",
+      items: ["Vivint Outdoor Camera Pro", "Doorbell Camera Pro", "Indoor Camera", "Vivint DVR"] },
+    { name: "Automação & Smart Home", tag: "Casa conectada", color: "from-emerald-500/15 to-emerald-700/5",
+      text: "Fechaduras, termostatos, iluminação e portões controlados por app e comando de voz.",
+      items: ["Smart Lock", "Element Thermostat", "Smart Bulbs", "Garage Door Control"] },
+    { name: "Assistente Vivint", tag: "IA proprietária", color: "from-purple-500/15 to-purple-700/5",
+      text: "IA que aprende rotinas, envia alertas e integra com Alexa, Google Home e Apple HomeKit.",
+      items: ["Vivint App", "Assistente Smart", "Integração Alexa", "Integração Google"] },
+  ],
+  planTitle: "Plano de Compensação Vivint (D2D — Door-to-Door Direct Sales)",
+  planIntro:
+    "Modelo agressivo de vendas D2D com comissão por instalação, bônus por contrato mensal, escalada de patente por número de contas ativas e viagens de incentivo (Summer Sales Program).",
+  planRanks: [
+    { rank: "Rep D2D", payout: "US$ 250-500 / venda", text: "Comissão direta por sistema instalado durante campanha de verão." },
+    { rank: "Team Lead", payout: "+ Override 10%", text: "Comissão sobre a equipe direta (mínimo 5 reps ativos)." },
+    { rank: "Regional Manager", payout: "+ Override 15%", text: "Gerencia múltiplas equipes em uma região." },
+    { rank: "District Manager", payout: "+ Override 20%", text: "Gerencia distrito com meta acima de 500 sistemas/ano." },
+    { rank: "Vice-Presidente Regional", payout: "+ Bônus de estrutura", text: "Elite com múltiplos distritos e milhares de contratos." },
+    { rank: "President's Club", payout: "Incentivos globais + equity", text: "Top 1% dos vendedores — viagens internacionais e bônus anual." },
+  ],
+  pros: [
+    "Marca #1 em smart home nos EUA",
+    "Comissões altas por venda (US$ 250-500 imediato)",
+    "Programa de verão gera renda concentrada em 4 meses",
+    "Produto físico tangível — fácil de demonstrar",
+    "Acquired pela NRG Energy — solidez financeira",
+    "Backup profissional 24/7 de monitoramento",
+  ],
+  cons: [
+    "Operação restrita a EUA e Canadá",
+    "Modelo D2D é fisicamente exaustivo (bater porta)",
+    "Contrato de assinatura mensal exige objection handling forte",
+    "Fama de vendas agressivas — atraiu processos passados",
+    "Não opera no Brasil nem América Latina",
+  ],
+  presenceIntro:
+    "Opera exclusivamente nos <strong>EUA e Canadá</strong>, cobrindo mais de 90% do território norte-americano com equipes locais e monitoramento centralizado em Provo (Utah) e Lehi.",
+  countries: ["🇺🇸 EUA (todos os 50 estados)", "🇨🇦 Canadá"],
+  awards: [
+    "DSN Global 100 — Top 25 (2020-2026)",
+    "Fast Company Most Innovative Companies",
+    "CES Innovation Awards (múltiplas edições)",
+    "Utah Business Fast 50",
+    "Inc. 5000 Hall of Fame",
+  ],
+  certifications: [
+    "UL Certified (Underwriters Laboratories)",
+    "Five Diamond Certification (TMA)",
+    "SOC 2 Type II (segurança de dados)",
+    "FCC / IC Approved",
+    "Better Business Bureau A+",
+  ],
+  faqs: [
+    { q: "O que é a Vivint Smart Home?",
+      a: "É a maior empresa norte-americana de vendas diretas em segurança residencial e automação inteligente, fundada em 1999 em Provo, Utah. Oferece sistemas de alarme, câmeras HD, fechaduras smart e monitoramento profissional 24/7." },
+    { q: "Quanto fatura a Vivint Smart Home em 2026?",
+      a: "Em 2025 a Vivint faturou US$ 1,7 bilhão, ocupando o Top 22 do ranking mundial Direct Selling News Global 100 2026. É a maior MMN de smart home dos EUA." },
+    { q: "A Vivint opera no Brasil?",
+      a: "Não. A operação da Vivint é restrita aos EUA (todos os 50 estados) e Canadá. Não há distribuidores oficiais no Brasil nem América Latina." },
+    { q: "Como funciona o modelo D2D (Door-to-Door) da Vivint?",
+      a: "A Vivint mobiliza mais de 10.000 representantes durante o verão americano para bater porta a porta em bairros residenciais, oferecendo instalação gratuita mediante contrato de monitoramento mensal (US$ 30-60/mês)." },
+    { q: "Quanto ganha um representante da Vivint?",
+      a: "Os top reps ganham entre US$ 30.000 e US$ 250.000 em uma temporada de 4 meses de verão. Comissão média por venda é de US$ 250-500 imediato + overrides." },
+    { q: "Vivint é uma pirâmide financeira?",
+      a: "Não. É uma empresa listada em bolsa (adquirida pela NRG Energy em 2023 por US$ 2,8 bi) que vende produto físico com receita recorrente de monitoramento — modelo válido de vendas diretas D2D." },
+    { q: "Qual a diferença entre Vivint e ADT?",
+      a: "ADT é a maior empresa tradicional de segurança residencial (varejo/instalador). Vivint é a maior empresa D2D de smart home integrada com IA. Vivint tem tecnologia proprietária mais moderna; ADT tem mais legado e cobertura." },
+    { q: "Quanto custa um sistema Vivint?",
+      a: "Instalação: US$ 599-1.799 (dependendo de equipamentos). Monitoramento mensal: US$ 30-60. Contratos de 42-60 meses são padrão." },
+    { q: "A Vivint é confiável?",
+      a: "Sim. Tem 25+ anos, é certificada UL e Five Diamond (TMA), possui rating A+ no Better Business Bureau, e pertence à NRG Energy (Fortune 500)." },
+    { q: "Como funciona o Vivint Summer Sales Program?",
+      a: "Programa sazonal em que representantes viajam para mercados-alvo (Texas, Flórida, Califórnia) durante o verão para vender porta-a-porta, com alojamento fornecido e comissão agressiva. É a principal fonte de recrutamento da empresa." },
+  ],
+  founders: ["Todd Pedersen", "Keith Nellesen"],
+  foundingDate: "1999-01-01",
+  foundingLocation: "Provo, Utah, EUA",
+  employees: 10000,
+  alternateNames: ["Vivint", "APX Alarm Security Solutions"],
+  wikipediaUrl: "https://en.wikipedia.org/wiki/Vivint",
+};
+
+const VivintSmartHome = () => <CompanyPremiumPage data={data} />;
+export default VivintSmartHome;

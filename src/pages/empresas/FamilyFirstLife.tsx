@@ -1,0 +1,136 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "Family First Life",
+  slug: "family-first-life",
+  officialUrl: "https://www.familyfirstlife.com/",
+  domain: "familyfirstlife.com",
+  seoTitle: "Family First Life (FFL): Maior IMO de Seguros de Vida dos EUA | 2026",
+  seoDescription:
+    "Family First Life (FFL) é a maior IMO independente de seguros de vida e final expense dos EUA, com US$ 1,2 bilhão em prêmios emitidos, 10 mil agentes ativos e comissões de até 145%.",
+  rankingLabel: "TOP 30 MUNDIAL • LÍDER IMO SEGUROS DE VIDA EUA",
+  heroHeadlineSuffix: "A Maior IMO de Seguros de Vida da América",
+  heroParagraph:
+    "Fundada em 2013 por Shawn Meaike em Uncasville (Connecticut), a Family First Life (FFL) é a maior Independent Marketing Organization (IMO) de seguros de vida dos EUA, especializada em Final Expense, Mortgage Protection, IUL e Annuities com comissões líderes de mercado.",
+  heroBadges: [
+    { label: "12 anos", icon: "calendar" },
+    { label: "EUA (50 estados)", icon: "globe" },
+    { label: "10 mil agentes", icon: "users" },
+    { label: "Comissões até 145%", icon: "check" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking IMO EUA 2026", value: "Top 1", hint: "Maior IMO de vida independente" },
+    { icon: "calendar", label: "Fundação", value: "2013", hint: "Uncasville, Connecticut (EUA)" },
+    { icon: "map", label: "País de Origem", value: "EUA 🇺🇸", hint: "Sede em Uncasville, CT" },
+    { icon: "globe", label: "Mercados", value: "50 estados EUA", hint: "Licenciada em todo o território" },
+    { icon: "users", label: "Agentes Ativos", value: "10.000+", hint: "Agentes independentes contratados" },
+    { icon: "package", label: "Produtos", value: "60+ carriers", hint: "Mutual of Omaha, Foresters, Americo, etc." },
+    { icon: "dollar", label: "Prêmios 2025", value: "US$ 1,2 bi", hint: "Volume anual emitido" },
+    { icon: "building", label: "Adquirida por", value: "Integrity Marketing", hint: "IMO Group (2022)" },
+  ],
+  aboutHtml: `
+    <p>A <strong>Family First Life (FFL)</strong> foi fundada em <strong>2013</strong> por <em>Shawn Meaike</em>, um ex-assistente social que se tornou o maior nome de vendas de seguros de vida dos EUA. Em pouco mais de 10 anos, tornou-se a <strong>maior IMO (Independent Marketing Organization) de seguros de vida do país</strong>.</p>
+    <p>A FFL é especializada em <strong>Final Expense (seguro funerário), Mortgage Protection Insurance (proteção hipotecária), Indexed Universal Life (IUL) e Annuities</strong>. Trabalha com <strong>60+ seguradoras carriers</strong> como Mutual of Omaha, Foresters, Americo, Prosperity Life, Aetna e Transamerica.</p>
+    <p>Emite mais de <strong>US$ 1,2 bilhão em prêmios anuais</strong> com mais de <strong>10.000 agentes independentes</strong>, oferecendo as <strong>comissões mais agressivas do mercado (100-145%)</strong>. Em 2022 foi adquirida pela <strong>Integrity Marketing Group</strong> — o maior consolidador de IMOs dos EUA — mantendo marca e liderança de Shawn Meaike.</p>
+  `,
+  timelineTitle: "Da fundação de Shawn Meaike à maior IMO de vida dos EUA",
+  milestones: [
+    { year: "2013", title: "Fundação em Connecticut", text: "Shawn Meaike funda a FFL após liderança de vendas em outra IMO." },
+    { year: "2015", title: "Modelo 100%+ commissions", text: "FFL rompe padrão e oferece comissões acima de 100% para agentes." },
+    { year: "2017", title: "US$ 100 milhões", text: "Cruza a marca de US$ 100 mi em prêmios anuais emitidos." },
+    { year: "2019", title: "5.000 agentes", text: "Torna-se referência de recrutamento no setor de vida." },
+    { year: "2021", title: "US$ 800 milhões", text: "Consolida-se como Top 3 IMO independente dos EUA." },
+    { year: "2022", title: "Aquisição pela Integrity", text: "Integrity Marketing Group compra a FFL — maior deal IMO de 2022." },
+    { year: "2026", title: "Top 1 IMO + US$ 1,2 bi", text: "Consolida liderança absoluta em Final Expense e Mortgage Protection." },
+  ],
+  productsIntro:
+    "A FFL <strong>não fabrica seguros</strong> — ela é uma <strong>IMO independente</strong> que treina, licencia e credencia agentes a vender produtos de 60+ seguradoras (carriers) parceiras, com foco em quatro linhas principais de alto ticket.",
+  productLines: [
+    { name: "Final Expense", tag: "Carro-chefe", color: "from-slate-500/15 to-slate-700/5",
+      text: "Seguro funerário (US$ 5-25 mil) para idosos — mercado mais rentável e de conversão rápida.",
+      items: ["Mutual of Omaha Living Promise", "Foresters PlanRight", "Americo Eagle Premier", "Prosperity Life"] },
+    { name: "Mortgage Protection", tag: "Alta comissão", color: "from-blue-500/15 to-blue-700/5",
+      text: "Seguro de vida vinculado à hipoteca — protege a família em caso de morte do titular.",
+      items: ["Americo Term Life", "Mutual of Omaha Term Life", "Foresters Your Term"] },
+    { name: "IUL (Indexed Universal Life)", tag: "Premium & investimento", color: "from-emerald-500/15 to-emerald-700/5",
+      text: "Seguro vida universal indexado a bolsa (S&P 500) com componente de investimento — ticket alto.",
+      items: ["Nationwide IUL", "Allianz IUL", "F&G IUL", "North American Builder IUL"] },
+    { name: "Annuities (Anuidades)", tag: "Aposentadoria", color: "from-amber-500/15 to-amber-700/5",
+      text: "Produtos de renda garantida para aposentadoria — grande potencial de comissão residual.",
+      items: ["Athene Ascent Pro", "F&G Safe Income", "Nationwide New Heights", "Allianz 222"] },
+  ],
+  planTitle: "Plano de Compensação Family First Life (Override Hierárquico IMO)",
+  planIntro:
+    "Modelo <strong>IMO com comissões diretas acima de 100%</strong> (chamado <em>advance</em>) e sistema de override em cascata: cada agente que você recruta gera diferença de comissão (spread) para você, criando renda escalável real.",
+  planRanks: [
+    { rank: "Agente Novo", payout: "80-100% do prêmio anual", text: "Primeiros contratos — nível de comissão de entrada (issued & paid)." },
+    { rank: "Agente Produtor", payout: "100-120% + leads exclusivos", text: "Cumpre metas e recebe leads da FFL (mortgage e Facebook)." },
+    { rank: "Agency Owner", payout: "120-140% + Override 5-25%", text: "Constrói agência própria — recebe override sobre a produção da equipe." },
+    { rank: "Regional Manager", payout: "+ Override sobre múltiplas agências", text: "Coordena diversos Agency Owners regionais." },
+    { rank: "Vice-Presidente", payout: "+ Bônus de estrutura", text: "Elite com centenas de agentes na estrutura." },
+    { rank: "President's Club", payout: "Comissões 145% + Equity", text: "Top 1% — bônus anuais em 6-7 dígitos e participação societária." },
+  ],
+  pros: [
+    "Maiores comissões do mercado de seguros de vida (100-145%)",
+    "Recebimento imediato via 'advance' — 9 a 12 meses de comissão adiantada",
+    "Sistema de leads próprio (mortgage protection + FB leads)",
+    "60+ carriers — pode ofertar melhor produto para cada cliente",
+    "Sem taxa mensal, sem quota — só produz quem quer",
+    "Suporte da Integrity Marketing (maior IMO consolidator EUA)",
+  ],
+  cons: [
+    "Exclusivo para EUA — precisa licença estadual (Life Insurance License)",
+    "Chargeback: se cliente cancela em <12 meses, agente devolve comissão",
+    "Mercado altamente competitivo — muitos IMOs concorrentes",
+    "Leads não são grátis (US$ 20-40 por lead exclusivo)",
+    "Requer investimento em licenciamento (US$ 200-500 dependendo do estado)",
+  ],
+  presenceIntro:
+    "A FFL é <strong>exclusiva para o mercado dos EUA</strong>, licenciada em todos os 50 estados. Não opera fora dos EUA, mas aceita agentes hispânicos que atendam a comunidade latina americana.",
+  countries: ["🇺🇸 EUA (todos os 50 estados)"],
+  awards: [
+    "Top 1 IMO Life Insurance USA (Insurance News Net, 2023-2026)",
+    "Inc. 5000 Fastest Growing Companies",
+    "NAILBA Top Producer",
+    "Best Places to Work in Insurance",
+    "Integrity Marketing Group Elite Partner",
+  ],
+  certifications: [
+    "Licenciada Life Insurance nos 50 estados EUA",
+    "NAIC Compliant",
+    "Better Business Bureau A+",
+    "AM Best Rated Carriers (todas as parcerias)",
+    "Integrity Marketing Group (subsidiária)",
+  ],
+  faqs: [
+    { q: "O que é a Family First Life (FFL)?",
+      a: "É a maior IMO (Independent Marketing Organization) de seguros de vida dos EUA, fundada em 2013 por Shawn Meaike em Connecticut. Recruta, treina e credencia agentes independentes a vender Final Expense, Mortgage Protection, IUL e Annuities de 60+ seguradoras." },
+    { q: "Quanto ganha um agente da Family First Life?",
+      a: "Agentes novos ganham 80-100% do prêmio anual como comissão. Producers ativos: 120-140%. Elite (President's Club): 145%. Um agente full-time médio gera US$ 100-300 mil/ano, e top producers ultrapassam US$ 1 milhão/ano." },
+    { q: "A Family First Life opera no Brasil?",
+      a: "Não. A FFL é exclusiva para o mercado dos EUA, onde o modelo de IMO independente de seguros de vida é regulado estado a estado. Não há operação no Brasil nem América Latina." },
+    { q: "Como se tornar agente da FFL?",
+      a: "É preciso obter Life Insurance License no seu estado (curso + exame estadual, US$ 200-500), assinar contrato de agente independente com a FFL e concluir o treinamento inicial. O processo leva 2-4 semanas." },
+    { q: "Family First Life é MLM ou empresa tradicional?",
+      a: "É uma IMO com plano de compensação hierárquico (override sobre agentes recrutados), mas o produto vendido é 100% real (seguros regulados por State Insurance Departments). É modelo válido, não pirâmide." },
+    { q: "Qual a diferença entre FFL e Primerica?",
+      a: "Primerica é seguradora própria (fabrica os produtos) com estrutura corporativa e comissões de 25-95%. FFL é IMO independente (não fabrica) que oferece produtos de 60+ carriers com comissões de 100-145%. FFL paga mais, mas exige mais autonomia do agente." },
+    { q: "O que é Final Expense na FFL?",
+      a: "Seguro funerário (US$ 5-25 mil) para idosos entre 50-85 anos, com aprovação simplificada e pagamento garantido em caso de morte. É o produto carro-chefe da FFL — mercado com baixa concorrência e alta conversão." },
+    { q: "A FFL fornece leads para os agentes?",
+      a: "Sim. A FFL vende leads exclusivos de Mortgage Protection e Facebook (US$ 20-40/lead). Também há sistema de leads gratuitos para top producers e programa de leads inbound (chamadas prontas)." },
+    { q: "O que aconteceu com a FFL após aquisição pela Integrity Marketing?",
+      a: "Em 2022, o Integrity Marketing Group (maior IMO consolidator dos EUA) adquiriu a FFL. Shawn Meaike segue como líder e a marca FFL foi mantida — a aquisição trouxe mais capital, tecnologia e acesso a novos carriers." },
+    { q: "Vale a pena entrar na Family First Life em 2026?",
+      a: "Para quem mora nos EUA e quer trabalhar com seguros de vida, sim — a FFL oferece as maiores comissões e o melhor suporte do mercado. Requer disciplina, licenciamento e disposição para prospectar. Não é caminho rápido, mas é altamente lucrativo." },
+  ],
+  founders: ["Shawn Meaike"],
+  foundingDate: "2013-01-01",
+  foundingLocation: "Uncasville, Connecticut, EUA",
+  employees: 10000,
+  alternateNames: ["FFL", "Family First Life Insurance"],
+  wikipediaUrl: "https://www.familyfirstlife.com/about",
+};
+
+const FamilyFirstLife = () => <CompanyPremiumPage data={data} />;
+export default FamilyFirstLife;

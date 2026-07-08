@@ -29,6 +29,19 @@ export const companySlugs: Record<string, string> = {
   "JoyMain Int.": "joymain",
   "Perfect China": "perfect-china",
   Sunhope: "sunhope",
+  "New Era Health": "new-era-health",
+  "New Era": "new-era-health",
+  "Vivint Smart Home": "vivint-smart-home",
+  Vivint: "vivint-smart-home",
+  "Ambit Energy": "ambit-energy",
+  Ambit: "ambit-energy",
+  "O Boticário": "o-boticario",
+  "O Boticario": "o-boticario",
+  Boticário: "o-boticario",
+  "Family First Life": "family-first-life",
+  FFL: "family-first-life",
+  USANA: "usana",
+  "USANA Health Sciences": "usana",
 };
 
 export const internalCompanyUrl = (name: string): string | null => {
