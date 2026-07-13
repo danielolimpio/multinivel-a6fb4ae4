@@ -42,6 +42,20 @@ export const companySlugs: Record<string, string> = {
   FFL: "family-first-life",
   USANA: "usana",
   "USANA Health Sciences": "usana",
+  "Vida Divina": "vida-divina",
+  Longrich: "longrich",
+  "Longrich Bioscience": "longrich",
+  "Betterware de Mexico (BeFra)": "betterware",
+  "Betterware de México (BeFra)": "betterware",
+  "Betterware de Mexico": "betterware",
+  Betterware: "betterware",
+  BeFra: "betterware",
+  SeneGence: "senegence",
+  "SeneGence International": "senegence",
+  "DXN Global": "dxn-global",
+  DXN: "dxn-global",
+  Belcorp: "belcorp",
+  "Corporación Belcorp": "belcorp",
 };
 
 export const internalCompanyUrl = (name: string): string | null => {
