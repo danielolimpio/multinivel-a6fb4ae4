@@ -1,0 +1,140 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "Belcorp",
+  slug: "belcorp",
+  officialUrl: "https://www.belcorp.biz/",
+  domain: "belcorp.biz",
+  seoTitle: "Belcorp: Gigante Peruana de Cosméticos L'Bel, Ésika e Cyzone | Top 20 Mundial 2026",
+  seoDescription:
+    "Belcorp é a multinacional peruana de venda direta dona das marcas L'Bel, Ésika e Cyzone. Com receita superior a US$ 1,7 bilhão e mais de 800 mil consultoras, é a maior empresa de cosméticos do LATAM depois da Natura.",
+  rankingLabel: "TOP 20 MUNDIAL • DSN GLOBAL 100 2026",
+  heroHeadlineSuffix: "A Gigante Latina de Beleza e Empreendedorismo Feminino",
+  heroParagraph:
+    "Fundada em 1968 por Eduardo Belmont em Lima (Peru), a Belcorp é uma das maiores empresas de venda direta da América Latina, com as marcas L'Bel (skincare premium), Ésika (maquiagem e perfumes) e Cyzone (jovem/teen). Faturamento superior a US$ 1,7 bilhão, mais de 800 mil consultoras e presença em 14 países.",
+  heroBadges: [
+    { label: "57 anos", icon: "calendar" },
+    { label: "14 países", icon: "globe" },
+    { label: "800 mil consultoras", icon: "users" },
+    { label: "3 marcas fortes", icon: "check" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking Mundial 2026", value: "Top 20", hint: "DSN Global 100" },
+    { icon: "calendar", label: "Fundação", value: "1968", hint: "Lima, Peru" },
+    { icon: "map", label: "País de Origem", value: "Peru 🇵🇪", hint: "Sede em Lima" },
+    { icon: "globe", label: "Países", value: "14", hint: "Toda a América Latina + EUA hispânico" },
+    { icon: "users", label: "Consultoras", value: "800 mil+", hint: "Maior força de vendas feminina do LATAM" },
+    { icon: "package", label: "Produtos", value: "2.000+", hint: "L'Bel, Ésika e Cyzone" },
+    { icon: "dollar", label: "Faturamento 2025", value: "US$ 1,7 bi", hint: "Fonte: DSN Global 100" },
+    { icon: "factory", label: "Fábricas", value: "3", hint: "Peru, Colômbia e México" },
+  ],
+  aboutHtml: `
+    <p>A <strong>Corporación Belcorp</strong> foi fundada em <strong>1968</strong> por <strong>Eduardo Belmont Anderson</strong> em Lima (Peru). Nasceu como distribuidora local de cosméticos e cresceu para se tornar uma <strong>das maiores empresas de venda direta da América Latina</strong>, atrás apenas da Natura no faturamento regional.</p>
+    <p>Belcorp opera três marcas complementares: <strong>L'Bel Paris</strong> (skincare e cosméticos premium com posicionamento europeu), <strong>Ésika</strong> (maquiagem, perfumes e cuidados corporais para o público adulto) e <strong>Cyzone</strong> (linha jovem/teen com apelo trendy e preço acessível). Juntas somam mais de <strong>2.000 produtos</strong> em portfólio ativo.</p>
+    <p>Com receita superior a <strong>US$ 1,7 bilhão em 2025</strong>, mais de <strong>800 mil consultoras ativas</strong>, presença em <strong>14 países</strong> das Américas e três fábricas próprias (Peru, Colômbia e México), a Belcorp ocupa o <strong>Top 20 do DSN Global 100 2026</strong> e é referência mundial em empreendedorismo feminino.</p>
+  `,
+  timelineTitle: "A trajetória da Belcorp desde 1968",
+  milestones: [
+    { year: "1968", title: "Fundação por Eduardo Belmont", text: "Nasce em Lima como distribuidora de cosméticos importados." },
+    { year: "1988", title: "Lançamento de L'Bel Paris", text: "Marca própria com posicionamento europeu premium." },
+    { year: "1992", title: "Expansão para Colômbia e Chile", text: "Primeira grande expansão internacional." },
+    { year: "1996", title: "Lançamento da Ésika", text: "Marca própria focada em maquiagem para o público adulto latino." },
+    { year: "2002", title: "Lançamento da Cyzone", text: "Marca jovem/teen para adolescentes e universitárias." },
+    { year: "2007", title: "Chegada ao México e Estados Unidos", text: "Consolidação regional com foco no mercado hispânico dos EUA." },
+    { year: "2015", title: "US$ 1,5 bi", text: "Belcorp cruza a marca de US$ 1,5 bilhão em receita anual." },
+    { year: "2026", title: "Top 20 mundial", text: "US$ 1,7 bi, 800 mil consultoras e liderança em cosméticos por venda direta no LATAM." },
+  ],
+  productsIntro:
+    "Três marcas complementares — <strong>L'Bel (premium)</strong>, <strong>Ésika (adulto)</strong> e <strong>Cyzone (jovem)</strong> — cobrem todos os segmentos de beleza: skincare, maquiagem, perfumes, cuidados corporais e higiene.",
+  productLines: [
+    { name: "L'Bel Paris", tag: "Premium skincare", color: "from-fuchsia-500/15 to-fuchsia-700/5",
+      text: "Linha skincare e cosméticos premium com posicionamento europeu — carro-chefe da Belcorp.",
+      items: ["Anti-Age Series", "Rescue White", "Aquagenic", "Signature Perfumes"] },
+    { name: "Ésika", tag: "Maquiagem & Perfumes", color: "from-rose-500/15 to-rose-700/5",
+      text: "Marca queridinha do público adulto latino em maquiagem, perfumes e cuidados corporais.",
+      items: ["Perfumes Icônicos", "Base Ésika Pro", "Batons Match System", "Skincare Facial"] },
+    { name: "Cyzone", tag: "Jovem & Teen", color: "from-amber-500/15 to-amber-700/5",
+      text: "Marca jovem, trendy e acessível — foco em adolescentes, universitárias e público millennial.",
+      items: ["Batons Colorlicious", "Perfumes Teen", "Máscara Cílios", "Nail Polish"] },
+    { name: "Cuidados Corporais & Higiene", tag: "Wellness", color: "from-emerald-500/15 to-emerald-700/5",
+      text: "Linhas complementares de cuidados corporais, higiene íntima e desodorantes das três marcas.",
+      items: ["Body Lotion", "Shower Gel", "Deodorants", "Hand Cream"] },
+  ],
+  planTitle: "Plano de Compensação Belcorp (Venda por Catálogo + Uni-Nível)",
+  planIntro:
+    "Modelo <strong>venda por catálogo</strong> (18 catálogos por ano) com <strong>margens de 30-40%</strong> nas vendas + <strong>bônus por volume de equipe</strong> (uni-nível clássico) + incentivos, prêmios e viagens para líderes.",
+  planRanks: [
+    { rank: "Consultora", payout: "30-40% margem venda", text: "Cadastro básico — compra do catálogo com desconto e revende com margem." },
+    { rank: "Consultora Master", payout: "+ Bônus 3-5% grupo", text: "Vendas mínimas por catálogo — bônus sobre indicações diretas." },
+    { rank: "Líder", payout: "+ Bônus multi-nível 8-15%", text: "Múltiplas consultoras ativas — bônus até 3 níveis." },
+    { rank: "Líder Elite / Sênior", payout: "+ Bônus Liderança + Prêmios", text: "Equipes qualificadas — prêmios mensais, joias, eletrodomésticos." },
+    { rank: "Diretora / Diretora Diamante", payout: "Bônus + Viagens Internacionais", text: "Elite — bônus especiais, viagens internacionais e reconhecimento público." },
+  ],
+  pros: [
+    "3 marcas complementares — atende todos os segmentos femininos",
+    "Empresa consolidada com 57 anos e US$ 1,7 bi/ano",
+    "Operação forte em toda América Latina (14 países)",
+    "Catálogo a cada 3 semanas — cliente sempre engajada",
+    "Kit inicial baixíssimo (~US$ 10 no Peru)",
+    "Programas de reconhecimento e viagens de incentivo",
+  ],
+  cons: [
+    "Não opera oficialmente no Brasil",
+    "Modelo mais focado em vendas do que em construção MMN pura",
+    "Concorrência forte com Natura, Avon e O Boticário",
+    "Portfólio quase exclusivamente feminino",
+    "Margem por venda menor que empresas de suplemento premium",
+  ],
+  presenceIntro:
+    "A Belcorp opera em <strong>14 países</strong> das Américas — toda a América Latina e o mercado hispânico dos Estados Unidos. O <strong>Brasil ainda não faz parte da operação oficial</strong>.",
+  countries: [
+    "🇵🇪 Peru", "🇨🇴 Colômbia", "🇲🇽 México", "🇨🇱 Chile", "🇦🇷 Argentina", "🇻🇪 Venezuela",
+    "🇪🇨 Equador", "🇧🇴 Bolívia", "🇵🇷 Porto Rico", "🇸🇻 El Salvador", "🇬🇹 Guatemala",
+    "🇩🇴 República Dominicana", "🇨🇷 Costa Rica", "🇺🇸 EUA (hispânico)",
+  ],
+  awards: [
+    "DSN Global 100 — Top 20 (desde 2010)",
+    "Great Place to Work LATAM (múltiplos anos)",
+    "Effie Awards — Publicidade em cosméticos",
+    "Perú21 Top Empresas Peruanas",
+    "WEP Award — Programa de Empoderamento Feminino da ONU",
+  ],
+  certifications: [
+    "ISO 9001",
+    "ISO 14001 (ambiental)",
+    "Great Place to Work Certified",
+    "WEP (Women Empowerment Principles) da ONU",
+    "PBM (Boas Práticas de Manufatura)",
+  ],
+  faqs: [
+    { q: "O que é a Belcorp?",
+      a: "É uma multinacional peruana de venda direta de cosméticos fundada em 1968 por Eduardo Belmont em Lima. É dona de três marcas: L'Bel Paris (premium), Ésika (maquiagem e perfumes) e Cyzone (jovem/teen). Uma das maiores MMN da América Latina." },
+    { q: "Quanto fatura a Belcorp em 2026?",
+      a: "A Belcorp fatura mais de US$ 1,7 bilhão em 2025, ocupando o Top 20 do ranking Direct Selling News Global 100 2026. É a segunda maior empresa de cosméticos por venda direta do LATAM, atrás apenas da Natura." },
+    { q: "A Belcorp opera no Brasil?",
+      a: "Não. A Belcorp ainda não tem operação oficial no Brasil. Atua em 14 países das Américas: Peru (sede), Colômbia, México, Chile, Argentina, Venezuela, Equador, Bolívia, Porto Rico, EUA hispânico e outros da América Central." },
+    { q: "Quais são as marcas da Belcorp?",
+      a: "A Belcorp possui três marcas: L'Bel Paris (skincare e cosméticos premium com posicionamento europeu), Ésika (maquiagem, perfumes e cuidados adulto) e Cyzone (linha jovem/teen com apelo trendy)." },
+    { q: "Como funciona o modelo de catálogo da Belcorp?",
+      a: "A Belcorp publica 18 catálogos por ano (novo a cada 3 semanas) — um dos ciclos mais rápidos do LATAM. As consultoras compram com desconto de 30-40% e revendem por catálogo, com prazos de entrega de 1-2 semanas." },
+    { q: "Quanto custa começar na Belcorp?",
+      a: "No Peru, o kit inicial de consultora custa aproximadamente PEN $30 (~US$ 10). Nos demais países, o valor varia entre US$ 10 e US$ 30, sendo um dos kits mais acessíveis do setor MMN da América Latina." },
+    { q: "Belcorp é pirâmide financeira?",
+      a: "Não. A Belcorp é uma empresa consolidada com 57 anos de mercado, três fábricas próprias, receita anual de US$ 1,7 bilhão e produtos reais vendidos ao consumidor final por catálogo. Está no ranking DSN Global 100 há mais de 15 anos." },
+    { q: "Qual a diferença entre L'Bel, Ésika e Cyzone?",
+      a: "L'Bel é a linha premium com posicionamento europeu (skincare anti-idade). Ésika é a marca principal para o público adulto (maquiagem e perfumes). Cyzone é focada em adolescentes e universitárias com produtos trendy, coloridos e preço acessível." },
+    { q: "Como funciona o plano de compensação da Belcorp?",
+      a: "É um modelo de venda por catálogo com margem de 30-40% + bônus por volume de equipe (uni-nível até 3 níveis) + prêmios mensais (joias, eletrodomésticos, dinheiro) + viagens internacionais para líderes qualificadas." },
+    { q: "Vale a pena trabalhar com Belcorp?",
+      a: "Sim, especialmente nos 14 países onde opera oficialmente. É ideal para mulheres empreendedoras que gostam de vender por catálogo com produtos consolidados. Para brasileiras, ainda não é uma opção oficial — sugerimos acompanhar futuras expansões." },
+  ],
+  founders: ["Eduardo Belmont Anderson"],
+  foundingDate: "1968-01-01",
+  foundingLocation: "Lima, Peru",
+  employees: 8000,
+  alternateNames: ["Corporación Belcorp", "L'Bel", "Ésika", "Cyzone"],
+  wikipediaUrl: "https://es.wikipedia.org/wiki/Belcorp",
+};
+
+const Belcorp = () => <CompanyPremiumPage data={data} />;
+export default Belcorp;
