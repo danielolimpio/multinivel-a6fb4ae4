@@ -1,0 +1,140 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "Vida Divina",
+  slug: "vida-divina",
+  officialUrl: "https://www.vidadivina.com/",
+  domain: "vidadivina.com",
+  seoTitle: "Vida Divina: MMN de Chá Detox e Suplementos | Ranking Mundial 2026",
+  seoDescription:
+    "Vida Divina é a empresa de marketing multinível fundada por Armand Puyolt em 2015, com sede em Los Angeles (EUA), especializada em chá detox, suplementos, café, CBD e produtos wellness. Presente em mais de 40 países.",
+  rankingLabel: "TOP 100 MUNDIAL • DSN GLOBAL 100 2026",
+  heroHeadlineSuffix: "Chá Detox, Wellness e Renda com Propósito",
+  heroParagraph:
+    "Criada em 2015 pelo lendário network marketer Armand Puyolt, a Vida Divina é uma das empresas de MMN que mais cresceram na última década — chegando a US$ 250 milhões em receita e presença em mais de 40 países com foco em chá detox, suplementos naturais, café funcional e CBD.",
+  heroBadges: [
+    { label: "10 anos", icon: "calendar" },
+    { label: "40+ países", icon: "globe" },
+    { label: "300 mil distribuidores", icon: "users" },
+    { label: "Fundador Armand Puyolt", icon: "check" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking Mundial 2026", value: "Top 90", hint: "DSN Global 100" },
+    { icon: "calendar", label: "Fundação", value: "2015", hint: "Los Angeles, Califórnia (EUA)" },
+    { icon: "map", label: "País de Origem", value: "EUA 🇺🇸", hint: "Sede em Los Angeles" },
+    { icon: "globe", label: "Países", value: "40+", hint: "Américas, Europa, Ásia e África" },
+    { icon: "users", label: "Distribuidores", value: "300 mil+", hint: "Comunidade global ativa" },
+    { icon: "package", label: "Produtos", value: "70+", hint: "Chá detox, café, CBD, suplementos" },
+    { icon: "dollar", label: "Faturamento", value: "US$ 250 mi", hint: "Estimativa 2025" },
+    { icon: "star", label: "Carro-chefe", value: "TeDivina", hint: "Chá detox 4 folhas mais vendido" },
+  ],
+  aboutHtml: `
+    <p>A <strong>Vida Divina</strong> é uma empresa americana de marketing multinível fundada em <strong>2015</strong> por <strong>Armand Puyolt</strong>, considerado um dos maiores construtores de rede da história do MMN, com mais de 40 anos de experiência no setor. A sede fica em <strong>Los Angeles, Califórnia</strong>.</p>
+    <p>O portfólio da Vida Divina é focado em <strong>bem-estar natural</strong>: o famoso <strong>chá detox TeDivina</strong> (produto que popularizou a marca), café funcional Cafe Divina, linha CBD, suplementos naturais, óleos essenciais e produtos de skincare. A empresa se destaca por ingredientes de origem natural e forte apelo hispânico-latino.</p>
+    <p>Com receita estimada em <strong>US$ 250 milhões</strong> e presença em <strong>mais de 40 países</strong>, a Vida Divina figura entre as empresas de MMN em maior crescimento no ranking <strong>DSN Global 100</strong>, sendo uma das principais opções para quem quer entrar no marketing multinível na área de wellness e detox.</p>
+  `,
+  timelineTitle: "A trajetória da Vida Divina desde 2015",
+  milestones: [
+    { year: "2015", title: "Fundação", text: "Armand Puyolt cria a Vida Divina em Los Angeles com o chá TeDivina como carro-chefe." },
+    { year: "2016", title: "Expansão para México e Colômbia", text: "Rápida penetração no mercado hispânico das Américas." },
+    { year: "2018", title: "Lançamento da linha Cafe Divina", text: "Café funcional com adaptógenos e ingredientes wellness." },
+    { year: "2019", title: "Chegada ao Brasil", text: "Operação oficial no Brasil ampliando comunidade lusófona." },
+    { year: "2020", title: "Linha CBD Divina", text: "Introdução de produtos com CBD e óleos essenciais." },
+    { year: "2022", title: "US$ 200 mi", text: "Empresa ultrapassa US$ 200 milhões em receita anual." },
+    { year: "2024", title: "40 países ativos", text: "Consolidação global com escritórios na Europa e Ásia." },
+    { year: "2026", title: "Top 90 DSN Global 100", text: "Reconhecimento como uma das maiores empresas de MMN wellness." },
+  ],
+  productsIntro:
+    "A Vida Divina foca em <strong>wellness natural</strong> com produtos de <strong>chá detox</strong>, café funcional, CBD, óleos essenciais, suplementos e skincare — todos com apelo natural e ingredientes selecionados.",
+  productLines: [
+    { name: "TeDivina Detox", tag: "Carro-chefe", color: "from-emerald-500/15 to-emerald-700/5",
+      text: "Chá detox de 4 folhas — produto mais vendido da empresa, referência mundial em desintoxicação natural.",
+      items: ["TeDivina Original", "TeDivina Berry", "TeDivina Pineapple", "TeDivina Passion"] },
+    { name: "Cafe Divina", tag: "Café funcional", color: "from-amber-500/15 to-amber-700/5",
+      text: "Cafés gourmet com adaptógenos como ganoderma, cordyceps e chaga para energia e foco.",
+      items: ["Cafe Divina Gold", "Cafe Divina Fit", "Cafe Divina Espresso", "Cafe Divina Latte"] },
+    { name: "CBD Divina & Óleos", tag: "Bem-estar", color: "from-green-500/15 to-green-700/5",
+      text: "Linha completa com óleos CBD, tinturas, cremes e produtos para relaxamento e recuperação.",
+      items: ["CBD Oil 500mg", "CBD Cream", "CBD Roll-On", "Óleos essenciais"] },
+    { name: "Suplementos & Skincare", tag: "Wellness", color: "from-rose-500/15 to-rose-700/5",
+      text: "Suplementos naturais, colágeno, vitaminas e linha skincare anti-idade.",
+      items: ["Collagen Divina", "Multi Vitamin", "Slim Divina", "Skincare Line"] },
+  ],
+  planTitle: "Plano de Compensação Vida Divina (Híbrido Uni-Binário)",
+  planIntro:
+    "Modelo <strong>híbrido</strong> combinando <strong>uni-nível para bônus rápido</strong> e <strong>binário para renda residual</strong>. Inclui Fast Start, Matching Bonus, Bônus de Carro e Pool de Liderança para top ranks.",
+  planRanks: [
+    { rank: "Distribuidor", payout: "25% desconto revenda", text: "Compra com preço de atacado para consumo e revenda." },
+    { rank: "Silver / Gold", payout: "Fast Start 20-30%", text: "Ganho rápido nas primeiras vendas dos indicados." },
+    { rank: "Platinum / Ruby", payout: "Binário + Matching", text: "Comissão binária semanal + matching bonus até 5 gerações." },
+    { rank: "Emerald / Diamond", payout: "+ Bônus de Carro", text: "Qualificação para bônus mensal de veículo." },
+    { rank: "Blue / Black Diamond", payout: "Pool de Liderança 3%", text: "Elite com múltiplas equipes qualificadas globalmente." },
+    { rank: "Crown / Royal Crown", payout: "Elite Pool + Viagens", text: "Top ranks — bônus de 6/7 dígitos anuais e incentivos." },
+  ],
+  pros: [
+    "Produto natural com apelo mundial (chá detox)",
+    "Fundador Armand Puyolt — lenda do MMN com credibilidade",
+    "Operação oficial no Brasil e mercado hispânico forte",
+    "Plano híbrido paga rápido e cria renda residual",
+    "Kit inicial acessível a partir de US$ 50",
+    "Forte comunidade latina e treinamentos em português/espanhol",
+  ],
+  cons: [
+    "Categoria de chá detox tem forte concorrência (Iaso, Herbalife)",
+    "Manutenção mensal de 100 PV para qualificar comissões",
+    "Renda alta exige construção binária balanceada",
+    "Mercado americano mais maduro que o brasileiro",
+  ],
+  presenceIntro:
+    "A Vida Divina opera em <strong>mais de 40 países</strong> com forte presença nas Américas, Europa e sudeste asiático. No Brasil, a operação é oficial com escritório e logística local.",
+  countries: [
+    "🇺🇸 EUA", "🇲🇽 México", "🇧🇷 Brasil", "🇨🇴 Colômbia", "🇦🇷 Argentina", "🇵🇪 Peru",
+    "🇨🇱 Chile", "🇻🇪 Venezuela", "🇩🇴 República Dominicana", "🇬🇹 Guatemala", "🇸🇻 El Salvador",
+    "🇭🇳 Honduras", "🇪🇸 Espanha", "🇬🇧 Reino Unido", "🇮🇹 Itália", "🇫🇷 França",
+    "🇩🇪 Alemanha", "🇵🇹 Portugal", "🇵🇭 Filipinas", "🇮🇩 Indonésia", "🇹🇭 Tailândia",
+    "🇻🇳 Vietnã", "🇳🇬 Nigéria", "🇰🇪 Quênia", "🇿🇦 África do Sul", "🇨🇦 Canadá",
+  ],
+  awards: [
+    "DSN Global 100 — Top 100 (desde 2020)",
+    "Business For Home — Top MLM Growth Companies",
+    "Armand Puyolt — Direct Selling Hall of Fame",
+    "Best Wellness MLM Company Award (2022)",
+  ],
+  certifications: [
+    "FDA Registered Facility",
+    "GMP (Good Manufacturing Practice)",
+    "Kosher Certified (linhas selecionadas)",
+    "USDA Organic (produtos selecionados)",
+    "Non-GMO Verified",
+  ],
+  faqs: [
+    { q: "O que é a Vida Divina?",
+      a: "É uma empresa americana de marketing multinível fundada em 2015 por Armand Puyolt, com sede em Los Angeles, especializada em chá detox TeDivina, café funcional, CBD, suplementos naturais e produtos wellness." },
+    { q: "Quanto fatura a Vida Divina?",
+      a: "A Vida Divina faturou aproximadamente US$ 250 milhões em 2025, figurando no Top 100 do ranking Direct Selling News Global 100 2026." },
+    { q: "A Vida Divina opera no Brasil?",
+      a: "Sim, a Vida Divina tem operação oficial no Brasil desde 2019, com escritório, logística local e comunidade brasileira ativa em vários estados." },
+    { q: "Como funciona o chá TeDivina?",
+      a: "TeDivina é um chá detox de 4 folhas naturais (holy thistle, malva, marshmallow e persimmon leaves) preparado por infusão de 8 horas. É consumido 2x ao dia por um período de 30-60 dias para desintoxicação e bem-estar." },
+    { q: "Quanto custa começar na Vida Divina?",
+      a: "O kit inicial custa a partir de US$ 50 (~R$ 260) para o Kit Fast Start Básico. Kits maiores (Silver, Gold, Platinum) custam US$ 300-1.500 e desbloqueiam mais bônus de rápida qualificação." },
+    { q: "Vida Divina é pirâmide financeira?",
+      a: "Não. Vida Divina é uma empresa de marketing multinível legítima, registrada nos EUA, com produtos reais vendidos ao consumidor final. Está listada há vários anos no ranking DSN Global 100, o principal índice do setor." },
+    { q: "Como funciona o plano híbrido da Vida Divina?",
+      a: "O plano combina uni-nível (paga rapidamente nas primeiras vendas via Fast Start Bonus) com binário (renda residual semanal balanceada) e Matching Bonus até 5 gerações — considerado um dos mais competitivos para networkers com equipe engajada." },
+    { q: "Quais os principais produtos da Vida Divina?",
+      a: "Os carros-chefes são: TeDivina (chá detox), Cafe Divina (café funcional com adaptógenos), CBD Divina (óleos e cremes), Collagen Divina (colágeno hidrolisado), Slim Divina (controle de peso) e a linha skincare anti-idade." },
+    { q: "Quem é Armand Puyolt?",
+      a: "Armand Puyolt é o fundador e CEO da Vida Divina — considerado uma lenda viva do MMN com mais de 40 anos de experiência. Construiu redes de centenas de milhares de distribuidores em empresas anteriores antes de fundar sua própria empresa." },
+    { q: "Vale a pena entrar na Vida Divina em 2026?",
+      a: "Sim, especialmente para quem busca produtos wellness com apelo natural e forte comunidade hispânico-latina. A Vida Divina é uma das empresas em maior crescimento no setor, com operação sólida no Brasil e plano de compensação híbrido competitivo." },
+  ],
+  founders: ["Armand Puyolt"],
+  foundingDate: "2015-01-01",
+  foundingLocation: "Los Angeles, Califórnia, EUA",
+  employees: 300,
+  alternateNames: ["Vida Divina International", "TeDivina"],
+};
+
+const VidaDivina = () => <CompanyPremiumPage data={data} />;
+export default VidaDivina;
