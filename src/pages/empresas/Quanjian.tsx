@@ -15,7 +15,7 @@ const data: CompanyPremiumData = {
   heroBadges: [
     { label: "Fundada 2004", icon: "calendar" },
     { label: "Desmantelada 2019", icon: "check" },
-    { label: "Tianjin, China", icon: "map" },
+    { label: "Tianjin, China", icon: "globe" },
     { label: "Estudo de caso", icon: "check" },
   ],
   stats: [
