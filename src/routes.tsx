@@ -69,6 +69,15 @@ import Betterware from './pages/empresas/Betterware';
 import SeneGence from './pages/empresas/SeneGence';
 import DXNGlobal from './pages/empresas/DXNGlobal';
 import Belcorp from './pages/empresas/Belcorp';
+import ArbonneInternational from './pages/empresas/ArbonneInternational';
+import LPTRealty from './pages/empresas/LPTRealty';
+import Quanjian from './pages/empresas/Quanjian';
+import Farmasi from './pages/empresas/Farmasi';
+import Omnilife from './pages/empresas/Omnilife';
+import MonatGlobal from './pages/empresas/MonatGlobal';
+import Chogan from './pages/empresas/Chogan';
+import AmorePacific from './pages/empresas/AmorePacific';
+import LegalShield from './pages/empresas/LegalShield';
 import { quizQuestions } from './data/quizData';
 
 const queryClient = new QueryClient();
@@ -286,13 +295,22 @@ export const routes: RouteRecord[] = [
       { path: 'empresa/senegence', element: <SeneGence />, entry: 'src/pages/empresas/SeneGence.tsx' },
       { path: 'empresa/dxn-global', element: <DXNGlobal />, entry: 'src/pages/empresas/DXNGlobal.tsx' },
       { path: 'empresa/belcorp', element: <Belcorp />, entry: 'src/pages/empresas/Belcorp.tsx' },
+      { path: 'empresa/arbonne-international', element: <ArbonneInternational />, entry: 'src/pages/empresas/ArbonneInternational.tsx' },
+      { path: 'empresa/lpt-realty', element: <LPTRealty />, entry: 'src/pages/empresas/LPTRealty.tsx' },
+      { path: 'empresa/quanjian', element: <Quanjian />, entry: 'src/pages/empresas/Quanjian.tsx' },
+      { path: 'empresa/farmasi', element: <Farmasi />, entry: 'src/pages/empresas/Farmasi.tsx' },
+      { path: 'empresa/omnilife', element: <Omnilife />, entry: 'src/pages/empresas/Omnilife.tsx' },
+      { path: 'empresa/monat-global', element: <MonatGlobal />, entry: 'src/pages/empresas/MonatGlobal.tsx' },
+      { path: 'empresa/chogan', element: <Chogan />, entry: 'src/pages/empresas/Chogan.tsx' },
+      { path: 'empresa/amore-pacific', element: <AmorePacific />, entry: 'src/pages/empresas/AmorePacific.tsx' },
+      { path: 'empresa/legalshield', element: <LegalShield />, entry: 'src/pages/empresas/LegalShield.tsx' },
       // Dynamic company pages - pre-rendered with getStaticPaths
       {
         path: 'empresa/:slug',
         element: <CompanyDetails />,
         entry: 'src/pages/CompanyDetails.tsx',
         getStaticPaths: () => companySlugs
-          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode','exp-realty','pm-international','coway','infinitus','sunrun','utility-warehouse','doterra','world-financial-group','real-brokerage','melaleuca','young-living','atomy','joymain','perfect-china','sunhope','new-era-health','vivint-smart-home','ambit-energy','o-boticario','family-first-life','usana','vida-divina','longrich','betterware','senegence','dxn-global','belcorp'].includes(s))
+          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode','exp-realty','pm-international','coway','infinitus','sunrun','utility-warehouse','doterra','world-financial-group','real-brokerage','melaleuca','young-living','atomy','joymain','perfect-china','sunhope','new-era-health','vivint-smart-home','ambit-energy','o-boticario','family-first-life','usana','vida-divina','longrich','betterware','senegence','dxn-global','belcorp','arbonne-international','lpt-realty','quanjian','farmasi','omnilife','monat-global','chogan','amore-pacific','legalshield'].includes(s))
           .map((slug) => `/empresa/${slug}`),
       },
       // Dynamic article pages - pre-rendered with getStaticPaths
