@@ -1,0 +1,141 @@
+import { CompanyPremiumPage, type CompanyPremiumData } from "@/components/CompanyPremiumPage";
+
+const data: CompanyPremiumData = {
+  name: "Farmasi",
+  slug: "farmasi",
+  officialUrl: "https://www.farmasi.com/",
+  domain: "farmasi.com",
+  seoTitle: "Farmasi: Cosméticos Turcos que Conquistam o Mundo | Top 30 Mundial 2026",
+  seoDescription:
+    "Farmasi é a maior MMN de cosméticos da Turquia — 75 anos de história, fábrica GMP própria em Istambul, presença em 130+ países e US$ 900 milhões em receita anual. Beleza acessível estilo europeu.",
+  rankingLabel: "TOP 30 MUNDIAL • DSN GLOBAL 100 2026",
+  heroHeadlineSuffix: "Beleza Turca com Padrão Europeu",
+  heroParagraph:
+    "Fundada em 1950 em Istambul pelo farmacêutico Dr. Cevdet Tuna, a Farmasi é a maior MMN de cosméticos da Turquia e uma das que mais cresce globalmente — combinando qualidade europeia, fábrica GMP própria e preços acessíveis.",
+  heroBadges: [
+    { label: "75+ anos", icon: "calendar" },
+    { label: "130+ países", icon: "globe" },
+    { label: "Fábrica GMP", icon: "check" },
+    { label: "3.6 mi de consultoras", icon: "users" },
+  ],
+  stats: [
+    { icon: "crown", label: "Ranking Mundial 2026", value: "Top 30", hint: "DSN Global 100" },
+    { icon: "calendar", label: "Fundação", value: "1950", hint: "Como Farma-Sağlık Ürünleri" },
+    { icon: "map", label: "País de Origem", value: "Turquia 🇹🇷", hint: "Sede em Istambul" },
+    { icon: "globe", label: "Países", value: "130+", hint: "Europa, Ásia, Américas, África" },
+    { icon: "users", label: "Consultoras", value: "3,6 milhões", hint: "Beauty Influencers globais" },
+    { icon: "package", label: "Produtos", value: "2.000+", hint: "Cosméticos, perfumaria, wellness" },
+    { icon: "dollar", label: "Faturamento 2025", value: "US$ 900 mi", hint: "Fonte: Business For Home 2026" },
+    { icon: "factory", label: "Fábrica", value: "Istambul (GMP)", hint: "60 mil m² — 1 dos maiores da Turquia" },
+  ],
+  aboutHtml: `
+    <p>A <strong>Farmasi Cosmetics</strong> nasceu em <strong>1950</strong> em Istambul (Turquia) como <em>Farma-Sağlık Ürünleri</em>, empresa farmacêutica fundada pelo <strong>Dr. Cevdet Tuna</strong>. Em <strong>2010</strong>, sob a liderança do neto <em>Ömer Tuna</em>, migrou para o modelo de <strong>venda direta multinível</strong>, tornando-se a maior MMN de cosméticos da Turquia.</p>
+    <p>Sua fábrica própria em Istambul tem <strong>60 mil m²</strong> — uma das maiores do setor cosmético da Europa Oriental — com certificações <strong>GMP, ISO 9001, ISO 22716</strong> e capacidade de produção de mais de <strong>200 milhões de unidades/ano</strong>. Todos os produtos seguem padrões da <strong>EU Cosmetic Regulation 1223/2009</strong>, mais rigorosa que a americana.</p>
+    <p>Com <strong>US$ 900 mi em receita anual</strong>, a Farmasi é <strong>Top 30 no DSN Global 100 2026</strong>, opera em <strong>130+ países</strong> (incluindo Brasil), tem <strong>3,6 milhões de Beauty Influencers</strong> e faturou 60% de crescimento no último triênio — puxada por mercados como EUA, México, Turquia, Nigéria e Brasil.</p>
+  `,
+  timelineTitle: "De farmácia turca à MMN global de cosméticos",
+  milestones: [
+    { year: "1950", title: "Fundação", text: "Dr. Cevdet Tuna abre a Farma-Sağlık em Istambul." },
+    { year: "2000", title: "Farmasi Cosmetics", text: "Reposicionamento para cosméticos e perfumaria." },
+    { year: "2010", title: "Modelo MMN", text: "Ömer Tuna migra para venda direta multinível." },
+    { year: "2015", title: "Expansão europeia", text: "Alemanha, França, Reino Unido, Balcãs." },
+    { year: "2018", title: "Chega aos EUA", text: "Lança operação nos Estados Unidos com forte marketing digital." },
+    { year: "2020", title: "US$ 500 mi", text: "Duplica receita em plena pandemia." },
+    { year: "2022", title: "Brasil oficial", text: "Farmasi Brasil abre operação com CD em São Paulo." },
+    { year: "2024", title: "3 milhões de consultoras", text: "Bate marca de 3 milhões de Beauty Influencers globais." },
+    { year: "2026", title: "Top 30 mundial", text: "US$ 900 mi em receita, 130+ países." },
+  ],
+  productsIntro:
+    "Mais de <strong>2.000 SKUs</strong> em maquiagem, skincare, perfumaria, cuidados capilares, wellness e produtos de bem-estar — fabricados na unidade própria de Istambul com padrão europeu.",
+  productLines: [
+    { name: "Makeup Studio", tag: "Maquiagem", color: "from-rose-500/15 to-rose-700/5",
+      text: "Linha completa de maquiagem — bases HD, batons matte, paletas e máscaras.",
+      items: ["Full Coverage Foundation", "Matte Lipstick", "Eye Palette", "Mascara XL"] },
+    { name: "Nutriplus Skincare", tag: "Skincare botânico", color: "from-emerald-500/15 to-emerald-700/5",
+      text: "Skincare com ativos naturais turcos: rosa de Isparta, romã, azeite egeu.",
+      items: ["Rose Serum", "Pomegranate Mask", "Vitamin C", "Retinol Night"] },
+    { name: "Dr. C. Tuna", tag: "Homenagem ao fundador", color: "from-amber-500/15 to-amber-700/5",
+      text: "Linha premium botânica assinada com o nome do fundador farmacêutico.",
+      items: ["Tea Tree Oil", "Argan Shampoo", "Propolis Cream", "Snail Serum"] },
+    { name: "Perfumaria", tag: "Fragrâncias", color: "from-purple-500/15 to-purple-700/5",
+      text: "Mais de 100 fragrâncias femininas e masculinas — inspiradas em nichos europeus.",
+      items: ["Prive Collection", "Signature Line", "Ck-inspired", "Oud Series"] },
+    { name: "Wellness & Home", tag: "Bem-estar", color: "from-sky-500/15 to-sky-700/5",
+      text: "Suplementos, aromaterapia, produtos de limpeza doméstica e higiene.",
+      items: ["Slim Tea", "Collagen", "Diffusers", "Detergentes Eco"] },
+  ],
+  planTitle: "Plano de Compensação Farmasi (Beauty Influencer)",
+  planIntro:
+    "Modelo <strong>unilevel com quebra e bônus de liderança</strong>. Sem taxa mensal, sem estoque obrigatório — Beauty Influencer paga apenas <strong>US$ 20 pelo kit inicial</strong>.",
+  planRanks: [
+    { rank: "Beauty Influencer", payout: "50% varejo", text: "Comissão direta em cada venda." },
+    { rank: "Beauty Consultant", payout: "+ 5% override", text: "3 diretos qualificados." },
+    { rank: "Team Leader", payout: "+ Bônus liderança", text: "Grupo de 500 PV mensais." },
+    { rank: "Silver / Gold / Platinum", payout: "+ Car Bonus", text: "Bônus para carro branco Farmasi." },
+    { rank: "Diamond", payout: "Elite Pool", text: "Top mundial — viagens e prêmios anuais." },
+  ],
+  pros: [
+    "Kit inicial baratíssimo (~US$ 20)",
+    "50% de comissão em varejo (uma das maiores do mercado)",
+    "Fábrica própria em Istambul (padrão europeu GMP)",
+    "Sem estoque obrigatório",
+    "Presença em 130+ países (networking global real)",
+    "Produtos com excelente custo-benefício",
+  ],
+  cons: [
+    "Operação no Brasil ainda em consolidação",
+    "Marca menos conhecida que Avon, Boticário e Natura no BR",
+    "Portfólio muito amplo (pode confundir iniciantes)",
+    "Concorrência interna forte em cosméticos massificados",
+    "Suporte em português ainda limitado em algumas regiões",
+  ],
+  presenceIntro:
+    "Presente em <strong>130+ países</strong> — EUA, Turquia, Alemanha, Rússia, Brasil, México, Nigéria, Índia, Cazaquistão, Reino Unido, França e dezenas de outros mercados.",
+  countries: [
+    "🇹🇷 Turquia", "🇺🇸 EUA", "🇩🇪 Alemanha", "🇷🇺 Rússia", "🇧🇷 Brasil",
+    "🇲🇽 México", "🇳🇬 Nigéria", "🇮🇳 Índia", "🇰🇿 Cazaquistão", "🇬🇧 Reino Unido",
+    "🇫🇷 França", "🇮🇹 Itália", "🇪🇸 Espanha", "🇺🇦 Ucrânia", "🇦🇿 Azerbaijão",
+    "🇷🇴 Romênia", "🇭🇺 Hungria", "🇨🇴 Colômbia", "🇦🇺 Austrália", "🇿🇦 África do Sul",
+  ],
+  awards: [
+    "Top 30 DSN Global 100 — 2026",
+    "Bravo Growth Award — Direct Selling News",
+    "Turkish Exporters Assembly — Top Exporter",
+    "Superbrands Turkey",
+    "Great Place to Work — Turquia",
+  ],
+  certifications: [
+    "ISO 9001 / 14001 / 22716 (GMP cosmético)",
+    "EU Cosmetic Regulation 1223/2009",
+    "Halal Certified (linhas selecionadas)",
+    "Cruelty-Free (Leaping Bunny — linhas selecionadas)",
+    "FDA (produtos aprovados nos EUA)",
+  ],
+  faqs: [
+    { q: "O que é a Farmasi?",
+      a: "É uma multinacional turca fundada em 1950 pelo Dr. Cevdet Tuna, especializada em cosméticos, perfumaria e wellness. Desde 2010 opera no modelo de venda direta multinível e é a maior MMN de cosméticos da Turquia, presente em 130+ países." },
+    { q: "Quanto fatura a Farmasi?",
+      a: "Em 2025 a Farmasi faturou US$ 900 milhões, ocupando o Top 30 no ranking mundial DSN Global 100 / Business For Home 2026." },
+    { q: "A Farmasi opera no Brasil?",
+      a: "Sim. A Farmasi Brasil tem operação oficial desde 2022 com centro de distribuição em São Paulo, atendimento em português e frete nacional. É possível se cadastrar como Beauty Influencer diretamente pelo site brasileiro." },
+    { q: "Como funciona o plano de compensação da Farmasi?",
+      a: "É um plano unilevel simples: 50% de comissão direta em varejo + 5-25% de overrides em até múltiplos níveis conforme rank + bônus de liderança + car bonus (carro branco) + Elite Pool para Diamonds." },
+    { q: "Quanto custa entrar na Farmasi?",
+      a: "O kit inicial de Beauty Influencer custa cerca de US$ 20 (aprox. R$ 100 no Brasil), com produtos e material de vendas incluídos. Não há taxa mensal, estoque obrigatório ou compra mínima recorrente." },
+    { q: "Os produtos Farmasi são bons?",
+      a: "Sim. São fabricados em Istambul (Turquia) com certificações GMP, ISO 9001/14001/22716 e seguem a EU Cosmetic Regulation 1223/2009 — regulamentação europeia mais rigorosa que a americana. A linha Dr. C. Tuna é botânica premium." },
+    { q: "A Farmasi é cruelty-free?",
+      a: "As linhas exportadas para EUA e Europa são cruelty-free (Leaping Bunny). Como a Farmasi vende também na China continental, algumas linhas locais lá podem estar sujeitas a testes regulatórios chineses — verifique o rótulo antes de comprar." },
+    { q: "Qual a diferença entre Farmasi e Oriflame?",
+      a: "Ambas são MMN de cosméticos com fábrica própria. A Oriflame é sueca (fundada 1967), com foco escandinavo. A Farmasi é turca (fundada 1950), com foco em preços mais acessíveis e comissão de 50% em varejo (Oriflame paga ~20-30%)." },
+  ],
+  founders: ["Dr. Cevdet Tuna", "Ömer Tuna"],
+  foundingDate: "1950-01-01",
+  foundingLocation: "Istambul, Turquia",
+  employees: 2500,
+  alternateNames: ["Farmasi Cosmetics", "Farma-Sağlık"],
+  wikipediaUrl: "https://en.wikipedia.org/wiki/Farmasi_(cosmetics)",
+};
+
+const Farmasi = () => <CompanyPremiumPage data={data} />;
+export default Farmasi;
