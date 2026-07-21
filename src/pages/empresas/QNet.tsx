@@ -15,7 +15,7 @@ const data: CompanyPremiumData = {
   heroBadges: [
     { label: "25+ anos", icon: "calendar" },
     { label: "100+ países", icon: "globe" },
-    { label: "Hong Kong 🇭🇰", icon: "map" },
+    { label: "Hong Kong 🇭🇰", icon: "globe" },
     { label: "Multi-categoria", icon: "check" },
   ],
   stats: [

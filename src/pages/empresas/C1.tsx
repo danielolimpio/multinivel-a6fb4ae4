@@ -15,8 +15,8 @@ const data: CompanyPremiumData = {
   heroBadges: [
     { label: "Fundada 2012", icon: "calendar" },
     { label: "China 🇨🇳", icon: "globe" },
-    { label: "US$ 550 mi", icon: "dollar" },
-    { label: "Ásia + Sudeste", icon: "map" },
+    { label: "US$ 550 mi", icon: "check" },
+    { label: "Ásia + Sudeste", icon: "globe" },
   ],
   stats: [
     { icon: "crown", label: "Ranking Mundial 2026", value: "Top 45", hint: "Business For Home Global 100" },

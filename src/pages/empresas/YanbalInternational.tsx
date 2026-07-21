@@ -15,7 +15,7 @@ const data: CompanyPremiumData = {
   heroBadges: [
     { label: "58 anos", icon: "calendar" },
     { label: "10 países", icon: "globe" },
-    { label: "Peru 🇵🇪", icon: "map" },
+    { label: "Peru 🇵🇪", icon: "globe" },
     { label: "Beleza + Joias", icon: "check" },
   ],
   stats: [

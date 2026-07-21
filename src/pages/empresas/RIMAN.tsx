@@ -16,7 +16,7 @@ const data: CompanyPremiumData = {
     { label: "Fundada 2021", icon: "calendar" },
     { label: "Coreia do Sul 🇰🇷", icon: "globe" },
     { label: "K-Beauty premium", icon: "check" },
-    { label: "US$ 720 mi", icon: "dollar" },
+    { label: "US$ 720 mi", icon: "check" },
   ],
   stats: [
     { icon: "crown", label: "Ranking Mundial 2026", value: "Top 38", hint: "Business For Home Global 100" },

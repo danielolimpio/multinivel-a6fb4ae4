@@ -16,7 +16,7 @@ const data: CompanyPremiumData = {
     { label: "Herança 1903", icon: "calendar" },
     { label: "60+ países", icon: "globe" },
     { label: "Bios Life", icon: "check" },
-    { label: "US$ 460 mi", icon: "dollar" },
+    { label: "US$ 460 mi", icon: "check" },
   ],
   stats: [
     { icon: "crown", label: "Ranking Mundial 2026", value: "Top 47", hint: "Business For Home Global 100" },

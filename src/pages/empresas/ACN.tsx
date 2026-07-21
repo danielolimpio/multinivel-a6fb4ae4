@@ -16,7 +16,7 @@ const data: CompanyPremiumData = {
     { label: "32+ anos", icon: "calendar" },
     { label: "27 países", icon: "globe" },
     { label: "Serviços recorrentes", icon: "check" },
-    { label: "US$ 500 mi", icon: "dollar" },
+    { label: "US$ 500 mi", icon: "check" },
   ],
   stats: [
     { icon: "crown", label: "Ranking Mundial 2026", value: "Top 48", hint: "Business For Home Global 100" },

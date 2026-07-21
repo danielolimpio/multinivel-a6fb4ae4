@@ -16,7 +16,7 @@ const data: CompanyPremiumData = {
     { label: "20+ anos", icon: "calendar" },
     { label: "50+ países", icon: "globe" },
     { label: "Adesivo X39", icon: "check" },
-    { label: "US$ 650 mi", icon: "dollar" },
+    { label: "US$ 650 mi", icon: "check" },
   ],
   stats: [
     { icon: "crown", label: "Ranking Mundial 2026", value: "Top 40", hint: "Business For Home Global 100" },

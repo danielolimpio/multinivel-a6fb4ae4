@@ -16,7 +16,7 @@ const data: CompanyPremiumData = {
     { label: "33+ anos", icon: "calendar" },
     { label: "SHOP.COM", icon: "globe" },
     { label: "UnFranchise", icon: "check" },
-    { label: "US$ 620 mi", icon: "dollar" },
+    { label: "US$ 620 mi", icon: "check" },
   ],
   stats: [
     { icon: "crown", label: "Ranking Mundial 2026", value: "Top 42", hint: "Business For Home Global 100" },
