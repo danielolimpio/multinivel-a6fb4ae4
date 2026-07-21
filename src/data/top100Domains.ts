@@ -45,7 +45,7 @@ export const top100Domains: Record<string, string> = {
   "Arbonne": "arbonne.com",
   "LPT Realty": "lptrealty.com",
   "Oriflame": "oriflame.com",
-  "Quanjian": "quanjian.com",
+  "Quanjian": "quanjian.com.cn",
   "C1": "c1official.com",
   "Farmasi": "farmasi.com",
   "Omnilife": "omnilife.com",
