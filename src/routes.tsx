@@ -78,6 +78,16 @@ import MonatGlobal from './pages/empresas/MonatGlobal';
 import Chogan from './pages/empresas/Chogan';
 import AmorePacific from './pages/empresas/AmorePacific';
 import LegalShield from './pages/empresas/LegalShield';
+import C1 from './pages/empresas/C1';
+import LifeWave from './pages/empresas/LifeWave';
+import RIMAN from './pages/empresas/RIMAN';
+import QNet from './pages/empresas/QNet';
+import MarketAmerica from './pages/empresas/MarketAmerica';
+import Shaklee from './pages/empresas/Shaklee';
+import ACN from './pages/empresas/ACN';
+import NaturesSunshine from './pages/empresas/NaturesSunshine';
+import Unicity from './pages/empresas/Unicity';
+import YanbalInternational from './pages/empresas/YanbalInternational';
 import { quizQuestions } from './data/quizData';
 
 const queryClient = new QueryClient();
@@ -304,13 +314,23 @@ export const routes: RouteRecord[] = [
       { path: 'empresa/chogan', element: <Chogan />, entry: 'src/pages/empresas/Chogan.tsx' },
       { path: 'empresa/amore-pacific', element: <AmorePacific />, entry: 'src/pages/empresas/AmorePacific.tsx' },
       { path: 'empresa/legalshield', element: <LegalShield />, entry: 'src/pages/empresas/LegalShield.tsx' },
+      { path: 'empresa/c1', element: <C1 />, entry: 'src/pages/empresas/C1.tsx' },
+      { path: 'empresa/lifewave', element: <LifeWave />, entry: 'src/pages/empresas/LifeWave.tsx' },
+      { path: 'empresa/riman', element: <RIMAN />, entry: 'src/pages/empresas/RIMAN.tsx' },
+      { path: 'empresa/qnet', element: <QNet />, entry: 'src/pages/empresas/QNet.tsx' },
+      { path: 'empresa/market-america', element: <MarketAmerica />, entry: 'src/pages/empresas/MarketAmerica.tsx' },
+      { path: 'empresa/shaklee', element: <Shaklee />, entry: 'src/pages/empresas/Shaklee.tsx' },
+      { path: 'empresa/acn', element: <ACN />, entry: 'src/pages/empresas/ACN.tsx' },
+      { path: 'empresa/natures-sunshine', element: <NaturesSunshine />, entry: 'src/pages/empresas/NaturesSunshine.tsx' },
+      { path: 'empresa/unicity', element: <Unicity />, entry: 'src/pages/empresas/Unicity.tsx' },
+      { path: 'empresa/yanbal-international', element: <YanbalInternational />, entry: 'src/pages/empresas/YanbalInternational.tsx' },
       // Dynamic company pages - pre-rendered with getStaticPaths
       {
         path: 'empresa/:slug',
         element: <CompanyDetails />,
         entry: 'src/pages/CompanyDetails.tsx',
         getStaticPaths: () => companySlugs
-          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode','exp-realty','pm-international','coway','infinitus','sunrun','utility-warehouse','doterra','world-financial-group','real-brokerage','melaleuca','young-living','atomy','joymain','perfect-china','sunhope','new-era-health','vivint-smart-home','ambit-energy','o-boticario','family-first-life','usana','vida-divina','longrich','betterware','senegence','dxn-global','belcorp','arbonne-international','lpt-realty','quanjian','farmasi','omnilife','monat-global','chogan','amore-pacific','legalshield'].includes(s))
+          .filter((s) => !['amway','herbalife','natura','vorwerk','mary-kay','nu-skin','forever-living','oriflame','primerica','hinode','exp-realty','pm-international','coway','infinitus','sunrun','utility-warehouse','doterra','world-financial-group','real-brokerage','melaleuca','young-living','atomy','joymain','perfect-china','sunhope','new-era-health','vivint-smart-home','ambit-energy','o-boticario','family-first-life','usana','vida-divina','longrich','betterware','senegence','dxn-global','belcorp','arbonne-international','lpt-realty','quanjian','farmasi','omnilife','monat-global','chogan','amore-pacific','legalshield','c1','lifewave','riman','qnet','market-america','shaklee','acn','natures-sunshine','unicity','yanbal-international'].includes(s))
           .map((slug) => `/empresa/${slug}`),
       },
       // Dynamic article pages - pre-rendered with getStaticPaths
